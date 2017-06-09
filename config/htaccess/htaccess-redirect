@@ -1,0 +1,9 @@
+# ######################################################################
+# # HTTP REDIRECTS                                                     #
+# ######################################################################
+
+# Write your redirections here
+
+# Example:
+# RedirectMatch 301 "^<##WEB_PATH_PQ##>/foo/?$" <##WEB_SCHEME##>://<##WEB_DOMAIN##><##WEB_PATH##>/bar/
+

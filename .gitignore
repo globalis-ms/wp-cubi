@@ -1,0 +1,39 @@
+# Configuration
+/config/vars.php*
+/config/local.php
+/config/salt-keys.php
+
+# .htaccess
+/web/.htaccess
+/web/.htpasswd
+
+# Composer
+/vendor/*
+!/vendor/.gitkeep
+
+# File system files
+.DS_Store
+*~
+.fuse*
+
+# Security
+*.db
+*.log
+
+# WordPress core
+/web/wp
+
+# WordPress temp files
+/web/app/cache
+/web/app/upgrade
+
+# WordPress Plugins
+/web/app/modules/*
+!/web/app/modules/.gitkeep
+
+# WordPress MU-Plugins
+/web/app/mu-modules/*/
+
+# WordPress Media / Uploads
+/web/media/*
+!/web/media/.gitkeep

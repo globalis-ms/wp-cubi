@@ -1,0 +1,134 @@
+# ######################################################################
+# # SECURITY                                                           #
+# ######################################################################
+
+# ----------------------------------------------------------------------
+# | Disable file indexes                                               |
+# ----------------------------------------------------------------------
+
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Block access to hidden files                                       |
+# ----------------------------------------------------------------------
+
+<FilesMatch "^\.">
+
+# Apache < 2.3
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  Deny from all
+  Satisfy All
+</IfModule>
+
+# Apache ≥ 2.3
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>
+
+</FilesMatch>
+
+# ----------------------------------------------------------------------
+# | Block access to files that can expose sensitive information        |
+# ----------------------------------------------------------------------
+
+<FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op])|~)$">
+
+  # Apache < 2.3
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+    Satisfy All
+  </IfModule>
+
+  # Apache ≥ 2.3
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+
+</FilesMatch>
+
+# ----------------------------------------------------------------------
+# | Reducing MIME type security risks                                  |
+# ----------------------------------------------------------------------
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Server-side technology information                                 |
+# ----------------------------------------------------------------------
+
+<IfModule mod_headers.c>
+  Header unset X-Powered-By
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Server software information                                        |
+# ----------------------------------------------------------------------
+
+ServerSignature Off
+
+# ----------------------------------------------------------------------
+# | Block outside access to WordPress includes files                   |
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+  RewriteRule ^wp/wp-admin/includes/ - [F,L]
+  RewriteRule !^wp/wp-includes/ - [S=3]
+
+  RewriteRule ^wp/wp-includes/js/tinymce/langs/.+\.php - [F,L]
+  RewriteRule ^wp/wp-includes/theme-compat/ - [F,L]
+
+  RewriteCond %{SCRIPT_FILENAME} !^(.*)wp/wp-includes/ms-files.php
+  RewriteRule ^wp/wp-includes/[^/]+\.php$ - [F,L]
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Block PHP in uploads directory                                     |
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+  RewriteRule ^media/.*\.(?:php[1-6]?|pht|phtml?)$ - [NC,F]
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Filter HTTP Request methods                                        |
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+  RewriteCond %{REQUEST_METHOD} !^(GET|POST|HEAD) [NC]
+  RewriteRule ^(.*)$ - [F]
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Block sensitive WordPress files                                    |
+# ----------------------------------------------------------------------
+
+<FilesMatch "^(xmlrpc\.php|wp-config\.php|readme\.html|license\.txt|install\.php|wp-cli\.local\.yml|wp-cli\.yml)">
+  # Apache < 2.3
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+    Satisfy All
+  </IfModule>
+
+  # Apache ≥ 2.3
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>
+
+# ----------------------------------------------------------------------
+# | Disable WordPress user enumerating                                 |
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+  RewriteCond %{REQUEST_URI} !^<##WEB_PATH_PQ##>(/wp)?/wp-admin/
+  RewriteCond %{QUERY_STRING} author=\d
+  RewriteRule ^(.*)$ - [F]
+</IfModule>
+

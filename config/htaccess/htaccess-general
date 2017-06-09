@@ -1,0 +1,132 @@
+# ######################################################################
+# # GENERAL                                                            #
+# ######################################################################
+
+# ----------------------------------------------------------------------
+# | Character encoding                                                 |
+# ----------------------------------------------------------------------
+
+AddDefaultCharset utf-8
+
+<IfModule mod_mime.c>
+  AddCharset utf-8 .atom \
+  .bbaw \
+  .css \
+  .geojson \
+  .js \
+  .json \
+  .jsonld \
+  .manifest \
+  .rdf \
+  .rss \
+  .topojson \
+  .vtt \
+  .webapp \
+  .webmanifest \
+  .xloc \
+  .xml
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Internet explorer                                                  |
+# ----------------------------------------------------------------------
+
+<IfModule mod_headers.c>
+  Header set X-UA-Compatible "IE=edge"
+  <FilesMatch "\.(appcache|atom|bbaw|bmp|crx|css|cur|eot|f4[abpv]|flv|geojson|gif|htc|ico|jpe?g|js|json(ld)?|m4[av]|manifest|map|mp4|oex|og[agv]|opus|otf|pdf|png|rdf|rss|safariextz|svgz?|swf|topojson|tt[cf]|txt|vcard|vcf|vtt|webapp|web[mp]|webmanifest|woff2?|xloc|xml|xpi)$">
+    Header unset X-UA-Compatible
+  </FilesMatch>
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Media types                                                        |
+# ----------------------------------------------------------------------
+
+<IfModule mod_mime.c>
+
+  # Data interchange
+  AddType application/atom+xml                        atom
+  AddType application/json                            json map topojson
+  AddType application/ld+json                         jsonld
+  AddType application/rss+xml                         rss
+  AddType application/vnd.geo+json                    geojson
+  AddType application/xml                             rdf xml
+
+  # JavaScript
+  # Normalize to standard type.
+  # https://tools.ietf.org/html/rfc4329#section-7.2
+  AddType application/javascript                      js
+
+  # Manifest files
+  AddType application/manifest+json                   webmanifest
+  AddType application/x-web-app-manifest+json         webapp
+  AddType text/cache-manifest                         appcache
+
+  # Media files
+  AddType audio/mp4                                   f4a f4b m4a
+  AddType audio/ogg                                   oga ogg opus
+  AddType image/bmp                                   bmp
+  AddType image/svg+xml                               svg svgz
+  AddType image/webp                                  webp
+  AddType video/mp4                                   f4v f4p m4v mp4
+  AddType video/ogg                                   ogv
+  AddType video/webm                                  webm
+  AddType video/x-flv                                 flv
+
+  # .ico Files
+  AddType image/x-icon                                cur ico
+
+  # Web fonts
+  AddType application/font-woff                       woff
+  AddType application/font-woff2                      woff2
+  AddType application/vnd.ms-fontobject               eot
+  AddType application/x-font-ttf                      ttc ttf
+  AddType font/opentype                               otf
+
+  # Other
+  AddType application/octet-stream                    safariextz
+  AddType application/x-bb-appworld                   bbaw
+  AddType application/x-chrome-extension              crx
+  AddType application/x-opera-extension               oex
+  AddType application/x-xpinstall                     xpi
+  AddType text/vcard                                  vcard vcf
+  AddType text/vnd.rim.location.xloc                  xloc
+  AddType text/vtt                                    vtt
+  AddType text/x-component                            htc
+
+  # Office
+  AddType application/docbook+xml       dbk
+  AddType application/msword        doc dot
+  AddType application/omdoc+xml       omdoc
+  AddType application/vnd.fujixerox.docuworks   xdw
+  AddType application/vnd.fujixerox.docuworks.binder  xbd
+  AddType application/vnd.ms-word.document.macroenabled.12  docm
+  AddType application/vnd.ms-xpsdocument      xps
+  AddType application/vnd.oasis.opendocument.chart    odc
+  AddType application/vnd.oasis.opendocument.chart-template otc
+  AddType application/vnd.oasis.opendocument.database   odb
+  AddType application/vnd.oasis.opendocument.formula    odf
+  AddType application/vnd.oasis.opendocument.formula-template odft
+  AddType application/vnd.oasis.opendocument.graphics   odg
+  AddType application/vnd.oasis.opendocument.graphics-template  otg
+  AddType application/vnd.oasis.opendocument.image    odi
+  AddType application/vnd.oasis.opendocument.image-template oti
+  AddType application/vnd.oasis.opendocument.presentation   odp
+  AddType application/vnd.oasis.opendocument.presentation-template  otp
+  AddType application/vnd.oasis.opendocument.spreadsheet    ods
+  AddType application/vnd.oasis.opendocument.spreadsheet-template ots
+  AddType application/vnd.oasis.opendocument.text     odt
+  AddType application/vnd.oasis.opendocument.text-master    odm
+  AddType application/vnd.oasis.opendocument.text-template  ott
+  AddType application/vnd.oasis.opendocument.text-web   oth
+  AddType application/vnd.openxmlformats-officedocument.presentationml.presentation pptx
+  AddType application/vnd.openxmlformats-officedocument.presentationml.slide  sldx
+  AddType application/vnd.openxmlformats-officedocument.presentationml.slideshow  ppsx
+  AddType application/vnd.openxmlformats-officedocument.presentationml.template potx
+  AddType application/vnd.openxmlformats-officedocument.spreadsheetml.sheet xlsx
+  AddType application/vnd.openxmlformats-officedocument.spreadsheetml.template  xltx
+  AddType application/vnd.openxmlformats-officedocument.wordprocessingml.document docx
+  AddType application/vnd.openxmlformats-officedocument.wordprocessingml.template dotx
+
+</IfModule>
+

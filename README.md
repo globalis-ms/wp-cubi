@@ -1,0 +1,101 @@
+# [wp-cubi](https://github.com/globalis-ms/wp-cubi/)
+
+[![Latest Stable Version](https://poser.pugx.org/globalis/wp-cubi/v/stable)](https://packagist.org/packages/globalis/wp-cubi)
+[![License](https://poser.pugx.org/globalis/wp-cubi/license)](https://github.com/globalis-ms/wp-cubi/blob/master/LICENSE.md)
+
+WordPress modern stack for developers
+
+[![wp-cubi](https://github.com/wp-globalis-tools/wp-cubi-logo/raw/master/wp-cubi-500x175.jpg)](https://github.com/globalis-ms/wp-cubi/)
+
+
+## Overview
+
+wp-cubi provides a modern stack and project structure to make professional web applications with WordPress.
+
+Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http://robo.li/) task runner.
+
+**Note : wp-cubi is under active development and is not a final product yet. You should not use it if you don't know PHP development and WordPress basics.**
+
+
+## Features
+
+### General
+
+* Environment-specific configuration
+* Command-line administration with [wp-cli](http://wp-cli.org/)
+* Optimized .htaccess generation (inspired by [html5-boilerplate](https://github.com/h5bp/server-configs-apache))
+* Gitflow integration with Robo commands
+
+### Security
+
+* Better password encryption with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt)
+* Deactivation of REST API and XML-RPC by default with [wpg-security](https://github.com/wp-globalis-tools/wpg-security)
+
+### Debug and monitoring
+
+* Standalone mail-trapping with [wpg-mail-trapping](https://github.com/wp-globalis-tools/wpg-mail-trapping)
+* Debug and monitoring plugin suite with [query-monitor](https://fr.wordpress.org/plugins/query-monitor/) and [wp-crontrol](https://fr.wordpress.org/plugins/wp-crontrol/)
+
+### WordPress
+
+* WordPress admin cleaner with [wpg-environment-info](https://github.com/wp-globalis-tools/wpg-environment-info)
+* Automated `no-index` on non-production stages with [wpg-disallow-indexing](https://github.com/wp-globalis-tools/wpg-disallow-indexing)
+
+
+## Requirements
+
+* [PHP](http://php.net/) >= 5.6
+* [Composer](http://getcomposer.org)
+* [Git](https://git-scm.com/)
+
+
+## Installation
+
+1. Create a new project: `composer create-project globalis/wp-cubi your-project && cd your-project`
+
+2. Run installation command and answer the questions: `./vendor/bin/robo install`
+
+3. Setup WordPress database: `./vendor/bin/robo wp:init` (***mysql*** must be an available command in your environment)
+
+Now you can :
+
+* Access your site admin at `./web/wp/wp-admin`
+* Use `wp-cli` commands with `./vendor/bin/wp`
+
+
+## Commands
+
+* `./vendor/bin/robo config`
+* `./vendor/bin/robo install`
+* `./vendor/bin/robo install:packages`
+* `./vendor/bin/robo build`
+* `./vendor/bin/robo build:htaccess`
+* `./vendor/bin/robo clean`
+* `./vendor/bin/robo clean:git`
+* `./vendor/bin/robo clean:files`
+* `./vendor/bin/robo wp:generate-salt-keys`
+* `./vendor/bin/robo wp:init`
+* `./vendor/bin/robo wp:db-create`
+* `./vendor/bin/robo wp:core:install`
+* `./vendor/bin/robo wp:plugin-update [<plugin-name>] [--all]`
+* `./vendor/bin/robo feature:start <feature-name>`
+* `./vendor/bin/robo feature:finish <feature-name>`
+* `./vendor/bin/robo hotfix:start [--semversion [SEMVERSION]]`
+* `./vendor/bin/robo hotfix:finish [--semversion [SEMVERSION]]`
+* `./vendor/bin/robo release:start [--semversion [SEMVERSION]]`
+* `./vendor/bin/robo release:finish [--semversion [SEMVERSION]]`
+
+
+## Deployment
+
+In future releases, wp-cubi will come with pre-configured deployment tasks. For now, you can write your own deployment command, editing `./RoboFile.php`.
+
+
+## WordPress plugins
+
+wp-cubi handles WordPress plugin dependencies (including [wordpress.org](https://wordpress.org/) plugins) through Composer.
+
+If you want to use plugins that are not available through [wordpress.org](https://wordpress.org/) or a public Composer repository, you have two options:
+
+1. (easier) Manually add the plugin in your `./web/app/modules/` directory, then whitelist it in your `./gitignore` file
+2. (recommanded) Create a [private Composer repository](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) to host your plugin
