@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fb67c10641f8c781c907cd85be78ed1e",
-    "content-hash": "3e701b55b4580ef0332f81cca751572e",
+    "content-hash": "efbf1606ef031f03fb34e412e9b52c14",
     "packages": [
         {
             "name": "composer/installers",
@@ -119,7 +118,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-04-24 06:37:16"
+            "time": "2017-04-24T06:37:16+00:00"
         },
         {
             "name": "globalis/wpg-disallow-indexing",
@@ -158,7 +157,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-06-02 13:25:19"
+            "time": "2017-06-02T13:25:19+00:00"
         },
         {
             "name": "globalis/wpg-environment-info",
@@ -197,7 +196,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-06-14 16:09:24"
+            "time": "2017-06-14T16:09:24+00:00"
         },
         {
             "name": "globalis/wpg-local-config",
@@ -242,7 +241,7 @@
                 "robo",
                 "wordpress"
             ],
-            "time": "2017-06-09 13:34:16"
+            "time": "2017-06-09T13:34:16+00:00"
         },
         {
             "name": "globalis/wpg-mail-trapping",
@@ -281,7 +280,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-06-02 12:38:51"
+            "time": "2017-06-02T12:38:51+00:00"
         },
         {
             "name": "globalis/wpg-security",
@@ -320,7 +319,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-06-02 17:06:39"
+            "time": "2017-06-02T17:06:39+00:00"
         },
         {
             "name": "globalis/wpg-uploads-path",
@@ -359,20 +358,20 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-06-02 17:15:11"
+            "time": "2017-06-02T17:15:11+00:00"
         },
         {
-            "name": "globalis/wpg-wp-cli-bin",
-            "version": "0.1.1",
+            "name": "globalis/wpg-wp-cli-phar",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/wp-globalis-tools/wpg-wp-cli-bin.git",
-                "reference": "6e1c60c11ca170c97b0986f134576e85f12d36fa"
+                "url": "https://github.com/wp-globalis-tools/wpg-wp-cli-phar.git",
+                "reference": "81dc194fc30188f12d7e385e2818ae46bd798e16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-globalis-tools/wpg-wp-cli-bin/zipball/6e1c60c11ca170c97b0986f134576e85f12d36fa",
-                "reference": "6e1c60c11ca170c97b0986f134576e85f12d36fa",
+                "url": "https://api.github.com/repos/wp-globalis-tools/wpg-wp-cli-phar/zipball/81dc194fc30188f12d7e385e2818ae46bd798e16",
+                "reference": "81dc194fc30188f12d7e385e2818ae46bd798e16",
                 "shasum": ""
             },
             "bin": [
@@ -393,12 +392,12 @@
                     "homepage": "https://www.globalis-ms.com/"
                 }
             ],
-            "description": "Wrapper for wp-cli binary ",
-            "homepage": "https://github.com/wp-globalis-tools/wpg-wp-cli-bin",
+            "description": "Wrapper for wp-cli phar",
+            "homepage": "https://github.com/wp-globalis-tools/wpg-wp-cli-phar",
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-06-15 08:04:11"
+            "time": "2017-06-19T11:01:14+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -437,7 +436,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2017-06-08 15:12:19"
+            "time": "2017-06-08T15:12:19+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
@@ -474,7 +473,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2017-06-08 15:12:14"
+            "time": "2017-06-08T15:12:14+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -523,7 +522,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-05-31 18:42:33"
+            "time": "2017-05-31T18:42:33+00:00"
         },
         {
             "name": "roots/wp-password-bcrypt",
@@ -580,7 +579,7 @@
             "keywords": [
                 "wordpress wp bcrypt password"
             ],
-            "time": "2016-03-01 16:27:06"
+            "time": "2016-03-01T16:27:06+00:00"
         },
         {
             "name": "wpackagist-plugin/query-monitor",
@@ -681,7 +680,7 @@
                 "ssl",
                 "tls"
             ],
-            "time": "2017-03-06 11:59:08"
+            "time": "2017-03-06T11:59:08+00:00"
         },
         {
             "name": "composer/composer",
@@ -758,7 +757,7 @@
                 "dependency",
                 "package"
             ],
-            "time": "2017-05-17 06:17:53"
+            "time": "2017-05-17T06:17:53+00:00"
         },
         {
             "name": "composer/semver",
@@ -820,7 +819,7 @@
                 "validation",
                 "versioning"
             ],
-            "time": "2016-08-30 16:08:34"
+            "time": "2016-08-30T16:08:34+00:00"
         },
         {
             "name": "composer/spdx-licenses",
@@ -881,7 +880,7 @@
                 "spdx",
                 "validator"
             ],
-            "time": "2017-04-03 19:08:52"
+            "time": "2017-04-03T19:08:52+00:00"
         },
         {
             "name": "consolidation/annotated-command",
@@ -933,7 +932,7 @@
                 }
             ],
             "description": "Initialize Symfony Console commands from annotated command class methods.",
-            "time": "2017-04-03 22:37:00"
+            "time": "2017-04-03T22:37:00+00:00"
         },
         {
             "name": "consolidation/log",
@@ -980,7 +979,7 @@
                 }
             ],
             "description": "Improved Psr-3 / Psr\\Log logger based on Symfony Console components.",
-            "time": "2016-03-23 23:46:42"
+            "time": "2016-03-23T23:46:42+00:00"
         },
         {
             "name": "consolidation/output-formatters",
@@ -1029,7 +1028,7 @@
                 }
             ],
             "description": "Format text by applying transformations provided by plug-in formatters.",
-            "time": "2017-06-06 19:08:54"
+            "time": "2017-06-06T19:08:54+00:00"
         },
         {
             "name": "consolidation/robo",
@@ -1109,7 +1108,7 @@
                 }
             ],
             "description": "Modern task runner",
-            "time": "2017-06-03 03:18:12"
+            "time": "2017-06-03T03:18:12+00:00"
         },
         {
             "name": "container-interop/container-interop",
@@ -1140,7 +1139,7 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
-            "time": "2017-02-14 19:40:03"
+            "time": "2017-02-14T19:40:03+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -1199,7 +1198,7 @@
                 "dot",
                 "notation"
             ],
-            "time": "2017-01-20 21:14:22"
+            "time": "2017-01-20T21:14:22+00:00"
         },
         {
             "name": "globalis/robo-task",
@@ -1245,7 +1244,46 @@
                 }
             ],
             "description": "Robo task common collection",
-            "time": "2017-06-13 12:36:35"
+            "time": "2017-06-13T12:36:35+00:00"
+        },
+        {
+            "name": "globalis/wpg-wp-cli-bin",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-globalis-tools/wpg-wp-cli-bin.git",
+                "reference": "6e1c60c11ca170c97b0986f134576e85f12d36fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-globalis-tools/wpg-wp-cli-bin/zipball/6e1c60c11ca170c97b0986f134576e85f12d36fa",
+                "reference": "6e1c60c11ca170c97b0986f134576e85f12d36fa",
+                "shasum": ""
+            },
+            "bin": [
+                "bin/wp"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Pierre Dargham",
+                    "homepage": "https://github.com/pierre-dargham/"
+                },
+                {
+                    "name": "GLOBALIS media systems",
+                    "homepage": "https://www.globalis-ms.com/"
+                }
+            ],
+            "description": "Wrapper for wp-cli binary ",
+            "homepage": "https://github.com/wp-globalis-tools/wpg-wp-cli-bin",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2017-06-15T08:04:11+00:00"
         },
         {
             "name": "grasmash/yaml-expander",
@@ -1293,7 +1331,7 @@
                 }
             ],
             "description": "Expands internal property references in a yaml file.",
-            "time": "2017-03-24 20:31:04"
+            "time": "2017-03-24T20:31:04+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -1360,7 +1398,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2017-05-16 21:06:09"
+            "time": "2017-05-16T21:06:09+00:00"
         },
         {
             "name": "league/container",
@@ -1425,7 +1463,7 @@
                 "provider",
                 "service"
             ],
-            "time": "2017-05-10 09:20:27"
+            "time": "2017-05-10T09:20:27+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -1479,7 +1517,7 @@
                 "reflection",
                 "static analysis"
             ],
-            "time": "2015-12-27 11:43:31"
+            "time": "2015-12-27T11:43:31+00:00"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -1524,7 +1562,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2016-09-30 07:12:33"
+            "time": "2016-09-30T07:12:33+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -1571,7 +1609,7 @@
                     "email": "me@mikevanriel.com"
                 }
             ],
-            "time": "2016-11-25 06:54:22"
+            "time": "2016-11-25T06:54:22+00:00"
         },
         {
             "name": "psr/container",
@@ -1620,7 +1658,7 @@
                 "container-interop",
                 "psr"
             ],
-            "time": "2017-02-14 16:28:37"
+            "time": "2017-02-14T16:28:37+00:00"
         },
         {
             "name": "psr/log",
@@ -1667,7 +1705,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10 12:19:37"
+            "time": "2016-10-10T12:19:37+00:00"
         },
         {
             "name": "rmccue/requests",
@@ -1716,7 +1754,7 @@
                 "iri",
                 "sockets"
             ],
-            "time": "2016-10-13 00:11:37"
+            "time": "2016-10-13T00:11:37+00:00"
         },
         {
             "name": "seld/cli-prompt",
@@ -1764,7 +1802,7 @@
                 "input",
                 "prompt"
             ],
-            "time": "2017-03-18 11:32:45"
+            "time": "2017-03-18T11:32:45+00:00"
         },
         {
             "name": "seld/jsonlint",
@@ -1813,7 +1851,7 @@
                 "parser",
                 "validator"
             ],
-            "time": "2017-03-06 16:42:24"
+            "time": "2017-03-06T16:42:24+00:00"
         },
         {
             "name": "seld/phar-utils",
@@ -1857,7 +1895,7 @@
             "keywords": [
                 "phra"
             ],
-            "time": "2015-10-13 18:44:15"
+            "time": "2015-10-13T18:44:15+00:00"
         },
         {
             "name": "symfony/console",
@@ -1926,7 +1964,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-02 19:24:58"
+            "time": "2017-06-02T19:24:58+00:00"
         },
         {
             "name": "symfony/debug",
@@ -1982,7 +2020,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-01 21:01:25"
+            "time": "2017-06-01T21:01:25+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -2045,7 +2083,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-04 18:15:29"
+            "time": "2017-06-04T18:15:29+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -2094,7 +2132,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-28 14:08:56"
+            "time": "2017-05-28T14:08:56+00:00"
         },
         {
             "name": "symfony/finder",
@@ -2143,7 +2181,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-01 21:01:25"
+            "time": "2017-06-01T21:01:25+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2202,7 +2240,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-09 14:24:12"
+            "time": "2017-06-09T14:24:12+00:00"
         },
         {
             "name": "symfony/process",
@@ -2251,7 +2289,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2017-05-22 12:32:03"
+            "time": "2017-05-22T12:32:03+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -2306,7 +2344,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-02 22:05:06"
+            "time": "2017-06-02T22:05:06+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -2356,7 +2394,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2016-11-23 20:04:58"
+            "time": "2016-11-23T20:04:58+00:00"
         }
     ],
     "aliases": [],
