@@ -7,8 +7,8 @@ define('WP_ENV', wpg_local('ENVIRONEMENT'));
 require_once __DIR__ . '/environments/' . WP_ENV . '.php';
 
 /* LOCAL CONFIGURATION */
-if(file_exists(__DIR__ . '/local.php')) {
-	require_once __DIR__ . '/local.php';
+if (file_exists(__DIR__ . '/local.php')) {
+    require_once __DIR__ . '/local.php';
 }
 
 /* SALT KEYS */
@@ -56,7 +56,7 @@ define('WP_AUTO_UPDATE_CORE', false);
 define('DISALLOW_FILE_MODS', true);
 define('DISALLOW_FILE_EDIT', true);
 
-/* PERFORMANCES */  
+/* PERFORMANCES */
 define('COMPRESS_CSS', true);
 define('COMPRESS_SCRIPTS', true);
 define('CONCATENATE_SCRIPTS', true);

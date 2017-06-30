@@ -42,6 +42,7 @@
         "wpackagist-plugin/wp-crontrol": "^1.5"
     },
     "require-dev": {
+        "squizlabs/php_codesniffer": "^2.5.1",
         "globalis/robo-task": "^1.0.2",
         "rmccue/requests" : "~1.6"
     },
