@@ -1,7 +1,5 @@
 <?php
 
-namespace Globalis\WP\WPCubi;
-
 use Globalis\Robo\Core\Command;
 use Globalis\Robo\Core\SemanticVersion;
 

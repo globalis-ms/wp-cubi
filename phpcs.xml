@@ -8,11 +8,19 @@
   <!-- Scan only PHP files -->
   <arg name="extensions" value="php"/>
 
-  <!-- Ignore WordPress and Composer dependencies -->
-  <exclude-pattern>vendor/</exclude-pattern>
-  <exclude-pattern>web/wp</exclude-pattern>
-  <exclude-pattern>web/app/modules/</exclude-pattern>
-  <exclude-pattern>web/app/mu-modules/*/</exclude-pattern>
+  <!-- Ignore dependencies -->
+  <exclude-pattern>/vendor/</exclude-pattern>
+  <exclude-pattern>/web/wp/</exclude-pattern>
+  <exclude-pattern>/web/app/modules/</exclude-pattern>
+  <exclude-pattern>/web/app/mu-modules/*/</exclude-pattern>
+
+  <!-- Ignore local files -->
+  <exclude-pattern>/config/vars.php*</exclude-pattern>
+  <exclude-pattern>/config/local.php</exclude-pattern>
+  <exclude-pattern>/config/salt-keys.php</exclude-pattern>
+
+  <!-- Ignore RoboFile.php -->
+  <exclude-pattern>/RoboFile.php</exclude-pattern>
 
   <!-- Show colors in console -->
   <arg value="-colors"/>
