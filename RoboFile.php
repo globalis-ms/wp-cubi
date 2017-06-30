@@ -41,7 +41,7 @@ class RoboFile extends \Globalis\Robo\Tasks
 
     private function createConfigLocal()
     {
-        if(!file_exists($this->fileConfigLocal)) {
+        if (!file_exists($this->fileConfigLocal)) {
             copy($this->fileConfigLocalSample, $this->fileConfigLocal);
         }
     }
@@ -66,10 +66,10 @@ class RoboFile extends \Globalis\Robo\Tasks
 
     public function buildHtaccess($env = null, $filePath = null)
     {
-        if(!isset($env)) {
+        if (!isset($env)) {
             $env = $this->getConfig('ENVIRONEMENT');
         }
-        if(!isset($filePath)) {
+        if (!isset($filePath)) {
             $filePath = $this->fileHtaccess;
         }
 
@@ -113,9 +113,9 @@ class RoboFile extends \Globalis\Robo\Tasks
      */
     public function wpGenerateSaltKeys()
     {
-        if(!file_exists($this->fileConfigSaltKeys)) {
-            $response = \Requests::request($this->saltKeysUrl, [], [], 'GET', ['timeout' => 10] );
-            if(200 === $response->status_code) {
+        if (!file_exists($this->fileConfigSaltKeys)) {
+            $response = \Requests::request($this->saltKeysUrl, [], [], 'GET', ['timeout' => 10]);
+            if (200 === $response->status_code) {
                 $salt_keys = $response->body;
             } else {
                 throw new Exception($this, sprintf('Couldn\'t fetch response from %s (HTTP code %s)', $this->saltKeysUrl, $response->status_code));
@@ -207,7 +207,7 @@ class RoboFile extends \Globalis\Robo\Tasks
 
     public function wpPluginUpdate($name = null, $opts = ['all' => false])
     {
-        if(null === $name && false === $opts['all']) {
+        if (null === $name && false === $opts['all']) {
             throw new Exception('Provide a plugin name, or use --all');
         }
 
@@ -227,12 +227,12 @@ class RoboFile extends \Globalis\Robo\Tasks
         );
 
         $latests = [];
-        foreach($requires as $packageName => $link) {
+        foreach ($requires as $packageName => $link) {
             $packageNameParts = explode('/', $packageName);
-            if(isset($packageNameParts[1])) {
-                if(true === $opts['all'] || $name === $packageNameParts[1]) {
+            if (isset($packageNameParts[1])) {
+                if (true === $opts['all'] || $name === $packageNameParts[1]) {
                     $dependency = $versionSelector->findBestCandidate($packageName);
-                    if('wordpress-plugin' == $dependency->getType()) {
+                    if ('wordpress-plugin' == $dependency->getType()) {
                         $latests[$packageName] = $dependency->getPrettyVersion();
                     }
                 }
@@ -240,7 +240,7 @@ class RoboFile extends \Globalis\Robo\Tasks
         }
 
         $cmd = $this->taskComposer('require');
-        foreach($latests as $packageName => $packageVersion) {
+        foreach ($latests as $packageName => $packageVersion) {
             $cmd = $cmd->arg($packageName . ':' . $packageVersion, false);
         }
         $cmd->run();
@@ -340,7 +340,7 @@ class RoboFile extends \Globalis\Robo\Tasks
         if (!isset($this->properties)) {
             $this->properties = include $this->fileProperties;
         }
-        if(isset($this->properties[$type])) {
+        if (isset($this->properties[$type])) {
             return $this->properties[$type];
         } else {
             return [];
@@ -350,32 +350,32 @@ class RoboFile extends \Globalis\Robo\Tasks
     private function loadConfig()
     {
         static $loaded;
-        if($loaded) {
+        if ($loaded) {
             return;
         } else {
             $this->config(['only-missing' => true]);
-            foreach($this->configVariables as $key => $value) {
+            foreach ($this->configVariables as $key => $value) {
                 $this->configVariables[$key . '_PQ'] = preg_quote($value);
             }
-        $loaded = true;
+            $loaded = true;
         }
     }
 
     private function getConfig($key = null)
     {
         $this->loadConfig();
-        if(isset($key)) {
+        if (isset($key)) {
             return $this->configVariables[$key];
         } else {
             return $this->configVariables;
         }
     }
 
-    private function processHtaccessParts($env, $filePath, $parts, $startPlaceholder = '<##',  $endPlaceholder = '##>')
+    private function processHtaccessParts($env, $filePath, $parts, $startPlaceholder = '<##', $endPlaceholder = '##>')
     {
-        foreach($parts as $key => $part) {
+        foreach ($parts as $key => $part) {
             $partEnv = $part . '-' . $env;
-            if(file_exists($partEnv)) {
+            if (file_exists($partEnv)) {
                 $parts[$key] = $partEnv;
             }
         }
@@ -422,7 +422,7 @@ class RoboFile extends \Globalis\Robo\Tasks
      */
     private function writeFile($filePath, $content)
     {
-        if(!$this->canWrite($filePath)) {
+        if (!$this->canWrite($filePath)) {
             throw new TaskException($this, 'Cannot write in file "' . $filePath  . '"');
         } else {
             file_put_contents($filePath, $content);
@@ -436,5 +436,4 @@ class RoboFile extends \Globalis\Robo\Tasks
     {
         return is_writable($filePath) || (!file_exists($filePath) && is_writable(dirname($filePath)) === true);
     }
-
 }
