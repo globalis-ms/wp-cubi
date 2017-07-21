@@ -2,7 +2,7 @@
 
 return [
 
-    // Local configuration
+    // User global configuration
     'local' => [
         'GIT_PATH' => [
             'question' => 'Path to git',
@@ -10,10 +10,7 @@ return [
         ],
     ],
 
-    // Project constants
-    'settings' => [],
-
-    // Project configuration
+    // Project local configuration
     'config' => [
         'DEV_MAIL' => [
             'question' => 'Developer email',
@@ -54,10 +51,6 @@ return [
             'default' => '/www/your-project/web',
             'empty' => true,
         ],
-        'WP_DEFAULT_THEME' => [
-            'question' => 'Default theme slug (you can change it later in ./config/vars.php)',
-            'default' => '',
-        ],
+    ],
 
-    ]
 ];

@@ -8,6 +8,7 @@ class RoboFile extends \Globalis\Robo\Tasks
 
     private $fileProperties        = __DIR__ . '/.robo/properties.php';
     private $fileVars              = __DIR__ . '/config/vars.php';
+    private $fileApplication       = __DIR__ . '/config/application.php';
     private $fileConfigLocal       = __DIR__ . '/config/local.php';
     private $fileConfigLocalSample = __DIR__ . '/config/local.sample.php';
     private $fileConfigSaltKeys    = __DIR__ . '/config/salt-keys.php';
@@ -133,10 +134,24 @@ class RoboFile extends \Globalis\Robo\Tasks
     public function wpInit()
     {
         $this->config(['only-missing' => true]);
+        $this->wpInitConfig();
         $this->wpDbCreate();
         $this->wpCoreInstall();
         $this->wpClean();
         $this->wpActivatePlugins();
+    }
+
+    public function wpInitConfig($startPlaceholder = '<##', $endPlaceholder = '##>')
+    {
+        $settings                     = [];
+        $settings['DB_PREFIX']        = $this->io()->ask('Database prefix', 'cubi_');
+        $settings['WP_DEFAULT_THEME'] = $this->io()->ask('Default theme slug (you can change it later in ./config/application.php)', 'my-theme');
+        $this->taskReplacePlaceholders($this->fileApplication)
+         ->from(array_keys($settings))
+         ->to($settings)
+         ->startDelimiter($startPlaceholder)
+         ->endDelimiter($endPlaceholder)
+         ->run();
     }
 
     public function wpDbCreate()
