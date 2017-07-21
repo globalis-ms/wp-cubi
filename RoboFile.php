@@ -97,8 +97,7 @@ class RoboFile extends \Globalis\Robo\Tasks
 
     public function cleanGit()
     {
-        $this->loadConfig();
-        $this->taskGitStack()
+        $this->taskGitStack($this->getConfig('GIT_PATH'))
          ->stopOnFail()
          ->exec('fetch --all --prune')
          ->run();
@@ -133,7 +132,6 @@ class RoboFile extends \Globalis\Robo\Tasks
 
     public function wpInit()
     {
-        $this->config(['only-missing' => true]);
         $this->wpInitConfig();
         $this->wpDbCreate();
         $this->wpCoreInstall();
@@ -141,7 +139,7 @@ class RoboFile extends \Globalis\Robo\Tasks
         $this->wpActivatePlugins();
     }
 
-    public function wpInitConfig($startPlaceholder = '<##', $endPlaceholder = '##>')
+    private function wpInitConfig($startPlaceholder = '<##', $endPlaceholder = '##>')
     {
         $settings                     = [];
         $settings['DB_PREFIX']        = $this->io()->ask('Database prefix', 'cubi_');
@@ -156,10 +154,14 @@ class RoboFile extends \Globalis\Robo\Tasks
 
     public function wpDbCreate()
     {
-        $cmd = new Command($this->fileBinWPCli);
-        $cmd->arg('db')
-            ->arg('create')
-            ->execute();
+        if ($this->checkMysql()) {
+            $cmd = new Command($this->fileBinWPCli);
+            $cmd->arg('db')
+                ->arg('create')
+                ->execute();
+        } else {
+            $this->io()->confirm('Could not find `mysql` binary. Please create database `' . $this->getConfig('DB_NAME') . '` manually then press ENTER');
+        }
     }
 
     public function wpCoreInstall()
@@ -295,7 +297,6 @@ class RoboFile extends \Globalis\Robo\Tasks
         } else {
             $version = $opts['semversion'];
         }
-        $this->loadConfig();
         return $this->taskHotfixStart((string)$version, $this->getConfig('GIT_PATH'))->run();
     }
 
@@ -450,5 +451,11 @@ class RoboFile extends \Globalis\Robo\Tasks
     private function canWrite($filePath)
     {
         return is_writable($filePath) || (!file_exists($filePath) && is_writable(dirname($filePath)) === true);
+    }
+
+    private function checkMysql()
+    {
+        exec('mysql --version >/dev/null 2>&1', $output, $return);
+        return 0 === $return;
     }
 }
