@@ -21,7 +21,7 @@ define('DB_PASSWORD', wpg_local('DB_PASSWORD'));
 define('DB_HOST', wpg_local('DB_HOST'));
 define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', '');
-$table_prefix = empty(wpg_local('DB_PREFIX')) ? 'wp_' : wpg_local('DB_PREFIX');
+$table_prefix = '<##DB_PREFIX##>';
 
 /* DIRECTORIES */
 define('ROOT_DIR', dirname(__DIR__));
@@ -46,7 +46,7 @@ if (!defined('ABSPATH')) {
 }
 
 /* THEME */
-define('WP_DEFAULT_THEME', wpg_local('WP_DEFAULT_THEME'));
+define('WP_DEFAULT_THEME', '<##WP_DEFAULT_THEME##>');
 
 /* UPDATES */
 define('AUTOMATIC_UPDATER_DISABLED', true);
