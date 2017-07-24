@@ -455,7 +455,9 @@ class RoboFile extends \Globalis\Robo\Tasks
 
     private function checkMysql()
     {
-        exec('mysql --version >/dev/null 2>&1', $output, $return);
-        return 0 === $return;
+        $cmd = new Command('mysql');
+        return $cmd->option('--version')
+        ->executeWithoutException()
+        ->isSuccessful();
     }
 }
