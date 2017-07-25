@@ -55,7 +55,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 
 2. Run installation command and answer the questions: `./vendor/bin/robo install`
 
-3. Setup WordPress database: `./vendor/bin/robo wp:init` (***mysql*** must be an available command in your environment)
+3. Setup WordPress database: `./vendor/bin/robo wp:init`
 
 Now you can :
 
