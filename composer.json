@@ -32,7 +32,7 @@
         "johnpbloch/wordpress": "4.8",
         "globalis/wpg-wp-cli-phar" : "^1.2.1",
         "globalis/wpg-local-config" : "^0.1",
-        "globalis/wpg-uploads-path" : "^0.1",
+        "globalis/wpg-uploads-path" : "^0.2",
         "globalis/wpg-disallow-indexing" : "^0.5.1",
         "globalis/wpg-mail-trapping" : "^0.4",
         "globalis/wpg-environment-info" : "^0.2.6",
