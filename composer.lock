@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "162e5c69d1fe2dcb05dd80d9f13b9128",
-    "content-hash": "0cc3f6c31e08ef1a029e18608da86ca4",
+    "hash": "98b91a5a7a7dc8e3feef1b9fee8557e2",
+    "content-hash": "74eea7ab04f0bf0b46348e27d4cdbab1",
     "packages": [
         {
             "name": "composer/installers",
@@ -162,16 +162,16 @@
         },
         {
             "name": "globalis/wpg-environment-info",
-            "version": "0.2.6",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-globalis-tools/wpg-environment-info.git",
-                "reference": "210ed6f48a38a70c5b3a223fc639cd6c6d189a8b"
+                "reference": "a55de9fd21b54967755ecdf8982d913e81944553"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-globalis-tools/wpg-environment-info/zipball/210ed6f48a38a70c5b3a223fc639cd6c6d189a8b",
-                "reference": "210ed6f48a38a70c5b3a223fc639cd6c6d189a8b",
+                "url": "https://api.github.com/repos/wp-globalis-tools/wpg-environment-info/zipball/a55de9fd21b54967755ecdf8982d913e81944553",
+                "reference": "a55de9fd21b54967755ecdf8982d913e81944553",
                 "shasum": ""
             },
             "require": {
@@ -197,7 +197,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-06-14 16:09:24"
+            "time": "2017-08-04 12:11:12"
         },
         {
             "name": "globalis/wpg-local-config",
@@ -583,6 +583,52 @@
             "time": "2016-03-01 16:27:06"
         },
         {
+            "name": "soberwp/intervention",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/soberwp/intervention.git",
+                "reference": "2faa7ac314cb66bcd9caba3fb953eac324202eed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/soberwp/intervention/zipball/2faa7ac314cb66bcd9caba3fb953eac324202eed",
+                "reference": "2faa7ac314cb66bcd9caba3fb953eac324202eed",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "2.*"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Sober\\Intervention\\": "src/",
+                    "Sober\\Intervention\\Module\\": "src/modules/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Darren Jacoby",
+                    "email": "darren@jacoby.co.za",
+                    "homepage": "https://twitter.com/withjacoby"
+                }
+            ],
+            "description": "WordPress plugin containing modules to cleanup and customize wp-admin.",
+            "homepage": "https://github.com/soberwp",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2017-03-11 15:31:31"
+        },
+        {
             "name": "wpackagist-plugin/query-monitor",
             "version": "2.13.4",
             "source": {
@@ -593,7 +639,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/query-monitor.2.13.4.zip",
-                "reference": null,
+                "reference": "tags/2.13.4",
                 "shasum": null
             },
             "require": {
@@ -613,7 +659,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wp-crontrol.1.5.zip",
-                "reference": null,
+                "reference": "tags/1.5",
                 "shasum": null
             },
             "require": {

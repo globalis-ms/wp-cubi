@@ -25,6 +25,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * Command-line administration with [wp-cli](http://wp-cli.org/)
 * Optimized .htaccess generation (inspired by [html5-boilerplate](https://github.com/h5bp/server-configs-apache))
 * Gitflow integration with Robo commands
+* Automated `no-index` on non-production stages with [wpg-disallow-indexing](https://github.com/wp-globalis-tools/wpg-disallow-indexing)
 
 ### Security
 
@@ -36,10 +37,10 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * Standalone mail-trapping with [wpg-mail-trapping](https://github.com/wp-globalis-tools/wpg-mail-trapping)
 * Debug and monitoring plugin suite with [query-monitor](https://fr.wordpress.org/plugins/query-monitor/) and [wp-crontrol](https://fr.wordpress.org/plugins/wp-crontrol/)
 
-### WordPress
+### wp-admin enhancement
 
-* WordPress admin cleaner with [wpg-environment-info](https://github.com/wp-globalis-tools/wpg-environment-info)
-* Automated `no-index` on non-production stages with [wpg-disallow-indexing](https://github.com/wp-globalis-tools/wpg-disallow-indexing)
+* Cleaner wp-admin with [soberwp/intervention](https://github.com/soberwp/intervention)
+* Environment info-box in admin-bar with [wpg-environment-info](https://github.com/wp-globalis-tools/wpg-environment-info)
 
 
 ## Requirements
