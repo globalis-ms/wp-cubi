@@ -118,7 +118,7 @@ class RoboFile extends \Globalis\Robo\Tasks
             if (200 === $response->status_code) {
                 $salt_keys = $response->body;
             } else {
-                throw new Exception($this, sprintf('Couldn\'t fetch response from %s (HTTP code %s)', $this->saltKeysUrl, $response->status_code));
+                throw new Exception(sprintf('Couldn\'t fetch response from %s (HTTP code %s)', $this->saltKeysUrl, $response->status_code));
             }
             $content = '<?php' . PHP_EOL;
             $content .= PHP_EOL;
