@@ -1,24 +1,24 @@
 {
-    "name":"globalis/wp-cubi",
-    "type":"project",
-    "license":"GPL-2.0",
-    "description":"WordPress modern stack for developers",
-    "homepage":"https://github.com/globalis-ms/wp-cubi/",
-    "authors":[
+    "name": "globalis/wp-cubi",
+    "description": "WordPress modern stack for developers",
+    "type": "project",
+    "license": "GPL-2.0",
+    "homepage": "https://github.com/globalis-ms/wp-cubi/",
+    "authors": [
         {
-            "name":"Pierre Dargham",
-            "homepage":"https://github.com/pierre-dargham/"
+            "name": "Pierre Dargham",
+            "homepage": "https://github.com/pierre-dargham/"
         },
         {
-            "name":"GLOBALIS media systems",
-            "homepage":"https://www.globalis-ms.com/"
+            "name": "GLOBALIS media systems",
+            "homepage": "https://www.globalis-ms.com/"
         }
     ],
-    "keywords":[
+    "keywords": [
         "wp-cubi", "globalis", "wordpress", "stack", "composer", "robo", "wp"
     ],
-    "support":{
-        "issues":"https://github.com/globalis-ms/wp-cubi/issues"
+    "support": {
+        "issues": "https://github.com/globalis-ms/wp-cubi/issues"
     },
     "repositories": [
         {
