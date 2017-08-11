@@ -48,7 +48,7 @@ return [
         ],
         'WEB_PATH' => [
             'question' => 'Site base path (don\'t forget the ending `/web` part if no vhost)',
-            'default' => '/www/your-project/web',
+            'default' => '/your-project/web',
             'empty' => true,
         ],
     ],
