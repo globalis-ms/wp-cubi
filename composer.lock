@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "40a3f4cfe92f9d50c947c327f3d2a987",
-    "content-hash": "90dda1c839aa89aef1e6c08cf17a3afb",
+    "hash": "ef69d567a3ccb4493fc846bc5675b7a7",
+    "content-hash": "22cfd85a9fc94698873ff93388f4f4be",
     "packages": [
         {
             "name": "composer/installers",
@@ -120,6 +120,62 @@
                 "zikula"
             ],
             "time": "2017-04-24 06:37:16"
+        },
+        {
+            "name": "globalis/wp-cubi-helpers",
+            "version": "0.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-globalis-tools/wp-cubi-helpers.git",
+                "reference": "bfd001a0dac0b6dd1cfc5ed0155a361499148501"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-globalis-tools/wp-cubi-helpers/zipball/bfd001a0dac0b6dd1cfc5ed0155a361499148501",
+                "reference": "bfd001a0dac0b6dd1cfc5ed0155a361499148501",
+                "shasum": ""
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^2.5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions-filters.php",
+                    "src/functions-mails.php",
+                    "src/functions-permalinks.php",
+                    "src/functions-templating.php",
+                    "src/functions-urls.php",
+                    "src/functions-utils.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Pierre Dargham",
+                    "homepage": "https://github.com/pierre-dargham/"
+                },
+                {
+                    "name": "GLOBALIS media systems",
+                    "homepage": "https://www.globalis-ms.com/"
+                }
+            ],
+            "description": "Collection of wp-cubi functions for WordPress",
+            "homepage": "https://github.com/wp-globalis-tools/wp-cubi-helpers/wp-cubi/",
+            "keywords": [
+                "composer",
+                "functions",
+                "globalis",
+                "helpers",
+                "snippets",
+                "wordpress",
+                "wp",
+                "wp-cubi"
+            ],
+            "time": "2017-08-18 09:55:35"
         },
         {
             "name": "globalis/wpg-disallow-indexing",
