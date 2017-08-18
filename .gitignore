@@ -8,8 +8,7 @@
 /web/.htpasswd
 
 # Composer
-/vendor/*
-!/vendor/.gitkeep
+/vendor
 
 # File system files
 .DS_Store

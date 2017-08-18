@@ -42,6 +42,10 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * Cleaner wp-admin with [soberwp/intervention](https://github.com/soberwp/intervention)
 * Environment info-box in admin-bar with [wpg-environment-info](https://github.com/wp-globalis-tools/wpg-environment-info)
 
+### Additional functions
+
+* Collection of simple WordPress-friendly functions with [globalis/wp-cubi-helpers](https://github.com/wp-globalis-tools/wp-cubi-helpers)
+
 
 ## Requirements
 
