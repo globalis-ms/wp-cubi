@@ -3,7 +3,7 @@
     "description": "WordPress modern stack for developers",
     "type": "project",
     "license": "GPL-2.0",
-    "homepage": "https://github.com/globalis-ms/wp-cubi/",
+    "homepage": "https://github.com/globalis-ms/wp-cubi",
     "authors": [
         {
             "name": "Pierre Dargham",
@@ -49,7 +49,7 @@
         "rmccue/requests" : "~1.6"
     },
     "suggest": {
-        "roots/soil": "^3.7.2",
+        "roots/soil": "^3.7.3",
         "wpackagist-plugin/user-switching": "^1.0.9",
         "wpackagist-plugin/autodescription": "^2.9.2"
     },
