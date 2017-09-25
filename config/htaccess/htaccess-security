@@ -70,7 +70,9 @@
 # | Server software information                                        |
 # ----------------------------------------------------------------------
 
-ServerSignature Off
+# Note: the following two lines does not work in .htaccess context, it should be in Apache server-wide configuration files
+# ServerSignature Off
+# ServerTokens Prod
 
 # ----------------------------------------------------------------------
 # | Block outside access to WordPress includes files                   |
