@@ -35,7 +35,7 @@
         "globalis/wpg-local-config" : "^0.1",
         "globalis/wpg-uploads-path" : "^0.3",
         "globalis/wpg-disallow-indexing" : "^0.5.1",
-        "globalis/wpg-mail-trapping" : "^0.4",
+        "globalis/wpg-mail-trapping" : "^1.0",
         "globalis/wpg-environment-info" : "^0.3.1",
         "globalis/wpg-security" : "^0.2",
         "roots/wp-password-bcrypt": "^1.0",

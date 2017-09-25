@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3fdd627cafa431563e4712428ee612cb",
-    "content-hash": "bb1a5abcbd909a3442e40496a890121c",
+    "hash": "87c4f87111c4a906cee50acf77ef8dd6",
+    "content-hash": "02bf62790a3582208f2f9b1b491613a1",
     "packages": [
         {
             "name": "composer/installers",
@@ -305,20 +305,23 @@
         },
         {
             "name": "globalis/wpg-mail-trapping",
-            "version": "0.4.0",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-globalis-tools/wpg-mail-trapping.git",
-                "reference": "915253231052daa0db7afe8f26dde99fdb9646f0"
+                "reference": "73c59ba861164b64bc4d23dc962448145e5df1fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-globalis-tools/wpg-mail-trapping/zipball/915253231052daa0db7afe8f26dde99fdb9646f0",
-                "reference": "915253231052daa0db7afe8f26dde99fdb9646f0",
+                "url": "https://api.github.com/repos/wp-globalis-tools/wpg-mail-trapping/zipball/73c59ba861164b64bc4d23dc962448145e5df1fe",
+                "reference": "73c59ba861164b64bc4d23dc962448145e5df1fe",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^2.5.1"
             },
             "type": "wordpress-muplugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -340,7 +343,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-06-02 12:38:51"
+            "time": "2017-09-25 09:47:10"
         },
         {
             "name": "globalis/wpg-security",
@@ -704,7 +707,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/query-monitor.2.14.0.zip",
-                "reference": null,
+                "reference": "tags/2.14.0",
                 "shasum": null
             },
             "require": {
