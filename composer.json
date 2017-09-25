@@ -50,8 +50,8 @@
     },
     "suggest": {
         "roots/soil": "^3.7.3",
-        "wpackagist-plugin/user-switching": "^1.0.9",
-        "wpackagist-plugin/autodescription": "^2.9.2"
+        "wpackagist-plugin/user-switching": "^1.1.0",
+        "wpackagist-plugin/autodescription": "^2.9.4"
     },
     "extra": {
         "installer-paths": {
