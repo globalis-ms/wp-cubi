@@ -28,3 +28,8 @@ add_filter('sanitize_file_name', 'remove_accents', 10, 1);
  * Disable conversion of wysiwyg smilies codes to images
  */
 add_filter('pre_option_use_smilies', '__return_zero', 10, 1);
+
+/*
+ * Disable dashboard browse-happy requests / widget
+ */
+add_filter('pre_site_transient_browser_' . md5($_SERVER['HTTP_USER_AGENT']), '__return_true');
