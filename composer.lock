@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "db521dc963164a1b3965102abea3254f",
-    "content-hash": "0adcf522eaa229201160ebdaa3ae1d34",
+    "hash": "6c85c33235c6b09e220f370d68159d80",
+    "content-hash": "14e5c620f986e245dd3afce74bc6f1b6",
     "packages": [
         {
             "name": "composer/installers",
@@ -126,16 +126,16 @@
         },
         {
             "name": "globalis/wp-cubi-helpers",
-            "version": "0.1.5",
+            "version": "0.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-globalis-tools/wp-cubi-helpers.git",
-                "reference": "68d42f621fe573b2e1b6efcc87a0621a195e9f8c"
+                "reference": "cb4ab6ec06c2ca6960548e06d5720691b7c5b1ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-globalis-tools/wp-cubi-helpers/zipball/68d42f621fe573b2e1b6efcc87a0621a195e9f8c",
-                "reference": "68d42f621fe573b2e1b6efcc87a0621a195e9f8c",
+                "url": "https://api.github.com/repos/wp-globalis-tools/wp-cubi-helpers/zipball/cb4ab6ec06c2ca6960548e06d5720691b7c5b1ca",
+                "reference": "cb4ab6ec06c2ca6960548e06d5720691b7c5b1ca",
                 "shasum": ""
             },
             "require-dev": {
@@ -178,7 +178,7 @@
                 "wp",
                 "wp-cubi"
             ],
-            "time": "2017-09-25 10:12:25"
+            "time": "2017-11-02 11:28:37"
         },
         {
             "name": "globalis/wpg-disallow-indexing",
