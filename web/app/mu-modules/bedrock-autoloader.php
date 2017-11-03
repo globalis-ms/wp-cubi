@@ -136,7 +136,7 @@ class Autoloader
         $plugins            = array_diff_key(self::$auto_plugins, self::$mu_plugins);
         $rebuild            = !is_array(self::$cache['plugins']);
         self::$activated    = ($rebuild) ? $plugins : array_diff_key($plugins, self::$cache['plugins']);
-        self::$cache        = array('plugins' => $plugins, 'count' => $this->countPlugins());
+        self::$cache        = ['plugins' => $plugins, 'count' => $this->countPlugins()];
 
         update_site_option('bedrock_autoloader', self::$cache);
     }
