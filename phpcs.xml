@@ -15,7 +15,7 @@
   <exclude-pattern>/web/app/mu-modules/*/</exclude-pattern>
 
   <!-- Ignore local files -->
-  <exclude-pattern>/config/vars.php*</exclude-pattern>
+  <exclude-pattern>/config/vars.*</exclude-pattern>
   <exclude-pattern>/config/local.php</exclude-pattern>
   <exclude-pattern>/config/salt-keys.php</exclude-pattern>
 
