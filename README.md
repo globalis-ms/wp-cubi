@@ -82,7 +82,6 @@ Now you can :
 * `./vendor/bin/robo wp:init`
 * `./vendor/bin/robo wp:db-create`
 * `./vendor/bin/robo wp:core:install`
-* `./vendor/bin/robo wp:plugin-update [<plugin-name>] [--all]`
 * `./vendor/bin/robo feature:start <feature-name>`
 * `./vendor/bin/robo feature:finish <feature-name>`
 * `./vendor/bin/robo hotfix:start [--semversion [SEMVERSION]]`

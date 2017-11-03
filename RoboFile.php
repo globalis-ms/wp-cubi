@@ -222,47 +222,6 @@ class RoboFile extends \Globalis\Robo\Tasks
             ->execute();
     }
 
-    public function wpPluginUpdate($name = null, $opts = ['all' => false])
-    {
-        if (null === $name && false === $opts['all']) {
-            throw new Exception('Provide a plugin name, or use --all');
-        }
-
-        @ini_set('memory_limit', '1G');
-
-        $composer        = \Composer\Factory::create(new \Composer\IO\NullIO(), null, true);
-        $package         = $composer->getPackage();
-        $repositories    = $composer->getRepositoryManager()->getRepositories();
-
-        $pool = new \Composer\DependencyResolver\Pool();
-        $pool->addRepository(new \Composer\Repository\CompositeRepository($repositories));
-        $versionSelector = new \Composer\Package\Version\VersionSelector($pool);
-
-        $requires = array_merge(
-            $composer->getPackage()->getRequires(),
-            $composer->getPackage()->getDevRequires()
-        );
-
-        $latests = [];
-        foreach ($requires as $packageName => $link) {
-            $packageNameParts = explode('/', $packageName);
-            if (isset($packageNameParts[1])) {
-                if (true === $opts['all'] || $name === $packageNameParts[1]) {
-                    $dependency = $versionSelector->findBestCandidate($packageName);
-                    if ('wordpress-plugin' == $dependency->getType()) {
-                        $latests[$packageName] = $dependency->getPrettyVersion();
-                    }
-                }
-            }
-        }
-
-        $cmd = $this->taskComposer('require');
-        foreach ($latests as $packageName => $packageVersion) {
-            $cmd = $cmd->arg($packageName . ':' . $packageVersion, false);
-        }
-        $cmd->run();
-    }
-
     /**
      * Start a new feature
      *
