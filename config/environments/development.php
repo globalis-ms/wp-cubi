@@ -24,5 +24,5 @@ define('ACF_LITE', false);
 
 /* WP-CRON */
 define('DISABLE_WP_CRON', false);
-define('ALTERNATE_WP_CRON', true);
+define('ALTERNATE_WP_CRON', PHP_SAPI != 'cli');
 define('WP_CRON_LOCK_TIMEOUT', 60);
