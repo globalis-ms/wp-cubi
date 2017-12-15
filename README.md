@@ -44,7 +44,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 
 ### Additional functions
 
-* Collection of simple WordPress-friendly functions with [globalis/wp-cubi-helpers](https://github.com/wp-globalis-tools/wp-cubi-helpers)
+* Collection of simple WordPress-friendly functions with [globalis/wp-cubi-helpers](https://github.com/globalis-ms/wp-cubi-helpers)
 
 
 ## Requirements

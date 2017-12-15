@@ -40,6 +40,9 @@ define('WPMU_PLUGIN_URL', WP_CONTENT_URL . '/mu-modules');
 define('WP_UPLOADS_DIR', WEBROOT_DIR . '/media');
 define('WP_UPLOADS_URL', WP_HOME . '/media');
 
+/* HTTPS */
+define('WP_IS_HTTPS', ('https' === WP_SCHEME));
+
 /* ABSPATH */
 if (!defined('ABSPATH')) {
     define('ABSPATH', WEBROOT_DIR . '/wp/');
