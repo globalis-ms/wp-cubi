@@ -18,7 +18,7 @@ namespace Globalis\WP\Cubi;
 use Inpsyde\Wonolog;
 use Monolog\Handler;
 
-if (!defined('Inpsyde\Wonolog\LOG') || !defined('WP_CUBI_LOG_ENABLED') || true !== WP_CUBI_LOG_ENABLED) {
+if (!defined('WP_CUBI_LOG_ENABLED') || true !== WP_CUBI_LOG_ENABLED) {
     return;
 }
 
