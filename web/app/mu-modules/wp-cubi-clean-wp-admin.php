@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Plugin Name:         wp-cubi Clean wp-admin
- * Plugin URI:          https://github.com/globalis-ms/wp-cubi/blob/master/web/app/mu-modules/wp-cubi-clean-wp-admin.php
+ * Plugin Name:         wp-cubi-clean-wp-admin
+ * Plugin URI:          https://github.com/globalis-ms/wp-cubi
  * Description:         Clean WordPress administration panel
  * Author:              Pierre Dargham, Globalis Media Systems
  * Author URI:          https://www.globalis-ms.com/
