@@ -5,6 +5,7 @@ ini_set('display_errors', 1);
 define('WP_DEBUG', true);
 define('WP_DEBUG_DISPLAY', true);
 define('SCRIPT_DEBUG', false);
+define('QUERY_MONITOR_HANDLE_PHP_ERRORS', false);
 define('SAVEQUERIES', PHP_SAPI != 'cli');
 
 /* MEMORY */
