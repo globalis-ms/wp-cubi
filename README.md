@@ -37,6 +37,10 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * Standalone mail-trapping with [wpg-mail-trapping](https://github.com/wp-globalis-tools/wpg-mail-trapping)
 * Debug and monitoring plugin suite with [query-monitor](https://fr.wordpress.org/plugins/query-monitor/) and [wp-crontrol](https://fr.wordpress.org/plugins/wp-crontrol/)
 
+### Logs
+
+* Logging system with [inpsyde/wonolog](https://github.com/inpsyde/Wonolog) and [monolog](https://github.com/Seldaek/monolog)
+
 ### wp-admin enhancement
 
 * Cleaner wp-admin with [soberwp/intervention](https://github.com/soberwp/intervention)
@@ -103,3 +107,12 @@ If you want to use plugins that are not available through [wordpress.org](https:
 
 1. (easier) Manually add the plugin in your `./web/app/modules/` directory, then whitelist it in your `./gitignore` file
 2. (recommanded) Create a [private Composer repository](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) to host your plugin
+
+
+## Logs
+
+wp-cubi comes with [inpsyde/wonolog](https://github.com/inpsyde/Wonolog), which allows to log anything with a single line of code, and automatically writes logs for multiple events like PHP errors, DB errors, HTTP API errors, `wp_mail()` errors, and 404 errors.
+
+Basic configuration is possible in wp-cubi `./config/application.php` and `./config/environments/` files, where you can change the maximum number of log files and the log level.
+
+For advanced configuration (adding channels or handlers), you can edit `./web/app/mu-modules/00-wp-cubi-wonolog.php` (see [inpsyde/wonolog documentation](https://inpsyde.github.io/Wonolog/) and [monolog documentation](https://github.com/Seldaek/monolog/tree/master/doc))

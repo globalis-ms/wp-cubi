@@ -42,7 +42,8 @@
         "roots/wp-password-bcrypt": "^1.0.0",
         "wpackagist-plugin/query-monitor": "^2.17.0",
         "wpackagist-plugin/wp-crontrol": "^1.6.2",
-        "soberwp/intervention": "^1.1.0"
+        "soberwp/intervention": "^1.1.0",
+        "inpsyde/wonolog": "^1.0.0"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.5.1",
