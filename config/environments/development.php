@@ -5,8 +5,14 @@ ini_set('display_errors', 1);
 define('WP_DEBUG', true);
 define('WP_DEBUG_DISPLAY', true);
 define('SCRIPT_DEBUG', true);
-define('QUERY_MONITOR_HANDLE_PHP_ERRORS', false);
 define('SAVEQUERIES', PHP_SAPI != 'cli');
+
+/* QUERY MONITOR */
+define('QUERY_MONITOR_HANDLE_PHP_ERRORS', false);
+
+/* WONOLOG */
+define('WP_CUBI_LOG_ENABLED', true);
+define('WP_CUBI_LOG_LEVEL', 'DEBUG');
 
 /* MEMORY */
 define('WP_MEMORY_LIMIT', '128M');
