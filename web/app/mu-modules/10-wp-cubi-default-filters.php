@@ -1,7 +1,8 @@
 <?php
+
 /**
- * Plugin Name:         wp-cubi default filters
- * Plugin URI:          https://github.com/globalis-ms/wp-cubi/blob/master/web/app/mu-modules/wp-cubi-default-filters.php
+ * Plugin Name:         wp-cubi-default-filters
+ * Plugin URI:          https://github.com/globalis-ms/wp-cubi
  * Description:         Collection of filters for wp-cubi
  * Author:              Pierre Dargham, Globalis Media Systems
  * Author URI:          https://www.globalis-ms.com/

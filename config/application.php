@@ -65,6 +65,11 @@ define('COMPRESS_SCRIPTS', true);
 define('CONCATENATE_SCRIPTS', true);
 define('ENFORCE_GZIP', true);
 
+/* WONOLOG */
+define('WP_DEBUG_LOG', false);
+define('WP_CUBI_LOG_DIR', ROOT_DIR . '/log');
+define('WP_CUBI_LOG_MAX_FILES', 30);
+
 /* PUBLIC URLS */
 define('WP_PUBLIC_URLS', serialize([
     'staging'    => 'https://staging.example.com/',

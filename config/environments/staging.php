@@ -7,6 +7,13 @@ define('WP_DEBUG_DISPLAY', true);
 define('SCRIPT_DEBUG', false);
 define('SAVEQUERIES', PHP_SAPI != 'cli');
 
+/* QUERY MONITOR */
+define('QUERY_MONITOR_HANDLE_PHP_ERRORS', false);
+
+/* WONOLOG */
+define('WP_CUBI_LOG_ENABLED', true);
+define('WP_CUBI_LOG_LEVEL', 'NOTICE');
+
 /* MEMORY */
 define('WP_MEMORY_LIMIT', '256M');
 

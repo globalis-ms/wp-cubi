@@ -125,6 +125,15 @@
 </FilesMatch>
 
 # ----------------------------------------------------------------------
+# | Block native WordPress admin routes                                |
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+  RewriteCond %{REQUEST_URI} ^<##WEB_PATH_PQ##>(/wp-admin/?|/wp-login.php)
+  RewriteRule ^(.*)$ - [F]
+</IfModule>
+
+# ----------------------------------------------------------------------
 # | Disable WordPress user enumerating                                 |
 # ----------------------------------------------------------------------
 
