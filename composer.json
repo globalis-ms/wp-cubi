@@ -2,7 +2,7 @@
     "name": "globalis/wp-cubi",
     "description": "WordPress modern stack for developers",
     "type": "project",
-    "license": "GPL-2.0",
+    "license": "GPL-2.0-or-later",
     "homepage": "https://github.com/globalis-ms/wp-cubi",
     "authors": [
         {
