@@ -139,6 +139,7 @@ class RoboFile extends \Globalis\Robo\Tasks
         $this->wpDbCreate();
         $this->wpCoreInstall($url);
         $this->wpUpdateLanguages();
+        $this->wpUpdateTimezone();
         $this->wpClean();
         $this->wpActivatePlugins();
 
@@ -215,6 +216,24 @@ class RoboFile extends \Globalis\Robo\Tasks
                 ->arg('update')
                 ->execute();
         }
+    }
+
+    public function wpUpdateTimezone()
+    {
+        $timezones = self::getTimeZones();
+
+        $group     = $this->io()->choice('Wordpress Timezone (1/2)', array_keys($timezones));
+
+        $timezone  = $this->io()->choice('Wordpress Timezone (2/2)', array_keys($timezones[$group]));
+
+        $value     = $timezones[$group][$timezone];
+
+        $cmd = new Command($this->fileBinWPCli);
+        $cmd->arg('option')
+            ->arg('update')
+            ->arg('timezone_string')
+            ->arg($value)
+            ->execute();
     }
 
     private function wpClean()
@@ -449,5 +468,24 @@ class RoboFile extends \Globalis\Robo\Tasks
         return $cmd->option('--version')
         ->executeWithoutException()
         ->isSuccessful();
+    }
+
+    private static function getTimeZones()
+    {
+        $groups = [];
+
+        foreach (timezone_identifiers_list() as $timezone) {
+            $parts   = explode('/', $timezone);
+            $group   = $parts[0];
+            $zone    = isset($parts[1]) ? $parts[1] : $parts[0];
+
+            if (!isset($groups[$group])) {
+                $groups[$group] = [];
+            }
+
+            $groups[$group][$zone] = $timezone;
+        }
+
+        return $groups;
     }
 }
