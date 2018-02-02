@@ -5,6 +5,7 @@ use Globalis\Robo\Core\SemanticVersion;
 
 class RoboFile extends \Globalis\Robo\Tasks
 {
+    const DEFAULT_WP_LANG          = 'en_US';
 
     private $fileProperties        = __DIR__ . '/.robo/properties.php';
     private $fileVars              = __DIR__ . '/config/vars.php';
@@ -132,11 +133,17 @@ class RoboFile extends \Globalis\Robo\Tasks
 
     public function wpInit()
     {
+        $url = $this->getConfig('WEB_SCHEME') . '://' . $this->getConfig('WEB_DOMAIN') . $this->getConfig('WEB_PATH') . '/wp';
+
         $this->wpInitConfig();
         $this->wpDbCreate();
-        $this->wpCoreInstall();
+        $this->wpCoreInstall($url);
+        $this->wpUpdateLanguages();
+        $this->wpUpdateTimezone();
         $this->wpClean();
         $this->wpActivatePlugins();
+
+        echo 'Access new site admin at ' . $url . '/wp-admin' . PHP_EOL;
     }
 
     private function wpInitConfig($startPlaceholder = '<##', $endPlaceholder = '##>')
@@ -144,6 +151,7 @@ class RoboFile extends \Globalis\Robo\Tasks
         $settings                     = [];
         $settings['DB_PREFIX']        = $this->io()->ask('Database prefix', 'cubi_');
         $settings['WP_DEFAULT_THEME'] = $this->io()->ask('Default theme slug (you can change it later in ./config/application.php)', 'my-theme');
+
         $this->taskReplacePlaceholders($this->fileApplication)
          ->from(array_keys($settings))
          ->to($settings)
@@ -164,13 +172,12 @@ class RoboFile extends \Globalis\Robo\Tasks
         }
     }
 
-    public function wpCoreInstall()
+    public function wpCoreInstall($url)
     {
         $title    = $this->io()->ask('Site title');
         $username = $this->io()->ask('Admin username');
         $password = $this->io()->askHidden('Admin password');
         $email    = $this->io()->ask('Admin email', $this->getConfig('DEV_MAIL'));
-        $url      = $this->getConfig('WEB_SCHEME') . '://' . $this->getConfig('WEB_DOMAIN') . $this->getConfig('WEB_PATH') . '/wp';
 
         $cmd = new Command($this->fileBinWPCli);
         $cmd->arg('core')
@@ -182,8 +189,51 @@ class RoboFile extends \Globalis\Robo\Tasks
             ->option('url', $url, '=')
             ->option('skip-email')
             ->execute();
+    }
 
-        echo 'Access new site admin at ' . $url . '/wp-admin' . PHP_EOL;
+    public function wpUpdateLanguages()
+    {
+        $lang = $this->io()->ask('WordPress language', self::DEFAULT_WP_LANG);
+
+        if (self::DEFAULT_WP_LANG !== $lang) {
+            $cmd = new Command($this->fileBinWPCli);
+            $cmd->arg('language')
+                ->arg('core')
+                ->arg('install')
+                ->arg($lang)
+                ->execute();
+
+            $cmd = new Command($this->fileBinWPCli);
+            $cmd->arg('language')
+                ->arg('core')
+                ->arg('activate')
+                ->arg($lang)
+                ->execute();
+
+            $cmd = new Command($this->fileBinWPCli);
+            $cmd->arg('language')
+                ->arg('core')
+                ->arg('update')
+                ->execute();
+        }
+    }
+
+    public function wpUpdateTimezone()
+    {
+        $timezones = self::getTimeZones();
+
+        $group     = $this->io()->choice('Wordpress Timezone (1/2)', array_keys($timezones));
+
+        $timezone  = $this->io()->choice('Wordpress Timezone (2/2)', array_keys($timezones[$group]));
+
+        $value     = $timezones[$group][$timezone];
+
+        $cmd = new Command($this->fileBinWPCli);
+        $cmd->arg('option')
+            ->arg('update')
+            ->arg('timezone_string')
+            ->arg($value)
+            ->execute();
     }
 
     private function wpClean()
@@ -418,5 +468,24 @@ class RoboFile extends \Globalis\Robo\Tasks
         return $cmd->option('--version')
         ->executeWithoutException()
         ->isSuccessful();
+    }
+
+    private static function getTimeZones()
+    {
+        $groups = [];
+
+        foreach (timezone_identifiers_list() as $timezone) {
+            $parts   = explode('/', $timezone);
+            $group   = $parts[0];
+            $zone    = isset($parts[1]) ? $parts[1] : $parts[0];
+
+            if (!isset($groups[$group])) {
+                $groups[$group] = [];
+            }
+
+            $groups[$group][$zone] = $timezone;
+        }
+
+        return $groups;
     }
 }
