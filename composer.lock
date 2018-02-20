@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4daafa221d72437c3ad68c7a6a57a8ad",
-    "content-hash": "6852e1bb1a127b9d1baea2beab84595f",
+    "hash": "6a56295040237f3779ceaa049164d411",
+    "content-hash": "0b3f7c346e644dbb1beaca1c3c7f7517",
     "packages": [
         {
             "name": "composer/installers",
@@ -227,16 +227,16 @@
         },
         {
             "name": "globalis/wpg-environment-info",
-            "version": "0.3.2",
+            "version": "0.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-globalis-tools/wpg-environment-info.git",
-                "reference": "967639f4c0df3530a086c558a9a4478317451c91"
+                "reference": "d4130babce9d4eab1548bbd5f56beed406eeb406"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-globalis-tools/wpg-environment-info/zipball/967639f4c0df3530a086c558a9a4478317451c91",
-                "reference": "967639f4c0df3530a086c558a9a4478317451c91",
+                "url": "https://api.github.com/repos/wp-globalis-tools/wpg-environment-info/zipball/d4130babce9d4eab1548bbd5f56beed406eeb406",
+                "reference": "d4130babce9d4eab1548bbd5f56beed406eeb406",
                 "shasum": ""
             },
             "require": {
@@ -265,7 +265,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-12-20 09:36:03"
+            "time": "2018-02-20 11:06:51"
         },
         {
             "name": "globalis/wpg-local-config",
