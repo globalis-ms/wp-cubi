@@ -32,6 +32,10 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * Better password encryption with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt)
 * Deactivation of REST API and XML-RPC by default with [wpg-security](https://github.com/wp-globalis-tools/wpg-security)
 
+### Performance
+
+* Standalone image / uploads minification plugin with [globalis/wp-cubi-imagemin](https://github.com/globalis-ms/wp-cubi-imagemin)
+
 ### Debug and monitoring
 
 * Standalone mail-trapping with [wpg-mail-trapping](https://github.com/wp-globalis-tools/wpg-mail-trapping)
