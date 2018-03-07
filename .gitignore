@@ -1,5 +1,5 @@
 # Configuration
-/config/vars.php*
+/config/vars.*
 /config/local.php
 /config/salt-keys.php
 
