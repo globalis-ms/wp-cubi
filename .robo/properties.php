@@ -5,7 +5,7 @@ return [
     // User global configuration
     'local' => [
         'GIT_PATH' => [
-            'question' => 'Path to git',
+            'question' => 'Path to local git executable (usually git or /usr/bin/git)',
             'default' => 'git',
         ],
     ],

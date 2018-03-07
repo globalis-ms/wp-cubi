@@ -1,19 +1,5 @@
 <?php
 
-/* ENVIRONMENT */
-define('WP_ENV', wpg_local('ENVIRONEMENT'));
-
-/* ENVIRONMENT CONFIGURATION */
-require_once __DIR__ . '/environments/' . WP_ENV . '.php';
-
-/* LOCAL CONFIGURATION */
-if (file_exists(__DIR__ . '/local.php')) {
-    require_once __DIR__ . '/local.php';
-}
-
-/* SALT KEYS */
-require_once __DIR__ . '/salt-keys.php';
-
 /* DATABASE */
 define('DB_NAME', wpg_local('DB_NAME'));
 define('DB_USER', wpg_local('DB_USER'));
