@@ -33,6 +33,14 @@ class RoboFile extends \Globalis\Robo\Tasks
 
     public function install()
     {
+        if(!file_exists($this->fileVars)) {
+            $this->io()->section('To get started, answer a few questions to setup project variables');
+            $this->io()->text(sprintf('Global variables will be saved at %s', '~/.robo_config'));
+            $this->io()->newLine();
+            $this->io()->text(sprintf('Project variables will be saved at %s', $this->fileVars));
+            $this->io()->newLine();
+            $this->io()->text('You can change those variables at any time by editing those files, or by running `./vendor/bin/robo config`');
+        }
         $this->loadConfig();
         $this->installPackages();
         $this->installTheme();
