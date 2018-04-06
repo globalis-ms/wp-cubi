@@ -59,6 +59,13 @@
 </IfModule>
 
 # ----------------------------------------------------------------------
+# | Disallow external iframes / Reducing clickjacking risks              |
+# ----------------------------------------------------------------------
+<IfModule mod_headers.c>
+  Header set X-Frame-Options: SAMEORIGIN
+</IfModule>
+
+# ----------------------------------------------------------------------
 # | Server-side technology information                                 |
 # ----------------------------------------------------------------------
 
