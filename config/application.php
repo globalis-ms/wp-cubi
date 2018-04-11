@@ -61,3 +61,15 @@ define('WP_PUBLIC_URLS', serialize([
     'staging'    => 'https://staging.example.com/',
     'production' => 'https://example.com/',
 ]));
+
+function foo() {
+	$bar = array();
+
+	if($bar) {
+		echo 'foo';
+	}
+
+
+
+	echo 'foobar?' ;
+}
