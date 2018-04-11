@@ -1,6 +1,6 @@
-language: php
-
 sudo: false
+
+language: php
 
 php:
     - 7.0
@@ -16,4 +16,4 @@ install:
     - composer install --no-interaction --prefer-dist
 
 script:
-    - ./vendor/bin/phpcs .
+    - ./vendor/bin/phpcs . -p --standard=./phpcs.xml
