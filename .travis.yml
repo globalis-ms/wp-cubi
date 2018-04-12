@@ -12,8 +12,18 @@ cache:
     directories:
         - $HOME/.composer/cache
 
+services:
+  - mysql
+
+before_install:
+    - cp ./test_sample_configs/vars.php config/
+    - cp ./test_sample_configs/.robo_config ~/
+    - mysql -e 'CREATE DATABASE IF NOT EXISTS base_wp_cubi;'
+    - composer self-update
+
 install:
     - composer install --no-interaction --prefer-dist
 
 script:
     - ./vendor/bin/phpcs . -p --standard=./phpcs.xml
+    - ./vendor/bin/robo install
