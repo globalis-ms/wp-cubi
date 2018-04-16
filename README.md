@@ -71,13 +71,19 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 
 3. Setup WordPress database: `./vendor/bin/robo wp:init`
 
-Now you can :
-
-* Access your site admin at `./web/wp/wp-admin`
-* Use `wp-cli` commands with `./vendor/bin/wp`
-
 
 ## Commands
+
+### wp-cli
+
+* `./vendor/bin/wp <command>` (see [complete list](https://developer.wordpress.org/cli/commands/))
+
+### Coding standards
+
+* `./vendor/bin/phpcs [directory]` : Check coding standards (see [`./phpcs.xml`](https://github.com/globalis-ms/wp-cubi/blob/master/phpcs.xml))
+* `./vendor/bin/phpcbf [directory]` : Fix coding standards auto-fixable violations
+
+### Robo
 
 * `./vendor/bin/robo config`
 * `./vendor/bin/robo install`
@@ -91,12 +97,14 @@ Now you can :
 * `./vendor/bin/robo wp:init`
 * `./vendor/bin/robo wp:db-create`
 * `./vendor/bin/robo wp:core:install`
+* `./vendor/bin/robo wp:update-language`
+* `./vendor/bin/robo wp:update-timezone`
 * `./vendor/bin/robo feature:start <feature-name>`
 * `./vendor/bin/robo feature:finish <feature-name>`
-* `./vendor/bin/robo hotfix:start [--semversion [SEMVERSION]]`
-* `./vendor/bin/robo hotfix:finish [--semversion [SEMVERSION]]`
-* `./vendor/bin/robo release:start [--semversion [SEMVERSION]]`
-* `./vendor/bin/robo release:finish [--semversion [SEMVERSION]]`
+* `./vendor/bin/robo hotfix:start [--semversion <version>]`
+* `./vendor/bin/robo hotfix:finish [--semversion <version>]`
+* `./vendor/bin/robo release:start [--semversion <version>]`
+* `./vendor/bin/robo release:finish [--semversion <version>]`
 
 
 ## Deployment
