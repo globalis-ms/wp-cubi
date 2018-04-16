@@ -139,13 +139,11 @@ class RoboFile extends \Globalis\Robo\Tasks
         }
     }
 
-    public function wpInit()
+    public function wpInit($opts = ['db_prefix' => null, 'default_theme_slug' => null, 'site_title' => null, 'admin_username' => null, 'admin_password' => null, 'admin_email'=> null])
     {
-        $url = $this->getConfig('WEB_SCHEME') . '://' . $this->getConfig('WEB_DOMAIN') . $this->getConfig('WEB_PATH') . '/wp';
-
-        $this->wpInitConfig();
+        $this->wpInitConfig($opts);
         $this->wpDbCreate();
-        $this->wpCoreInstall($url);
+        $this->wpCoreInstall($opts);
         $this->wpUpdateLanguages();
         $this->wpUpdateTimezone();
         $this->wpClean();
@@ -154,11 +152,11 @@ class RoboFile extends \Globalis\Robo\Tasks
         echo 'Access new site admin at ' . $url . '/wp-admin' . PHP_EOL;
     }
 
-    private function wpInitConfig($startPlaceholder = '<##', $endPlaceholder = '##>')
+    private function wpInitConfig($opts = false, $startPlaceholder = '<##', $endPlaceholder = '##>')
     {
         $settings                     = [];
-        $settings['DB_PREFIX']        = $this->io()->ask('Database prefix', 'cubi_');
-        $settings['WP_DEFAULT_THEME'] = $this->io()->ask('Default theme slug (you can change it later in ./config/application.php)', 'my-theme');
+        $settings['DB_PREFIX']        = !empty($opts['db_prefix']) ? $opts['db_prefix'] : $this->io()->ask('Database prefix', 'cubi_');
+        $settings['WP_DEFAULT_THEME'] = !empty($opts['default_theme_slug']) ? $opts['default_theme_slug'] : $this->io()->ask('Default theme slug (you can change it later in ./config/application.php)', 'my-theme');
 
         $this->taskReplacePlaceholders($this->fileApplication)
          ->from(array_keys($settings))
@@ -180,13 +178,14 @@ class RoboFile extends \Globalis\Robo\Tasks
         }
     }
 
-    public function wpCoreInstall($url)
+    public function wpCoreInstall($opts = false)
     {
-        $title    = $this->io()->ask('Site title');
-        $username = $this->io()->ask('Admin username');
-        $password = $this->io()->askHidden('Admin password');
-        $email    = $this->io()->ask('Admin email', $this->getConfig('DEV_MAIL'));
-
+        $title    = !empty($opts['site_title']) ? $opts['site_title'] : $this->io()->ask('Site title');
+        $username = !empty($opts['admin_username']) ? $opts['admin_username'] : $this->io()->ask('Admin username');
+        $password = (isset($opts['admin_password']) && !is_null($opts['admin_password']) )? $opts['admin_password'] : $this->io()->askHidden('Admin password');
+        $email    = !empty($opts['admin_email']) ? $opts['admin_email'] : $this->io()->ask('Admin email', $this->getConfig('DEV_MAIL'));
+        $url = $this->getConfig('WEB_SCHEME') . '://' . $this->getConfig('WEB_DOMAIN') . $this->getConfig('WEB_PATH') . '/wp';
+        
         $cmd = new Command($this->fileBinWPCli);
         $cmd->arg('core')
             ->arg('install')
