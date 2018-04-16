@@ -18,8 +18,16 @@ services:
 before_install:
     - cp ./test_sample_configs/vars.php config/
     - cp ./test_sample_configs/.robo_config ~/
-    - mysql -e 'CREATE DATABASE IF NOT EXISTS base_wp_cubi;'
     - composer self-update
+    - export DB_PREFIX='test'
+    - export DEFAULT_THEME_SLUG='wp'
+    - export SITE_TITLE='Test WP-CUBI'
+    - export SITE_LANGUAGE='en_US'
+    - export SITE_TIMEZONE='America'
+    - export SITE_TIMEZONE_CITY='New_York'
+    - export ADMIN_USERNAME='wp_cubi'
+    - export ADMIN_PASSWORD='123456'
+    - export ADMIN_EMAIL='tester@test.com'
 
 install:
     - composer install --no-interaction --prefer-dist
@@ -27,3 +35,4 @@ install:
 script:
     - ./vendor/bin/phpcs . -p --standard=./phpcs.xml
     - ./vendor/bin/robo install
+    - ./vendor/bin/robo wp:init --db_prefix="$DB_PREFIX" --default_theme_slug="$DEFAULT_THEME_SLUG" --site_title="$SITE_TITLE" --site_language="$SITE_LANGUAGE" --site_timezone="$SITE_TIMEZONE" --site_timezone_city="$SITE_TIMEZONE_CITY" --admin_username="$ADMIN_USERNAME" --admin_password="$ADMIN_PASSWORD" --admin_email="$ADMIN_EMAIL"
