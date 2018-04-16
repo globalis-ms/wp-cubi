@@ -58,7 +58,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 
 ## Requirements
 
-* [PHP](http://php.net/) >= 5.6
+* [PHP](http://php.net/) >= 7.0
 * [Composer](http://getcomposer.org)
 * [Git](https://git-scm.com/)
 
