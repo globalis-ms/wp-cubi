@@ -6,6 +6,6 @@
   'DB_PASSWORD' => '',
   'ENVIRONEMENT' => 'development',
   'WEB_SCHEME' => 'http',
-  'WEB_DOMAIN' => 'localhost',
+  'WEB_DOMAIN' => '127.0.0.1:8888',
   'WEB_PATH' => '/wp-cubi/web',
 ];

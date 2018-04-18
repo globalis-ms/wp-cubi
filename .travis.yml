@@ -8,19 +8,30 @@ php:
     - 7.2
     - nightly
 
+services:
+  - mysql
+
 cache:
     directories:
         - $HOME/.composer/cache
 
-services:
-  - mysql
-
 before_install:
-    - cp ./test_sample_configs/vars.php config/
-    - cp ./test_sample_configs/.robo_config ~/
+    - cp ./test_samples/vars.php config/
+    - cp ./test_samples/.robo_config ~/
+    - cp ./test_samples/codeception.yml ./
+    - cp -r ./test_samples/tests ./
     - composer self-update
-    - export DB_PREFIX='test'
-    - export DEFAULT_THEME_SLUG='wp'
+    - php -S 127.0.0.1:8888 -t ./.. >/dev/null 2>&1 &
+    - phantomjs --webdriver=4444 >/dev/null 2>&1 &
+    - chmod 777 log
+
+install:
+    - composer update --no-interaction --prefer-dist
+
+
+before_script:
+    - export DB_PREFIX='test_'
+    - export DEFAULT_THEME_SLUG='test-theme'
     - export SITE_TITLE='Test WP-CUBI'
     - export SITE_LANGUAGE='en_US'
     - export SITE_TIMEZONE='America'
@@ -28,11 +39,10 @@ before_install:
     - export ADMIN_USERNAME='wp_cubi'
     - export ADMIN_PASSWORD='123456'
     - export ADMIN_EMAIL='tester@test.com'
-
-install:
-    - composer install --no-interaction --prefer-dist
+    
 
 script:
     - ./vendor/bin/phpcs . -p --standard=./phpcs.xml
     - ./vendor/bin/robo install
     - ./vendor/bin/robo wp:init --db_prefix="$DB_PREFIX" --default_theme_slug="$DEFAULT_THEME_SLUG" --site_title="$SITE_TITLE" --site_language="$SITE_LANGUAGE" --site_timezone="$SITE_TIMEZONE" --site_timezone_city="$SITE_TIMEZONE_CITY" --admin_username="$ADMIN_USERNAME" --admin_password="$ADMIN_PASSWORD" --admin_email="$ADMIN_EMAIL"
+    - ./vendor/bin/codecept run acceptance --debug

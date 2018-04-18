@@ -1,0 +1,21 @@
+# Codeception Test Suite Configuration
+#
+# Suite for acceptance tests.
+# Perform tests in browser using the WebDriver or PhpBrowser.
+# If you need both WebDriver and PHPBrowser tests - create a separate suite.
+
+actor: AcceptanceTester
+modules:
+    enabled:
+        - Asserts
+        - \Helper\Acceptance
+        - WebDriver
+    config:
+        WebDriver: 
+            url: 'http://127.0.0.1:8888/wp-cubi/web'
+            window_size: 1600x900
+            browser: phantomjs
+            port: 4444
+            admin_login: 'wp_cubi'
+            admin_password: '123456'
+                    
