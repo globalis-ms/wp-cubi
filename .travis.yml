@@ -55,7 +55,8 @@ before_install:
 
 install:
     #Update dependencies
-    - composer update --no-interaction --prefer-dist
+    - composer install --no-interaction --prefer-dist
+    - composer require codeception/codeception
     
 
 script:
