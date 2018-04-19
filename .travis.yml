@@ -16,20 +16,7 @@ cache:
         - $HOME/.composer/cache
 
 before_install:
-    - cp ./test_samples/vars.php config/
-    - cp ./test_samples/.robo_config ~/
-    - cp ./test_samples/codeception.yml ./
-    - cp -r ./test_samples/tests ./
-    - composer self-update
-    - php -S 127.0.0.1:8888 -t ./.. >/dev/null 2>&1 &
-    - phantomjs --webdriver=4444 >/dev/null 2>&1 &
-    - chmod 777 log
-
-install:
-    - composer update --no-interaction --prefer-dist
-
-
-before_script:
+    #Define the parameters for the test
     - export DB_PREFIX='test_'
     - export DEFAULT_THEME_SLUG='test-theme'
     - export SITE_TITLE='Test WP-CUBI'
@@ -39,10 +26,45 @@ before_script:
     - export ADMIN_USERNAME='wp_cubi'
     - export ADMIN_PASSWORD='123456'
     - export ADMIN_EMAIL='tester@test.com'
+    - export WEB_DOMAIN='127.0.0.1:8888'
+    - export WEB_PATH='/wp-cubi/web'
+    - export WEB_SCHEME='http'
+
+    #Put defined parameters into test files
+    - sed -i "s%<##ADMIN_EMAIL##>%$ADMIN_EMAIL%g" ./test_samples/vars.php
+    - sed -i "s%<##WEB_DOMAIN##>%$WEB_DOMAIN%g" ./test_samples/vars.php
+    - sed -i "s%<##WEB_PATH##>%$WEB_PATH%g" ./test_samples/vars.php
+    - sed -i "s%<##WEB_SCHEME##>%$WEB_SCHEME%g" ./test_samples/vars.php
+    - sed -i "s%<##WEB_SCHEME##>%$WEB_SCHEME%g" ./test_samples/tests/acceptance.suite.yml
+    - sed -i "s%<##WEB_DOMAIN##><##WEB_PATH##>%$WEB_DOMAIN$WEB_PATH%g" ./test_samples/tests/acceptance.suite.yml
+    - sed -i "s%<##ADMIN_USERNAME##>%$ADMIN_USERNAME%g" ./test_samples/tests/acceptance.suite.yml
+    - sed -i "s%<##ADMIN_PASSWORD##>%$ADMIN_PASSWORD%g" ./test_samples/tests/acceptance.suite.yml
+
+    #Move test files to the right position
+    - cp ./test_samples/vars.php config/
+    - cp ./test_samples/.robo_config ~/
+    - cp ./test_samples/codeception.yml ./
+    - cp -r ./test_samples/tests ./
+    
+    #Launch the php server and phantomJs server
+    - php -S 127.0.0.1:8888 -t ./.. >/dev/null 2>&1 &
+    - phantomjs --webdriver=4444 >/dev/null 2>&1 &
+    
+    - chmod 777 log
+    - composer self-update
+
+install:
+    #Update dependencies
+    - composer update --no-interaction --prefer-dist
     
 
 script:
+    #Verify php coding standart
     - ./vendor/bin/phpcs . -p --standard=./phpcs.xml
+
+    #Test installation of the website
     - ./vendor/bin/robo install
     - ./vendor/bin/robo wp:init --db_prefix="$DB_PREFIX" --default_theme_slug="$DEFAULT_THEME_SLUG" --site_title="$SITE_TITLE" --site_language="$SITE_LANGUAGE" --site_timezone="$SITE_TIMEZONE" --site_timezone_city="$SITE_TIMEZONE_CITY" --admin_username="$ADMIN_USERNAME" --admin_password="$ADMIN_PASSWORD" --admin_email="$ADMIN_EMAIL"
+    
+    #Acceptance test by Codeception
     - ./vendor/bin/codecept run acceptance --debug

@@ -12,10 +12,10 @@ modules:
         - WebDriver
     config:
         WebDriver: 
-            url: 'http://127.0.0.1:8888/wp-cubi/web'
+            url: '<##WEB_SCHEME##>://<##WEB_DOMAIN##><##WEB_PATH##>'
             window_size: 1600x900
             browser: phantomjs
             port: 4444
-            admin_login: 'wp_cubi'
-            admin_password: '123456'
+            admin_login: '<##ADMIN_USERNAME##>'
+            admin_password: '<##ADMIN_PASSWORD##>'
                     
