@@ -48,8 +48,7 @@
         "squizlabs/php_codesniffer": "^2.5.1",
         "composer/installers": "^1.5.0",
         "globalis/robo-task": "^1.0.4",
-        "rmccue/requests" : "~1.6",
-        "codeception/codeception": "^2.4"
+        "rmccue/requests" : "~1.6"
     },
     "suggest": {
         "roots/soil": "^3.7.3",
