@@ -1,5 +1,6 @@
 <?php
 
+namespace WpCubiTest;
 
 class HomepageCest
 {

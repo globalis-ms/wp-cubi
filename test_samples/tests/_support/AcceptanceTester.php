@@ -1,5 +1,6 @@
 <?php
 
+namespace WpCubiTest;
 
 /**
  * Inherited Methods
@@ -23,7 +24,7 @@ class AcceptanceTester extends \Codeception\Actor
    /**
     * Define custom actions here
     */
-    function loginAsAdmin()
+    public function loginAsAdmin()
     {
         $I = $this;
         $I->amOnPage('/wp/wp-admin/');
@@ -39,12 +40,12 @@ class AcceptanceTester extends \Codeception\Actor
     }
 
 
-    function displayWarningCodes()
+    public function displayWarningCodes()
     {
         $I = $this;
         $warnings = $I->grabMultiple('//b[text()="Warning"]/parent::*');
         foreach ($warnings as $warning) {
-            $I->variable_dump($warnings);
+            $I->variableDump($warnings);
         }
     }
 }

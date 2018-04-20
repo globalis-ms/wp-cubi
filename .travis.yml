@@ -68,4 +68,4 @@ script:
     - ./vendor/bin/robo wp:init --db_prefix="$DB_PREFIX" --default_theme_slug="$DEFAULT_THEME_SLUG" --site_title="$SITE_TITLE" --site_language="$SITE_LANGUAGE" --site_timezone="$SITE_TIMEZONE" --site_timezone_city="$SITE_TIMEZONE_CITY" --admin_username="$ADMIN_USERNAME" --admin_password="$ADMIN_PASSWORD" --admin_email="$ADMIN_EMAIL"
     
     #Acceptance test by Codeception
-    - ./vendor/bin/codecept run acceptance --debug
+    - ./vendor/bin/codecept run --debug
