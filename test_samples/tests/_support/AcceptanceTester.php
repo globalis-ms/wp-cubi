@@ -30,11 +30,10 @@ class AcceptanceTester extends \Codeception\Actor
         $I->amOnPage('/wp/wp-admin/');
         $I->dontSeeInCurrentUrl('/wp/wp-admin/');
         $I->seeInCurrentUrl('/wp/wp-login.php');
-        $I->scrollTo('//input[contains(@name, "log")]', 0, 50);
-        $I->fillField(['name' => 'log'], $I->getConfigParameter('admin_login'));
-        $I->scrollTo('//input[contains(@name, "pwd")]', 0, 50);
-        $I->fillField(['name' => 'pwd'], $I->getConfigParameter('admin_password'));
-        $I->click('//input[contains(@name, "wp-submit")]');
+        $I->submitForm('#loginform', [
+            'log' => $I->getConfigParameter('admin_login'),
+            'pwd' => $I->getConfigParameter('admin_password')
+        ]);
         $I->seeInCurrentUrl('/wp/wp-admin/');
         $I->dontSee('Warning');
     }
