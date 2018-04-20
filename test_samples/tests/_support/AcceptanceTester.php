@@ -27,15 +27,15 @@ class AcceptanceTester extends \Codeception\Actor
     public function loginAsAdmin()
     {
         $I = $this;
-        $I->amOnPage('/wp/wp-admin/');
-        $I->dontSeeInCurrentUrl('/wp/wp-admin/');
-        $I->seeInCurrentUrl('/wp/wp-login.php');
-        $I->submitForm('#loginform', [
+        $I->amOnPage(Page\Login::$URL);
+        $I->dontSeeInCurrentUrl(Page\BackOffice::$URL);
+        $I->seeInCurrentUrl(Page\Login::$URL);
+        $I->submitForm(Page\Login::$LoginForm, [
             'log' => $I->getConfigParameter('admin_login'),
             'pwd' => $I->getConfigParameter('admin_password')
         ]);
-        $I->seeInCurrentUrl('/wp/wp-admin/');
-        $I->dontSee('Warning');
+        $I->seeInCurrentUrl(Page\BackOffice::$URL);
+        $I->dontSeeElement('//b[text()="Warning"]');
     }
 
 
