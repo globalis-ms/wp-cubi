@@ -31,7 +31,7 @@
         "johnpbloch/wordpress": "4.9.5",
         "globalis/wp-cubi-helpers": "^0.2.0",
         "globalis/wp-cubi-imagemin": "^1.0.0",
-        "globalis/wpg-wp-cli-phar" : "^1.5.0",
+        "globalis/wpg-wp-cli-phar" : "^1.5.1",
         "globalis/wpg-local-config" : "^0.1.1",
         "globalis/wpg-uploads-path" : "^0.3.1",
         "globalis/wpg-disallow-indexing" : "^0.5.2",
