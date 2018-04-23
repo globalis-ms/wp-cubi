@@ -19,8 +19,10 @@
   <exclude-pattern>/config/local.php</exclude-pattern>
   <exclude-pattern>/config/salt-keys.php</exclude-pattern>
 
-  <!-- Ignore RoboFile.php -->
-  <exclude-pattern>/RoboFile.php</exclude-pattern>
+  <!-- RoboFile.php can't have a namespace -->
+  <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
+    <exclude-pattern>/RoboFile.php</exclude-pattern>
+  </rule>
 
   <!-- Show colors in console -->
   <arg value="-colors"/>
