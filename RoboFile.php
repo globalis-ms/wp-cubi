@@ -139,26 +139,26 @@ class RoboFile extends \Globalis\Robo\Tasks
         }
     }
 
-    public function wpInit()
+    public function wpInit($opts = ['db_prefix' => null, 'default_theme_slug' => null, 'site_title' => null, 'admin_username' => null, 'admin_password' => null, 'admin_email'=> null, 'site_language' => null, 'site_timezone' => null, 'site_timezone_city' => null])
     {
         $url = $this->getConfig('WEB_SCHEME') . '://' . $this->getConfig('WEB_DOMAIN') . $this->getConfig('WEB_PATH') . '/wp';
 
-        $this->wpInitConfig();
+        $this->wpInitConfig($opts);
         $this->wpDbCreate();
-        $this->wpCoreInstall($url);
-        $this->wpUpdateLanguages();
-        $this->wpUpdateTimezone();
+        $this->wpCoreInstall($url, $opts);
+        $this->wpUpdateLanguages($opts);
+        $this->wpUpdateTimezone($opts);
         $this->wpClean();
         $this->wpActivatePlugins();
 
         echo 'Access new site admin at ' . $url . '/wp-admin' . PHP_EOL;
     }
 
-    private function wpInitConfig($startPlaceholder = '<##', $endPlaceholder = '##>')
+    private function wpInitConfig($opts = false, $startPlaceholder = '<##', $endPlaceholder = '##>')
     {
         $settings                     = [];
-        $settings['DB_PREFIX']        = $this->io()->ask('Database prefix', 'cubi_');
-        $settings['WP_DEFAULT_THEME'] = $this->io()->ask('Default theme slug (you can change it later in ./config/application.php)', 'my-theme');
+        $settings['DB_PREFIX']        = !empty($opts['db_prefix']) ? $opts['db_prefix'] : $this->io()->ask('Database prefix', 'cubi_');
+        $settings['WP_DEFAULT_THEME'] = !empty($opts['default_theme_slug']) ? $opts['default_theme_slug'] : $this->io()->ask('Default theme slug (you can change it later in ./config/application.php)', 'my-theme');
 
         $this->taskReplacePlaceholders($this->fileApplication)
          ->from(array_keys($settings))
@@ -180,13 +180,13 @@ class RoboFile extends \Globalis\Robo\Tasks
         }
     }
 
-    public function wpCoreInstall($url)
+    public function wpCoreInstall($url, $opts = false)
     {
-        $title    = $this->io()->ask('Site title');
-        $username = $this->io()->ask('Admin username');
-        $password = $this->io()->askHidden('Admin password');
-        $email    = $this->io()->ask('Admin email', $this->getConfig('DEV_MAIL'));
-
+        $title    = !empty($opts['site_title']) ? $opts['site_title'] : $this->io()->ask('Site title');
+        $username = !empty($opts['admin_username']) ? $opts['admin_username'] : $this->io()->ask('Admin username');
+        $password = !empty($opts['admin_password']) ? $opts['admin_password'] : $this->io()->askHidden('Admin password');
+        $email    = !empty($opts['admin_email']) ? $opts['admin_email'] : $this->io()->ask('Admin email', $this->getConfig('DEV_MAIL'));
+        
         $cmd = new Command($this->fileBinWPCli);
         $cmd->arg('core')
             ->arg('install')
@@ -199,9 +199,9 @@ class RoboFile extends \Globalis\Robo\Tasks
             ->execute();
     }
 
-    public function wpUpdateLanguages()
+    public function wpUpdateLanguages($opts = false)
     {
-        $lang = $this->io()->ask('WordPress language', self::DEFAULT_WP_LANG);
+        $lang = !empty($opts['site_language']) ? $opts['site_language'] : $this->io()->ask('WordPress language', self::DEFAULT_WP_LANG);
 
         if (self::DEFAULT_WP_LANG !== $lang) {
             $cmd = new Command($this->fileBinWPCli);
@@ -226,13 +226,13 @@ class RoboFile extends \Globalis\Robo\Tasks
         }
     }
 
-    public function wpUpdateTimezone()
+    public function wpUpdateTimezone($opts = false)
     {
         $timezones = self::getTimeZones();
 
-        $group     = $this->io()->choice('Wordpress Timezone (1/2)', array_keys($timezones));
+        $group     = !empty($opts['site_timezone']) ? $opts['site_timezone'] : $this->io()->choice('Wordpress Timezone (1/2)', array_keys($timezones));
 
-        $timezone  = $this->io()->choice('Wordpress Timezone (2/2)', array_keys($timezones[$group]));
+        $timezone  = !empty($opts['site_timezone_city']) ? $opts['site_timezone_city'] : $this->io()->choice('Wordpress Timezone (2/2)', array_keys($timezones[$group]));
 
         $value     = $timezones[$group][$timezone];
 
