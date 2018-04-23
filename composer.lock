@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4cf9a4722fde86ee95988f52cb47608a",
+    "content-hash": "833be52a9134b05317d7ed5781787742",
     "packages": [
         {
             "name": "composer/installers",
@@ -184,22 +184,22 @@
         },
         {
             "name": "globalis/wp-cubi-imagemin",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-imagemin.git",
-                "reference": "7bc870e3826d342ef3a03e1daa1ad38530ac6031"
+                "reference": "c4dfd587f7ca715900810928a15c8c856a77f636"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-imagemin/zipball/7bc870e3826d342ef3a03e1daa1ad38530ac6031",
-                "reference": "7bc870e3826d342ef3a03e1daa1ad38530ac6031",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-imagemin/zipball/c4dfd587f7ca715900810928a15c8c856a77f636",
+                "reference": "c4dfd587f7ca715900810928a15c8c856a77f636",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "^1.5.0",
                 "php": ">=5.5.0",
-                "ps/image-optimizer": "^1.1.2"
+                "ps/image-optimizer": "^1.2.0"
             },
             "require-dev": {
                 "squizlabs/php_codesniffer": "^2.5.1"
@@ -221,7 +221,7 @@
             ],
             "description": "Standalone image minification WordPress plugin",
             "homepage": "https://github.com/globalis-ms/wp-cubi-imagemin",
-            "time": "2018-03-07T15:24:26+00:00"
+            "time": "2018-04-23T13:15:45+00:00"
         },
         {
             "name": "globalis/wpg-disallow-indexing",
