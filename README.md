@@ -90,11 +90,9 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * `./vendor/bin/robo hotfix:finish [--semversion <version>]`
 * `./vendor/bin/robo release:start [--semversion <version>]`
 * `./vendor/bin/robo release:finish [--semversion <version>]`
-
-
-## Deployment
-
-In future releases, wp-cubi will come with pre-configured deployment tasks. For now, you can write your own deployment command, editing `./RoboFile.php`.
+* `./vendor/bin/robo deploy <environment> <branch>`
+* `./vendor/bin/robo media:dump <environment> [--delete]`
+* `./vendor/bin/robo media:push <environment> [--delete]`
 
 
 ## WordPress plugins
@@ -114,3 +112,10 @@ wp-cubi comes with [inpsyde/wonolog](https://github.com/inpsyde/Wonolog), which 
 Basic configuration is possible in wp-cubi `./config/application.php` and `./config/environments/` files, where you can change the maximum number of log files and the log level.
 
 For advanced configuration (adding channels or handlers), you can edit `./web/app/mu-modules/00-wp-cubi-wonolog.php` (see [inpsyde/wonolog documentation](https://inpsyde.github.io/Wonolog/) and [monolog documentation](https://github.com/Seldaek/monolog/tree/master/doc))
+
+
+## Deploys
+
+wp-cubi provides a basic deploy command `./vendor/bin/robo deploy <environment> <branch>` that builds the application and deploys it with `rsync`.
+
+You can build your own deploy method using [Capistrano](https://capistranorb.com/) or any other tool by editing [`RoboFile.php`](https://github.com/globalis-ms/wp-cubi/raw/master/RoboFile.php).
