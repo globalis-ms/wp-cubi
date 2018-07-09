@@ -28,7 +28,7 @@
     ],
     "require": {
         "php": ">=7.0",
-        "johnpbloch/wordpress-core": "4.9.6",
+        "johnpbloch/wordpress-core": "4.9.7",
         "globalis/wp-cubi-helpers": "^0.2.1",
         "globalis/wp-cubi-imagemin": "^1.0.3",
         "globalis/wpg-wp-cli-phar" : "^1.5.1",
