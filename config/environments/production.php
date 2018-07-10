@@ -8,7 +8,7 @@ define('SCRIPT_DEBUG', false);
 define('SAVEQUERIES', false);
 
 /* QUERY MONITOR */
-define('QUERY_MONITOR_HANDLE_PHP_ERRORS', true);
+define('WP_CUBI_QUERY_MONITOR_HANDLE_PHP_ERRORS', true);
 
 /* WONOLOG */
 define('WP_CUBI_LOG_ENABLED', true);
@@ -18,7 +18,7 @@ define('WP_CUBI_LOG_LEVEL', 'CRITICAL');
 define('WP_MEMORY_LIMIT', '256M');
 
 /* SECURITY */
-define('FORCE_SSL_ADMIN', 'https' === wpg_local('WEB_SCHEME'));
+define('FORCE_SSL_ADMIN', 'https' === WP_CUBI_CONFIG['WEB_SCHEME']);
 
 /* AUTOSAVE, REVISIONS, TRASH */
 define('AUTOSAVE_INTERVAL', '300');

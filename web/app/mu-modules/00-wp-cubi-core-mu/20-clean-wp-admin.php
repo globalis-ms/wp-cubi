@@ -1,26 +1,10 @@
 <?php
 
-/**
- * Plugin Name:         wp-cubi-clean-wp-admin
- * Plugin URI:          https://github.com/globalis-ms/wp-cubi
- * Description:         Clean WordPress administration panel
- * Author:              Pierre Dargham, Globalis Media Systems
- * Author URI:          https://www.globalis-ms.com/
- * License:             GPL2
- *
- * Version:             0.1.0
- * Requires at least:   4.0.0
- * Tested up to:        4.8.1
- */
-
 namespace Globalis\WP\Cubi;
 
 use function \Sober\Intervention\intervention;
 
-add_action('plugins_loaded', __NAMESPACE__ . '\\clean_wp_admin', 99);
-
-function clean_wp_admin()
-{
+add_action('plugins_loaded', function () {
     if (!function_exists('\Sober\Intervention\intervention')) {
         return;
     }
@@ -55,4 +39,4 @@ function clean_wp_admin()
         'comments',
         'customize',
     ], 'all');
-}
+}, 99);

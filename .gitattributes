@@ -10,5 +10,6 @@
 
 # Files won’t be added to archive files.
 /.gitattributes export-ignore
+/.resources export-ignore
 /LICENSE.md export-ignore
 /README.md export-ignore

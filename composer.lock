@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e111bc0300c73d45e25d5b28e9c6da49",
+    "content-hash": "079c8611eabf62b46b0c0b4fdde5f955",
     "packages": [
         {
             "name": "composer/installers",
@@ -127,6 +127,45 @@
             "time": "2017-12-29T09:13:20+00:00"
         },
         {
+            "name": "globalis/wp-cli-bin",
+            "version": "1.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/globalis-ms/wp-cli-bin.git",
+                "reference": "675e13fd72940a7efde02d373e18da8aed22d0c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cli-bin/zipball/675e13fd72940a7efde02d373e18da8aed22d0c2",
+                "reference": "675e13fd72940a7efde02d373e18da8aed22d0c2",
+                "shasum": ""
+            },
+            "bin": [
+                "bin/wp"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pierre Dargham",
+                    "homepage": "https://github.com/pierre-dargham/"
+                },
+                {
+                    "name": "GLOBALIS media systems",
+                    "homepage": "https://www.globalis-ms.com/"
+                }
+            ],
+            "description": "Wrapper for wp-cli binary / phar",
+            "homepage": "https://github.com/globalis-ms/wp-cli-bin",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2018-07-10T08:42:53+00:00"
+        },
+        {
             "name": "globalis/wp-cubi-helpers",
             "version": "0.2.2",
             "source": {
@@ -223,303 +262,6 @@
             "description": "Standalone image minification WordPress plugin",
             "homepage": "https://github.com/globalis-ms/wp-cubi-imagemin",
             "time": "2018-05-25T08:43:27+00:00"
-        },
-        {
-            "name": "globalis/wpg-disallow-indexing",
-            "version": "0.5.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-globalis-tools/wpg-disallow-indexing.git",
-                "reference": "ce4d836220bdbb0c2f06405d98bd18b61c090f22"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-globalis-tools/wpg-disallow-indexing/zipball/ce4d836220bdbb0c2f06405d98bd18b61c090f22",
-                "reference": "ce4d836220bdbb0c2f06405d98bd18b61c090f22",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5"
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "^2.5.1"
-            },
-            "type": "wordpress-muplugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Pierre Dargham",
-                    "homepage": "https://github.com/pierre-dargham/"
-                },
-                {
-                    "name": "GLOBALIS media systems",
-                    "homepage": "https://www.globalis-ms.com/"
-                }
-            ],
-            "description": "Disallow indexing of your site on non-production environments",
-            "homepage": "https://github.com/wp-globalis-tools/wpg-disallow-indexing",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2017-12-20T09:35:32+00:00"
-        },
-        {
-            "name": "globalis/wpg-environment-info",
-            "version": "0.3.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-globalis-tools/wpg-environment-info.git",
-                "reference": "33e872ee0d55d438c6f951bd6f6facc889c61736"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-globalis-tools/wpg-environment-info/zipball/33e872ee0d55d438c6f951bd6f6facc889c61736",
-                "reference": "33e872ee0d55d438c6f951bd6f6facc889c61736",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5"
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "^2.5.1"
-            },
-            "type": "wordpress-muplugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Pierre Dargham",
-                    "homepage": "https://github.com/pierre-dargham/"
-                },
-                {
-                    "name": "GLOBALIS media systems",
-                    "homepage": "https://www.globalis-ms.com/"
-                }
-            ],
-            "description": "Add environment informations to your wp-admin bar",
-            "homepage": "https://github.com/wp-globalis-tools/wpg-environment-info",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2018-04-20T15:13:41+00:00"
-        },
-        {
-            "name": "globalis/wpg-local-config",
-            "version": "0.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-globalis-tools/wpg-local-config.git",
-                "reference": "424cae6439a3cd5d3cd8349ade339add64523621"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-globalis-tools/wpg-local-config/zipball/424cae6439a3cd5d3cd8349ade339add64523621",
-                "reference": "424cae6439a3cd5d3cd8349ade339add64523621",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5"
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "^2.5.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Globalis\\WP\\LocalConfig\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Pierre Dargham",
-                    "homepage": "https://github.com/pierre-dargham/"
-                },
-                {
-                    "name": "GLOBALIS media systems",
-                    "homepage": "https://www.globalis-ms.com/"
-                }
-            ],
-            "description": "Get local config variables",
-            "homepage": "https://github.com/wp-globalis-tools/wpg-local-config",
-            "keywords": [
-                "robo",
-                "wordpress"
-            ],
-            "time": "2017-12-20T09:34:47+00:00"
-        },
-        {
-            "name": "globalis/wpg-mail-trapping",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-globalis-tools/wpg-mail-trapping.git",
-                "reference": "cb7856e6769c93839b6e68a2d5788c36ecd1f723"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-globalis-tools/wpg-mail-trapping/zipball/cb7856e6769c93839b6e68a2d5788c36ecd1f723",
-                "reference": "cb7856e6769c93839b6e68a2d5788c36ecd1f723",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5"
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "^2.5.1"
-            },
-            "type": "wordpress-muplugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Pierre Dargham",
-                    "homepage": "https://github.com/pierre-dargham/"
-                },
-                {
-                    "name": "GLOBALIS media systems",
-                    "homepage": "https://www.globalis-ms.com/"
-                }
-            ],
-            "description": "Prevent sending emails from non-production environments",
-            "homepage": "https://github.com/wp-globalis-tools/wpg-mail-trapping",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2017-12-20T09:35:44+00:00"
-        },
-        {
-            "name": "globalis/wpg-security",
-            "version": "0.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-globalis-tools/wpg-security.git",
-                "reference": "11cc8fde97629888a046b2d02113afb2c326e6b1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-globalis-tools/wpg-security/zipball/11cc8fde97629888a046b2d02113afb2c326e6b1",
-                "reference": "11cc8fde97629888a046b2d02113afb2c326e6b1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5"
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "^2.5.1"
-            },
-            "type": "wordpress-muplugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Pierre Dargham",
-                    "homepage": "https://github.com/pierre-dargham/"
-                },
-                {
-                    "name": "GLOBALIS media systems",
-                    "homepage": "https://www.globalis-ms.com/"
-                }
-            ],
-            "description": "Collection of WordPress security mu-plugins",
-            "homepage": "https://github.com/wp-globalis-tools/wpg-security",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2017-12-20T09:36:22+00:00"
-        },
-        {
-            "name": "globalis/wpg-uploads-path",
-            "version": "0.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-globalis-tools/wpg-uploads-path.git",
-                "reference": "f0d2e3589b6836bccdfd5e618c1396800bc4f64d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-globalis-tools/wpg-uploads-path/zipball/f0d2e3589b6836bccdfd5e618c1396800bc4f64d",
-                "reference": "f0d2e3589b6836bccdfd5e618c1396800bc4f64d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5"
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "^2.5.1"
-            },
-            "type": "wordpress-muplugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Pierre Dargham",
-                    "homepage": "https://github.com/pierre-dargham/"
-                },
-                {
-                    "name": "GLOBALIS media systems",
-                    "homepage": "https://www.globalis-ms.com/"
-                }
-            ],
-            "description": "Change WordPress uploads directory",
-            "homepage": "https://github.com/wp-globalis-tools/wpg-uploads-path",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2017-12-20T09:35:19+00:00"
-        },
-        {
-            "name": "globalis/wpg-wp-cli-phar",
-            "version": "1.5.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-globalis-tools/wpg-wp-cli-phar.git",
-                "reference": "64058dc068de525a92ae1c93b3c075ff350a1d62"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-globalis-tools/wpg-wp-cli-phar/zipball/64058dc068de525a92ae1c93b3c075ff350a1d62",
-                "reference": "64058dc068de525a92ae1c93b3c075ff350a1d62",
-                "shasum": ""
-            },
-            "bin": [
-                "bin/wp"
-            ],
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Pierre Dargham",
-                    "homepage": "https://github.com/pierre-dargham/"
-                },
-                {
-                    "name": "GLOBALIS media systems",
-                    "homepage": "https://www.globalis-ms.com/"
-                }
-            ],
-            "description": "Wrapper for wp-cli phar",
-            "homepage": "https://github.com/wp-globalis-tools/wpg-wp-cli-phar",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2018-04-23T09:54:27+00:00"
         },
         {
             "name": "inpsyde/wonolog",
@@ -627,6 +369,55 @@
                 "wordpress"
             ],
             "time": "2018-07-05T18:12:13+00:00"
+        },
+        {
+            "name": "johnpbloch/wordpress-core-installer",
+            "version": "1.0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johnpbloch/wordpress-core-installer.git",
+                "reference": "7941acd71725710a789daabe0557429da63e7ac6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/7941acd71725710a789daabe0557429da63e7ac6",
+                "reference": "7941acd71725710a789daabe0557429da63e7ac6",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "conflict": {
+                "composer/installers": "<1.0.6"
+            },
+            "require-dev": {
+                "composer/composer": "^1.0",
+                "phpunit/phpunit": ">=4.8.35"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "johnpbloch\\Composer\\WordPressCorePlugin"
+            },
+            "autoload": {
+                "psr-0": {
+                    "johnpbloch\\Composer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "John P. Bloch",
+                    "email": "me@johnpbloch.com"
+                }
+            ],
+            "description": "A custom installer to handle deploying WordPress with composer",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2018-01-29T14:49:29+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -801,6 +592,51 @@
                 "psr-3"
             ],
             "time": "2016-10-10T12:19:37+00:00"
+        },
+        {
+            "name": "roots/soil",
+            "version": "3.7.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roots/soil.git",
+                "reference": "d0e409e70dafff4ceeaa8ef941ee319e350317dd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roots/soil/zipball/d0e409e70dafff4ceeaa8ef941ee319e350317dd",
+                "reference": "d0e409e70dafff4ceeaa8ef941ee319e350317dd",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^2.5.1"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Scott Walkinshaw",
+                    "email": "scott.walkinshaw@gmail.com",
+                    "homepage": "https://github.com/swalkinshaw"
+                },
+                {
+                    "name": "Ben Word",
+                    "email": "ben@benword.com",
+                    "homepage": "https://github.com/retlehs"
+                }
+            ],
+            "description": "A WordPress plugin which contains a collection of modules to apply theme-agnostic front-end modifications",
+            "homepage": "https://roots.io/plugins/soil/",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2017-08-14T01:36:41+00:00"
         },
         {
             "name": "roots/wp-password-bcrypt",
@@ -1012,6 +848,26 @@
             "time": "2018-05-30T04:24:30+00:00"
         },
         {
+            "name": "wpackagist-plugin/autodescription",
+            "version": "3.0.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/autodescription/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/autodescription.zip?timestamp=1525625897",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/autodescription/"
+        },
+        {
             "name": "wpackagist-plugin/query-monitor",
             "version": "3.0.1",
             "source": {
@@ -1030,6 +886,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/query-monitor/"
+        },
+        {
+            "name": "wpackagist-plugin/user-switching",
+            "version": "1.3.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/user-switching/",
+                "reference": "tags/1.3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/user-switching.1.3.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/user-switching/"
         },
         {
             "name": "wpackagist-plugin/wp-crontrol",
@@ -1832,55 +1708,6 @@
             ],
             "description": "Expands internal property references in a yaml file.",
             "time": "2017-12-16T16:06:03+00:00"
-        },
-        {
-            "name": "johnpbloch/wordpress-core-installer",
-            "version": "1.0.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/johnpbloch/wordpress-core-installer.git",
-                "reference": "7941acd71725710a789daabe0557429da63e7ac6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core-installer/zipball/7941acd71725710a789daabe0557429da63e7ac6",
-                "reference": "7941acd71725710a789daabe0557429da63e7ac6",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0"
-            },
-            "conflict": {
-                "composer/installers": "<1.0.6"
-            },
-            "require-dev": {
-                "composer/composer": "^1.0",
-                "phpunit/phpunit": ">=4.8.35"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "johnpbloch\\Composer\\WordPressCorePlugin"
-            },
-            "autoload": {
-                "psr-0": {
-                    "johnpbloch\\Composer\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "John P. Bloch",
-                    "email": "me@johnpbloch.com"
-                }
-            ],
-            "description": "A custom installer to handle deploying WordPress with composer",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2018-01-29T14:49:29+00:00"
         },
         {
             "name": "justinrainbow/json-schema",

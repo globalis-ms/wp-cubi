@@ -6,7 +6,7 @@
 
 WordPress modern stack for developers
 
-[![wp-cubi](https://github.com/wp-globalis-tools/wp-cubi-logo/raw/master/wp-cubi-500x175.jpg)](https://github.com/globalis-ms/wp-cubi/)
+[![wp-cubi](https://github.com/globalis-ms/wp-cubi/raw/master/.resources/wp-cubi-500x175.jpg)](https://github.com/globalis-ms/wp-cubi/)
 
 
 ## Overview
@@ -20,40 +20,25 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 
 ## Features
 
-### General
-
 * Environment-specific configuration
+* Automated `no-index` and mail-trapper on development / staging environments
 * Command-line administration with [wp-cli](http://wp-cli.org/)
-* Optimized .htaccess generation (inspired by [html5-boilerplate](https://github.com/h5bp/server-configs-apache))
+* Monitoring tools ([query-monitor](https://fr.wordpress.org/plugins/query-monitor/), [wp-crontrol](https://fr.wordpress.org/plugins/wp-crontrol/), [user-switching](https://fr.wordpress.org/plugins/user-switching/), [wp-cubi-admin-bar](https://github.com/globalis-ms/wp-cubi/raw/master/web/app/mu-modules/00-wp-cubi-core-mu/30-wp-cubi-admin-bar))
+* Cleaner wp-admin dashboard with [soberwp/intervention](https://github.com/soberwp/intervention)
 * Gitflow integration with Robo commands
-* Automated `no-index` on non-production stages with [wpg-disallow-indexing](https://github.com/wp-globalis-tools/wpg-disallow-indexing)
-
-### Security
-
-* Better password encryption with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt)
-* Deactivation of REST API and XML-RPC by default with [wpg-security](https://github.com/wp-globalis-tools/wpg-security)
-
-### Performance
-
-* Standalone image / uploads minification plugin with [globalis/wp-cubi-imagemin](https://github.com/globalis-ms/wp-cubi-imagemin)
-
-### Debug and monitoring
-
-* Standalone mail-trapping with [wpg-mail-trapping](https://github.com/wp-globalis-tools/wpg-mail-trapping)
-* Debug and monitoring plugin suite with [query-monitor](https://fr.wordpress.org/plugins/query-monitor/) and [wp-crontrol](https://fr.wordpress.org/plugins/wp-crontrol/)
-
-### Logs
-
+* Optimized `.htaccess` generation
 * Logging system with [inpsyde/wonolog](https://github.com/inpsyde/Wonolog) and [monolog](https://github.com/Seldaek/monolog)
+* Standalone image minification plugin with [globalis/wp-cubi-imagemin](https://github.com/globalis-ms/wp-cubi-imagemin)
+* Additional functions with [globalis/wp-cubi-helpers](https://github.com/globalis-ms/wp-cubi-helpers)
+* SEO friendly, with [The SEO Framework](https://fr.wordpress.org/plugins/autodescription/) plugin and [roots/soil](https://github.com/roots/soil) DOM optimizations
 
-### wp-admin enhancement
 
-* Cleaner wp-admin with [soberwp/intervention](https://github.com/soberwp/intervention)
-* Environment info-box in admin-bar with [wpg-environment-info](https://github.com/wp-globalis-tools/wpg-environment-info)
+## Security optimizations
 
-### Additional functions
-
-* Collection of simple WordPress-friendly functions with [globalis/wp-cubi-helpers](https://github.com/globalis-ms/wp-cubi-helpers)
+* Separated web root folder
+* `.htaccess` security directives
+* Deactivation of REST API and `xmlrpc.php` unless explicitly activated
+* Better password encryption with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt)
 
 
 ## Requirements

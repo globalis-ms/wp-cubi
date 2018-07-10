@@ -12,7 +12,6 @@
   <exclude-pattern>/vendor/</exclude-pattern>
   <exclude-pattern>/web/wp/</exclude-pattern>
   <exclude-pattern>/web/app/modules/</exclude-pattern>
-  <exclude-pattern>/web/app/mu-modules/*/</exclude-pattern>
 
   <!-- Ignore local files -->
   <exclude-pattern>/config/vars.*</exclude-pattern>
