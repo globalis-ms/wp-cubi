@@ -1,4 +1,6 @@
 <?php
 
 /* MAIL TRAPPING */
-define('WPG_MAIL_TRAPPING', serialize([wpg_local('DEV_MAIL')]));
+define('WPG_MAIL_TRAPPING', [
+    WP_CUBI_CONFIG['DEV_MAIL'],
+]);

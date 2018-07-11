@@ -30,9 +30,6 @@
 /web/app/modules/*
 !/web/app/modules/.gitkeep
 
-# WordPress MU-Plugins
-/web/app/mu-modules/*/
-
 # WordPress Media / Uploads
 /web/media/*
 !/web/media/.gitkeep
