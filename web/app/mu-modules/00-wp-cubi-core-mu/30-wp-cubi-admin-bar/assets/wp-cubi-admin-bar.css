@@ -1,5 +1,5 @@
 // Minify from https://cssminifier.com/
-// wget --post-data="input=`cat wp-cubi-admin-bar-info-box.css`" --output-document="wp-cubi-admin-bar-info-box.$(date +%Y%m%d%H%M%S).min.css" https://cssminifier.com/raw
+// wget --post-data="input=`cat wp-cubi-admin-bar.css`" --output-document="wp-cubi-admin-bar.$(date +%Y%m%d%H%M%S).min.css" https://cssminifier.com/raw
 
 #wpadminbar #wp-admin-bar-website-env {
     width: 160px;
@@ -9,7 +9,7 @@
     display: block;
 }
 
-#wpadminbar #wp-admin-bar-website-env code {
+#wpadminbar #wp-admin-bar-website-env .code {
     color: #00b9eb;
     background-color: #22262a;
     padding: 0 3px;

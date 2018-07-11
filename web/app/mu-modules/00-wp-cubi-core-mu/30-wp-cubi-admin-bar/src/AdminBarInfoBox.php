@@ -4,7 +4,7 @@ namespace Globalis\WP\Cubi;
 
 class AdminBar
 {
-    const CSS_PATH        = 'assets/wp-cubi-admin-bar.20180711090958.min.css';
+    const CSS_PATH        = 'assets/wp-cubi-admin-bar.20180711103154.min.css';
 
     const NODE            = 'website-env';
 
@@ -99,7 +99,7 @@ class AdminBar
 
     protected static function formatCode($string)
     {
-        return '<code>' . $string . '</code>';
+        return '<span class="code">' . $string . '</span>';
     }
 
     protected function getDataServer()
