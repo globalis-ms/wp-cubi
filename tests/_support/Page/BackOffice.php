@@ -1,12 +1,10 @@
 <?php
-namespace WpCubiTest\Page;
+namespace App\Test\Page;
 
-class Login
+class BackOffice
 {
     // include url of current page
-    public static $URL = '/wp/wp-login.php';
-
-    public static $LoginForm = '#loginform';
+    public static $URL = '/wp/wp-admin/';
 
     public static function route($param)
     {

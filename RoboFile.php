@@ -6,7 +6,7 @@ use Globalis\Robo\Core\SemanticVersion;
 class RoboFile extends \Globalis\Robo\Tasks
 {
     const DEFAULT_WP_LANG          = 'en_US';
-
+    
     private $fileProperties        = __DIR__ . '/.robo/properties.php';
     private $fileVars              = __DIR__ . '/config/vars.php';
     private $fileApplication       = __DIR__ . '/config/application.php';
@@ -17,12 +17,15 @@ class RoboFile extends \Globalis\Robo\Tasks
     private $fileHtaccess          = __DIR__ . '/web/.htaccess';
     private $fileBinWPCli          = __DIR__ . '/vendor/bin/wp';
     private $saltKeysUrl           = 'https://api.wordpress.org/secret-key/1.1/salt/';
+    
+    private $testsDirectory        = __DIR__ . '/tests';
+    private $testsConfigVars       = __DIR__ . '/tests/vars.travis.php';
 
     public function config($opts = ['only-missing' => false])
     {
         $force = true !== $opts['only-missing'];
         $this->configVariables = $this->taskConfiguration()
-            ->initConfig($this->getProperties('config'))
+            ->initConfig($this->getPropertiesConfig())
             ->initLocal($this->getProperties('local'))
             ->initSettings($this->getProperties('settings'))
             ->configFilePath($this->fileVars)
@@ -139,9 +142,21 @@ class RoboFile extends \Globalis\Robo\Tasks
         }
     }
 
-    public function wpInit($opts = ['db_prefix' => null, 'default_theme_slug' => null, 'site_title' => null, 'admin_username' => null, 'admin_password' => null, 'admin_email'=> null, 'site_language' => null, 'site_timezone' => null, 'site_timezone_city' => null])
+    public function wpInit($opts = ['db_prefix' => null, 'default_theme_slug' => null, 'site_title' => null, 'admin_username' => null, 'admin_password' => null, 'admin_email'=> null, 'site_language' => null, 'site_timezone' => null, 'site_timezone_city' => null, 'env' => null])
     {
         $url = $this->getConfig('WEB_SCHEME') . '://' . $this->getConfig('WEB_DOMAIN') . $this->getConfig('WEB_PATH') . '/wp';
+        
+        if (isset($opts['env']) && 'test' === $opts['env']) {
+            $opts['db_prefix']              = $this->getConfig('DB_PREFIX');
+            $opts['default_theme_slug']     = $this->getConfig('DEFAULT_THEME_SLUG');
+            $opts['site_title']             = $this->getConfig('SITE_TITLE');
+            $opts['site_language']          = $this->getConfig('SITE_LANGUAGE');
+            $opts['site_timezone']          = $this->getConfig('SITE_TIMEZONE');
+            $opts['site_timezone_city']     = $this->getConfig('SITE_TIMEZONE_CITY');
+            $opts['admin_email']            = $this->getConfig('ADMIN_EMAIL');
+            $opts['admin_username']         = $this->getConfig('ADMIN_USERNAME');
+            $opts['admin_password']         = $this->getConfig('ADMIN_PASSWORD');
+        }
 
         $this->wpInitConfig($opts);
         $this->wpDbCreate();
@@ -159,7 +174,7 @@ class RoboFile extends \Globalis\Robo\Tasks
         $settings                     = [];
         $settings['DB_PREFIX']        = !empty($opts['db_prefix']) ? $opts['db_prefix'] : $this->io()->ask('Database prefix', 'cubi_');
         $settings['WP_DEFAULT_THEME'] = !empty($opts['default_theme_slug']) ? $opts['default_theme_slug'] : $this->io()->ask('Default theme slug (you can change it later in ./config/application.php)', 'my-theme');
-
+    
         $this->taskReplacePlaceholders($this->fileApplication)
          ->from(array_keys($settings))
          ->to($settings)
@@ -380,6 +395,24 @@ class RoboFile extends \Globalis\Robo\Tasks
         }
     }
 
+    private function getPropertiesConfig()
+    {
+        $properties = $this->getProperties('config');
+        if (!is_dir($this->testsDirectory)) {
+            return $properties;
+        }
+        return $properties;
+    }
+
+    private function getPropertiesEnv($env = '')
+    {
+        if (!isset($this->propertiesEnv)) {
+            $this->propertiesEnv = include $this->filePropertiesEnv;
+            $this->propertiesEnv = array_merge($this->getProperties('config'), $this->propertiesEnv);
+        }
+        return $this->propertiesEnv;
+    }
+
     private function loadConfig()
     {
         static $loaded;
@@ -495,5 +528,33 @@ class RoboFile extends \Globalis\Robo\Tasks
         }
 
         return $groups;
+    }
+
+    public function testsInstall()
+    {
+        if (!file_exists($this->fileVars)) {
+            copy($this->testsConfigVars, $this->fileVars);
+        }
+
+        $suiteFilesPattern = __DIR__ . '/tests/*.suite.yml.config';
+        $suiteFiles = glob($suiteFilesPattern);
+        if (empty($suiteFiles)) {
+            return;
+        }
+        
+        $settings                   = $this->getConfig();
+        $settings['ADMIN_USERNAME'] = self::TEST_ADMIN_USERNAME;
+        $settings['ADMIN_PASSWORD'] = self::TEST_ADMIN_PASSWORD;
+
+        foreach ($suiteFiles as $file) {
+            $copy = substr($file, 0, -7);
+            copy($file, $copy);
+            $this->taskReplacePlaceholders($copy)
+                ->from(array_keys($settings))
+                ->to($settings)
+                ->startDelimiter('<##')
+                ->endDelimiter('##>')
+                ->run();
+        }
     }
 }

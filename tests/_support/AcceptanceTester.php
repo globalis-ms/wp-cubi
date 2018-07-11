@@ -1,6 +1,6 @@
 <?php
 
-namespace WpCubiTest;
+namespace App\Test;
 
 /**
  * Inherited Methods

@@ -1,4 +1,4 @@
-namespace: WpCubiTest
+namespace: App\Test
 paths:
     tests: tests
     output: tests/_output
