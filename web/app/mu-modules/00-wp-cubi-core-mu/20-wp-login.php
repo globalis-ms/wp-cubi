@@ -6,7 +6,7 @@ add_action('login_head', function () {
     $logo_url = esc_url(home_url('/logo.png'));
     ?>
     <style type="text/css" media="screen">
-        .login h1 { width: 100%; height: 100%; background-image: url('<?= custom_logo_url() ?>'); background-position: center top; background-repeat: no-repeat; background-size: contain; }
+        .login h1 { width: 100%; height: 100%; background-image: url('<?= $logo_url ?>'); background-position: center top; background-repeat: no-repeat; background-size: contain; }
         .login h1 a { background-image: none; display: block; width: 100%; min-height: 100px; }
         .login .message { margin-top: 20px; }
     </style>
