@@ -1,1 +1,3 @@
 /*.suite.yml
+/vars.*
+!/vars.travis.php

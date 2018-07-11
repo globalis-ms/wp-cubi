@@ -42,7 +42,9 @@
         "wpackagist-plugin/query-monitor": "^3.0.0",
         "wpackagist-plugin/wp-crontrol": "^1.6.2",
         "soberwp/intervention": "^1.2.0",
-        "inpsyde/wonolog": "^1.0.1"
+        "inpsyde/wonolog": "^1.0.1",
+        "codeception/codeception": "^2.4",
+        "site5/phantoman": "^2.0"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.5.1",

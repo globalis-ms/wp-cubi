@@ -557,6 +557,7 @@ class RoboFile extends \Globalis\Robo\Tasks
                 copy($testFileVars, $this->fileVars);
                 $this->io()->success(sprintf('File %s created', $this->fileVars));
             }
+            $this->buildHtaccess();
         } elseif (isset($opts['env'])) {
             $this->io()->error(sprintf('File %s doesn\'t exist', $testFileVars));
         }
