@@ -4,7 +4,7 @@ namespace Globalis\WP\Cubi;
 
 class AdminBar
 {
-    const CSS_PATH        = 'assets/wp-cubi-admin-bar.20180711103154.min.css';
+    const CSS_PATH        = 'assets/wp-cubi-admin-bar.20180711161137.min.css';
 
     const NODE            = 'website-env';
 
@@ -196,14 +196,14 @@ class AdminBar
     protected function getGitCommit($prefix = '#')
     {
         if (!isset($this->git_commit)) {
-            if ('development' !== WP_ENV) {
-                if (file_exists(self::FILE_GIT_COMMIT)) {
-                    $commit = file_get_contents(self::FILE_GIT_COMMIT);
-                } else {
-                    $commit = 'unknown';
-                }
+            if ('development' !== WP_ENV && file_exists(self::FILE_GIT_COMMIT)) {
+                $commit = file_get_contents(self::FILE_GIT_COMMIT);
             } else {
                 $commit = exec('git rev-parse --short HEAD');
+            }
+
+            if(empty($commit)) {
+                $commit = 'unknown';
             }
 
             $this->git_commit = $prefix . $commit;
@@ -215,14 +215,14 @@ class AdminBar
     protected function getGitBranch()
     {
         if (!isset($this->git_branch)) {
-            if ('development' !== WP_ENV) {
-                if (file_exists(self::FILE_GIT_BRANCH)) {
-                    $this->git_branch = file_get_contents(self::FILE_GIT_BRANCH);
-                } else {
-                    $this->git_branch = 'unknown branch';
-                }
+            if ('development' !== WP_ENV && file_exists(self::FILE_GIT_BRANCH)) {
+                $this->git_branch = file_get_contents(self::FILE_GIT_BRANCH);
             } else {
                 $this->git_branch = exec('git rev-parse --abbrev-ref HEAD');
+            }
+
+            if(empty($this->git_branch)) {
+                $this->git_branch = 'unknown';
             }
         }
 
