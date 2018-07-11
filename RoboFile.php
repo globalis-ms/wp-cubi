@@ -8,7 +8,9 @@ class RoboFile extends \Globalis\Robo\Tasks
     const DEFAULT_WP_LANG          = 'en_US';
 
     private $fileProperties        = __DIR__ . '/.robo/properties.php';
+    private $filePropertiesRemote  = __DIR__ . '/.robo/properties.remote.php';
     private $fileVars              = __DIR__ . '/config/vars.php';
+    private $fileVarsRemote        = __DIR__ . '/config/vars.%s.php';
     private $fileApplication       = __DIR__ . '/config/application.php';
     private $fileConfigLocal       = __DIR__ . '/config/local.php';
     private $fileConfigLocalSample = __DIR__ . '/config/local.sample.php';
@@ -16,6 +18,7 @@ class RoboFile extends \Globalis\Robo\Tasks
     private $dirHtaccessParts      = __DIR__ . '/config/htaccess/';
     private $fileHtaccess          = __DIR__ . '/web/.htaccess';
     private $fileBinWPCli          = __DIR__ . '/vendor/bin/wp';
+    private $pathMedia             = '/web/media';
     private $saltKeysUrl           = 'https://api.wordpress.org/secret-key/1.1/salt/';
 
     public function config($opts = ['only-missing' => false])
@@ -26,6 +29,17 @@ class RoboFile extends \Globalis\Robo\Tasks
             ->initLocal($this->getProperties('local'))
             ->initSettings($this->getProperties('settings'))
             ->configFilePath($this->fileVars)
+            ->force($force)
+            ->run()
+            ->getData();
+    }
+
+    private function configRemote($opts = ['only-missing' => false])
+    {
+        $force = true !== $opts['only-missing'];
+        $this->configVariablesRemote = $this->taskConfiguration()
+            ->initConfig($this->getPropertiesRemote())
+            ->configFilePath($this->fileVarsRemote)
             ->force($force)
             ->run()
             ->getData();
@@ -43,7 +57,6 @@ class RoboFile extends \Globalis\Robo\Tasks
         }
         $this->loadConfig();
         $this->installPackages();
-        $this->installTheme();
         $this->createConfigLocal();
         $this->wpGenerateSaltKeys();
         $this->build();
@@ -63,15 +76,18 @@ class RoboFile extends \Globalis\Robo\Tasks
             ->run();
     }
 
-    public function installTheme()
-    {
-        // Write your own task, according to your theme architecture
-    }
-
     public function build()
     {
         $this->buildHtaccess();
-        $this->buildTheme();
+    }
+
+    private function buildRemote($dir)
+    {
+        $fileVarsRemote = $this->remoteWorkPath($dir, $this->fileVarsRemote);
+        $fileVarsRemote = str_replace('.' . $this->envRemote, '', $fileVarsRemote);
+        copy($this->fileVarsRemote, $fileVarsRemote);
+        $this->installPackagesRemote($dir);
+        $this->buildHtaccess($this->envRemote, $this->remoteWorkPath($dir, $this->fileHtaccess));
     }
 
     public function buildHtaccess($env = null, $filePath = null)
@@ -91,11 +107,6 @@ class RoboFile extends \Globalis\Robo\Tasks
             $this->dirHtaccessParts . '/htaccess-urls',
             $this->dirHtaccessParts . '/htaccess-wp-permalinks',
         ]);
-    }
-
-    public function buildTheme()
-    {
-        // Write your own task, according to your theme architecture
     }
 
     public function clean()
@@ -368,6 +379,166 @@ class RoboFile extends \Globalis\Robo\Tasks
         return $this->taskReleaseFinish((string)$version, $this->getConfig('GIT_PATH'))->run();
     }
 
+    /**
+     * Deploy Application
+     *
+     * @param  string $env Environment
+     * @param  string $releaseVersion Version number
+     */
+    public function deploy($env, $releaseVersion)
+    {
+        $this->io()->title('Deploy version ' . $releaseVersion . ' to ' . $env);
+        $this->io()->text('You must answer a few questions about the remote environment:');
+
+        $this->envRemote = $env;
+        $this->loadConfigRemote(false);
+
+        $config                = $this->getConfigRemote();
+        $config['REMOTE_PATH'] = self::trailingslashit($config['REMOTE_PATH']);
+
+        $collection = $this->collectionBuilder();
+        $workDir    = self::trailingslashit($collection->tmpDir());
+
+        // Current commit
+        $gitCommit = exec('git rev-parse --short HEAD'); //'unknown';
+
+        // Create archive files
+        $cmd = new Command($this->getConfig('GIT_PATH'));
+        $cmd = $cmd->arg('archive')
+            ->option('--format=tar')
+            ->option('--prefix=' . basename($workDir) . DIRECTORY_SEPARATOR)
+            ->arg($releaseVersion)
+            ->pipe('(cd')
+            ->arg(dirname($workDir))
+            ->getCommand();
+
+        $cmd .= ' && tar xf -)';
+
+        $this->taskExec($cmd)
+            ->run();
+
+        $this->taskWriteToFile($workDir . '.gitrevision')
+             ->line($gitCommit)
+             ->run();
+
+        $this->taskWriteToFile($workDir . '.gitbranch')
+             ->line($releaseVersion)
+             ->run();
+
+        $this->buildRemote($workDir);
+
+        // 1. Dry Run
+        $this->rsync($workDir, $config['REMOTE_USERNAME'], $config['REMOTE_HOSTNAME'], $config['REMOTE_PORT'], $config['REMOTE_PATH'], true);
+
+        if ($this->io()->confirm('Do you want to run', false)) {
+            // 2. Run
+            $this->rsync($workDir, $config['REMOTE_USERNAME'], $config['REMOTE_HOSTNAME'], $config['REMOTE_PORT'], $config['REMOTE_PATH'], false);
+        }
+
+        $this->taskDeleteDir($workDir)->run();
+    }
+
+    private function rsync($workDir, $remoteUser, $remoteHost, $remotePort, $remotePath, $dryRun = false)
+    {
+        $cmd = $this->taskRsync()
+            ->fromPath($workDir)
+            ->toHost($remoteHost)
+            ->toUser($remoteUser)
+            ->toPath($remotePath)
+            ->option('rsh', 'ssh -p ' . $remotePort)
+            ->verbose()
+            ->recursive()
+            ->delete()
+            ->checksum()
+            ->compress()
+            ->itemizeChanges()
+            ->excludeVcs()
+            ->progress()
+            ->option('copy-links')
+            ->option('perms')
+            ->option('chmod', 'Du=rwx,Dgo=rx,Fu=rw,Fgo=r')
+            ->stats();
+
+        if (file_exists($workDir . '.rsyncignore')) {
+            $cmd->excludeFrom($workDir . '.rsyncignore');
+        }
+
+        if (true === $dryRun) {
+            $cmd->dryRun();
+        }
+        return $cmd->run();
+    }
+
+    public function mediaDump($from_env, $opts = ['delete' => false])
+    {
+        $this->envRemote = $from_env;
+        $config          = $this->getConfigRemote();
+        $localPath       = self::trailingslashit(__DIR__ . $this->pathMedia);
+        $remotePath      = self::trailingslashit(self::untrailingslashit($config['REMOTE_PATH']) . $this->pathMedia);
+        $delete          = true === $opts['delete'];
+
+        if (!is_dir($localPath)) {
+            mkdir($localPath, 0777);
+        }
+
+        // 1. Dry Run
+        $this->rsyncMedia($config['REMOTE_HOSTNAME'], $config['REMOTE_USERNAME'], $remotePath, null, null, $localPath, $delete, true);
+
+        if ($this->io()->confirm('Do you want to run', false)) {
+            // 2. Run
+            $this->rsyncMedia($config['REMOTE_HOSTNAME'], $config['REMOTE_USERNAME'], $remotePath, null, null, $localPath, $delete, false);
+        }
+    }
+
+    public function mediaPush($to_env, $opts = ['delete' => false])
+    {
+        $this->envRemote = $to_env;
+        $config          = $this->getConfigRemote();
+        $localPath       = self::trailingslashit(__DIR__ . $this->pathMedia);
+        $remotePath      = self::trailingslashit(self::untrailingslashit($config['REMOTE_PATH']) . $this->pathMedia);
+        $delete          = true === $opts['delete'];
+
+        // 1. Dry Run
+        $this->rsyncMedia(null, null, $localPath, $config['REMOTE_HOSTNAME'], $config['REMOTE_USERNAME'], $remotePath, $delete, true);
+
+        if ($this->io()->confirm('Do you want to run', false)) {
+            // 2. Run
+            $this->rsyncMedia(null, null, $localPath, $config['REMOTE_HOSTNAME'], $config['REMOTE_USERNAME'], $remotePath, $delete, false);
+        }
+    }
+
+    private function rsyncMedia($fromHost, $fromUser, $fromPath, $toHost, $toUser, $toPath, $remotePort = 22, $delete = false, $dryRun = false)
+    {
+        $cmd = $this->taskRsync()
+            ->fromHost($fromHost)
+            ->fromUser($fromUser)
+            ->fromPath($fromPath)
+            ->toHost($toHost)
+            ->toUser($toUser)
+            ->toPath($toPath)
+            ->option('rsh', 'ssh -p ' . $remotePort)
+            ->verbose()
+            ->recursive()
+            ->checksum()
+            ->compress()
+            ->itemizeChanges()
+            ->progress()
+            ->exclude('.gitkeep')
+            ->option('perms')
+            ->option('chmod', 'Dugo=rwx,Fugo=rwx')
+            ->stats();
+
+        if (true === $delete) {
+            $cmd->delete();
+        }
+
+        if (true === $dryRun) {
+            $cmd->dryRun();
+        }
+
+        return $cmd->run();
+    }
+
     private function getProperties($type)
     {
         if (!isset($this->properties)) {
@@ -378,6 +549,15 @@ class RoboFile extends \Globalis\Robo\Tasks
         } else {
             return [];
         }
+    }
+
+    private function getPropertiesRemote()
+    {
+        if (!isset($this->propertiesRemote)) {
+            $this->propertiesRemote = include $this->filePropertiesRemote;
+            $this->propertiesRemote = array_merge($this->getProperties('config'), $this->propertiesRemote);
+        }
+        return $this->propertiesRemote;
     }
 
     private function loadConfig()
@@ -394,6 +574,21 @@ class RoboFile extends \Globalis\Robo\Tasks
         }
     }
 
+    private function loadConfigRemote($only_missing = false)
+    {
+        static $loaded;
+        if ($loaded) {
+            return;
+        } else {
+            $this->fileVarsRemote = sprintf($this->fileVarsRemote, $this->envRemote);
+            $this->configRemote(['only-missing' => $only_missing]);
+            foreach ($this->configVariablesRemote as $key => $value) {
+                $this->configVariablesRemote[$key . '_PQ'] = preg_quote($value);
+            }
+            $loaded = true;
+        }
+    }
+
     private function getConfig($key = null)
     {
         $this->loadConfig();
@@ -401,6 +596,16 @@ class RoboFile extends \Globalis\Robo\Tasks
             return $this->configVariables[$key];
         } else {
             return $this->configVariables;
+        }
+    }
+
+    private function getConfigRemote($key = null)
+    {
+        $this->loadConfigRemote(true);
+        if (isset($key)) {
+            return $this->configVariablesRemote[$key];
+        } else {
+            return $this->configVariablesRemote;
         }
     }
 
@@ -417,7 +622,11 @@ class RoboFile extends \Globalis\Robo\Tasks
         ->to($filePath)
         ->run();
 
-        $config = $this->getConfig();
+        if (isset($this->configVariablesRemote) && !empty($this->configVariablesRemote)) {
+            $config = $this->getConfigRemote();
+        } else {
+            $config = $this->getConfig();
+        }
 
         $this->taskReplacePlaceholders($filePath)
          ->from(array_keys($config))
@@ -495,5 +704,20 @@ class RoboFile extends \Globalis\Robo\Tasks
         }
 
         return $groups;
+    }
+
+    private static function trailingslashit($string)
+    {
+        return self::untrailingslashit($string) . '/';
+    }
+
+    private static function untrailingslashit($string)
+    {
+        return rtrim($string, '/\\');
+    }
+
+    private function remoteWorkPath($dir, $path)
+    {
+        return str_replace(self::trailingslashit(__DIR__), $dir, $path);
     }
 }
