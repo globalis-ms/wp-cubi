@@ -31,7 +31,7 @@ install:
 
 script:
     - cp ./.robo_config ~/
-    - ./vendor/bin/robo tests:install
+    - ./vendor/bin/robo tests:install --env="travis"
     
     #Verify php coding standart
     - ./vendor/bin/phpcs . -p --standard=./phpcs.xml

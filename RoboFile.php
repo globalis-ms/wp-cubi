@@ -6,6 +6,8 @@ use Globalis\Robo\Core\SemanticVersion;
 class RoboFile extends \Globalis\Robo\Tasks
 {
     const DEFAULT_WP_LANG          = 'en_US';
+    const DEFAULT_TEST_ADMIN_USERNAME = 'tester';
+    const DEFAULT_TEST_ADMIN_PASSWORD = 'tester';
     
     private $fileProperties        = __DIR__ . '/.robo/properties.php';
     private $fileVars              = __DIR__ . '/config/vars.php';
@@ -19,7 +21,7 @@ class RoboFile extends \Globalis\Robo\Tasks
     private $saltKeysUrl           = 'https://api.wordpress.org/secret-key/1.1/salt/';
     
     private $testsDirectory        = __DIR__ . '/tests';
-    private $testsConfigVars       = __DIR__ . '/tests/vars.travis.php';
+    private $testsConfigVars       = __DIR__ . '/tests/vars.<env>.php';
 
     public function config($opts = ['only-missing' => false])
     {
@@ -530,21 +532,48 @@ class RoboFile extends \Globalis\Robo\Tasks
         return $groups;
     }
 
-    public function testsInstall()
+    public function testsInstall($opts = ['env' => null])
     {
-        if (!file_exists($this->fileVars)) {
-            copy($this->testsConfigVars, $this->fileVars);
+        $env = $opts['env'];
+        if (!isset($env)) {
+            $env = $this->getConfig('ENVIRONEMENT');
         }
 
+        $testFileVars = str_replace('<env>', $env, $this->testsConfigVars);
+        if (file_exists($testFileVars)) {
+            if (file_exists($this->fileVars)) {
+                $vars        = include $this->fileVars;
+                $master_vars = include $testFileVars;
+                $config      = array_merge($vars, $master_vars);
+                if (!is_writable($this->fileVars)
+                    &&
+                    (!file_exists($this->fileVars) && is_writable(dirname($this->fileVars)) === false)
+                ) {
+                    throw new TaskException($this, "Cannot write in file '" . $this->fileVars  ."'");
+                }
+                file_put_contents($this->fileVars, '<?php return ' . var_export($config, true) . ';');
+                $this->io()->success(sprintf('File %s updated', $this->fileVars));
+            } else {
+                copy($testFileVars, $this->fileVars);
+                $this->io()->success(sprintf('File %s created', $this->fileVars));
+            }
+        } elseif (isset($opts['env'])) {
+            $this->io()->error(sprintf('File %s doesn\'t exist', $testFileVars));
+        }
+    
         $suiteFilesPattern = __DIR__ . '/tests/*.suite.yml.config';
         $suiteFiles = glob($suiteFilesPattern);
         if (empty($suiteFiles)) {
             return;
         }
         
-        $settings                   = $this->getConfig();
-        $settings['ADMIN_USERNAME'] = self::TEST_ADMIN_USERNAME;
-        $settings['ADMIN_PASSWORD'] = self::TEST_ADMIN_PASSWORD;
+        $settings = $this->getConfig();
+        if (!isset($settings['ADMIN_USERNAME'])) {
+            $settings['ADMIN_USERNAME'] = self::DEFAULT_TEST_ADMIN_USERNAME;
+        }
+        if (!isset($settings['ADMIN_PASSWORD'])) {
+            $settings['ADMIN_PASSWORD'] = self::DEFAULT_TEST_ADMIN_PASSWORD;
+        }
 
         foreach ($suiteFiles as $file) {
             $copy = substr($file, 0, -7);
