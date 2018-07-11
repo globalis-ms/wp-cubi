@@ -56,6 +56,14 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 
 3. Setup WordPress database: `./vendor/bin/robo wp:init`
 
+And according to your needs:
+
+- Ensure `./log/` and `./web/media/` are writable
+
+- Initialize your git repository
+
+- Replace `./web/logo.png` with your application logo (or edit [`00-wp-cubi-core-mu/20-wp-login.php`](https://github.com/globalis-ms/wp-cubi/blob/master/web/app/mu-modules/00-wp-cubi-core-mu/20-wp-login.php))
+
 
 ## Commands
 
@@ -101,8 +109,8 @@ wp-cubi handles WordPress plugin dependencies (including [wordpress.org](https:/
 
 If you want to use plugins that are not available through [wordpress.org](https://wordpress.org/) or a public Composer repository, you have two options:
 
-1. (easier) Manually add the plugin in your `./web/app/modules/` directory, then whitelist it in your `./gitignore` file
-2. (recommanded) Create a [private Composer repository](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) to host your plugin
+1. **Simplest:** Manually add the plugin in your `./web/app/modules/` directory, then whitelist it in your `./gitignore` file
+2. **Recommanded:** Create a [private Composer repository](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) to host your plugin
 
 
 ## Logs
@@ -118,4 +126,4 @@ For advanced configuration (adding channels or handlers), you can edit `./web/ap
 
 wp-cubi provides a basic deploy command `./vendor/bin/robo deploy <environment> <branch>` that builds the application and deploys it with `rsync`.
 
-You can build your own deploy method using [Capistrano](https://capistranorb.com/) or any other tool by editing [`RoboFile.php`](https://github.com/globalis-ms/wp-cubi/raw/master/RoboFile.php).
+You can build your own deploy method using [Capistrano](https://capistranorb.com/) or any other tool by editing [`./RoboFile.php`](https://github.com/globalis-ms/wp-cubi/raw/master/RoboFile.php).
