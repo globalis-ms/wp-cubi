@@ -50,7 +50,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 
 ## Installation
 
-1. Create a new project: `composer create-project globalis/wp-cubi your-project && cd your-project`
+1. Create a new project: `composer create-project --remove-vcs globalis/wp-cubi your-project && cd your-project`
 
 2. Run installation command and answer the questions: `./vendor/bin/robo install`
 
