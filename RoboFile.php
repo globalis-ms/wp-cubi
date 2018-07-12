@@ -413,7 +413,7 @@ class RoboFile extends \Globalis\Robo\Tasks
         $cmd = new Command($this->getConfig('GIT_PATH'));
         $cmd = $cmd->arg('archive')
             ->option('--format=tar')
-            ->option('--prefix=' . basename($workDir) . DIRECTORY_SEPARATOR)
+            ->option('--prefix=' . basename($workDir) . '/')
             ->arg($gitRevision)
             ->pipe('(cd')
             ->arg(dirname($workDir))
