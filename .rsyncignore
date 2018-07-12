@@ -5,6 +5,7 @@
 .gitkeep
 .jscsrc
 .jshintrc
+.travis.yml
 /.robo
 /.rsyncignore
 /config/htaccess

@@ -76,6 +76,16 @@ class RoboFile extends \Globalis\Robo\Tasks
             ->run();
     }
 
+    public function installPackagesRemote($dir)
+    {
+        $this->taskComposerInstall()
+            ->workingDir($dir)
+            ->optimizeAutoloader()
+            ->noDev()
+            ->preferDist()
+            ->run();
+    }
+
     public function build()
     {
         $this->buildHtaccess();
@@ -387,7 +397,7 @@ class RoboFile extends \Globalis\Robo\Tasks
      */
     public function deploy($env, $gitRevision)
     {
-        $this->io()->title('Deploy version ' . $releaseVersion . ' to ' . $env);
+        $this->io()->title('Deploy version ' . $gitRevision . ' to ' . $env);
         $this->io()->text('You must answer a few questions about the remote environment:');
 
         $this->envRemote = $env;
@@ -404,7 +414,7 @@ class RoboFile extends \Globalis\Robo\Tasks
         $cmd = $cmd->arg('archive')
             ->option('--format=tar')
             ->option('--prefix=' . basename($workDir) . DIRECTORY_SEPARATOR)
-            ->arg($releaseVersion)
+            ->arg($gitRevision)
             ->pipe('(cd')
             ->arg(dirname($workDir))
             ->getCommand();
