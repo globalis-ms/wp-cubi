@@ -441,7 +441,7 @@ class RoboFile extends \Globalis\Robo\Tasks
 
     private function deployWriteState($directory, $gitRevision)
     {
-        $gitCommit = exec('git rev-parse --short ' . $gitRevision);
+        $gitCommit = $this->gitCommit($gitRevision);
 
         switch ($this->gitRevisionType($gitRevision)) {
             case 'branch':
@@ -476,6 +476,17 @@ class RoboFile extends \Globalis\Robo\Tasks
         $this->taskWriteToFile($directory . '/time')
              ->line(date('Y-m-d H:i:s'))
              ->run();
+    }
+
+    private function gitCommit($gitRevision)
+    {
+        $cmd = new Command($this->getConfig('GIT_PATH'));
+        $cmd = $cmd->arg('rev-parse')
+            ->option('--short')
+            ->arg($gitRevision);
+
+        $process = $cmd->executeWithoutException();
+        return rtrim($process->getOutput());
     }
 
     private function gitRevisionType($gitRevision)
