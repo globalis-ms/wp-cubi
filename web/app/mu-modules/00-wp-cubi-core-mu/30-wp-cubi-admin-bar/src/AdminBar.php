@@ -8,9 +8,9 @@ class AdminBar
 
     const NODE            = 'website-env';
 
-    const FILE_GIT_COMMIT = ROOT_DIR . '/deploy/.git_commit';
-    const FILE_GIT_BRANCH = ROOT_DIR . '/deploy/.git_branch';
-    const FILE_GIT_TAG    = ROOT_DIR . '/deploy/.git_tag';
+    const FILE_GIT_COMMIT  = ROOT_DIR . '/deploy/git_commit';
+    const FILE_GIT_TAG     = ROOT_DIR . '/deploy/git_tag';
+    const FILE_DEPLOY_TIME = ROOT_DIR . '/deploy/time';
 
     private $git_commit;
     private $git_branch;
@@ -50,6 +50,11 @@ class AdminBar
             $this->addNode('website-env-box-server', 'Server', $this->getDataServer());
             $this->addNode('website-env-box-db', 'Database', $this->getDataDatabase());
             $this->addNode('website-env-box-git', 'Git', $this->getDataGit());
+
+            if ('development' !== WP_ENV && file_exists(self::FILE_DEPLOY_TIME)) {
+                $this->addNode('website-env-box-deploy', 'Deploy', $this->getDataDeploy());
+            }
+
             $this->addNode('website-env-box-wp', 'WordPress', $this->getDataWordpress());
             $this->addNode('website-env-box-php', 'PHP', $this->getDataPhp());
             $this->addNode('website-env-box-seo', 'SEO', $this->getDataSeo());
@@ -126,17 +131,33 @@ class AdminBar
 
     protected function getDataGit()
     {
-        return 'commit ' . self::formatCode($this->getGitCommit()) . ' on branch ' . self::formatCode($this->getGitBranch());
+        $gitCommit = $this->getGitCommit();
+
+        if ('development' === WP_ENV) {
+            return 'commit ' . self::formatCode($gitCommit) . ' on branch ' . self::formatCode($this->getGitBranch());
+        } elseif ($git_tag = $this->getGitTag()) {
+            return 'commit ' . self::formatCode($gitCommit) . ' on version ' . self::formatCode($git_tag);
+        } else {
+            return 'commit ' . self::formatCode($gitCommit);
+        }
+    }
+
+    protected function getDataDeploy($format = 'Y-m-d H:i:s')
+    {
+        $date     = substr(file_get_contents(self::FILE_DEPLOY_TIME), 0, strlen(date($format)));
+        $datetime = \DateTime::createFromFormat($format, $date, new \DateTimeZone('UTC'));
+        $datetime->setTimeZone(new \DateTimeZone(get_option('timezone_string')));
+        return self::formatCode($datetime->format($format));
     }
 
     protected function getDataWordpress()
     {
-        return 'version ' . get_bloginfo('version', 'display');
+        return 'version ' . self::formatCode(get_bloginfo('version', 'display'));
     }
 
     protected function getDataPhp()
     {
-        return 'version ' . phpversion();
+        return 'version ' . self::formatCode(phpversion());
     }
 
     protected function getDataSeo()
@@ -155,7 +176,7 @@ class AdminBar
         if (isset($envs[$env])) {
             return $envs[$env];
         } else {
-            return strtolower(substr($env, 0, 6)) . '.';
+            return strtolower(substr($env, 0, 7)) . '.';
         }
     }
 
@@ -193,49 +214,41 @@ class AdminBar
         }
     }
 
-    protected function getGitCommit($prefix = '#')
+    protected function getGitCommit($default = 'unknown')
     {
         if (!isset($this->git_commit)) {
-            if ('development' !== WP_ENV && file_exists(self::FILE_GIT_COMMIT)) {
-                $commit = file_get_contents(self::FILE_GIT_COMMIT);
-            } else {
-                $commit = exec('git rev-parse --short HEAD');
-            }
+            $this->git_commit = false;
 
-            if(empty($commit)) {
-                $commit = 'unknown';
+            if ('development' === WP_ENV) {
+                $this->git_commit = exec('git rev-parse --short HEAD');
+            } elseif (file_exists(self::FILE_GIT_COMMIT)) {
+                $this->git_commit = file_get_contents(self::FILE_GIT_COMMIT);
             }
-
-            $this->git_commit = $prefix . $commit;
         }
 
-        return $this->git_commit;
+        return empty($this->git_commit) ? $default : $this->git_commit;
     }
 
-    protected function getGitBranch()
+    protected function getGitBranch($default = 'unknown')
     {
         if (!isset($this->git_branch)) {
-            if ('development' !== WP_ENV && file_exists(self::FILE_GIT_BRANCH)) {
-                $this->git_branch = file_get_contents(self::FILE_GIT_BRANCH);
-            } else {
-                $this->git_branch = exec('git rev-parse --abbrev-ref HEAD');
-            }
+            $this->git_branch = false;
 
-            if(empty($this->git_branch)) {
-                $this->git_branch = 'unknown';
+            if ('development' === WP_ENV) {
+                $this->git_branch = exec('git rev-parse --abbrev-ref HEAD');
             }
         }
 
-        return $this->git_branch;
+        return empty($this->git_branch) ? $default : $this->git_branch;
     }
 
     protected function getGitTag()
     {
         if (!isset($this->git_tag)) {
+            $this->git_tag = false;
+
             if ('development' !== WP_ENV && file_exists(self::FILE_GIT_TAG)) {
                 $this->git_tag = file_get_contents(self::FILE_GIT_TAG);
-            } else {
-                $this->git_tag = false;
             }
         }
 

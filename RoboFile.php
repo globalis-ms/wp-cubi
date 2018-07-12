@@ -382,10 +382,10 @@ class RoboFile extends \Globalis\Robo\Tasks
     /**
      * Deploy Application
      *
-     * @param  string $env Environment
-     * @param  string $releaseVersion Version number
+     * @param  string $env         Target environment
+     * @param  string $gitRevision The git revision to deploy
      */
-    public function deploy($env, $releaseVersion)
+    public function deploy($env, $gitRevision)
     {
         $this->io()->title('Deploy version ' . $releaseVersion . ' to ' . $env);
         $this->io()->text('You must answer a few questions about the remote environment:');
@@ -398,9 +398,6 @@ class RoboFile extends \Globalis\Robo\Tasks
 
         $collection = $this->collectionBuilder();
         $workDir    = self::trailingslashit($collection->tmpDir());
-
-        // Current commit
-        $gitCommit = exec('git rev-parse --short HEAD'); //'unknown';
 
         // Create archive files
         $cmd = new Command($this->getConfig('GIT_PATH'));
@@ -417,15 +414,9 @@ class RoboFile extends \Globalis\Robo\Tasks
         $this->taskExec($cmd)
             ->run();
 
-        $this->taskWriteToFile($workDir . '.gitrevision')
-             ->line($gitCommit)
-             ->run();
-
-        $this->taskWriteToFile($workDir . '.gitbranch')
-             ->line($releaseVersion)
-             ->run();
-
         $this->buildRemote($workDir);
+
+        $this->deployWriteState($workDir . 'deploy', $gitRevision);
 
         // 1. Dry Run
         $this->rsync($workDir, $config['REMOTE_USERNAME'], $config['REMOTE_HOSTNAME'], $config['REMOTE_PORT'], $config['REMOTE_PATH'], true);
@@ -436,6 +427,69 @@ class RoboFile extends \Globalis\Robo\Tasks
         }
 
         $this->taskDeleteDir($workDir)->run();
+    }
+
+    private function deployWriteState($directory, $gitRevision)
+    {
+        $gitCommit = exec('git rev-parse --short ' . $gitRevision);
+
+        switch ($this->gitRevisionType($gitRevision)) {
+            case 'branch':
+                if (false !== strpos($gitRevision, 'release_')) {
+                    $gitTag = str_replace('release_', '', $gitRevision);
+                } elseif (false !== strpos($gitRevision, 'hotfix_')) {
+                    $gitTag = str_replace('hotfix_', '', $gitRevision);
+                } else {
+                    $gitTag = false;
+                }
+                break;
+
+            case 'tag':
+                $gitTag = $gitRevision;
+                break;
+
+            default:
+                $gitTag = false;
+                break;
+        }
+
+        $this->taskWriteToFile($directory . '/git_commit')
+             ->line($gitCommit)
+             ->run();
+
+        if (false !== $gitTag) {
+            $this->taskWriteToFile($directory . '/git_tag')
+                 ->line($gitTag)
+                 ->run();
+        }
+
+        $this->taskWriteToFile($directory . '/time')
+             ->line(date('Y-m-d H:i:s'))
+             ->run();
+    }
+
+    private function gitRevisionType($gitRevision)
+    {
+        $types = [
+            'refs/heads/' => 'branch',
+            'refs/tags/'  => 'tag'
+        ];
+
+        foreach ($types as $ref => $type) {
+            $cmd = new Command($this->getConfig('GIT_PATH'));
+            $cmd = $cmd->arg('show-ref')
+                ->option('--verify')
+                ->option('--quiet')
+                ->arg($ref . $gitRevision);
+
+            $process = $cmd->executeWithoutException();
+
+            if ($process->isSuccessful()) {
+                return $type;
+            }
+        }
+
+        return 'commit';
     }
 
     private function rsync($workDir, $remoteUser, $remoteHost, $remotePort, $remotePath, $dryRun = false)
