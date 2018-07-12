@@ -66,7 +66,6 @@ class RoboFile extends \Globalis\Robo\Tasks
     private function gitInit()
     {
         if (!is_dir(__DIR__ . '/.git/') && $this->io()->confirm('Initialize a git repository ?', true)) {
-
             $this->taskGitStack($this->getConfig('GIT_PATH'))
              ->stopOnFail()
              ->exec('init')
