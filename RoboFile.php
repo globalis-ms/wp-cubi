@@ -60,6 +60,26 @@ class RoboFile extends \Globalis\Robo\Tasks
         $this->createConfigLocal();
         $this->wpGenerateSaltKeys();
         $this->build();
+        $this->gitInit();
+    }
+
+    private function gitInit()
+    {
+        if (!is_dir(__DIR__ . '/.git/') && $this->io()->confirm('Initialize a git repository ?', true)) {
+
+            $this->taskGitStack($this->getConfig('GIT_PATH'))
+             ->stopOnFail()
+             ->exec('init')
+             ->run();
+
+            $commitMessage = $this->io()->ask('Initial commit message', 'Initial commit');
+
+            $this->taskGitStack()
+             ->stopOnFail()
+             ->add('-A')
+             ->commit($commitMessage)
+             ->run();
+        }
     }
 
     private function createConfigLocal()
@@ -431,7 +451,7 @@ class RoboFile extends \Globalis\Robo\Tasks
         // 1. Dry Run
         $this->rsync($workDir, $config['REMOTE_USERNAME'], $config['REMOTE_HOSTNAME'], $config['REMOTE_PORT'], $config['REMOTE_PATH'], true);
 
-        if ($this->io()->confirm('Do you want to run', false)) {
+        if ($this->io()->confirm('Do you want to run ?', false)) {
             // 2. Run
             $this->rsync($workDir, $config['REMOTE_USERNAME'], $config['REMOTE_HOSTNAME'], $config['REMOTE_PORT'], $config['REMOTE_PATH'], false);
         }
@@ -559,7 +579,7 @@ class RoboFile extends \Globalis\Robo\Tasks
         // 1. Dry Run
         $this->rsyncMedia($config['REMOTE_HOSTNAME'], $config['REMOTE_USERNAME'], $remotePath, null, null, $localPath, $delete, true);
 
-        if ($this->io()->confirm('Do you want to run', false)) {
+        if ($this->io()->confirm('Do you want to run ?', false)) {
             // 2. Run
             $this->rsyncMedia($config['REMOTE_HOSTNAME'], $config['REMOTE_USERNAME'], $remotePath, null, null, $localPath, $delete, false);
         }
@@ -576,7 +596,7 @@ class RoboFile extends \Globalis\Robo\Tasks
         // 1. Dry Run
         $this->rsyncMedia(null, null, $localPath, $config['REMOTE_HOSTNAME'], $config['REMOTE_USERNAME'], $remotePath, $delete, true);
 
-        if ($this->io()->confirm('Do you want to run', false)) {
+        if ($this->io()->confirm('Do you want to run ?', false)) {
             // 2. Run
             $this->rsyncMedia(null, null, $localPath, $config['REMOTE_HOSTNAME'], $config['REMOTE_USERNAME'], $remotePath, $delete, false);
         }
