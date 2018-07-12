@@ -577,11 +577,11 @@ class RoboFile extends \Globalis\Robo\Tasks
         }
 
         // 1. Dry Run
-        $this->rsyncMedia($config['REMOTE_HOSTNAME'], $config['REMOTE_USERNAME'], $remotePath, null, null, $localPath, $delete, true);
+        $this->rsyncMedia($config['REMOTE_HOSTNAME'], $config['REMOTE_USERNAME'], $remotePath, null, null, $localPath, $config['REMOTE_PORT'], $delete, true);
 
         if ($this->io()->confirm('Do you want to run ?', false)) {
             // 2. Run
-            $this->rsyncMedia($config['REMOTE_HOSTNAME'], $config['REMOTE_USERNAME'], $remotePath, null, null, $localPath, $delete, false);
+            $this->rsyncMedia($config['REMOTE_HOSTNAME'], $config['REMOTE_USERNAME'], $remotePath, null, null, $localPath, $config['REMOTE_PORT'], $delete, false);
         }
     }
 
@@ -594,11 +594,11 @@ class RoboFile extends \Globalis\Robo\Tasks
         $delete          = true === $opts['delete'];
 
         // 1. Dry Run
-        $this->rsyncMedia(null, null, $localPath, $config['REMOTE_HOSTNAME'], $config['REMOTE_USERNAME'], $remotePath, $delete, true);
+        $this->rsyncMedia(null, null, $localPath, $config['REMOTE_HOSTNAME'], $config['REMOTE_USERNAME'], $remotePath, $config['REMOTE_PORT'], $delete, true);
 
         if ($this->io()->confirm('Do you want to run ?', false)) {
             // 2. Run
-            $this->rsyncMedia(null, null, $localPath, $config['REMOTE_HOSTNAME'], $config['REMOTE_USERNAME'], $remotePath, $delete, false);
+            $this->rsyncMedia(null, null, $localPath, $config['REMOTE_HOSTNAME'], $config['REMOTE_USERNAME'], $remotePath, $config['REMOTE_PORT'], $delete, false);
         }
     }
 
@@ -619,8 +619,6 @@ class RoboFile extends \Globalis\Robo\Tasks
             ->itemizeChanges()
             ->progress()
             ->exclude('.gitkeep')
-            ->option('perms')
-            ->option('chmod', 'Dugo=rwx,Fugo=rwx')
             ->stats();
 
         if (true === $delete) {
