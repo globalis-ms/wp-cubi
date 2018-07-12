@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "079c8611eabf62b46b0c0b4fdde5f955",
+    "content-hash": "e464293d60e26432880febdc163a27e9",
     "packages": [
         {
             "name": "composer/installers",
@@ -167,17 +167,20 @@
         },
         {
             "name": "globalis/wp-cubi-helpers",
-            "version": "0.2.2",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-helpers.git",
-                "reference": "d9f0819626fa1ae4dd5e91ff96f17573f00778d9"
+                "reference": "159d084d2b1a24aa7290783ef46fa62cc138d644"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-helpers/zipball/d9f0819626fa1ae4dd5e91ff96f17573f00778d9",
-                "reference": "d9f0819626fa1ae4dd5e91ff96f17573f00778d9",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-helpers/zipball/159d084d2b1a24aa7290783ef46fa62cc138d644",
+                "reference": "159d084d2b1a24aa7290783ef46fa62cc138d644",
                 "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
             },
             "require-dev": {
                 "squizlabs/php_codesniffer": "^2.5.1"
@@ -186,6 +189,7 @@
             "autoload": {
                 "files": [
                     "src/functions-cache.php",
+                    "src/functions-debug.php",
                     "src/functions-filters.php",
                     "src/functions-mails.php",
                     "src/functions-permalinks.php",
@@ -220,7 +224,7 @@
                 "wp",
                 "wp-cubi"
             ],
-            "time": "2018-06-01T10:10:19+00:00"
+            "time": "2018-07-12T09:08:23+00:00"
         },
         {
             "name": "globalis/wp-cubi-imagemin",
