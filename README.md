@@ -96,7 +96,7 @@ And according to your needs:
 * `./vendor/bin/robo hotfix:finish [--semversion <version>]`
 * `./vendor/bin/robo release:start [--semversion <version>]`
 * `./vendor/bin/robo release:finish [--semversion <version>]`
-* `./vendor/bin/robo deploy <environment> <branch>`
+* `./vendor/bin/robo deploy <environment> <version>`
 * `./vendor/bin/robo media:dump <environment> [--delete]`
 * `./vendor/bin/robo media:push <environment> [--delete]`
 
