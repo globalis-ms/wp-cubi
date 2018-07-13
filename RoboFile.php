@@ -153,9 +153,38 @@ class RoboFile extends \Globalis\Robo\Tasks
         $this->wpClean();
         $this->wpActivatePlugins();
 
+        $this->io()->success('Installation is complete.');
+
         $this->gitInit();
 
-        echo 'Access new site admin at ' . $url . '/wp-admin' . PHP_EOL;
+        $this->io()->success('Access new site admin at ' . $url . '/wp-admin');
+    }
+
+    private function gitInit()
+    {
+        if (!is_dir(__DIR__ . '/.git/')) {
+
+            if($this->io()->confirm('Initialize a git repository ?', true)) {
+
+                $this->taskGitStack($this->getConfig('GIT_PATH'))
+                 ->stopOnFail()
+                 ->exec('init')
+                 ->run();
+
+                 $this->io()->newLine();
+
+                $commitMessage = $this->io()->ask('Initial commit message', 'Initial commit');
+
+                $this->taskGitStack()
+                 ->stopOnFail()
+                 ->add('-A')
+                 ->commit($commitMessage)
+                 ->run();
+
+            }
+
+            $this->io()->newLine();
+        }
     }
 
     private function wpInitConfig($startPlaceholder = '<##', $endPlaceholder = '##>')
@@ -282,24 +311,6 @@ class RoboFile extends \Globalis\Robo\Tasks
             ->arg('administrator')
             ->arg('view_query_monitor')
             ->execute();
-    }
-
-    private function gitInit()
-    {
-        if (!is_dir(__DIR__ . '/.git/') && $this->io()->confirm('Initialize a git repository ?', true)) {
-            $this->taskGitStack($this->getConfig('GIT_PATH'))
-             ->stopOnFail()
-             ->exec('init')
-             ->run();
-
-            $commitMessage = $this->io()->ask('Initial commit message', 'Initial commit');
-
-            $this->taskGitStack()
-             ->stopOnFail()
-             ->add('-A')
-             ->commit($commitMessage)
-             ->run();
-        }
     }
 
     /**
