@@ -163,9 +163,7 @@ class RoboFile extends \Globalis\Robo\Tasks
     private function gitInit()
     {
         if (!is_dir(__DIR__ . '/.git/')) {
-
-            if($this->io()->confirm('Initialize a git repository ?', true)) {
-
+            if ($this->io()->confirm('Initialize a git repository ?', true)) {
                 $this->taskGitStack($this->getConfig('GIT_PATH'))
                  ->stopOnFail()
                  ->exec('init')
@@ -180,7 +178,6 @@ class RoboFile extends \Globalis\Robo\Tasks
                  ->add('-A')
                  ->commit($commitMessage)
                  ->run();
-
             }
 
             $this->io()->newLine();
