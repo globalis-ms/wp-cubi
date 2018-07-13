@@ -56,9 +56,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 
 3. Setup WordPress database: `./vendor/bin/robo wp:init`
 
-And according to your needs:
-
-- Ensure `./log/` and `./web/media/` are writable
+And optionally:
 
 - Replace `./web/logo.png` with your application logo (or edit [`00-wp-cubi-core-mu/20-wp-login.php`](https://github.com/globalis-ms/wp-cubi/blob/master/web/app/mu-modules/00-wp-cubi-core-mu/20-wp-login.php))
 

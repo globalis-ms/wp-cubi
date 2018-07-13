@@ -55,5 +55,10 @@
             "web/app/themes/{$name}/": ["type:wordpress-theme"]
         },
         "wordpress-install-dir": "web/wp"
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "chmod 777 log && chmod 777 web/media"
+        ]
     }
 }
