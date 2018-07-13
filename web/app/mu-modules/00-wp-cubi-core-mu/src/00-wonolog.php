@@ -1,18 +1,5 @@
 <?php
 
-/**
- * Plugin Name:         wp-cubi-wonolog
- * Plugin URI:          https://github.com/globalis-ms/wp-cubi
- * Description:         Wonolog bootstrap plugin for wp-cubi
- * Author:              Pierre Dargham, Globalis Media Systems
- * Author URI:          https://www.globalis-ms.com/
- * License:             GPL2
- *
- * Version:             0.1.0
- * Requires at least:   4.7.0
- * Tested up to:        4.8.1
- */
-
 namespace Globalis\WP\Cubi;
 
 use Inpsyde\Wonolog;

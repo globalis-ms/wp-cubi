@@ -28,33 +28,25 @@
     ],
     "require": {
         "php": ">=7.0",
-        "johnpbloch/wordpress-core": "4.9.6",
-        "globalis/wp-cubi-helpers": "^0.2.1",
+        "composer/installers": "^1.5.0",
+        "johnpbloch/wordpress-core-installer": "^1.0",
+        "johnpbloch/wordpress-core": "4.9.7",
+        "globalis/wp-cli-bin" : "^1.5.1",
+        "globalis/wp-cubi-helpers": "^0.3.0",
         "globalis/wp-cubi-imagemin": "^1.0.3",
-        "globalis/wpg-wp-cli-phar" : "^1.5.1",
-        "globalis/wpg-local-config" : "^0.1.1",
-        "globalis/wpg-uploads-path" : "^0.3.1",
-        "globalis/wpg-disallow-indexing" : "^0.5.2",
-        "globalis/wpg-mail-trapping" : "^1.0.1",
-        "globalis/wpg-environment-info" : "^0.3.7",
-        "globalis/wpg-security" : "^0.2.1",
+        "roots/soil": "^3.7.3",
         "roots/wp-password-bcrypt": "^1.0.0",
+        "soberwp/intervention": "^1.2.0",
+        "inpsyde/wonolog": "^1.0.2",
         "wpackagist-plugin/query-monitor": "^3.0.1",
         "wpackagist-plugin/wp-crontrol": "^1.6.2",
-        "soberwp/intervention": "^1.2.0",
-        "inpsyde/wonolog": "^1.0.2"
+        "wpackagist-plugin/user-switching": "^1.3.1",
+        "wpackagist-plugin/autodescription": "^3.0.6"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.5.1",
-        "composer/installers": "^1.5.0",
-        "johnpbloch/wordpress-core-installer": "^1.0",
         "globalis/robo-task": "^1.0.4",
         "rmccue/requests" : "~1.6"
-    },
-    "suggest": {
-        "roots/soil": "^3.7.3",
-        "wpackagist-plugin/user-switching": "^1.3.1",
-        "wpackagist-plugin/autodescription": "^3.0.6"
     },
     "extra": {
         "installer-paths": {
@@ -63,5 +55,10 @@
             "web/app/themes/{$name}/": ["type:wordpress-theme"]
         },
         "wordpress-install-dir": "web/wp"
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "chmod 777 log && chmod 777 web/media"
+        ]
     }
 }

@@ -32,6 +32,8 @@
 
 # WordPress MU-Plugins
 /web/app/mu-modules/*/
+!/web/app/mu-modules/00-wp-cubi-core-mu/
+!/web/app/mu-modules/10-wp-cubi-admin-bar/
 
 # WordPress Media / Uploads
 /web/media/*
