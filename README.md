@@ -23,7 +23,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * Environment-specific configuration
 * Automated `no-index` and mail-trapper on development / staging environments
 * Command-line administration with [wp-cli](http://wp-cli.org/)
-* Monitoring tools ([query-monitor](https://fr.wordpress.org/plugins/query-monitor/), [wp-crontrol](https://fr.wordpress.org/plugins/wp-crontrol/), [user-switching](https://fr.wordpress.org/plugins/user-switching/), [wp-cubi-admin-bar](https://github.com/globalis-ms/wp-cubi/raw/master/web/app/mu-modules/00-wp-cubi-core-mu/30-wp-cubi-admin-bar))
+* Monitoring tools ([query-monitor](https://fr.wordpress.org/plugins/query-monitor/), [wp-crontrol](https://fr.wordpress.org/plugins/wp-crontrol/), [user-switching](https://fr.wordpress.org/plugins/user-switching/), [wp-cubi-admin-bar](https://github.com/globalis-ms/wp-cubi/tree/master/web/app/mu-modules/10-wp-cubi-admin-bar))
 * Cleaner wp-admin dashboard with [soberwp/intervention](https://github.com/soberwp/intervention)
 * Gitflow integration with Robo commands
 * Optimized `.htaccess` generation
@@ -58,7 +58,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 
 And optionally:
 
-- Replace `./web/logo.png` with your application logo (or edit [`00-wp-cubi-core-mu/20-wp-login.php`](https://github.com/globalis-ms/wp-cubi/blob/master/web/app/mu-modules/00-wp-cubi-core-mu/20-wp-login.php))
+- Replace `./web/logo.png` with your application logo (or edit [`00-wp-cubi-core-mu/20-wp-login.php`](https://github.com/globalis-ms/wp-cubi/blob/master/web/app/mu-modules/00-wp-cubi-core-mu/src/20-wp-login.php))
 
 
 ## Commands
@@ -119,4 +119,4 @@ For advanced configuration (adding channels or handlers), you can edit `./web/ap
 
 wp-cubi provides a basic deploy command `./vendor/bin/robo deploy <environment> <branch>` that builds the application and deploys it with `rsync`.
 
-You can build your own deploy method using [Capistrano](https://capistranorb.com/) or any other tool by editing [`./RoboFile.php`](https://github.com/globalis-ms/wp-cubi/raw/master/RoboFile.php).
+You can build your own deploy method using [Capistrano](https://capistranorb.com/) or any other tool by editing [`./RoboFile.php`](https://github.com/globalis-ms/wp-cubi/blob/master/RoboFile.php).

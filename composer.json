@@ -58,7 +58,9 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "chmod 777 log && chmod 777 web/media"
+            "chmod 777 log",
+            "chmod 777 web/media",
+            "rm -rf .resources LICENSE.md README.md"
         ]
     }
 }
