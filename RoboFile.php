@@ -60,25 +60,6 @@ class RoboFile extends \Globalis\Robo\Tasks
         $this->createConfigLocal();
         $this->wpGenerateSaltKeys();
         $this->build();
-        $this->gitInit();
-    }
-
-    private function gitInit()
-    {
-        if (!is_dir(__DIR__ . '/.git/') && $this->io()->confirm('Initialize a git repository ?', true)) {
-            $this->taskGitStack($this->getConfig('GIT_PATH'))
-             ->stopOnFail()
-             ->exec('init')
-             ->run();
-
-            $commitMessage = $this->io()->ask('Initial commit message', 'Initial commit');
-
-            $this->taskGitStack()
-             ->stopOnFail()
-             ->add('-A')
-             ->commit($commitMessage)
-             ->run();
-        }
     }
 
     private function createConfigLocal()
@@ -171,6 +152,8 @@ class RoboFile extends \Globalis\Robo\Tasks
         $this->wpUpdateTimezone();
         $this->wpClean();
         $this->wpActivatePlugins();
+
+        $this->gitInit();
 
         echo 'Access new site admin at ' . $url . '/wp-admin' . PHP_EOL;
     }
@@ -299,6 +282,24 @@ class RoboFile extends \Globalis\Robo\Tasks
             ->arg('administrator')
             ->arg('view_query_monitor')
             ->execute();
+    }
+
+    private function gitInit()
+    {
+        if (!is_dir(__DIR__ . '/.git/') && $this->io()->confirm('Initialize a git repository ?', true)) {
+            $this->taskGitStack($this->getConfig('GIT_PATH'))
+             ->stopOnFail()
+             ->exec('init')
+             ->run();
+
+            $commitMessage = $this->io()->ask('Initial commit message', 'Initial commit');
+
+            $this->taskGitStack()
+             ->stopOnFail()
+             ->add('-A')
+             ->commit($commitMessage)
+             ->run();
+        }
     }
 
     /**
