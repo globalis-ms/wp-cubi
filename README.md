@@ -110,9 +110,9 @@ If you want to use plugins that are not available through [wordpress.org](https:
 
 wp-cubi comes with [inpsyde/wonolog](https://github.com/inpsyde/Wonolog), which allows to log anything with a single line of code, and automatically writes logs for multiple events like PHP errors, DB errors, HTTP API errors, `wp_mail()` errors, and 404 errors.
 
-Basic configuration is possible in wp-cubi `./config/application.php` and `./config/environments/` files, where you can change the maximum number of log files and the log level.
+Basic configuration is possible in wp-cubi [`./config/application.php`](https://github.com/globalis-ms/wp-cubi/blob/master/config/application.php) and [`./config/environments/`](https://github.com/globalis-ms/wp-cubi/tree/master/config/environments) files, where you can change the maximum number of log files and the log level.
 
-For advanced configuration (adding channels or handlers), you can edit `./web/app/mu-modules/00-wp-cubi-wonolog.php` (see [inpsyde/wonolog documentation](https://inpsyde.github.io/Wonolog/) and [monolog documentation](https://github.com/Seldaek/monolog/tree/master/doc))
+For advanced configuration (adding channels or handlers), you can edit [`./web/app/mu-modules/00-wp-cubi-core-mu/src/00-wonolog.php`](https://github.com/globalis-ms/wp-cubi/blob/master/web/app/mu-modules/00-wp-cubi-core-mu/src/00-wonolog.php) (see [inpsyde/wonolog documentation](https://inpsyde.github.io/Wonolog/) and [monolog documentation](https://github.com/Seldaek/monolog/tree/master/doc))
 
 
 ## Deploys
