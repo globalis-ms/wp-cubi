@@ -138,25 +138,6 @@ class RoboFile extends \Globalis\Robo\Tasks
         ]);
     }
 
-    public function clean()
-    {
-        $this->cleanGit();
-        $this->cleanFiles();
-    }
-
-    public function cleanGit()
-    {
-        $this->taskGitStack($this->getConfig('GIT_PATH'))
-         ->stopOnFail()
-         ->exec('fetch --all --prune')
-         ->run();
-    }
-
-    public function cleanFiles()
-    {
-        $this->taskCleanWaste(__DIR__)->run();
-    }
-
     /**
      * @todo use http://robo.li/tasks/File/#write ?
      */

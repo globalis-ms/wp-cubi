@@ -81,9 +81,6 @@ And according to your needs:
 * `./vendor/bin/robo install:packages`
 * `./vendor/bin/robo build`
 * `./vendor/bin/robo build:htaccess`
-* `./vendor/bin/robo clean`
-* `./vendor/bin/robo clean:git`
-* `./vendor/bin/robo clean:files`
 * `./vendor/bin/robo wp:generate-salt-keys`
 * `./vendor/bin/robo wp:init`
 * `./vendor/bin/robo wp:db-create`
