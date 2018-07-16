@@ -38,7 +38,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * Separated web root folder
 * `.htaccess` security directives
 * Deactivation of REST API and `xmlrpc.php` unless explicitly activated
-* Better password encryption with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt)
+* Better password encryption with [roots/wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt)
 
 
 ## Requirements
