@@ -23,3 +23,8 @@ add_filter('pre_option_use_smilies', '__return_zero', 10, 1);
 if (!empty($_SERVER['HTTP_USER_AGENT'])) {
     add_filter('pre_site_transient_browser_' . md5($_SERVER['HTTP_USER_AGENT']), '__return_true');
 }
+
+/*
+ * Disable “Try Gutenberg” dashboard callout
+ */
+remove_action('try_gutenberg_panel', 'wp_try_gutenberg_panel');
