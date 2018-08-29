@@ -83,7 +83,7 @@ And optionally:
 * `./vendor/bin/robo wp:init`
 * `./vendor/bin/robo wp:db-create`
 * `./vendor/bin/robo wp:core:install`
-* `./vendor/bin/robo wp:update-language`
+* `./vendor/bin/robo wp:update-language <language> [--activate]`
 * `./vendor/bin/robo wp:update-timezone`
 * `./vendor/bin/robo feature:start <feature-name>`
 * `./vendor/bin/robo feature:finish <feature-name>`
