@@ -148,7 +148,7 @@ class RoboFile extends \Globalis\Robo\Tasks
         $this->wpInitConfig();
         $this->wpDbCreate();
         $this->wpCoreInstall($url);
-        $this->wpUpdateLanguages();
+        $this->wpUpdateLanguages(null, ['activate' => true]);
         $this->wpUpdateTimezone();
         $this->wpClean();
         $this->wpActivatePlugins();
@@ -229,31 +229,124 @@ class RoboFile extends \Globalis\Robo\Tasks
             ->execute();
     }
 
-    public function wpUpdateLanguages()
+    public function wpUpdateLanguages($language = null, $options = ['activate' => false])
     {
-        $lang = $this->io()->ask('WordPress language', self::DEFAULT_WP_LANG);
+        if (!isset($language)) {
+            $language = self::DEFAULT_WP_LANG;
 
-        if (self::DEFAULT_WP_LANG !== $lang) {
             $cmd = new Command($this->fileBinWPCli);
-            $cmd->arg('language')
-                ->arg('core')
-                ->arg('install')
-                ->arg($lang)
-                ->execute();
+            $cmd->arg('option')
+                ->arg('get')
+                ->arg('WPLANG');
 
+            $process = $cmd->executeWithoutException();
+
+            if ($process->isSuccessful()) {
+                $language = rtrim($process->getOutput());
+            }
+        }
+
+        $this->wpUpdateLanguagesCore($language, $options['activate']);
+        $this->wpUpdateLanguagesPlugins($language);
+        $this->wpUpdateLanguagesThemes($language);
+    }
+
+    protected function wpUpdateLanguagesCore($language, $activate)
+    {
+        $cmd = new Command($this->fileBinWPCli);
+        $cmd->arg('language')
+            ->arg('core')
+            ->arg('install')
+            ->arg($language)
+            ->execute();
+
+        if ($activate) {
             $cmd = new Command($this->fileBinWPCli);
             $cmd->arg('language')
                 ->arg('core')
                 ->arg('activate')
-                ->arg($lang)
-                ->execute();
-
-            $cmd = new Command($this->fileBinWPCli);
-            $cmd->arg('language')
-                ->arg('core')
-                ->arg('update')
+                ->arg($language)
                 ->execute();
         }
+
+        $cmd = new Command($this->fileBinWPCli);
+        $cmd->arg('language')
+            ->arg('core')
+            ->arg('update')
+            ->execute();
+    }
+
+    protected function wpUpdateLanguagesPlugins($language)
+    {
+        $cmd = new Command($this->fileBinWPCli);
+        $cmd->arg('plugin')
+            ->arg('list')
+            ->option('field', 'name', '=')
+            ->option('status', 'active', '=');
+
+        $process    = $cmd->execute();
+        $pluginList = rtrim($process->getOutput());
+        $plugins    = explode(PHP_EOL, $pluginList);
+
+        $cmd = new Command($this->fileBinWPCli);
+        $cmd->arg('plugin')
+            ->arg('list')
+            ->option('field', 'name', '=')
+            ->option('status', 'inactive', '=');
+
+        $process    = $cmd->execute();
+        $pluginList = rtrim($process->getOutput());
+        $plugins    = array_merge($plugins, explode(PHP_EOL, $pluginList));
+
+        foreach ($plugins as $plugin) {
+            if (!empty($plugin)) {
+                $cmd = new Command($this->fileBinWPCli);
+                $cmd->arg('language')
+                    ->arg('plugin')
+                    ->arg('install')
+                    ->arg($plugin)
+                    ->arg($language)
+                    ->executeWithoutException();
+            }
+        }
+
+        $cmd = new Command($this->fileBinWPCli);
+        $cmd->arg('language')
+            ->arg('plugin')
+            ->arg('update')
+            ->option('all')
+            ->execute();
+    }
+
+    protected function wpUpdateLanguagesThemes($language)
+    {
+        $cmd = new Command($this->fileBinWPCli);
+        $cmd->arg('theme')
+            ->arg('list')
+            ->option('field', 'name', '=');
+
+        $process   = $cmd->execute();
+        $themeList = rtrim($process->getOutput());
+        $themes    = explode(PHP_EOL, $themeList);
+
+        foreach ($themes as $theme) {
+            if (!empty($theme)) {
+                $cmd = new Command($this->fileBinWPCli);
+                $cmd->arg('language')
+                    ->arg('theme')
+                    ->arg('install')
+                    ->arg($theme)
+                    ->arg($language)
+                    ->executeWithoutException();
+            }
+        }
+
+        $cmd = new Command($this->fileBinWPCli);
+        $cmd->arg('language')
+            ->arg('theme')
+            ->arg('update')
+            ->option('all')
+            ->execute();
     }
 
     public function wpUpdateTimezone()

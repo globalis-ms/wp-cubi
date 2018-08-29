@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "60e21efeddeb45d5fbaee6c1b1a0a74c",
+    "content-hash": "b7937e3178b2ec7dbc7ef3fdd745b0b1",
     "packages": [
         {
             "name": "composer/installers",
@@ -128,16 +128,16 @@
         },
         {
             "name": "globalis/wp-cli-bin",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cli-bin.git",
-                "reference": "dade3eed54ae8c078baef5bc1f9b10d81d9b98e0"
+                "reference": "9ebb1cf7a0f86efbcba8f4a3cc13265d320b81e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cli-bin/zipball/dade3eed54ae8c078baef5bc1f9b10d81d9b98e0",
-                "reference": "dade3eed54ae8c078baef5bc1f9b10d81d9b98e0",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cli-bin/zipball/9ebb1cf7a0f86efbcba8f4a3cc13265d320b81e2",
+                "reference": "9ebb1cf7a0f86efbcba8f4a3cc13265d320b81e2",
                 "shasum": ""
             },
             "bin": [
@@ -163,7 +163,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2018-08-21T12:13:32+00:00"
+            "time": "2018-08-28T07:31:05+00:00"
         },
         {
             "name": "globalis/wp-cubi-helpers",
