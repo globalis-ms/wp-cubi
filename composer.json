@@ -44,9 +44,8 @@
         "wpackagist-plugin/autodescription": "^3.0.6"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^2.5.1",
-        "globalis/robo-task": "^1.0.4",
-        "rmccue/requests" : "~1.6"
+        "globalis/wp-cubi-robo" : "^0.1.0",
+        "squizlabs/php_codesniffer": "^2.5.1"
     },
     "extra": {
         "installer-paths": {

@@ -51,14 +51,13 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 ## Installation
 
 1. Create a new project: `composer create-project --remove-vcs globalis/wp-cubi your-project && cd your-project`
+2. Run installation command and answer the questions: `./vendor/bin/robo install --setup-wordpress`
 
-2. Run installation command and answer the questions: `./vendor/bin/robo install`
 
-3. Setup WordPress database: `./vendor/bin/robo wp:init`
+## Configuration
 
-And optionally:
-
-- Replace `./web/logo.png` with your application logo (or edit [`00-wp-cubi-core-mu/20-wp-login.php`](https://github.com/globalis-ms/wp-cubi/blob/master/web/app/mu-modules/00-wp-cubi-core-mu/src/20-wp-login.php))
+* Login page logo: Replace `./web/logo.png` with your application logo (or edit [`00-wp-cubi-core-mu/20-wp-login.php`](https://github.com/globalis-ms/wp-cubi/blob/master/web/app/mu-modules/00-wp-cubi-core-mu/src/20-wp-login.php))
+* Image minification: Configure [globalis/wp-cubi-imagemin](https://github.com/globalis-ms/wp-cubi-imagemin) to enable a meaningfull level of uploads / image minification
 
 
 ## Commands
@@ -74,16 +73,14 @@ And optionally:
 
 ### Robo
 
-* `./vendor/bin/robo config`
-* `./vendor/bin/robo install`
-* `./vendor/bin/robo install:packages`
+* `./vendor/bin/robo install [--setup-wordpress]`
+* `./vendor/bin/robo configure`
 * `./vendor/bin/robo build`
+* `./vendor/bin/robo build:composer`
+* `./vendor/bin/robo build:config`
 * `./vendor/bin/robo build:htaccess`
-* `./vendor/bin/robo wp:generate-salt-keys`
-* `./vendor/bin/robo wp:init`
-* `./vendor/bin/robo wp:db-create`
-* `./vendor/bin/robo wp:core:install`
-* `./vendor/bin/robo wp:update-language <language> [--activate]`
+* `./vendor/bin/robo wp:language-install [<language>] [--activate]`
+* `./vendor/bin/robo wp:language-update [<language>] [--activate]`
 * `./vendor/bin/robo wp:update-timezone`
 * `./vendor/bin/robo feature:start <feature-name>`
 * `./vendor/bin/robo feature:finish <feature-name>`
@@ -91,7 +88,8 @@ And optionally:
 * `./vendor/bin/robo hotfix:finish [--semversion <version>]`
 * `./vendor/bin/robo release:start [--semversion <version>]`
 * `./vendor/bin/robo release:finish [--semversion <version>]`
-* `./vendor/bin/robo deploy <environment> <version>`
+* `./vendor/bin/robo deploy <environment> <version> [--ignore-assets]`
+* `./vendor/bin/robo deploy:setup <environment>`
 * `./vendor/bin/robo media:dump <environment> [--delete]`
 * `./vendor/bin/robo media:push <environment> [--delete]`
 
@@ -117,6 +115,6 @@ For advanced configuration (adding channels or handlers), you can edit [`./web/a
 
 ## Deploys
 
-wp-cubi provides a basic deploy command `./vendor/bin/robo deploy <environment> <branch>` that builds the application and deploys it with `rsync`.
+wp-cubi provides a basic deploy command `./vendor/bin/robo deploy` that builds the application and deploys it with `rsync`.
 
 You can build your own deploy method using [Capistrano](https://capistranorb.com/) or any other tool by editing [`./RoboFile.php`](https://github.com/globalis-ms/wp-cubi/blob/master/RoboFile.php).
