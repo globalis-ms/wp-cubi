@@ -1745,12 +1745,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-robo.git",
-                "reference": "121d3f6d1581151aee636af68b20d4d08b87a467"
+                "reference": "16fcb9aa402177129fe94770898db2d1b93c55b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-robo/zipball/121d3f6d1581151aee636af68b20d4d08b87a467",
-                "reference": "121d3f6d1581151aee636af68b20d4d08b87a467",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-robo/zipball/16fcb9aa402177129fe94770898db2d1b93c55b7",
+                "reference": "16fcb9aa402177129fe94770898db2d1b93c55b7",
                 "shasum": ""
             },
             "require": {
@@ -1782,7 +1782,7 @@
             ],
             "description": "Default Robo commands for wp-cubi",
             "homepage": "https://github.com/globalis-ms/wp-cubi-robo",
-            "time": "2018-09-03T13:41:36+00:00"
+            "time": "2018-09-03T14:44:11+00:00"
         },
         {
             "name": "grasmash/expander",
