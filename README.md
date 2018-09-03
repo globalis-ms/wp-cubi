@@ -76,6 +76,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * `./vendor/bin/robo install [--setup-wordpress]`
 * `./vendor/bin/robo configure`
 * `./vendor/bin/robo build`
+* `./vendor/bin/robo build:composer`
 * `./vendor/bin/robo build:config`
 * `./vendor/bin/robo build:htaccess`
 * `./vendor/bin/robo wp:language-install [<language>] [--activate]`
