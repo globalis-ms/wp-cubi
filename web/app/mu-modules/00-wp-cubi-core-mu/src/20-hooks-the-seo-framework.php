@@ -13,7 +13,7 @@ add_filter('the_seo_framework_metabox_priority', function ($priority) {
 add_filter('the_seo_framework_ld_json_search_url', function ($url) {
     $filter = 'Roots\\Soil\\NiceSearch\\rewrite';
     if (function_exists($filter) && true === get_theme_support('soil-nice-search')) {
-        $url = call_user_func($filter);
+        $url = call_user_func($filter, $url);
     }
     return $url;
 });
