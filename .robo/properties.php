@@ -20,6 +20,7 @@ return [
     'DB_PASSWORD' => [
         'question' => 'Database password',
         'default' => '',
+        'hidden'  => true,
     ],
     'ENVIRONEMENT' => [
         'question' => 'Environment',
