@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "51d7fb9d8a6706e285c82d6835d235fe",
+    "content-hash": "85a6e26bd7d4bc73000cbd0da73274a9",
     "packages": [
         {
             "name": "composer/installers",
@@ -1695,16 +1695,16 @@
         },
         {
             "name": "globalis/robo-task",
-            "version": "1.0.4",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/robo_task.git",
-                "reference": "b229c447375bd09eb085bec29efb857730e7f2ae"
+                "reference": "7e05bbf3022515e2eb802e46bca18aa76e5cc151"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/robo_task/zipball/b229c447375bd09eb085bec29efb857730e7f2ae",
-                "reference": "b229c447375bd09eb085bec29efb857730e7f2ae",
+                "url": "https://api.github.com/repos/globalis-ms/robo_task/zipball/7e05bbf3022515e2eb802e46bca18aa76e5cc151",
+                "reference": "7e05bbf3022515e2eb802e46bca18aa76e5cc151",
                 "shasum": ""
             },
             "require": {
@@ -1713,7 +1713,8 @@
                 "php": ">=5.6"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.2|^5.7",
+                "phpmd/phpmd": "^2.6",
+                "phpunit/phpunit": "^7.3|^6.2|^5.7",
                 "squizlabs/php_codesniffer": "^3.0"
             },
             "type": "robo-tasks",
@@ -1728,7 +1729,7 @@
             ],
             "authors": [
                 {
-                    "name": "Romain GUGERT",
+                    "name": "Romain Gugert",
                     "email": "romain.gugert@globalis-ms.com"
                 },
                 {
@@ -1737,24 +1738,24 @@
                 }
             ],
             "description": "Robo task common collection",
-            "time": "2017-11-22T10:58:35+00:00"
+            "time": "2018-09-04T10:23:06+00:00"
         },
         {
             "name": "globalis/wp-cubi-robo",
-            "version": "0.1.0",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-robo.git",
-                "reference": "16fcb9aa402177129fe94770898db2d1b93c55b7"
+                "reference": "03467cd1193e8d589e4a9af2746aba9af615e01b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-robo/zipball/16fcb9aa402177129fe94770898db2d1b93c55b7",
-                "reference": "16fcb9aa402177129fe94770898db2d1b93c55b7",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-robo/zipball/03467cd1193e8d589e4a9af2746aba9af615e01b",
+                "reference": "03467cd1193e8d589e4a9af2746aba9af615e01b",
                 "shasum": ""
             },
             "require": {
-                "globalis/robo-task": "^1.0.4"
+                "globalis/robo-task": "^1.1.0"
             },
             "require-dev": {
                 "rmccue/requests": "~1.6",
@@ -1782,7 +1783,7 @@
             ],
             "description": "Default Robo commands for wp-cubi",
             "homepage": "https://github.com/globalis-ms/wp-cubi-robo",
-            "time": "2018-09-03T14:44:11+00:00"
+            "time": "2018-10-02T12:18:50+00:00"
         },
         {
             "name": "grasmash/expander",
