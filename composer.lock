@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "85a6e26bd7d4bc73000cbd0da73274a9",
+    "content-hash": "45eda95a96286de035eb7dbce667a8b8",
     "packages": [
         {
             "name": "composer/installers",
@@ -857,11 +857,11 @@
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autodescription/",
-                "reference": "trunk"
+                "reference": "tags/3.0.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.zip?timestamp=1525625897",
+                "url": "https://downloads.wordpress.org/plugin/autodescription.3.0.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1742,23 +1742,23 @@
         },
         {
             "name": "globalis/wp-cubi-robo",
-            "version": "0.1.1",
+            "version": "0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-robo.git",
-                "reference": "03467cd1193e8d589e4a9af2746aba9af615e01b"
+                "reference": "1a67d32e6f5b0d2cd80cc1f2a2b8c950799b84b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-robo/zipball/03467cd1193e8d589e4a9af2746aba9af615e01b",
-                "reference": "03467cd1193e8d589e4a9af2746aba9af615e01b",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-robo/zipball/1a67d32e6f5b0d2cd80cc1f2a2b8c950799b84b5",
+                "reference": "1a67d32e6f5b0d2cd80cc1f2a2b8c950799b84b5",
                 "shasum": ""
             },
             "require": {
-                "globalis/robo-task": "^1.1.0"
+                "globalis/robo-task": "^1.1.0",
+                "rmccue/requests": "~1.6"
             },
             "require-dev": {
-                "rmccue/requests": "~1.6",
                 "squizlabs/php_codesniffer": "^2.5.1"
             },
             "type": "library",
@@ -1783,7 +1783,7 @@
             ],
             "description": "Default Robo commands for wp-cubi",
             "homepage": "https://github.com/globalis-ms/wp-cubi-robo",
-            "time": "2018-10-02T12:18:50+00:00"
+            "time": "2018-11-02T13:37:06+00:00"
         },
         {
             "name": "grasmash/expander",
