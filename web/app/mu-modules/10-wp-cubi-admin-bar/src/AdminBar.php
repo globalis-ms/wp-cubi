@@ -32,7 +32,9 @@ class AdminBar
 
     public function enqueueStyle()
     {
-        wp_enqueue_style('wp-cubi/admin-bar', plugins_url(self::CSS_PATH, dirname(__FILE__)), [], null);
+        if (is_user_logged_in()) {
+            wp_enqueue_style('wp-cubi/admin-bar', plugins_url(self::CSS_PATH, dirname(__FILE__)), [], null);
+        }
     }
 
     public function removeWpLogo($wp_admin_bar)
