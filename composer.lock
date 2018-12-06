@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "45eda95a96286de035eb7dbce667a8b8",
+    "content-hash": "d9c13811c2f49d44788515a7a7cc66fd",
     "packages": [
         {
             "name": "composer/installers",
@@ -167,16 +167,16 @@
         },
         {
             "name": "globalis/wp-cubi-helpers",
-            "version": "0.3.1",
+            "version": "0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-helpers.git",
-                "reference": "051a63ff5d41d6e1b2ff5f8373ff088594e1278a"
+                "reference": "80bb543bbdaabdb35886e98cf28334ff08e6afbf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-helpers/zipball/051a63ff5d41d6e1b2ff5f8373ff088594e1278a",
-                "reference": "051a63ff5d41d6e1b2ff5f8373ff088594e1278a",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-helpers/zipball/80bb543bbdaabdb35886e98cf28334ff08e6afbf",
+                "reference": "80bb543bbdaabdb35886e98cf28334ff08e6afbf",
                 "shasum": ""
             },
             "require": {
@@ -224,7 +224,7 @@
                 "wp",
                 "wp-cubi"
             ],
-            "time": "2018-07-25T11:56:27+00:00"
+            "time": "2018-12-06T16:52:50+00:00"
         },
         {
             "name": "globalis/wp-cubi-imagemin",
