@@ -37,7 +37,7 @@ class RoboFile extends \Globalis\WP\Cubi\Robo\RoboFile
         'htaccess-redirect',
         'htaccess-security',
         'htaccess-urls',
-        'htaccess-wp-permalinks'
+        'htaccess-wp-permalinks',
     ];
 
     // public function buildAssets($environment = 'development', $root = \RoboFile::ROOT)
