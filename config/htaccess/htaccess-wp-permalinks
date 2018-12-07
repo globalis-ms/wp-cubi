@@ -6,6 +6,7 @@
 
 <IfModule mod_rewrite.c>
 	RewriteEngine On
+	RewriteRule ^media/ - [L]
 	RewriteBase <##WEB_PATH##>/
 	RewriteRule ^index\.php$ - [L]
 	RewriteCond %{REQUEST_FILENAME} !-f
