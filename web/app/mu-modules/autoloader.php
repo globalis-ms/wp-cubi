@@ -112,7 +112,11 @@ class Autoloader
      */
     private function checkCache()
     {
-        $cache = get_site_option('bedrock_autoloader');
+        if (is_multisite()) {
+            $cache = get_site_option('bedrock_autoloader');
+        } else {
+            $cache = get_option('bedrock_autoloader');
+        }
 
         if ($cache === false) {
             $this->updateCache();
@@ -138,7 +142,11 @@ class Autoloader
         self::$activated    = ($rebuild) ? $plugins : array_diff_key($plugins, self::$cache['plugins']);
         self::$cache        = ['plugins' => $plugins, 'count' => $this->countPlugins()];
 
-        update_site_option('bedrock_autoloader', self::$cache);
+        if (is_multisite()) {
+            update_site_option('bedrock_autoloader', self::$cache);
+        } else {
+            update_option('bedrock_autoloader', self::$cache, true);
+        }
     }
 
     /**
