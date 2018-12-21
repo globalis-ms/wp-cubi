@@ -59,6 +59,7 @@ class AdminBar
 
             $this->addNode('website-env-box-wp', 'WordPress', $this->getDataWordpress());
             $this->addNode('website-env-box-php', 'PHP', $this->getDataPhp());
+            $this->addNode('website-env-box-mysql', 'MYSQL', $this->getDataMySql());
             $this->addNode('website-env-box-seo', 'SEO', $this->getDataSeo());
 
             if ($public_urls = self::getPublicUrls()) {
@@ -160,6 +161,12 @@ class AdminBar
     protected function getDataPhp()
     {
         return 'version ' . self::formatCode(phpversion());
+    }
+
+    protected function getDataMySql()
+    {
+        global $wpdb;
+        return 'version ' . self::formatCode($wpdb->db_version());
     }
 
     protected function getDataSeo()
