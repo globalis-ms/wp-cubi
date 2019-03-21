@@ -9,6 +9,7 @@
 	RewriteRule ^media/ - [L]
 	RewriteBase <##WEB_PATH##>/
 	RewriteRule ^index\.php$ - [L]
+	RewriteCond %{REQUEST_URI} !\.(gif|jpe?g|png|bmp|cur|ico|webp|svgz?|f4a|f4b|m4a|oga|ogg|opus|ogv|mp3|mp4|f4v|f4p|m4v|webm|flv|woff2?|eot|ttc|ttf|otf|css|js|pdf)$ [NC]
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteRule . <##WEB_PATH##>/index.php [L]
