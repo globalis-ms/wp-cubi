@@ -8,7 +8,8 @@ define('SCRIPT_DEBUG', true);
 define('SAVEQUERIES', PHP_SAPI != 'cli');
 
 /* QUERY MONITOR */
-define('WP_CUBI_QUERY_MONITOR_HANDLE_PHP_ERRORS', false);
+define('QM_DISABLE_ERROR_HANDLER', true);
+define('QM_ENABLE_CAPS_PANEL', true);
 
 /* WONOLOG */
 define('WP_CUBI_LOG_ENABLED', true);

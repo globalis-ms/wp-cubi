@@ -32,7 +32,7 @@ class AdminBar
 
     public function enqueueStyle()
     {
-        if (is_user_logged_in()) {
+        if (is_user_logged_in() && is_admin_bar_showing()) {
             wp_enqueue_style('wp-cubi/admin-bar', plugins_url(self::CSS_PATH, dirname(__FILE__)), [], null);
         }
     }

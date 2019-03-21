@@ -84,10 +84,10 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * `./vendor/bin/robo wp:update-timezone`
 * `./vendor/bin/robo feature:start <feature-name>`
 * `./vendor/bin/robo feature:finish <feature-name>`
-* `./vendor/bin/robo hotfix:start [--semversion <version>]`
-* `./vendor/bin/robo hotfix:finish [--semversion <version>]`
-* `./vendor/bin/robo release:start [--semversion <version>]`
-* `./vendor/bin/robo release:finish [--semversion <version>]`
+* `./vendor/bin/robo hotfix:start [--semversion=<version>]`
+* `./vendor/bin/robo hotfix:finish [--semversion=<version>]`
+* `./vendor/bin/robo release:start [--semversion=<version>]`
+* `./vendor/bin/robo release:finish [--semversion=<version>]`
 * `./vendor/bin/robo deploy <environment> <version> [--ignore-assets]`
 * `./vendor/bin/robo deploy:setup <environment>`
 * `./vendor/bin/robo media:dump <environment> [--delete]`

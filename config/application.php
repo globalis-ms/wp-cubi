@@ -2,6 +2,7 @@
 
 /* ENVIRONEMENT */
 define('WP_ENV', WP_CUBI_CONFIG['ENVIRONEMENT']);
+define('WP_LOCAL_DEV', WP_ENV === 'development');
 
 /* DATABASE */
 define('DB_NAME', WP_CUBI_CONFIG['DB_NAME']);
