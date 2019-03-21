@@ -39,9 +39,9 @@
         "soberwp/intervention": "^1.2.0",
         "inpsyde/wonolog": "^1.0.2",
         "wpackagist-plugin/query-monitor": "^3.3.3",
-        "wpackagist-plugin/wp-crontrol": "^1.6.2",
-        "wpackagist-plugin/user-switching": "^1.4.1",
-        "wpackagist-plugin/autodescription": "^3.2.2"
+        "wpackagist-plugin/wp-crontrol": "^1.7.0",
+        "wpackagist-plugin/user-switching": "^1.4.2",
+        "wpackagist-plugin/autodescription": "^3.2.4"
     },
     "require-dev": {
         "globalis/wp-cubi-robo" : "^0.1.5",
