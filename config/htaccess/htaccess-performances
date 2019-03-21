@@ -118,11 +118,8 @@ FileETag None
 # ----------------------------------------------------------------------
 
 <IfModule mod_headers.c>
-  <FilesMatch "\.(ico|jpe?g|png|gif|swf|css|gz|svg|mp4)$">
+  <FilesMatch "\.(ico|jpe?g|png|gif|swf|js|css|gz|svg|mp4)$">
     Header set Cache-Control "max-age=2592000, public"
-  </FilesMatch>
-  <FilesMatch "\.(js)$">
-    Header set Cache-Control "max-age=2592000, private"
   </FilesMatch>
   <FilesMatch "\.(html|htm)$">
     Header set Cache-Control "max-age=7200, public"
