@@ -28,3 +28,17 @@ if (!empty($_SERVER['HTTP_USER_AGENT'])) {
  * Disable “Try Gutenberg” dashboard callout
  */
 remove_action('try_gutenberg_panel', 'wp_try_gutenberg_panel');
+
+/*
+ * Remove useless capital_P_dangit filter (priority: 11)
+ */
+foreach (['wp_title', 'the_title', 'the_content', 'widget_text_content'] as $filter) {
+    remove_filter($filter, 'capital_P_dangit', 11);
+}
+
+/*
+ * Remove useless capital_P_dangit filter (priority: 31)
+ */
+foreach (['comment_text'] as $filter) {
+    remove_filter($filter, 'capital_P_dangit', 31);
+}
