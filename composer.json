@@ -38,9 +38,9 @@
         "roots/wp-password-bcrypt": "^1.0.0",
         "soberwp/intervention": "^1.2.0",
         "inpsyde/wonolog": "^1.0.2",
-        "wpackagist-plugin/query-monitor": "^3.3.3",
+        "wpackagist-plugin/query-monitor": "^3.3.4",
         "wpackagist-plugin/wp-crontrol": "^1.7.0",
-        "wpackagist-plugin/user-switching": "^1.4.2",
+        "wpackagist-plugin/user-switching": "^1.5.0",
         "wpackagist-plugin/autodescription": "^3.2.4"
     },
     "require-dev": {
