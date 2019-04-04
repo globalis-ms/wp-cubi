@@ -44,3 +44,6 @@ require_once __DIR__ . '/src/20-soil-modules.php';
 
 // Customize wp-login.php page with application logo and url
 require_once __DIR__ . '/src/20-wp-login.php';
+
+// Disable block-editor (previously, gutenberg)
+require_once __DIR__ . '/src/30-disable-block-editor.php';

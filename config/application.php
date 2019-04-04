@@ -55,6 +55,9 @@ define('WP_CUBI_ENABLE_REST_API', false);
 /* XML-RPC */
 define('WP_CUBI_ENABLE_XMLRPC', false);
 
+/* BLOCK-EDITOR (PREV. GUTENBERG) */
+define('WP_CUBI_ENABLE_BLOCK_EDITOR', false);
+
 /* PERFORMANCES */
 define('COMPRESS_CSS', true);
 define('COMPRESS_SCRIPTS', true);
