@@ -23,4 +23,8 @@ if (file_exists(__DIR__ . '/../config/local.php')) {
     require_once __DIR__ . '/../config/local.php';
 }
 
+if (defined('SQL_CACHE_QUERIES') && true !== SQL_CACHE_QUERIES) {
+    \Globalis\WP\Cubi\mysql_enable_nocache_mod();
+}
+
 require_once ABSPATH . 'wp-settings.php';

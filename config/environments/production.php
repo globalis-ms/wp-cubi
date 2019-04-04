@@ -6,6 +6,7 @@ define('WP_DEBUG', false);
 define('WP_DEBUG_DISPLAY', false);
 define('SCRIPT_DEBUG', false);
 define('SAVEQUERIES', false);
+define('SQL_CACHE_QUERIES', true);
 
 /* QUERY MONITOR */
 define('QM_DISABLE_ERROR_HANDLER', false);
