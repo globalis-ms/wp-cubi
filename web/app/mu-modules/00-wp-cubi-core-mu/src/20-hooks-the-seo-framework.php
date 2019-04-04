@@ -17,3 +17,8 @@ add_filter('the_seo_framework_ld_json_search_url', function ($url) {
     }
     return $url;
 });
+
+add_filter('option_autodescription-site-settings', function ($settings) {
+    $settings['canonical_scheme'] = WP_SCHEME;
+    return $settings;
+});
