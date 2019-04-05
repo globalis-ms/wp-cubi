@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a92e3cd836dad0c03db156d66d4fc7a4",
+    "content-hash": "8ec13eb1ba844dc77b757e3860b86016",
     "packages": [
         {
             "name": "composer/installers",
@@ -167,16 +167,16 @@
         },
         {
             "name": "globalis/wp-cubi-helpers",
-            "version": "0.3.4",
+            "version": "0.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-helpers.git",
-                "reference": "fa1bade50e1db4d06916e724c0393f3a09cc54b8"
+                "reference": "2820a66ad5a76a4305e7425d1812fc9525042ff8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-helpers/zipball/fa1bade50e1db4d06916e724c0393f3a09cc54b8",
-                "reference": "fa1bade50e1db4d06916e724c0393f3a09cc54b8",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-helpers/zipball/2820a66ad5a76a4305e7425d1812fc9525042ff8",
+                "reference": "2820a66ad5a76a4305e7425d1812fc9525042ff8",
                 "shasum": ""
             },
             "require": {
@@ -224,20 +224,20 @@
                 "wp",
                 "wp-cubi"
             ],
-            "time": "2019-02-14T18:23:58+00:00"
+            "time": "2019-04-05T10:11:14+00:00"
         },
         {
             "name": "globalis/wp-cubi-imagemin",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-imagemin.git",
-                "reference": "3d5ba6e1ab1617e227d92fa0ee864228a139346c"
+                "reference": "31e1a138fe4c28d2ca6e8b7fc3156a3ce149d8ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-imagemin/zipball/3d5ba6e1ab1617e227d92fa0ee864228a139346c",
-                "reference": "3d5ba6e1ab1617e227d92fa0ee864228a139346c",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-imagemin/zipball/31e1a138fe4c28d2ca6e8b7fc3156a3ce149d8ba",
+                "reference": "31e1a138fe4c28d2ca6e8b7fc3156a3ce149d8ba",
                 "shasum": ""
             },
             "require": {
@@ -265,7 +265,7 @@
             ],
             "description": "Standalone image minification WordPress plugin",
             "homepage": "https://github.com/globalis-ms/wp-cubi-imagemin",
-            "time": "2018-11-09T11:15:19+00:00"
+            "time": "2019-04-05T10:12:28+00:00"
         },
         {
             "name": "inpsyde/wonolog",
