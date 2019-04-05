@@ -39,7 +39,7 @@ if (!defined('ABSPATH')) {
 }
 
 /* THEME */
-define('WP_DEFAULT_THEME', '<##WP_DEFAULT_THEME##>');
+define('WP_DEFAULT_THEME', 'wp-cubi-debug-theme');
 
 /* UPDATES */
 define('AUTOMATIC_UPDATER_DISABLED', true);
