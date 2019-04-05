@@ -15,6 +15,7 @@ define('QM_ENABLE_CAPS_PANEL', true);
 /* WONOLOG */
 define('WP_CUBI_LOG_ENABLED', true);
 define('WP_CUBI_LOG_LEVEL', 'DEBUG');
+define('WP_CUBI_LOG_PHP_ERRORS', true);
 
 /* MEMORY */
 define('WP_MEMORY_LIMIT', '128M');

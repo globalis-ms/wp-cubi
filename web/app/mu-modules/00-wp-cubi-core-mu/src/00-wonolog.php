@@ -44,6 +44,19 @@ if (defined('WP_CUBI_LOG_DIR')) {
 }
 
 if (false !== $handler) {
-    add_action('qm/collect/new_php_error', [new \Inpsyde\Wonolog\PhpErrorController(), 'on_error'], 10, 5);
-    Wonolog\bootstrap($handler);
+    if (defined('WP_CUBI_LOG_PHP_ERRORS') && WP_CUBI_LOG_PHP_ERRORS) {
+        $flags = Wonolog\USE_DEFAULT_PROCESSOR|Wonolog\LOG_PHP_ERRORS;
+        add_action('qm/collect/new_php_error', [new Wonolog\PhpErrorController(), 'on_error'], 10, 5);
+    } else {
+        $flags = Wonolog\USE_DEFAULT_PROCESSOR;
+    }
+
+    Wonolog\bootstrap($handler, $flags)
+        ->use_hook_listener(new Wonolog\HookListener\DbErrorListener())
+        ->use_hook_listener(new Wonolog\HookListener\FailedLoginListener())
+        ->use_hook_listener(new Wonolog\HookListener\HttpApiListener())
+        ->use_hook_listener(new Wonolog\HookListener\MailerListener())
+        //->use_hook_listener(new Wonolog\HookListener\QueryErrorsListener())
+        ->use_hook_listener(new Wonolog\HookListener\CronDebugListener())
+        ->use_hook_listener(new Wonolog\HookListener\WpDieHandlerListener());
 }
