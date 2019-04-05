@@ -44,6 +44,7 @@ define('WP_DEFAULT_THEME', 'wp-cubi-debug-theme');
 /* UPDATES */
 define('AUTOMATIC_UPDATER_DISABLED', true);
 define('WP_AUTO_UPDATE_CORE', false);
+define('WP_CUBI_DISABLE_ALL_VERSION_UPDATE_CHECKS', true);
 
 /* SECURITY */
 define('DISALLOW_FILE_MODS', true);
