@@ -89,3 +89,23 @@ if (defined('WP_CUBI_DISABLE_ALL_VERSION_UPDATE_CHECKS') && WP_CUBI_DISABLE_ALL_
     remove_action('wp_maybe_auto_update', 'wp_maybe_auto_update');
     remove_action('init', 'wp_schedule_update_checks');
 }
+
+/*
+ * Disable get_option('theme_switched') useless queries (check autoload options only)
+ */
+add_filter('pre_option_theme_switched', __NAMESPACE__ . '\\get_option_autoload_theme_switched', 10, 1);
+
+function get_option_autoload_theme_switched($default)
+{
+    if (!\Globalis\WP\Cubi\is_frontend()) {
+        return $default;
+    }
+
+    $alloptions = wp_load_alloptions();
+
+    if (isset($alloptions['theme_switched'])) {
+        return $alloptions['theme_switched'];
+    } else {
+        return '';
+    }
+}
