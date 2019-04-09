@@ -47,3 +47,9 @@ require_once __DIR__ . '/src/20-wp-login.php';
 
 // Disable block-editor (previously, gutenberg)
 require_once __DIR__ . '/src/30-disable-block-editor.php';
+
+// Disable core useless SQL queries
+require_once __DIR__ . '/src/30-disable-useless-sql-queries.php';
+
+// Disable version update checks
+require_once __DIR__ . '/src/30-disable-version-update-checks.php';
