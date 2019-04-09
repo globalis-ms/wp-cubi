@@ -18,13 +18,17 @@ add_filter('sanitize_file_name', 'remove_accents', 10, 1);
 add_filter('pre_option_use_smilies', '__return_zero', 10, 1);
 
 /*
- * Disable dashboard browse-happy requests / widget
+ * Remove emojis and smilies hooks
  */
-if (!empty($_SERVER['HTTP_USER_AGENT'])) {
-    add_filter('pre_site_transient_browser_' . md5($_SERVER['HTTP_USER_AGENT']), '__return_true');
-}
+remove_action('init', 'smilies_init', 5);
+remove_filter('the_content', 'convert_smilies', 20);
+remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
 
 /*
- * Disable “Try Gutenberg” dashboard callout
+ * Remove useless capital_P_dangit filter
  */
-remove_action('try_gutenberg_panel', 'wp_try_gutenberg_panel');
+remove_filter('wp_title', 'capital_P_dangit', 11);
+remove_filter('the_title', 'capital_P_dangit', 11);
+remove_filter('the_content', 'capital_P_dangit', 11);
+remove_filter('widget_text_content', 'capital_P_dangit', 11);
+remove_filter('comment_text', 'capital_P_dangit', 31);
