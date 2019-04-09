@@ -118,3 +118,8 @@ For advanced configuration (adding channels or handlers), you can edit [`./web/a
 wp-cubi provides a basic deploy command `./vendor/bin/robo deploy` that builds the application and deploys it with `rsync`.
 
 You can build your own deploy method using [Capistrano](https://capistranorb.com/) or any other tool by editing [`./RoboFile.php`](https://github.com/globalis-ms/wp-cubi/blob/master/RoboFile.php).
+
+
+## Block Editor (previously known as Gutenberg)
+
+The Block Editor, existing since WordPress version 5.0 is disabled by default. If you want to use it, edit your `./config/application.php` file, and turn constants `WP_CUBI_ENABLE_BLOCK_EDITOR` and `WP_CUBI_ENABLE_REST_API` to `true`.
