@@ -36,6 +36,8 @@ function register_jquery()
 
     wp_register_script('jquery', jquery_url(), [], null, true);
 
+    wp_add_inline_script('jquery', 'jQuery.noConflict();', 'after');
+
     add_filter('wp_resource_hints', function ($urls, $relation_type) {
         if ($relation_type === 'dns-prefetch' && $jquery_domain = jquery_domain()) {
             $urls[] = $jquery_domain;
