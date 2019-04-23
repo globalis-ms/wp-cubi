@@ -22,7 +22,7 @@ function jquery_url()
 function jquery_domain()
 {
     $parts = parse_url(jquery_url());
- 
+
     if (is_array($parts) && !empty($parts['host'])) {
         return $parts['host'];
     }
