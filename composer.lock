@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ec13eb1ba844dc77b757e3860b86016",
+    "content-hash": "9443087ebff8a993f3a55ce9304f113c",
     "packages": [
         {
             "name": "composer/installers",
@@ -1900,16 +1900,16 @@
         },
         {
             "name": "globalis/wp-cubi-robo",
-            "version": "0.1.6",
+            "version": "0.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-robo.git",
-                "reference": "1d7794488232a910725340ecd386303f126e764f"
+                "reference": "4acc9d37c77e24a968a950d59b5ba53818c53bc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-robo/zipball/1d7794488232a910725340ecd386303f126e764f",
-                "reference": "1d7794488232a910725340ecd386303f126e764f",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-robo/zipball/4acc9d37c77e24a968a950d59b5ba53818c53bc1",
+                "reference": "4acc9d37c77e24a968a950d59b5ba53818c53bc1",
                 "shasum": ""
             },
             "require": {
@@ -1941,7 +1941,7 @@
             ],
             "description": "Default Robo commands for wp-cubi",
             "homepage": "https://github.com/globalis-ms/wp-cubi-robo",
-            "time": "2019-04-05T09:14:56+00:00"
+            "time": "2019-04-25T15:47:31+00:00"
         },
         {
             "name": "grasmash/expander",
