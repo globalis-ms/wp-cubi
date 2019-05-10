@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b937a3b4eb3db83752c7db6e186d9ca7",
+    "content-hash": "1718016189202d01eb6f3527b88a4ef1",
     "packages": [
         {
             "name": "composer/installers",
@@ -913,15 +913,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-crontrol",
-            "version": "1.7.0",
+            "version": "1.7.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-crontrol/",
-                "reference": "tags/1.7.0"
+                "reference": "tags/1.7.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-crontrol.1.7.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-crontrol.1.7.1.zip",
                 "reference": null,
                 "shasum": null
             },
