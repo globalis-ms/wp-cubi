@@ -14,7 +14,7 @@ define('QM_ENABLE_CAPS_PANEL', false);
 
 /* WONOLOG */
 define('WP_CUBI_LOG_ENABLED', true);
-define('WP_CUBI_LOG_LEVEL', 'DEBUG');
+define('WP_CUBI_LOG_LEVEL', 'INFO');
 define('WP_CUBI_LOG_PHP_ERRORS', true);
 
 /* MEMORY */
