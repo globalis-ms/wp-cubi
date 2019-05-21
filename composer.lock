@@ -873,15 +873,15 @@
         },
         {
             "name": "wpackagist-plugin/query-monitor",
-            "version": "3.3.5",
+            "version": "3.3.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/3.3.5"
+                "reference": "tags/3.3.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.3.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.3.6.zip",
                 "reference": null,
                 "shasum": null
             },
