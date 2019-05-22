@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7662891af463621e30db8dec6ffaf83f",
+    "content-hash": "23c6b933a96ee91ebfb0b260df5e0e45",
     "packages": [
         {
             "name": "composer/installers",
@@ -228,22 +228,23 @@
         },
         {
             "name": "globalis/wp-cubi-imagemin",
-            "version": "1.0.5",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-imagemin.git",
-                "reference": "31e1a138fe4c28d2ca6e8b7fc3156a3ce149d8ba"
+                "reference": "1269ed20df52e179d9ce92eeb470981ca2d96aff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-imagemin/zipball/31e1a138fe4c28d2ca6e8b7fc3156a3ce149d8ba",
-                "reference": "31e1a138fe4c28d2ca6e8b7fc3156a3ce149d8ba",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-imagemin/zipball/1269ed20df52e179d9ce92eeb470981ca2d96aff",
+                "reference": "1269ed20df52e179d9ce92eeb470981ca2d96aff",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "^1.5.0",
                 "php": ">=5.5.0",
-                "ps/image-optimizer": "^1.2.0"
+                "ps/image-optimizer": "^1.2.0",
+                "psr/log": "^1.0"
             },
             "require-dev": {
                 "squizlabs/php_codesniffer": "^2.5.1"
@@ -265,7 +266,7 @@
             ],
             "description": "Standalone image minification WordPress plugin",
             "homepage": "https://github.com/globalis-ms/wp-cubi-imagemin",
-            "time": "2019-04-05T10:12:28+00:00"
+            "time": "2019-05-22T14:43:23+00:00"
         },
         {
             "name": "inpsyde/wonolog",

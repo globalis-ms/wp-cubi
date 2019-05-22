@@ -33,7 +33,7 @@
         "johnpbloch/wordpress-core": "5.2.1",
         "globalis/wp-cli-bin" : "^2.2.0",
         "globalis/wp-cubi-helpers": "^0.3.5",
-        "globalis/wp-cubi-imagemin": "^1.0.5",
+        "globalis/wp-cubi-imagemin": "^1.1.0",
         "roots/soil": "^3.7.3",
         "roots/wp-password-bcrypt": "^1.0.0",
         "soberwp/intervention": "^1.2.0",
