@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ec13eb1ba844dc77b757e3860b86016",
+    "content-hash": "23c6b933a96ee91ebfb0b260df5e0e45",
     "packages": [
         {
             "name": "composer/installers",
@@ -128,16 +128,16 @@
         },
         {
             "name": "globalis/wp-cli-bin",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cli-bin.git",
-                "reference": "a27e3bbffc8fbb11b683ee65ebf670c09eed649d"
+                "reference": "da0046dbf7b2582710726d27ecc75b256eea154b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cli-bin/zipball/a27e3bbffc8fbb11b683ee65ebf670c09eed649d",
-                "reference": "a27e3bbffc8fbb11b683ee65ebf670c09eed649d",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cli-bin/zipball/da0046dbf7b2582710726d27ecc75b256eea154b",
+                "reference": "da0046dbf7b2582710726d27ecc75b256eea154b",
                 "shasum": ""
             },
             "bin": [
@@ -163,7 +163,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2019-02-06T15:20:49+00:00"
+            "time": "2019-04-26T10:23:45+00:00"
         },
         {
             "name": "globalis/wp-cubi-helpers",
@@ -228,22 +228,23 @@
         },
         {
             "name": "globalis/wp-cubi-imagemin",
-            "version": "1.0.5",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-imagemin.git",
-                "reference": "31e1a138fe4c28d2ca6e8b7fc3156a3ce149d8ba"
+                "reference": "1269ed20df52e179d9ce92eeb470981ca2d96aff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-imagemin/zipball/31e1a138fe4c28d2ca6e8b7fc3156a3ce149d8ba",
-                "reference": "31e1a138fe4c28d2ca6e8b7fc3156a3ce149d8ba",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-imagemin/zipball/1269ed20df52e179d9ce92eeb470981ca2d96aff",
+                "reference": "1269ed20df52e179d9ce92eeb470981ca2d96aff",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "^1.5.0",
                 "php": ">=5.5.0",
-                "ps/image-optimizer": "^1.2.0"
+                "ps/image-optimizer": "^1.2.0",
+                "psr/log": "^1.0"
             },
             "require-dev": {
                 "squizlabs/php_codesniffer": "^2.5.1"
@@ -265,7 +266,7 @@
             ],
             "description": "Standalone image minification WordPress plugin",
             "homepage": "https://github.com/globalis-ms/wp-cubi-imagemin",
-            "time": "2019-04-05T10:12:28+00:00"
+            "time": "2019-05-22T14:43:23+00:00"
         },
         {
             "name": "inpsyde/wonolog",
@@ -336,23 +337,23 @@
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "5.1.1",
+            "version": "5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "dba22982e7cb433b68f1b12a0bd4e5851f967010"
+                "reference": "7555561027211f295e1d6a77d06ab47f605608cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/dba22982e7cb433b68f1b12a0bd4e5851f967010",
-                "reference": "dba22982e7cb433b68f1b12a0bd4e5851f967010",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/7555561027211f295e1d6a77d06ab47f605608cd",
+                "reference": "7555561027211f295e1d6a77d06ab47f605608cd",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "provide": {
-                "wordpress/core-implementation": "5.1.1"
+                "wordpress/core-implementation": "5.2.1"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -365,14 +366,14 @@
                     "homepage": "http://wordpress.org/about/"
                 }
             ],
-            "description": "WordPress is web software you can use to create a beautiful website or blog.",
+            "description": "WordPress is open source software you can use to create a beautiful website, blog, or app.",
             "homepage": "http://wordpress.org/",
             "keywords": [
                 "blog",
                 "cms",
                 "wordpress"
             ],
-            "time": "2019-03-13T00:27:30+00:00"
+            "time": "2019-05-21T18:27:33+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -873,15 +874,15 @@
         },
         {
             "name": "wpackagist-plugin/query-monitor",
-            "version": "3.3.4",
+            "version": "3.3.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/3.3.4"
+                "reference": "tags/3.3.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.3.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.3.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -913,15 +914,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-crontrol",
-            "version": "1.7.0",
+            "version": "1.7.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-crontrol/",
-                "reference": "tags/1.7.0"
+                "reference": "tags/1.7.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-crontrol.1.7.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-crontrol.1.7.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1900,16 +1901,16 @@
         },
         {
             "name": "globalis/wp-cubi-robo",
-            "version": "0.1.6",
+            "version": "0.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-robo.git",
-                "reference": "1d7794488232a910725340ecd386303f126e764f"
+                "reference": "4acc9d37c77e24a968a950d59b5ba53818c53bc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-robo/zipball/1d7794488232a910725340ecd386303f126e764f",
-                "reference": "1d7794488232a910725340ecd386303f126e764f",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-robo/zipball/4acc9d37c77e24a968a950d59b5ba53818c53bc1",
+                "reference": "4acc9d37c77e24a968a950d59b5ba53818c53bc1",
                 "shasum": ""
             },
             "require": {
@@ -1941,7 +1942,7 @@
             ],
             "description": "Default Robo commands for wp-cubi",
             "homepage": "https://github.com/globalis-ms/wp-cubi-robo",
-            "time": "2019-04-05T09:14:56+00:00"
+            "time": "2019-04-25T15:47:31+00:00"
         },
         {
             "name": "grasmash/expander",

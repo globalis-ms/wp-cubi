@@ -17,6 +17,6 @@ add_filter('login_headerurl', function ($url) {
     return esc_url(home_url('/'));
 }, 10, 1);
 
-add_filter('login_headertitle', function ($title) {
+add_filter('login_headertext', function ($title) {
      return get_bloginfo('name');
 }, 10, 1);

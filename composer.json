@@ -30,21 +30,21 @@
         "php": ">=7.0",
         "composer/installers": "^1.5.0",
         "johnpbloch/wordpress-core-installer": "^1.0",
-        "johnpbloch/wordpress-core": "5.1.1",
-        "globalis/wp-cli-bin" : "^2.1.0",
+        "johnpbloch/wordpress-core": "5.2.1",
+        "globalis/wp-cli-bin" : "^2.2.0",
         "globalis/wp-cubi-helpers": "^0.3.5",
-        "globalis/wp-cubi-imagemin": "^1.0.5",
+        "globalis/wp-cubi-imagemin": "^1.1.0",
         "roots/soil": "^3.7.3",
         "roots/wp-password-bcrypt": "^1.0.0",
         "soberwp/intervention": "^1.2.0",
         "inpsyde/wonolog": "^1.0.2",
-        "wpackagist-plugin/query-monitor": "^3.3.4",
-        "wpackagist-plugin/wp-crontrol": "^1.7.0",
+        "wpackagist-plugin/query-monitor": "^3.3.6",
+        "wpackagist-plugin/wp-crontrol": "^1.7.1",
         "wpackagist-plugin/user-switching": "^1.5.0",
         "wpackagist-plugin/autodescription": "^3.2.4"
     },
     "require-dev": {
-        "globalis/wp-cubi-robo" : "^0.1.6",
+        "globalis/wp-cubi-robo" : "^0.1.7",
         "squizlabs/php_codesniffer": "^2.9.2"
     },
     "extra": {
