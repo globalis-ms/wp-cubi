@@ -33,6 +33,7 @@ class RoboFile extends \Globalis\WP\Cubi\Robo\RoboFile
     const HTACCESS_CONFIG_DIRECTORY     = 'config/htaccess';
     const HTACCESS_PARTS                = [
         'htaccess-general',
+        'htaccess-seo',
         'htaccess-performances',
         'htaccess-redirect',
         'htaccess-security',

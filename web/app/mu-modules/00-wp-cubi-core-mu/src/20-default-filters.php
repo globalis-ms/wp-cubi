@@ -32,3 +32,8 @@ remove_filter('the_title', 'capital_P_dangit', 11);
 remove_filter('the_content', 'capital_P_dangit', 11);
 remove_filter('widget_text_content', 'capital_P_dangit', 11);
 remove_filter('comment_text', 'capital_P_dangit', 31);
+
+/*
+ * Prevent AMP pages being indexed on development / staging
+ */
+add_action('amp_post_template_head', 'noindex');
