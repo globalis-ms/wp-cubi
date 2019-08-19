@@ -34,7 +34,7 @@
         "globalis/wp-cli-bin" : "^2.3.0",
         "globalis/wp-cubi-helpers": "^0.3.5",
         "globalis/wp-cubi-imagemin": "^1.1.0",
-        "roots/soil": "^3.7.3",
+        "roots/soil": "^3.8.1",
         "roots/wp-password-bcrypt": "^1.0.0",
         "soberwp/intervention": "^1.2.0",
         "inpsyde/wonolog": "^1.0.2",

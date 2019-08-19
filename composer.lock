@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "394a2a54f01fb44157a24f146163c6bb",
+    "content-hash": "4c57a73a4d41e65f1a737a2a83c7b6d8",
     "packages": [
         {
             "name": "composer/installers",
@@ -600,16 +600,16 @@
         },
         {
             "name": "roots/soil",
-            "version": "3.7.3",
+            "version": "3.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/soil.git",
-                "reference": "d0e409e70dafff4ceeaa8ef941ee319e350317dd"
+                "reference": "7920eb22bb434c1b86ff3d4d7dc318498de0c675"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/soil/zipball/d0e409e70dafff4ceeaa8ef941ee319e350317dd",
-                "reference": "d0e409e70dafff4ceeaa8ef941ee319e350317dd",
+                "url": "https://api.github.com/repos/roots/soil/zipball/7920eb22bb434c1b86ff3d4d7dc318498de0c675",
+                "reference": "7920eb22bb434c1b86ff3d4d7dc318498de0c675",
                 "shasum": ""
             },
             "require": {
@@ -641,7 +641,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2017-08-14T01:36:41+00:00"
+            "time": "2019-05-23T21:45:50+00:00"
         },
         {
             "name": "roots/wp-password-bcrypt",
