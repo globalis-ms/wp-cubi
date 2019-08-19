@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3863cc73e45801fb9d4cdbb0d58f84a8",
+    "content-hash": "394a2a54f01fb44157a24f146163c6bb",
     "packages": [
         {
             "name": "composer/installers",
@@ -874,15 +874,15 @@
         },
         {
             "name": "wpackagist-plugin/query-monitor",
-            "version": "3.3.6",
+            "version": "3.3.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/3.3.6"
+                "reference": "tags/3.3.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.3.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.3.7.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -894,15 +894,15 @@
         },
         {
             "name": "wpackagist-plugin/user-switching",
-            "version": "1.5.0",
+            "version": "1.5.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/user-switching/",
-                "reference": "tags/1.5.0"
+                "reference": "tags/1.5.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/user-switching.1.5.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/user-switching.1.5.2.zip",
                 "reference": null,
                 "shasum": null
             },
