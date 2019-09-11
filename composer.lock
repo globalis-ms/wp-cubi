@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1a89d6e7c44a13b162745f0da30de279",
+    "content-hash": "ebcf522aafae26542c191c08159bfe9a",
     "packages": [
         {
             "name": "composer/installers",
@@ -337,23 +337,23 @@
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "5.2.2",
+            "version": "5.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "bbded8adf0ddd8cafdbd6e6605e0ee82d5c1dc8a"
+                "reference": "455a884ce96b042602d1eb04fdf2b8e003be0eef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/bbded8adf0ddd8cafdbd6e6605e0ee82d5c1dc8a",
-                "reference": "bbded8adf0ddd8cafdbd6e6605e0ee82d5c1dc8a",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/455a884ce96b042602d1eb04fdf2b8e003be0eef",
+                "reference": "455a884ce96b042602d1eb04fdf2b8e003be0eef",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": ">=5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "5.2.2"
+                "wordpress/core-implementation": "5.2.3"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -373,7 +373,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2019-06-18T17:57:57+00:00"
+            "time": "2019-09-05T01:17:09+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
