@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c57a73a4d41e65f1a737a2a83c7b6d8",
+    "content-hash": "1a89d6e7c44a13b162745f0da30de279",
     "packages": [
         {
             "name": "composer/installers",
@@ -270,20 +270,20 @@
         },
         {
             "name": "inpsyde/wonolog",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/inpsyde/Wonolog.git",
-                "reference": "01605cd9e5a471df4cf9b8ed5260fd1355e8da11"
+                "reference": "62b2cf977d2222787fbc895bd0c7f557c6687b44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/inpsyde/Wonolog/zipball/01605cd9e5a471df4cf9b8ed5260fd1355e8da11",
-                "reference": "01605cd9e5a471df4cf9b8ed5260fd1355e8da11",
+                "url": "https://api.github.com/repos/inpsyde/Wonolog/zipball/62b2cf977d2222787fbc895bd0c7f557c6687b44",
+                "reference": "62b2cf977d2222787fbc895bd0c7f557c6687b44",
                 "shasum": ""
             },
             "require": {
-                "monolog/monolog": "@stable",
+                "monolog/monolog": "^1.21.0",
                 "php": ">=5.6"
             },
             "require-dev": {
@@ -311,15 +311,15 @@
             ],
             "authors": [
                 {
-                    "name": "Giuseppe Mazzapica",
-                    "email": "giuseppe.mazzapica@gmail.com",
-                    "role": "Developer"
-                },
-                {
                     "name": "Inpsyde GmbH",
                     "email": "hello@inpsyde.com",
                     "homepage": "https://inpsyde.com",
                     "role": "Company"
+                },
+                {
+                    "name": "Giuseppe Mazzapica",
+                    "email": "giuseppe.mazzapica@gmail.com",
+                    "role": "Developer"
                 }
             ],
             "description": "Monolog-based logging package for WordPress.",
@@ -333,7 +333,7 @@
                 "psr-3",
                 "wordpress"
             ],
-            "time": "2018-05-15T15:39:44+00:00"
+            "time": "2019-09-11T10:42:24+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core",
@@ -426,16 +426,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.24.0",
+            "version": "1.25.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266"
+                "reference": "70e65a5470a42cfec1a7da00d30edb6e617e8dcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266",
-                "reference": "bfc9ebb28f97e7a24c45bdc3f0ff482e47bb0266",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/70e65a5470a42cfec1a7da00d30edb6e617e8dcf",
+                "reference": "70e65a5470a42cfec1a7da00d30edb6e617e8dcf",
                 "shasum": ""
             },
             "require": {
@@ -500,7 +500,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2018-11-05T09:00:11+00:00"
+            "time": "2019-09-06T13:49:17+00:00"
         },
         {
             "name": "ps/image-optimizer",
