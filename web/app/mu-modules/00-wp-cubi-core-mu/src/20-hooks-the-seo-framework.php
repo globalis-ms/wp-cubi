@@ -22,3 +22,13 @@ add_filter('option_autodescription-site-settings', function ($settings) {
     $settings['canonical_scheme'] = WP_SCHEME;
     return $settings;
 });
+
+add_action('wp_head', __NAMESPACE__ . '\\seo_meta_robo_eucd', 1, 1);
+add_action('amp_post_template_head', __NAMESPACE__ . '\\seo_meta_robo_eucd', 1, 1);
+
+function seo_meta_robo_eucd()
+{
+    ?>
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <?php
+}

@@ -7,6 +7,7 @@
 # ----------------------------------------------------------------------
 
 <IfModule mod_headers.c>
+  Header set X-Robots-Tag "max-snippet:-1, max-image-preview:large, max-video-preview:-1"
   Header set X-Robots-Tag "noindex,follow"
 </IfModule>
 
