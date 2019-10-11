@@ -38,10 +38,10 @@
         "roots/wp-password-bcrypt": "^1.0.0",
         "soberwp/intervention": "^1.2.0",
         "inpsyde/wonolog": "^1.0.3",
-        "wpackagist-plugin/query-monitor": "^3.3.7",
+        "wpackagist-plugin/query-monitor": "^3.4.0",
         "wpackagist-plugin/wp-crontrol": "^1.7.1",
         "wpackagist-plugin/user-switching": "^1.5.2",
-        "wpackagist-plugin/autodescription": "^3.2.4"
+        "wpackagist-plugin/autodescription": "^4.0.1"
     },
     "require-dev": {
         "globalis/wp-cubi-robo" : "^0.1.7",
