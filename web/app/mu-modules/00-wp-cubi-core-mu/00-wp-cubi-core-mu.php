@@ -33,9 +33,6 @@ require_once __DIR__ . '/src/20-clean-wp-admin.php';
 // Various default filters
 require_once __DIR__ . '/src/20-default-filters.php';
 
-// Hooks on query-monitor plugin
-require_once __DIR__ . '/src/20-hooks-query-monitor.php';
-
 // Hooks on autodescription / The SEO Framework plugin
 require_once __DIR__ . '/src/20-hooks-the-seo-framework.php';
 
