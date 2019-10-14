@@ -1,14 +1,18 @@
 <?php
 
-use \Globalis\WP\Cubi\Robo\BuildTrait;
-use \Globalis\WP\Cubi\Robo\DeployTrait;
-use \Globalis\WP\Cubi\Robo\GitTrait;
-use \Globalis\WP\Cubi\Robo\InstallTrait;
-use \Globalis\WP\Cubi\Robo\WordPressTrait;
+use Globalis\WP\Cubi\Robo\BuildTrait;
+use Globalis\WP\Cubi\Robo\DeployTrait;
+use Globalis\WP\Cubi\Robo\GitTrait;
+use Globalis\WP\Cubi\Robo\InstallTrait;
+use Globalis\WP\Cubi\Robo\WordPressTrait;
 
 class RoboFile extends \Globalis\WP\Cubi\Robo\RoboFile
 {
-    use BuildTrait, DeployTrait, GitTrait, InstallTrait, WordPressTrait;
+    use BuildTrait;
+    use DeployTrait;
+    use GitTrait;
+    use InstallTrait;
+    use WordPressTrait;
 
     const ROOT                          = __DIR__;
 

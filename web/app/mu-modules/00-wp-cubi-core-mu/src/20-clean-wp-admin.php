@@ -2,7 +2,7 @@
 
 namespace Globalis\WP\Cubi;
 
-use function \Sober\Intervention\intervention;
+use function Sober\Intervention\intervention;
 
 /*
  * Disable dashboard browse-happy requests / widget
