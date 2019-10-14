@@ -19,6 +19,8 @@ require_once __DIR__ . '/../config/application.php';
 require_once __DIR__ . '/../config/salt-keys.php';
 require_once __DIR__ . '/../config/environments/' . WP_CUBI_CONFIG['ENVIRONEMENT'] . '.php';
 
+define('FS_METHOD', 'direct');
+
 if (file_exists(__DIR__ . '/../config/local.php')) {
     require_once __DIR__ . '/../config/local.php';
 }

@@ -6,6 +6,8 @@ define('TSF_DISABLE_SUGGESTIONS', true);
 
 add_filter('the_seo_framework_indicator', '__return_false');
 
+add_filter('the_seo_framework_indicator_sitemap', '__return_false');
+
 add_filter('the_seo_framework_metabox_priority', function ($priority) {
     return 'low';
 });

@@ -45,7 +45,7 @@ if (defined('WP_CUBI_LOG_DIR')) {
 
 if (false !== $handler) {
     if (defined('WP_CUBI_LOG_PHP_ERRORS') && WP_CUBI_LOG_PHP_ERRORS) {
-        $flags = Wonolog\USE_DEFAULT_PROCESSOR|Wonolog\LOG_PHP_ERRORS;
+        $flags = Wonolog\USE_DEFAULT_PROCESSOR | Wonolog\LOG_PHP_ERRORS;
         add_action('qm/collect/new_php_error', [new Wonolog\PhpErrorController(), 'on_error'], 10, 5);
     } else {
         $flags = Wonolog\USE_DEFAULT_PROCESSOR;

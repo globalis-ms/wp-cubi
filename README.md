@@ -15,8 +15,6 @@ wp-cubi provides a modern stack and project structure to make professional web a
 
 Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http://robo.li/) task runner.
 
-**Note: wp-cubi is under active development and is not a final product yet. You should not use it if you don't know PHP development and WordPress basics.**
-
 
 ## Features
 
@@ -43,7 +41,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 
 ## Requirements
 
-* [PHP](http://php.net/) >= 7.0
+* [PHP](http://php.net/) >= 7.1
 * [Composer](http://getcomposer.org)
 * [Git](https://git-scm.com/)
 

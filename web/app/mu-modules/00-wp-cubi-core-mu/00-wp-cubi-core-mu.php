@@ -33,9 +33,6 @@ require_once __DIR__ . '/src/20-clean-wp-admin.php';
 // Various default filters
 require_once __DIR__ . '/src/20-default-filters.php';
 
-// Hooks on query-monitor plugin
-require_once __DIR__ . '/src/20-hooks-query-monitor.php';
-
 // Hooks on autodescription / The SEO Framework plugin
 require_once __DIR__ . '/src/20-hooks-the-seo-framework.php';
 
@@ -53,6 +50,9 @@ require_once __DIR__ . '/src/30-disable-useless-sql-queries.php';
 
 // Disable version update checks
 require_once __DIR__ . '/src/30-disable-version-update-checks.php';
+
+// Configure Site Health admin panel
+require_once __DIR__ . '/src/30-site-health.php';
 
 // jQuery (frontend): use cdnjs.cloudflare.com
 require_once __DIR__ . '/src/40-jquery-cdn.php';

@@ -30,8 +30,8 @@
   <!-- Show sniff codes in all reports -->
   <arg value="ns"/>
 
-  <!-- Use PSR-2 as a base -->
-  <rule ref="PSR2"/>
+  <!-- Use PSR-12 as a base -->
+  <rule ref="PSR12"/>
 
   <!-- Custom rule: disallow long `array()` syntax, use short `[]` syntax instead -->
   <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
