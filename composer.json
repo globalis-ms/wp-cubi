@@ -32,8 +32,8 @@
         "johnpbloch/wordpress-core-installer": "^1.0",
         "johnpbloch/wordpress-core": "5.2.3",
         "globalis/wp-cli-bin" : "^2.3.0",
-        "globalis/wp-cubi-helpers": "^0.3.5",
-        "globalis/wp-cubi-imagemin": "^1.1.0",
+        "globalis/wp-cubi-helpers": "^1.0.0",
+        "globalis/wp-cubi-imagemin": "^1.2.0",
         "roots/soil": "^3.8.1",
         "roots/wp-password-bcrypt": "^1.0.0",
         "soberwp/intervention": "^1.2.0",
@@ -44,7 +44,7 @@
         "wpackagist-plugin/autodescription": "^4.0.1"
     },
     "require-dev": {
-        "globalis/wp-cubi-robo" : "^0.1.7",
+        "globalis/wp-cubi-robo" : "^1.0.0",
         "squizlabs/php_codesniffer": "^3.5.0"
     },
     "extra": {

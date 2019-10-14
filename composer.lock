@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d4f2f5807a14b2235fc194d9adbd279",
+    "content-hash": "4d44bd2d09d42113349fb6f384a4b4eb",
     "packages": [
         {
             "name": "composer/installers",
@@ -169,23 +169,23 @@
         },
         {
             "name": "globalis/wp-cubi-helpers",
-            "version": "0.3.5",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-helpers.git",
-                "reference": "2820a66ad5a76a4305e7425d1812fc9525042ff8"
+                "reference": "0ce0fa07e06cbb66feb3f87ce9726c49acf73aa3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-helpers/zipball/2820a66ad5a76a4305e7425d1812fc9525042ff8",
-                "reference": "2820a66ad5a76a4305e7425d1812fc9525042ff8",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-helpers/zipball/0ce0fa07e06cbb66feb3f87ce9726c49acf73aa3",
+                "reference": "0ce0fa07e06cbb66feb3f87ce9726c49acf73aa3",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.0"
+                "php": ">=7.1"
             },
             "require-dev": {
-                "squizlabs/php_codesniffer": "^2.5.1"
+                "squizlabs/php_codesniffer": "^3.5.0"
             },
             "type": "library",
             "autoload": {
@@ -226,30 +226,30 @@
                 "wp",
                 "wp-cubi"
             ],
-            "time": "2019-04-05T10:11:14+00:00"
+            "time": "2019-10-14T12:55:02+00:00"
         },
         {
             "name": "globalis/wp-cubi-imagemin",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-imagemin.git",
-                "reference": "1269ed20df52e179d9ce92eeb470981ca2d96aff"
+                "reference": "45144dbbff27956383a358fd79639f6d4c619563"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-imagemin/zipball/1269ed20df52e179d9ce92eeb470981ca2d96aff",
-                "reference": "1269ed20df52e179d9ce92eeb470981ca2d96aff",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-imagemin/zipball/45144dbbff27956383a358fd79639f6d4c619563",
+                "reference": "45144dbbff27956383a358fd79639f6d4c619563",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "^1.5.0",
-                "php": ">=5.5.0",
+                "php": ">=7.1",
                 "ps/image-optimizer": "^1.2.0",
                 "psr/log": "^1.0"
             },
             "require-dev": {
-                "squizlabs/php_codesniffer": "^2.5.1"
+                "squizlabs/php_codesniffer": "^3.5.0"
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -268,7 +268,7 @@
             ],
             "description": "Standalone image minification WordPress plugin",
             "homepage": "https://github.com/globalis-ms/wp-cubi-imagemin",
-            "time": "2019-05-22T14:43:23+00:00"
+            "time": "2019-10-14T12:59:24+00:00"
         },
         {
             "name": "inpsyde/wonolog",
@@ -1903,24 +1903,25 @@
         },
         {
             "name": "globalis/wp-cubi-robo",
-            "version": "0.1.7",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-robo.git",
-                "reference": "4acc9d37c77e24a968a950d59b5ba53818c53bc1"
+                "reference": "2d09770112fd62bda3fec5c83f89a1f884651ff4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-robo/zipball/4acc9d37c77e24a968a950d59b5ba53818c53bc1",
-                "reference": "4acc9d37c77e24a968a950d59b5ba53818c53bc1",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-robo/zipball/2d09770112fd62bda3fec5c83f89a1f884651ff4",
+                "reference": "2d09770112fd62bda3fec5c83f89a1f884651ff4",
                 "shasum": ""
             },
             "require": {
                 "globalis/robo-task": "^1.1.0",
+                "php": ">=7.1",
                 "rmccue/requests": "~1.6"
             },
             "require-dev": {
-                "squizlabs/php_codesniffer": "^2.5.1"
+                "squizlabs/php_codesniffer": "^3.5.0"
             },
             "type": "library",
             "autoload": {
@@ -1944,7 +1945,7 @@
             ],
             "description": "Default Robo commands for wp-cubi",
             "homepage": "https://github.com/globalis-ms/wp-cubi-robo",
-            "time": "2019-04-25T15:47:31+00:00"
+            "time": "2019-10-14T12:48:24+00:00"
         },
         {
             "name": "grasmash/expander",
@@ -3015,7 +3016,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.0"
+        "php": ">=7.1"
     },
     "platform-dev": []
 }
