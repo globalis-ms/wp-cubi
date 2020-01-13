@@ -20,9 +20,6 @@ define('WP_CUBI_LOG_PHP_ERRORS', true);
 /* MEMORY */
 define('WP_MEMORY_LIMIT', '256M');
 
-/* SECURITY */
-define('FORCE_SSL_ADMIN', 'https' === WP_CUBI_CONFIG['WEB_SCHEME']);
-
 /* AUTOSAVE, REVISIONS, TRASH */
 define('AUTOSAVE_INTERVAL', '300');
 define('WP_POST_REVISIONS', 10);

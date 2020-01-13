@@ -3,7 +3,7 @@
 namespace Globalis\WP\Cubi;
 
 if (!defined('WP_CUBI_JQUERY_VERSION')) {
-    define('WP_CUBI_JQUERY_VERSION', '3.4.0');
+    define('WP_CUBI_JQUERY_VERSION', '3.4.1');
 }
 
 if (!defined('WP_CUBI_JQUERY_CDN_URL')) {
