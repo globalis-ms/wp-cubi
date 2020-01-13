@@ -31,16 +31,22 @@ require_once __DIR__ . '/src/10-security-xmlrpc.php';
 require_once __DIR__ . '/src/10-uploads-path.php';
 
 // Clean WordPress administration dahboard (remove widgets)
-require_once __DIR__ . '/src/20-clean-wp-admin.php';
+if (!defined('WP_INSTALLING') || !WP_INSTALLING) {
+    require_once __DIR__ . '/src/20-clean-wp-admin.php';
+}
 
 // Various default filters
 require_once __DIR__ . '/src/20-default-filters.php';
 
 // Hooks on autodescription / The SEO Framework plugin
-require_once __DIR__ . '/src/20-hooks-the-seo-framework.php';
+if (!defined('WP_INSTALLING') || !WP_INSTALLING) {
+    require_once __DIR__ . '/src/20-hooks-the-seo-framework.php';
+}
 
 // Activate roots/soil modules / theme-supports (provides cleaner front DOM)
-require_once __DIR__ . '/src/20-soil-modules.php';
+if (!defined('WP_INSTALLING') || !WP_INSTALLING) {
+    require_once __DIR__ . '/src/20-soil-modules.php';
+}
 
 // Customize wp-login.php page with application logo and url
 require_once __DIR__ . '/src/20-wp-login.php';
