@@ -44,7 +44,7 @@
         "wpackagist-plugin/autodescription": "^4.0.4"
     },
     "require-dev": {
-        "globalis/wp-cubi-robo" : "^1.0.0",
+        "globalis/wp-cubi-robo" : "^1.0.1",
         "squizlabs/php_codesniffer": "^3.5.3"
     },
     "extra": {

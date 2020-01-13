@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5cd2f9f49da686a7d2f32b6075d97c4d",
+    "content-hash": "00db3ff5db17de2580ae7b8fb04c2ddc",
     "packages": [
         {
             "name": "composer/installers",
@@ -1904,21 +1904,21 @@
         },
         {
             "name": "globalis/wp-cubi-robo",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-robo.git",
-                "reference": "2d09770112fd62bda3fec5c83f89a1f884651ff4"
+                "reference": "194b56557bb9f119a579e1f97ad5362f7efb8e0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-robo/zipball/2d09770112fd62bda3fec5c83f89a1f884651ff4",
-                "reference": "2d09770112fd62bda3fec5c83f89a1f884651ff4",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-robo/zipball/194b56557bb9f119a579e1f97ad5362f7efb8e0b",
+                "reference": "194b56557bb9f119a579e1f97ad5362f7efb8e0b",
                 "shasum": ""
             },
             "require": {
                 "globalis/robo-task": "^1.1.0",
-                "php": ">=7.1",
+                "php": ">=7.2",
                 "rmccue/requests": "~1.6"
             },
             "require-dev": {
@@ -1946,7 +1946,7 @@
             ],
             "description": "Default Robo commands for wp-cubi",
             "homepage": "https://github.com/globalis-ms/wp-cubi-robo",
-            "time": "2019-10-14T12:48:24+00:00"
+            "time": "2020-01-13T17:39:40+00:00"
         },
         {
             "name": "grasmash/expander",
