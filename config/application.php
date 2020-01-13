@@ -32,6 +32,8 @@ define('WP_UPLOADS_URL', WP_HOME . '/media');
 
 /* HTTPS */
 define('WP_IS_HTTPS', ('https' === WP_SCHEME));
+define('FORCE_SSL_ADMIN', ('https' === WP_SCHEME));
+$_SERVER['HTTPS'] = ('https' === WP_SCHEME) ? 1 : 0;
 
 /* ABSPATH */
 if (!defined('ABSPATH')) {

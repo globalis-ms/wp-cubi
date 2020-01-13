@@ -18,6 +18,9 @@ require_once __DIR__ . '/src/10-disallow-indexing.php';
 // Mail-trapper on development / staging environments
 require_once __DIR__ . '/src/10-mail-trapper.php';
 
+// Force secure cookies if site has HTTPS scheme (better reverse proxies compatibility)
+require_once __DIR__ . '/src/10-secure-cookies.php';
+
 // Disable REST API unless explicitly activated
 require_once __DIR__ . '/src/10-security-rest-api.php';
 
