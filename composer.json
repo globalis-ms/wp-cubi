@@ -32,7 +32,7 @@
         "johnpbloch/wordpress-core-installer": "^1.0.2",
         "johnpbloch/wordpress-core": "5.3.2",
         "globalis/wp-cli-bin" : "^2.4.0",
-        "globalis/wp-cubi-helpers": "^1.0.0",
+        "globalis/wp-cubi-helpers": "^1.0.1",
         "globalis/wp-cubi-imagemin": "^1.2.0",
         "roots/soil": "^3.9.0",
         "roots/wp-password-bcrypt": "^1.0.0",
