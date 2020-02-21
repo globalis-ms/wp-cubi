@@ -24,7 +24,6 @@ remove_action('init', 'smilies_init', 5);
 remove_filter('the_content', 'convert_smilies', 20);
 remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
 
-
 /*
  * Remove useless capital_P_dangit filter
  */
