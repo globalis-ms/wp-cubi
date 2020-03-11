@@ -7,6 +7,7 @@ define('WP_DEBUG_DISPLAY', true);
 define('SCRIPT_DEBUG', true);
 define('SAVEQUERIES', PHP_SAPI != 'cli');
 define('SQL_CACHE_QUERIES', false);
+define('WP_DISABLE_FATAL_ERROR_HANDLER', true);
 
 /* QUERY MONITOR */
 define('QM_DISABLE_ERROR_HANDLER', true);
