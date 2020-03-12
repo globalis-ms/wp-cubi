@@ -40,8 +40,8 @@
         "inpsyde/wonolog": "^1.0.3",
         "wpackagist-plugin/query-monitor": "^3.5.2",
         "wpackagist-plugin/wp-crontrol": "^1.7.1",
-        "wpackagist-plugin/user-switching": "^1.5.3",
-        "wpackagist-plugin/autodescription": "^4.0.4"
+        "wpackagist-plugin/user-switching": "^1.5.4",
+        "wpackagist-plugin/autodescription": "^4.0.5"
     },
     "require-dev": {
         "globalis/wp-cubi-robo" : "^1.0.1",
