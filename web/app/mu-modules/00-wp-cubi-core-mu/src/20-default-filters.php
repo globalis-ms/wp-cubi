@@ -32,3 +32,12 @@ remove_filter('the_title', 'capital_P_dangit', 11);
 remove_filter('the_content', 'capital_P_dangit', 11);
 remove_filter('widget_text_content', 'capital_P_dangit', 11);
 remove_filter('comment_text', 'capital_P_dangit', 31);
+
+/*
+ * Remove smilies and useless capital_P_dangit filter in ACF fields
+ */
+add_filter('acf_the_content', function ($default) {
+    remove_filter('acf_the_content', 'convert_smilies', 20);
+    remove_filter('acf_the_content', 'capital_P_dangit', 11);
+    return $default;
+}, 0);
