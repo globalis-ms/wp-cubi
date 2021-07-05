@@ -14,6 +14,10 @@ function wp_site_health_options($tests)
         unset($tests['direct']['rest_availability']);
     }
 
+    if (isset($tests['direct']['wordpress_version'])) {
+        unset($tests['direct']['wordpress_version']);
+    }
+
     if (isset($tests['async']['background_updates'])) {
         unset($tests['async']['background_updates']);
     }
