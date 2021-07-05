@@ -8,6 +8,7 @@ define('SCRIPT_DEBUG', false);
 define('SAVEQUERIES', PHP_SAPI != 'cli');
 define('SQL_CACHE_QUERIES', false);
 define('WP_DISABLE_FATAL_ERROR_HANDLER', true);
+define('WP_ENVIRONMENT_TYPE', 'staging');
 
 /* QUERY MONITOR */
 define('QM_DISABLE_ERROR_HANDLER', true);
