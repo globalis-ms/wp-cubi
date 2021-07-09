@@ -41,3 +41,8 @@ add_filter('acf_the_content', function ($default) {
     remove_filter('acf_the_content', 'capital_P_dangit', 11);
     return $default;
 }, 0);
+
+/*
+ * Remove native WordPress sitemap
+ */
+remove_action('init', 'wp_sitemaps_get_server');

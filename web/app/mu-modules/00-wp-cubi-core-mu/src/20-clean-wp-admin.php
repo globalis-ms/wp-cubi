@@ -7,7 +7,7 @@ use function Sober\Intervention\intervention;
 /*
  * Disable dashboard browse-happy requests / widget
  */
-if (is_blog_admin() && !empty($_SERVER['HTTP_USER_AGENT'])) {
+if (is_blog_admin() && is_array($_SERVER) && isset($_SERVER['HTTP_USER_AGENT']) && !empty($_SERVER['HTTP_USER_AGENT'])) {
     add_filter('pre_site_transient_browser_' . md5($_SERVER['HTTP_USER_AGENT']), '__return_empty_array');
 }
 
@@ -16,6 +16,10 @@ if (is_blog_admin() && !empty($_SERVER['HTTP_USER_AGENT'])) {
  */
 add_action('plugins_loaded', function () {
     if (!function_exists('\Sober\Intervention\intervention')) {
+        return;
+    }
+
+    if (\Globalis\WP\Cubi\is_frontend()) {
         return;
     }
 
@@ -50,3 +54,10 @@ add_action('plugins_loaded', function () {
         'customize',
     ], 'all');
 }, 99);
+
+/*
+ * Disable dashboard site health widget
+ */
+add_action('wp_dashboard_setup', function () {
+    remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
+});
