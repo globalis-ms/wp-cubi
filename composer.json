@@ -42,7 +42,7 @@
         "wpackagist-plugin/query-monitor": "^3.7.1",
         "wpackagist-plugin/wp-crontrol": "^1.10.0",
         "wpackagist-plugin/user-switching": "^1.5.7",
-        "wpackagist-plugin/autodescription": "^4.1.3"
+        "wpackagist-plugin/autodescription": "^4.1.5.1"
     },
     "require-dev": {
         "globalis/wp-cubi-robo" : "^2.0.1",
