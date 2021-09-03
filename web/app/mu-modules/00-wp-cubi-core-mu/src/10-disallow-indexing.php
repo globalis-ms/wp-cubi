@@ -25,4 +25,4 @@ if (WP_ENV === 'production') {
 /*
  * Prevent AMP pages being indexed when option blog_public != 1
  */
-add_action('amp_post_template_head', 'noindex');
+add_action('amp_post_template_head', 'wp_robots');
