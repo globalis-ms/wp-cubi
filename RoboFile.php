@@ -45,6 +45,8 @@ class RoboFile extends \Globalis\WP\Cubi\Robo\RoboFile
         'htaccess-wp-permalinks',
     ];
 
+    const CONFIRM_CONFIG_BEFORE_DEPLOY  = true;
+
     // public function buildAssets($environment = 'development', $root = \RoboFile::ROOT)
     // {
     //     // Write your own function, according to your assets build process

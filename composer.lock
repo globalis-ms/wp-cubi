@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0fd34365f37264672f4a58bf45dc1320",
+    "content-hash": "5985798e5905e4a9317adb8fc2bfe39f",
     "packages": [
         {
             "name": "composer/installers",
@@ -3513,16 +3513,16 @@
         },
         {
             "name": "globalis/wp-cubi-robo",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-robo.git",
-                "reference": "30567b263dc6894ddb5c1d8edae911c0d9f38aa3"
+                "reference": "6f4ed0ce74f249bc1514f9258a53db07ea8fdd03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-robo/zipball/30567b263dc6894ddb5c1d8edae911c0d9f38aa3",
-                "reference": "30567b263dc6894ddb5c1d8edae911c0d9f38aa3",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-robo/zipball/6f4ed0ce74f249bc1514f9258a53db07ea8fdd03",
+                "reference": "6f4ed0ce74f249bc1514f9258a53db07ea8fdd03",
                 "shasum": ""
             },
             "require": {
@@ -3557,9 +3557,9 @@
             "homepage": "https://github.com/globalis-ms/wp-cubi-robo",
             "support": {
                 "issues": "https://github.com/globalis-ms/wp-cubi-robo/issues",
-                "source": "https://github.com/globalis-ms/wp-cubi-robo/tree/2.0.2"
+                "source": "https://github.com/globalis-ms/wp-cubi-robo/tree/2.0.3"
             },
-            "time": "2021-09-03T14:02:26+00:00"
+            "time": "2021-09-03T14:32:13+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
