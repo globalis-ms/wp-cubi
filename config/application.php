@@ -52,6 +52,9 @@ define('WP_CUBI_DISABLE_ALL_VERSION_UPDATE_CHECKS', true);
 define('DISALLOW_FILE_MODS', true);
 define('DISALLOW_FILE_EDIT', true);
 
+/* PASSWORDS */
+define('WP_CUBI_DISALLOW_WEAKS_PASSWORDS', true);
+
 /* REST API */
 define('WP_CUBI_ENABLE_REST_API', false);
 

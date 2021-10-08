@@ -65,3 +65,6 @@ require_once __DIR__ . '/src/30-site-health.php';
 
 // jQuery (frontend): use cdnjs.cloudflare.com
 require_once __DIR__ . '/src/40-jquery-cdn.php';
+
+// Disallow weak passwords
+require_once __DIR__ . '/src/40-disallow-weaks-passwords.php';
