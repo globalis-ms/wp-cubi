@@ -44,11 +44,13 @@ if (!defined('ABSPATH')) {
 define('WP_DEFAULT_THEME', 'wp-cubi-debug-theme');
 
 /* UPDATES */
+// NOTE: If you need to edit this section, you may need to edit htaccess-security > Block sensitive WordPress files
 define('AUTOMATIC_UPDATER_DISABLED', true);
 define('WP_AUTO_UPDATE_CORE', false);
 define('WP_CUBI_DISABLE_ALL_VERSION_UPDATE_CHECKS', true);
 
 /* SECURITY */
+// NOTE: If you need to edit this section, you may need to edit htaccess-security > Block sensitive WordPress files
 define('DISALLOW_FILE_MODS', true);
 define('DISALLOW_FILE_EDIT', true);
 

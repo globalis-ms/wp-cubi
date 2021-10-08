@@ -118,7 +118,7 @@
 # | Block sensitive WordPress files                                    |
 # ----------------------------------------------------------------------
 
-<FilesMatch "^(xmlrpc\.php|wp-config\.php|readme\.html|license\.txt|install\.php|wp-cli\.local\.yml|wp-cli\.yml)">
+<FilesMatch "^(xmlrpc\.php|wp-config\.php|readme\.html|license\.txt|install\.php|wp-cli\.local\.yml|wp-cli\.yml|plugin-install\.php|plugin-editor\.php|theme-install\.php|theme-editor\.php|update\.php)">
   # Apache < 2.3
   <IfModule !mod_authz_core.c>
     Order allow,deny
