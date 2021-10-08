@@ -48,6 +48,9 @@ if (!defined('WP_INSTALLING') || !WP_INSTALLING) {
     require_once __DIR__ . '/src/20-soil-modules.php';
 }
 
+// Hide admin-ajax URL
+require_once __DIR__ . '/src/20-hide-admin-ajax-url.php';
+
 // Customize wp-login.php page with application logo and url
 require_once __DIR__ . '/src/20-wp-login.php';
 
