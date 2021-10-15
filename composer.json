@@ -30,7 +30,7 @@
         "php": ">=7.4",
         "composer/installers": "^1.11.0",
         "johnpbloch/wordpress-core-installer": "^2.0.0",
-        "johnpbloch/wordpress-core": "5.8.0",
+        "johnpbloch/wordpress-core": "5.8.1",
         "consolidation/robo": "3.x-dev",
         "globalis/wp-cli-bin" : "^2.5.0",
         "globalis/wp-cubi-helpers": "^1.0.4",
@@ -41,7 +41,7 @@
         "inpsyde/wonolog": "^1.0.4",
         "wpackagist-plugin/query-monitor": "^3.7.1",
         "wpackagist-plugin/wp-crontrol": "^1.10.0",
-        "wpackagist-plugin/user-switching": "^1.5.7",
+        "wpackagist-plugin/user-switching": "^1.5.8",
         "wpackagist-plugin/autodescription": "^4.1.5.1"
     },
     "require-dev": {
