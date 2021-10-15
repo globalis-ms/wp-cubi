@@ -87,14 +87,14 @@
 # ----------------------------------------------------------------------
 
 <IfModule mod_rewrite.c>
-  RewriteRule ^wp/wp-admin/includes/ - [F,L]
-  RewriteRule !^wp/wp-includes/ - [S=3]
+  RewriteRule ^wpcb/wp-admin/includes/ - [F,L]
+  RewriteRule !^wpcb/wp-includes/ - [S=3]
 
-  RewriteRule ^wp/wp-includes/js/tinymce/langs/.+\.php - [F,L]
-  RewriteRule ^wp/wp-includes/theme-compat/ - [F,L]
+  RewriteRule ^wpcb/wp-includes/js/tinymce/langs/.+\.php - [F,L]
+  RewriteRule ^wpcb/wp-includes/theme-compat/ - [F,L]
 
-  RewriteCond %{SCRIPT_FILENAME} !^(.*)wp/wp-includes/ms-files.php
-  RewriteRule ^wp/wp-includes/[^/]+\.php$ - [F,L]
+  RewriteCond %{SCRIPT_FILENAME} !^(.*)wpcb/wp-includes/ms-files.php
+  RewriteRule ^wpcb/wp-includes/[^/]+\.php$ - [F,L]
 </IfModule>
 
 # ----------------------------------------------------------------------
@@ -146,7 +146,7 @@
 # ----------------------------------------------------------------------
 
 <IfModule mod_rewrite.c>
-  RewriteCond %{REQUEST_URI} !^<##WEB_PATH_PQ##>(/wp)?/wp-admin/
+  RewriteCond %{REQUEST_URI} !^<##WEB_PATH_PQ##>(/wpcb)?/wp-admin/
   RewriteCond %{QUERY_STRING} author=\d
   RewriteRule ^(.*)$ - [F]
 </IfModule>

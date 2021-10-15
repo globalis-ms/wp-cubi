@@ -10,7 +10,7 @@
 
   <!-- Ignore dependencies -->
   <exclude-pattern>/vendor/</exclude-pattern>
-  <exclude-pattern>/web/wp/</exclude-pattern>
+  <exclude-pattern>/web/wpcb/</exclude-pattern>
   <exclude-pattern>/web/app/modules/</exclude-pattern>
   <exclude-pattern>/web/app/mu-modules/(?!(00-wp-cubi-core-mu/|10-wp-cubi-admin-bar/))*/</exclude-pattern>
 

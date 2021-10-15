@@ -20,7 +20,7 @@ define('WP_DOMAIN', WP_CUBI_CONFIG['WEB_DOMAIN']);
 define('WP_PATH', WP_CUBI_CONFIG['WEB_PATH']);
 define('WP_HOME', WP_SCHEME . '://' . WP_DOMAIN . WP_PATH);
 define('WEBROOT_DIR', ROOT_DIR . '/web');
-define('WP_SITEURL', WP_HOME . '/wp');
+define('WP_SITEURL', WP_HOME . '/wpcb');
 define('WP_CONTENT_DIR', WEBROOT_DIR . '/app');
 define('WP_CONTENT_URL', WP_HOME . '/app');
 define('WP_PLUGIN_DIR', WP_CONTENT_DIR . '/modules');
@@ -37,7 +37,7 @@ $_SERVER['HTTPS'] = ('https' === WP_SCHEME) ? 1 : 0;
 
 /* ABSPATH */
 if (!defined('ABSPATH')) {
-    define('ABSPATH', WEBROOT_DIR . '/wp/');
+    define('ABSPATH', WEBROOT_DIR . '/wpcb/');
 }
 
 /* THEME */

@@ -50,6 +50,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 
 1. Create a new project: `composer create-project --remove-vcs globalis/wp-cubi your-project && cd your-project`
 2. Run installation command and answer the questions: `./vendor/bin/robo install --setup-wordpress`
+3. Access your new site administration: `/wpcb/wp-admin/`
 
 
 ## Configuration

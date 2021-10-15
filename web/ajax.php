@@ -1,3 +1,3 @@
 <?php
 
-include __DIR__ . '/C2H6O/wp-admin/admin-ajax.php';
+include __DIR__ . '/wpcb/wp-admin/admin-ajax.php';
