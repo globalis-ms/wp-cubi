@@ -48,6 +48,9 @@ if (!defined('WP_INSTALLING') || !WP_INSTALLING) {
     require_once __DIR__ . '/src/20-soil-modules.php';
 }
 
+// Hide admin-ajax URL
+require_once __DIR__ . '/src/20-hide-admin-ajax-url.php';
+
 // Customize wp-login.php page with application logo and url
 require_once __DIR__ . '/src/20-wp-login.php';
 
@@ -65,3 +68,6 @@ require_once __DIR__ . '/src/30-site-health.php';
 
 // jQuery (frontend): use cdnjs.cloudflare.com
 require_once __DIR__ . '/src/40-jquery-cdn.php';
+
+// Disallow weak passwords
+require_once __DIR__ . '/src/40-disallow-weaks-passwords.php';

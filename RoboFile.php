@@ -12,7 +12,9 @@ class RoboFile extends \Globalis\WP\Cubi\Robo\RoboFile
     use DeployTrait;
     use GitTrait;
     use InstallTrait;
-    use WordPressTrait;
+    use WordPressTrait {
+        wpUrl as wpUrlInherited;
+    }
 
     const ROOT                          = __DIR__;
 
@@ -46,6 +48,14 @@ class RoboFile extends \Globalis\WP\Cubi\Robo\RoboFile
     ];
 
     const CONFIRM_CONFIG_BEFORE_DEPLOY  = true;
+
+    protected function wpUrl()
+    {
+        $scheme = $this->getConfig('development', 'WEB_SCHEME');
+        $domain = $this->getConfig('development', 'WEB_DOMAIN');
+        $path   = $this->getConfig('development', 'WEB_PATH');
+        return $scheme . '://' . $domain . $path . '/wpcb';
+    }
 
     // public function buildAssets($environment = 'development', $root = \RoboFile::ROOT)
     // {

@@ -21,7 +21,7 @@
 *.log
 
 # WordPress core
-/web/wp
+/web/wpcb
 
 # WordPress temp files
 /web/app/cache

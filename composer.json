@@ -54,7 +54,7 @@
             "web/app/modules/{$name}/": ["type:wordpress-plugin"],
             "web/app/themes/{$name}/": ["type:wordpress-theme"]
         },
-        "wordpress-install-dir": "web/wp"
+        "wordpress-install-dir": "web/wpcb"
     },
     "scripts": {
         "post-create-project-cmd": [

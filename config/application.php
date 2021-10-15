@@ -20,7 +20,7 @@ define('WP_DOMAIN', WP_CUBI_CONFIG['WEB_DOMAIN']);
 define('WP_PATH', WP_CUBI_CONFIG['WEB_PATH']);
 define('WP_HOME', WP_SCHEME . '://' . WP_DOMAIN . WP_PATH);
 define('WEBROOT_DIR', ROOT_DIR . '/web');
-define('WP_SITEURL', WP_HOME . '/wp');
+define('WP_SITEURL', WP_HOME . '/wpcb');
 define('WP_CONTENT_DIR', WEBROOT_DIR . '/app');
 define('WP_CONTENT_URL', WP_HOME . '/app');
 define('WP_PLUGIN_DIR', WP_CONTENT_DIR . '/modules');
@@ -37,20 +37,28 @@ $_SERVER['HTTPS'] = ('https' === WP_SCHEME) ? 1 : 0;
 
 /* ABSPATH */
 if (!defined('ABSPATH')) {
-    define('ABSPATH', WEBROOT_DIR . '/wp/');
+    define('ABSPATH', WEBROOT_DIR . '/wpcb/');
 }
 
 /* THEME */
 define('WP_DEFAULT_THEME', 'wp-cubi-debug-theme');
 
 /* UPDATES */
+// NOTE: If you need to edit this section, you may need to edit htaccess-security > Block sensitive WordPress files
 define('AUTOMATIC_UPDATER_DISABLED', true);
 define('WP_AUTO_UPDATE_CORE', false);
 define('WP_CUBI_DISABLE_ALL_VERSION_UPDATE_CHECKS', true);
 
 /* SECURITY */
+// NOTE: If you need to edit this section, you may need to edit htaccess-security > Block sensitive WordPress files
 define('DISALLOW_FILE_MODS', true);
 define('DISALLOW_FILE_EDIT', true);
+
+/* PASSWORDS */
+define('WP_CUBI_DISALLOW_WEAKS_PASSWORDS', true);
+
+/* ADMIN AJAX */
+define('WP_CUBI_HIDE_ADMIN_AJAX_URL', true);
 
 /* REST API */
 define('WP_CUBI_ENABLE_REST_API', false);
