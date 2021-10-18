@@ -2,7 +2,7 @@
 
 namespace Globalis\WP\Cubi;
 
-if (!defined('WP_CUBI_DISALLOW_WEAKS_PASSWORDS') || !WP_CUBI_DISALLOW_WEAKS_PASSWORDS) {
+if (!defined('WP_CUBI_DISALLOW_WEAK_PASSWORDS') || !WP_CUBI_DISALLOW_WEAK_PASSWORDS) {
     return;
 }
 
