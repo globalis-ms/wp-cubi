@@ -70,4 +70,4 @@ require_once __DIR__ . '/src/30-site-health.php';
 require_once __DIR__ . '/src/40-jquery-cdn.php';
 
 // Disallow weak passwords
-require_once __DIR__ . '/src/40-disallow-weaks-passwords.php';
+require_once __DIR__ . '/src/40-disallow-weak-passwords.php';
