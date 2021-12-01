@@ -18,6 +18,9 @@
 
 # Security
 *.db
+
+# Logs
+/log
 *.log
 
 # WordPress core
