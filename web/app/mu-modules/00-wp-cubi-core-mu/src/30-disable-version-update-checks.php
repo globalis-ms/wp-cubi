@@ -21,4 +21,23 @@ if (defined('WP_CUBI_DISABLE_ALL_VERSION_UPDATE_CHECKS') && WP_CUBI_DISABLE_ALL_
     remove_action('update_option_WPLANG', 'wp_clean_update_cache', 10, 0);
     remove_action('wp_maybe_auto_update', 'wp_maybe_auto_update');
     remove_action('init', 'wp_schedule_update_checks');
+
+    add_filter('pre_site_transient_update_core', __NAMESPACE__ . '\\removeWordPressUpdates');
+    add_filter('pre_site_transient_update_plugins', __NAMESPACE__ . '\\removeWordPressUpdates');
+    add_filter('pre_site_transient_update_themes', __NAMESPACE__ . '\\removeWordPressUpdates');
+
+    add_action('admin_init', function () {
+        remove_submenu_page('index.php', 'update-core.php');
+    });
+}
+
+function removeWordPressUpdates()
+{
+    global $wp_version;
+
+    return(object) [
+        'last_checked' => time(),
+        'version_checked' => $wp_version,
+        'updates' => [],
+    ];
 }
