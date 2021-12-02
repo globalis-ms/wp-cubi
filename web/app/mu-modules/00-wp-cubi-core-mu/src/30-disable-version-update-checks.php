@@ -25,6 +25,10 @@ if (defined('WP_CUBI_DISABLE_ALL_VERSION_UPDATE_CHECKS') && WP_CUBI_DISABLE_ALL_
     add_filter('pre_site_transient_update_core', __NAMESPACE__ . '\\removeWordPressUpdates');
     add_filter('pre_site_transient_update_plugins', __NAMESPACE__ . '\\removeWordPressUpdates');
     add_filter('pre_site_transient_update_themes', __NAMESPACE__ . '\\removeWordPressUpdates');
+
+    add_action('admin_init', function () {
+        remove_submenu_page('index.php', 'update-core.php');
+    });
 }
 
 function removeWordPressUpdates()
