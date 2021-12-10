@@ -9,23 +9,26 @@
 AddDefaultCharset utf-8
 
 <IfModule mod_mime.c>
-  AddCharset utf-8 .atom \
-  .bbaw \
-  .css \
-  .geojson \
-  .js \
-  .json \
-  .jsonld \
-  .manifest \
-  .rdf \
-  .rss \
-  .topojson \
-  .vtt \
-  .webapp \
-  .webmanifest \
-  .xloc \
-  .xml
+  AddCharset utf-8 .appcache \
+    .bbaw \
+    .css \
+    .htc \
+    .ics \
+    .js \
+    .json \
+    .manifest \
+    .map \
+    .markdown \
+    .md \
+    .mjs \
+    .topojson \
+    .vtt \
+    .vcard \
+    .vcf \
+    .webmanifest \
+    .xloc
 </IfModule>
+
 
 # ----------------------------------------------------------------------
 # | Internet explorer                                                  |
