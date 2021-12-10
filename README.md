@@ -87,7 +87,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * `./vendor/bin/robo hotfix:finish [--semversion=<version>]`
 * `./vendor/bin/robo release:start [--semversion=<version>]`
 * `./vendor/bin/robo release:finish [--semversion=<version>]`
-* `./vendor/bin/robo deploy <environment> <version> [--ignore-assets]`
+* `./vendor/bin/robo deploy <environment> <version> [--ignore-assets] [--ignore-composer]`
 * `./vendor/bin/robo deploy:setup <environment>`
 * `./vendor/bin/robo media:dump <environment> [--delete]`
 * `./vendor/bin/robo media:push <environment> [--delete]`
