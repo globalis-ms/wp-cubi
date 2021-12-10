@@ -6,6 +6,7 @@
 .jscsrc
 .jshintrc
 .travis.yml
+/.htaccess
 /.robo
 /.rsyncignore
 /config/htaccess

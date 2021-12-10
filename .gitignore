@@ -4,6 +4,7 @@
 /config/salt-keys.php
 
 # .htaccess
+/.htaccess
 /config/htaccess/*-local
 /web/.htaccess
 /web/.htpasswd
