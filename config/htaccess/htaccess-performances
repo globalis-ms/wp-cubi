@@ -16,38 +16,47 @@
   </IfModule>
 
   <IfModule mod_filter.c>
-    AddOutputFilterByType DEFLATE "application/atom+xml" \
-    "application/javascript" \
-    "application/json" \
-    "application/ld+json" \
-    "application/manifest+json" \
-    "application/rdf+xml" \
-    "application/rss+xml" \
-    "application/schema+json" \
-    "application/vnd.geo+json" \
-    "application/vnd.ms-fontobject" \
-    "application/x-font-ttf" \
-    "application/x-javascript" \
-    "application/x-web-app-manifest+json" \
-    "application/xhtml+xml" \
-    "application/xml" \
-    "font/eot" \
-    "font/opentype" \
-    "image/bmp" \
-    "image/svg+xml" \
-    "image/vnd.microsoft.icon" \
-    "image/x-icon" \
-    "text/cache-manifest" \
-    "text/css" \
-    "text/html" \
-    "text/javascript" \
-    "text/plain" \
-    "text/vcard" \
-    "text/vnd.rim.location.xloc" \
-    "text/vtt" \
-    "text/x-component" \
-    "text/x-cross-domain-policy" \
-    "text/xml"
+    AddOutputFilterByType DEFLATE application/atom+xml
+    AddOutputFilterByType DEFLATE application/font-sfnt
+    AddOutputFilterByType DEFLATE application/geo+json
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/js
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/ld+json
+    AddOutputFilterByType DEFLATE application/manifest+json
+    AddOutputFilterByType DEFLATE application/rdf+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/schema+json
+    AddOutputFilterByType DEFLATE application/vnd.geo+json
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+    AddOutputFilterByType DEFLATE application/wasm
+    AddOutputFilterByType DEFLATE application/x-font-ttf
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/x-web-app-manifest+json
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE font/eot
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE image/bmp
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE image/vnd.microsoft.icon
+    AddOutputFilterByType DEFLATE image/x-icon
+    AddOutputFilterByType DEFLATE text/cache-manifest
+    AddOutputFilterByType DEFLATE text/calendar
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/markdown
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/vcard
+    AddOutputFilterByType DEFLATE text/vnd.rim.location.xloc
+    AddOutputFilterByType DEFLATE text/vtt
+    AddOutputFilterByType DEFLATE text/x-component
+    AddOutputFilterByType DEFLATE text/x-cross-domain-policy
+    AddOutputFilterByType DEFLATE text/x-javascript
+    AddOutputFilterByType DEFLATE text/xml
   </IfModule>
 
   <IfModule mod_mime.c>
@@ -71,46 +80,100 @@ FileETag None
 # ----------------------------------------------------------------------
 
 <IfModule mod_expires.c>
-  ExpiresActive on
-  ExpiresDefault                                      "access plus 1 month"
-  ExpiresByType text/css                              "access plus 1 year"
-  ExpiresByType application/atom+xml                  "access plus 1 hour"
-  ExpiresByType application/rdf+xml                   "access plus 1 hour"
-  ExpiresByType application/rss+xml                   "access plus 1 hour"
-  ExpiresByType application/json                      "access plus 0 seconds"
-  ExpiresByType application/ld+json                   "access plus 0 seconds"
-  ExpiresByType application/schema+json               "access plus 0 seconds"
-  ExpiresByType application/vnd.geo+json              "access plus 0 seconds"
-  ExpiresByType application/xml                       "access plus 0 seconds"
-  ExpiresByType text/xml                              "access plus 0 seconds"
-  ExpiresByType image/vnd.microsoft.icon              "access plus 1 week"
-  ExpiresByType image/x-icon                          "access plus 1 week"
-  ExpiresByType text/html                             "access plus 0 seconds"
-  ExpiresByType application/javascript                "access plus 1 year"
-  ExpiresByType application/x-javascript              "access plus 1 year"
-  ExpiresByType text/javascript                       "access plus 1 year"
-  ExpiresByType application/manifest+json             "access plus 1 week"
-  ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
-  ExpiresByType text/cache-manifest                   "access plus 0 seconds"
-  ExpiresByType audio/ogg                             "access plus 1 month"
-  ExpiresByType image/bmp                             "access plus 1 month"
-  ExpiresByType image/gif                             "access plus 1 month"
-  ExpiresByType image/jpeg                            "access plus 1 month"
-  ExpiresByType image/png                             "access plus 1 month"
-  ExpiresByType image/svg+xml                         "access plus 1 month"
-  ExpiresByType image/webp                            "access plus 1 month"
-  ExpiresByType video/mp4                             "access plus 1 month"
-  ExpiresByType video/ogg                             "access plus 1 month"
-  ExpiresByType video/webm                            "access plus 1 month"
-  ExpiresByType application/vnd.ms-fontobject         "access plus 1 month"
-  ExpiresByType font/eot                              "access plus 1 month"
-  ExpiresByType font/opentype                         "access plus 1 month"
-  ExpiresByType application/x-font-ttf                "access plus 1 month"
-  ExpiresByType application/font-woff                 "access plus 1 month"
-  ExpiresByType application/x-font-woff               "access plus 1 month"
-  ExpiresByType font/woff                             "access plus 1 month"
-  ExpiresByType application/font-woff2                "access plus 1 month"
-  ExpiresByType text/x-cross-domain-policy            "access plus 1 week"
+    ExpiresActive on
+
+  # Default
+    ExpiresDefault                                      "access plus 1 week"
+
+  # HTML
+    ExpiresByType text/html                             "access plus 0 seconds"
+
+  # Text & Markdown
+    ExpiresByType text/plain                            "access plus 0 seconds"
+    ExpiresByType text/markdown                         "access plus 0 seconds"
+
+  # Data interchange
+    ExpiresByType application/json                      "access plus 0 seconds"
+    ExpiresByType application/ld+json                   "access plus 0 seconds"
+    ExpiresByType application/schema+json               "access plus 0 seconds"
+    ExpiresByType application/geo+json                  "access plus 0 seconds"
+    ExpiresByType application/vnd.geo+json              "access plus 0 seconds"
+    ExpiresByType application/xml                       "access plus 0 seconds"
+    ExpiresByType text/calendar                         "access plus 0 seconds"
+    ExpiresByType text/xml                              "access plus 0 seconds"
+
+  # Manifest files
+    ExpiresByType text/cache-manifest                   "access plus 0 seconds"
+    ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
+
+  # Feeds
+    ExpiresByType application/atom+xml                  "access plus 1 hour"
+    ExpiresByType application/rdf+xml                   "access plus 1 hour"
+    ExpiresByType application/rss+xml                   "access plus 1 hour"
+
+  # Manifest files
+    ExpiresByType application/manifest+json             "access plus 1 week"
+
+  # Cross Domain Policy
+    ExpiresByType text/x-cross-domain-policy            "access plus 1 week"
+
+  # Favicon (cannot be renamed!) and cursor images
+    ExpiresByType image/vnd.microsoft.icon              "access plus 1 week"
+    ExpiresByType image/x-icon                          "access plus 1 week"
+
+  # PDF
+    ExpiresByType application/pdf                       "access plus 1 month"
+
+  # Audio/Video files
+    ExpiresByType audio/ogg                             "access plus 1 month"
+    ExpiresByType video/mp4                             "access plus 1 month"
+    ExpiresByType video/ogg                             "access plus 1 month"
+    ExpiresByType video/webm                            "access plus 1 month"
+
+  # Images
+    ExpiresByType image/apng                            "access plus 1 year"
+    ExpiresByType image/avif                            "access plus 1 year"
+    ExpiresByType image/avif-sequence                   "access plus 1 year"
+    ExpiresByType image/avifs                           "access plus 1 year"
+    ExpiresByType image/gif                             "access plus 1 year"
+    ExpiresByType image/heic                            "access plus 1 year"
+    ExpiresByType image/heic-sequence                   "access plus 1 year"
+    ExpiresByType image/heics                           "access plus 1 year"
+    ExpiresByType image/heif                            "access plus 1 year"
+    ExpiresByType image/heif-sequence                   "access plus 1 year"
+    ExpiresByType image/heifs                           "access plus 1 year"
+    ExpiresByType image/jpeg                            "access plus 1 year"
+    ExpiresByType image/jpg                             "access plus 1 year"
+    ExpiresByType image/png                             "access plus 1 year"
+    ExpiresByType image/svg+xml                         "access plus 1 year"
+    ExpiresByType image/webp                            "access plus 1 year"
+
+  # Web fonts
+    ExpiresByType font/collection                       "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject         "access plus 1 year"
+    ExpiresByType font/eot                              "access plus 1 year"
+    ExpiresByType font/opentype                         "access plus 1 year"
+    ExpiresByType font/otf                              "access plus 1 year"
+    ExpiresByType application/x-font-ttf                "access plus 1 year"
+    ExpiresByType font/ttf                              "access plus 1 year"
+    ExpiresByType application/font-woff                 "access plus 1 year"
+    ExpiresByType application/x-font-woff               "access plus 1 year"
+    ExpiresByType font/woff                             "access plus 1 year"
+    ExpiresByType application/font-woff2                "access plus 1 year"
+    ExpiresByType font/woff2                            "access plus 1 year"
+
+  # CSS
+    ExpiresByType text/css                              "access plus 1 year"
+
+  # JavaScript
+    ExpiresByType text/javascript                       "access plus 1 year"
+    ExpiresByType text/x-javascript                     "access plus 1 year"
+    ExpiresByType application/javascript                "access plus 1 year"
+    ExpiresByType application/x-javascript              "access plus 1 year"
+
+  # WebAssembly
+    ExpiresByType application/wasm                      "access plus 1 year"
+
 </IfModule>
 
 # ----------------------------------------------------------------------
@@ -118,14 +181,52 @@ FileETag None
 # ----------------------------------------------------------------------
 
 <IfModule mod_headers.c>
-  <FilesMatch "\.(ico|jpe?g|png|gif|swf|js|css|gz|svg|mp4)$">
-    Header set Cache-Control "max-age=2592000, public"
-  </FilesMatch>
-  <FilesMatch "\.(html|htm)$">
-    Header set Cache-Control "max-age=7200, public"
-  </FilesMatch>
-  <FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
-    Header unset Cache-Control
-  </FilesMatch>
+
+  # SCRIPTS, NO CACHE-CONTROL HEADER
+    <FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
+      Header unset Cache-Control
+    </FilesMatch>
+
+  # 1 WEEK
+
+    # Favicon (cannot be renamed!) and cursor images
+      <FilesMatch "\.(cur|ico)$">
+        Header set Cache-Control "max-age=604800, public"
+      </FilesMatch>
+
+  # 1 MONTH
+
+    # PDF
+      <FilesMatch "\.(pdf)$">
+        Header set Cache-Control "max-age=2592000, public"
+      </FilesMatch>
+
+    # Audio/Video files
+      <FilesMatch "\.(avi|f4a|f4b|f4p|f4v|flv|m4a|m4v|mkv|mov|mp3|mp4|oga|ogg|ogv|opus|swf|webm|wmv)$">
+        Header set Cache-Control "max-age=2592000, public"
+      </FilesMatch>
+
+  # 1 YEAR
+
+    # Images
+      <FilesMatch "\.(gif|jpg|jpeg|svg|svgz|webp|apng|png|heif|heifs|heic|heics|avci|avcs|avif|avifs)$">
+        Header set Cache-Control "max-age=31536000, public"
+      </FilesMatch>
+
+    # Web fonts
+      <FilesMatch "\.(eot|otf|ttc|ttf|woff|woff2)$">
+        Header set Cache-Control "max-age=31536000, public"
+      </FilesMatch>
+
+    # CSS
+      <FilesMatch "\.(css)$">
+        Header set Cache-Control "max-age=31536000, public"
+      </FilesMatch>
+
+    # JavaScript
+      <FilesMatch "\.(js|cjs|mjs)$">
+        Header set Cache-Control "max-age=31536000, public"
+      </FilesMatch>
+
 </IfModule>
 

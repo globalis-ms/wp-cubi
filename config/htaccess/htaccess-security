@@ -14,27 +14,19 @@
 # | Block access to hidden files                                       |
 # ----------------------------------------------------------------------
 
-<FilesMatch "^\.">
-
-  # Apache < 2.3
-  <IfModule !mod_authz_core.c>
-    Order allow,deny
-    Deny from all
-    Satisfy All
-  </IfModule>
-
-  # Apache ≥ 2.3
-  <IfModule mod_authz_core.c>
-    Require all denied
-  </IfModule>
-
-</FilesMatch>
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} "!(^|/)\.well-known/([^./]+./?)+$" [NC]
+    RewriteCond %{SCRIPT_FILENAME} -d [OR]
+    RewriteCond %{SCRIPT_FILENAME} -f
+    RewriteRule "(^|/)\." - [F]
+</IfModule>
 
 # ----------------------------------------------------------------------
 # | Block access to files that can expose sensitive information        |
 # ----------------------------------------------------------------------
 
-<FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op])|~)$">
+<FilesMatch "(^#.*#|\.(lock|bak|conf|dist|fla|in[ci]|log|orig|bash|z?sh|sql|sw[op])|~)$">
 
   # Apache < 2.3
   <IfModule !mod_authz_core.c>
@@ -55,7 +47,7 @@
 # ----------------------------------------------------------------------
 
 <IfModule mod_headers.c>
-  Header set X-Content-Type-Options "nosniff"
+  Header always set X-Content-Type-Options "nosniff"
 </IfModule>
 
 # ----------------------------------------------------------------------
@@ -72,6 +64,7 @@
 
 <IfModule mod_headers.c>
   Header unset X-Powered-By
+  Header always unset X-Powered-By
 </IfModule>
 
 # ----------------------------------------------------------------------
