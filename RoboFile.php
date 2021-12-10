@@ -47,6 +47,12 @@ class RoboFile extends \Globalis\WP\Cubi\Robo\RoboFile
         'htaccess-wp-permalinks',
     ];
 
+    const PATH_VENDORS = [
+        '/vendor',
+        '/web/wpcb',
+        '/web/app/modules',
+    ];
+
     const CONFIRM_CONFIG_BEFORE_DEPLOY  = true;
 
     protected function wpUrl()
