@@ -116,7 +116,7 @@ For advanced configuration (adding channels or handlers), you can edit [`./web/a
 
 wp-cubi provides a basic deploy command `./vendor/bin/robo deploy` that builds the application and deploys it with `rsync`.
 
-You can build your own deploy method using [Capistrano](https://capistranorb.com/) or any other tool by editing [`./RoboFile.php`](https://github.com/globalis-ms/wp-cubi/blob/master/RoboFile.php).
+You can build your own deploy method using [Deployer](https://deployer.org/), [Capistrano](https://capistranorb.com/) or any other tool by editing [`./RoboFile.php`](https://github.com/globalis-ms/wp-cubi/blob/master/RoboFile.php).
 
 
 ## Block Editor (previously known as Gutenberg)
