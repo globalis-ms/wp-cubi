@@ -65,5 +65,11 @@
             "chmod 777 web/media",
             "rm -rf .resources LICENSE.md README.md"
         ]
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "roots/wordpress-core-installer": true
+        }
     }
 }
