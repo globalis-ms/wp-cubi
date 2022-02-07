@@ -31,3 +31,22 @@ function disable_block_editor_privacy_notice()
     remove_action('admin_notices', ['WP_Privacy_Policy_Content', 'notice']);
     add_action('edit_form_after_title', ['WP_Privacy_Policy_Content', 'notice']);
 }
+
+add_filter('posts_pre_query', __NAMESPACE__ . '\\disable_block_template_queries', 10, 2);
+add_filter('terms_pre_query', __NAMESPACE__ . '\\disable_taxonomy_template_queries', 10, 2);
+
+function disable_block_template_queries($posts, $wp_query)
+{
+    if(!isset($wp_query->query_vars['post_type']) || 'wp_template' !== $wp_query->query_vars['post_type']) {
+        return $posts;
+    }
+    return [];
+}
+
+function disable_taxonomy_template_queries($terms, $wp_query)
+{
+    if(!isset($wp_query->query_vars['taxonomy']) || 1 != count($wp_query->query_vars['taxonomy']) || "wp_theme" !== current($wp_query->query_vars['taxonomy'])) {
+        return $terms;
+    }
+    return [];
+}

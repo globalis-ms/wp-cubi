@@ -3,12 +3,20 @@
 namespace Globalis\WP\Cubi;
 
 add_action('after_setup_theme', function () {
-    add_theme_support('soil-relative-urls');
-    add_theme_support('soil-clean-up');
-    add_theme_support('soil-nice-search');
-    add_theme_support('soil-disable-trackbacks');
-    //add_theme_support('soil-disable-asset-versioning');
-    //add_theme_support('soil-js-to-footer');
-    //add_theme_support('soil-nav-walker');
-    //add_theme_support('soil-google-analytics', 'UA-XXXXX-Y');
+
+    $modules = [
+        'clean-up',
+        'disable-trackbacks',
+        'nice-search',
+        'relative-urls',
+        // 'disable-asset-versioning',
+        // 'nav-walker',
+        // 'js-to-footer',
+    ];
+
+    if(!WP_CUBI_ENABLE_REST_API) {
+        $modules[] = 'disable-rest-api';
+    }
+
+    add_theme_support('soil', $modules);
 }, 10);

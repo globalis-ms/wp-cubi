@@ -57,6 +57,9 @@ define('DISALLOW_FILE_EDIT', true);
 /* PASSWORDS */
 define('WP_CUBI_DISALLOW_WEAK_PASSWORDS', true);
 
+/* COMMENTS */
+define('WP_CUBI_ENABLE_COMMENTS', false);
+
 /* ADMIN AJAX */
 define('WP_CUBI_HIDE_ADMIN_AJAX_URL', true);
 

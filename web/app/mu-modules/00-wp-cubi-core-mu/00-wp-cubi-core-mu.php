@@ -30,6 +30,9 @@ require_once __DIR__ . '/src/10-security-xmlrpc.php';
 // Force uploads path to configuration constants values
 require_once __DIR__ . '/src/10-uploads-path.php';
 
+// Clean WordPress frontend (remove unwanted inline css and other things)
+require_once __DIR__ . '/src/20-clean-frontend.php';
+
 // Clean WordPress administration dahboard (remove widgets)
 if (!defined('WP_INSTALLING') || !WP_INSTALLING) {
     require_once __DIR__ . '/src/20-clean-wp-admin.php';
