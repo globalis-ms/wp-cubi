@@ -57,6 +57,9 @@ if (!defined('WP_INSTALLING') || !WP_INSTALLING) {
     require_once __DIR__ . '/src/20-soil-modules.php';
 }
 
+// Disable comments
+require_once __DIR__ . '/src/20-disable-comments.php';
+
 // Hide admin-ajax URL
 require_once __DIR__ . '/src/20-hide-admin-ajax-url.php';
 
