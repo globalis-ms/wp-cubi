@@ -82,6 +82,7 @@ define('ENFORCE_GZIP', true);
 define('WP_DEBUG_LOG', false);
 define('WP_CUBI_LOG_DIR', ROOT_DIR . '/log');
 define('WP_CUBI_LOG_MAX_FILES', 30);
+define('WP_CUBI_LOG_CUSTOM_CHANNELS', []);
 
 /* PUBLIC URLS */
 define('WP_CUBI_PUBLIC_URLS', [

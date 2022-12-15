@@ -38,7 +38,7 @@
         "roots/soil": "^4.1.1",
         "roots/wp-password-bcrypt": "^1.1.0",
         "soberwp/intervention": "dev-main",
-        "inpsyde/wonolog": "^1.0.4",
+        "inpsyde/wonolog": "^2.x-dev",
         "wpackagist-plugin/query-monitor": "^3.10.1",
         "wpackagist-plugin/wp-crontrol": "^1.15.0",
         "wpackagist-plugin/user-switching": "^1.7.0",
