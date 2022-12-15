@@ -80,3 +80,6 @@ require_once __DIR__ . '/src/40-jquery-cdn.php';
 
 // Disallow weak passwords
 require_once __DIR__ . '/src/40-disallow-weak-passwords.php';
+
+// Remove attachments public templates and permalinks
+require_once __DIR__ . '/src/50-disable-attachments-public.php';
