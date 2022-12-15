@@ -15,6 +15,12 @@ require_once __DIR__ . '/src/00-wonolog.php';
 // Automated `no-index` on development / staging environments
 require_once __DIR__ . '/src/10-disallow-indexing.php';
 
+// Mail configuration
+require_once __DIR__ . '/src/10-mail.php';
+
+// SMTP server configuration
+require_once __DIR__ . '/src/10-mail-smtp.php';
+
 // Mail-trapper on development / staging environments
 require_once __DIR__ . '/src/10-mail-trapper.php';
 

@@ -88,3 +88,7 @@ define('WP_CUBI_PUBLIC_URLS', [
     'staging'    => 'https://staging.example.com/',
     'production' => 'https://example.com/',
 ]);
+
+/* EMAIL */
+// define('WP_MAIL_FROM_EMAIL', 'no-reply@example.com');
+// define('WP_MAIL_FROM_NAME', 'Example');
