@@ -10,7 +10,7 @@ define('THE_SEO_FRAMEWORK_HEADLESS', [
 
 define('TSF_DISABLE_SUGGESTIONS', true);
 
-add_filter('the_seo_framework_default_site_options', function($config) {
+add_filter('the_seo_framework_default_site_options', function ($config) {
     $config['alter_search_query'] = 0;
     $config['alter_archive_query'] = 0;
     $config['canonical_scheme'] = WP_SCHEME;
@@ -35,7 +35,7 @@ add_filter('the_seo_framework_ld_json_search_url', function ($url) {
     return $url;
 });
 
-add_action('plugins_loaded', function() {
+add_action('plugins_loaded', function () {
     remove_action('the_seo_framework_upgraded', 'The_SEO_Framework\\Bootstrap\\_prepare_upgrade_notice', 99, 2);
     remove_action('the_seo_framework_upgraded', 'The_SEO_Framework\\Bootstrap\\_prepare_upgrade_suggestion', 100, 2);
 });

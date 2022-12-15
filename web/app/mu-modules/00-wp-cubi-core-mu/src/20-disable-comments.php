@@ -2,11 +2,11 @@
 
 namespace Globalis\WP\Cubi;
 
-if(defined('WP_CUBI_ENABLE_COMMENTS') && WP_CUBI_ENABLE_COMMENTS) {
+if (defined('WP_CUBI_ENABLE_COMMENTS') && WP_CUBI_ENABLE_COMMENTS) {
     return;
 }
 
-add_filter('wp_count_comments', function($default) {
+add_filter('wp_count_comments', function ($default) {
     return (object) [
         'approved' => 0,
         'awaiting_moderation' => 0,
@@ -40,16 +40,16 @@ class DisableComments
         add_filter('comment_link', '__return_false', 10, 1);
         add_filter('get_comments_number', '__return_false', 10, 2);
         add_filter('feed_links_show_comments_feed', '__return_false');
-        add_action('wp_enqueue_scripts', function() {
+        add_action('wp_enqueue_scripts', function () {
             wp_deregister_script('comment-reply');
         }, 99);
         remove_action('wp_head', 'feed_links_extra', 3);
-        add_action('wp_before_admin_bar_render', function() {
+        add_action('wp_before_admin_bar_render', function () {
             global $wp_admin_bar;
             $wp_admin_bar->remove_menu('comments');
         });
 
-        add_action('admin_menu', function() {
+        add_action('admin_menu', function () {
             remove_menu_page('edit-comments.php');
         });
     }

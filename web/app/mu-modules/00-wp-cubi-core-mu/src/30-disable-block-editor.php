@@ -69,7 +69,7 @@ remove_action('init', 'register_block_core_tag_cloud');
 remove_action('init', 'register_block_core_template_part');
 remove_action('init', 'register_block_core_term_description');
 remove_action('init', 'register_block_core_widget_group');
-remove_action('init', 'register_core_block_types_from_metadata' );
+remove_action('init', 'register_core_block_types_from_metadata');
 remove_action('init', ['WP_Block_Supports', 'init'], 22);
 
 remove_action('setup_theme', 'wp_enable_block_templates');
@@ -92,7 +92,7 @@ function disable_block_editor_privacy_notice()
 
 function disable_block_template_queries($posts, $wp_query)
 {
-    if(!isset($wp_query->query_vars['post_type']) || 'wp_template' !== $wp_query->query_vars['post_type']) {
+    if (!isset($wp_query->query_vars['post_type']) || 'wp_template' !== $wp_query->query_vars['post_type']) {
         return $posts;
     }
     return [];
@@ -100,7 +100,7 @@ function disable_block_template_queries($posts, $wp_query)
 
 function disable_taxonomy_template_queries($terms, $wp_query)
 {
-    if(!isset($wp_query->query_vars['taxonomy']) || 1 != count($wp_query->query_vars['taxonomy']) || "wp_theme" !== current($wp_query->query_vars['taxonomy'])) {
+    if (!isset($wp_query->query_vars['taxonomy']) || 1 != count($wp_query->query_vars['taxonomy']) || "wp_theme" !== current($wp_query->query_vars['taxonomy'])) {
         return $terms;
     }
     return [];

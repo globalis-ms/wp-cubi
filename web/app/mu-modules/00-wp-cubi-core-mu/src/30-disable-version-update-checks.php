@@ -6,7 +6,7 @@ namespace Globalis\WP\Cubi;
  * Disable all version checks (core, plugins, themes)
  */
 
-if(!WP_AUTO_UPDATE_CORE) {
+if (!WP_AUTO_UPDATE_CORE) {
     add_filter('pre_option_auto_update_core_dev', '__return_zero');
     add_filter('pre_option_auto_update_core_minor', '__return_zero');
     add_filter('pre_option_auto_update_core_major', '__return_zero');

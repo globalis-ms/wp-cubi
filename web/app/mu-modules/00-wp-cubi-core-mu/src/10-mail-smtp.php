@@ -2,13 +2,13 @@
 
 namespace Globalis\WP\Cubi;
 
-if(!defined('WP_MAIL_SMTP_ENABLED') || !WP_MAIL_SMTP_ENABLED) {
+if (!defined('WP_MAIL_SMTP_ENABLED') || !WP_MAIL_SMTP_ENABLED) {
     return;
 }
 
 // Configure SMTP settings in config/local.php OR in config/application.php OR in config/environments/
 
-add_action('phpmailer_init', function($phpmailer) {
+add_action('phpmailer_init', function ($phpmailer) {
     $phpmailer->isSMTP();
 
     if (defined('WP_MAIL_SMTP_HOST')) {

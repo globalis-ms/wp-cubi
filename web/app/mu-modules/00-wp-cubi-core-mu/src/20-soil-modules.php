@@ -14,7 +14,7 @@ add_action('after_setup_theme', function () {
         //'js-to-footer',
     ];
 
-    if(!WP_CUBI_ENABLE_REST_API) {
+    if (!WP_CUBI_ENABLE_REST_API) {
         $modules[] = 'disable-rest-api';
     }
 

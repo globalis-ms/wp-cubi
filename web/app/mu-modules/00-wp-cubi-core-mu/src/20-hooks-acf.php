@@ -14,7 +14,7 @@ add_filter('acf_the_content', function ($default) {
 add_filter('pre_option_acf_pro_license', '__return_zero');
 add_filter('acf/settings/show_updates', '__return_false');
 
-add_filter('acf/settings/autoload', function() {
+add_filter('acf/settings/autoload', function () {
     return 'yes';
 });
 
@@ -96,20 +96,20 @@ function acf_set_side_metabox_priority($priority, $field_group)
     return $priority;
 }
 
-add_filter('posts_pre_query', function($posts, $wp_query) {
+add_filter('posts_pre_query', function ($posts, $wp_query) {
     if (WP_ENV === 'development') {
         return $posts;
     }
-    if(!isset($wp_query->query) || !isset($wp_query->query["post_type"])) {
+    if (!isset($wp_query->query) || !isset($wp_query->query["post_type"])) {
         return $posts;
     }
-    if("acf-field-group" !== $wp_query->query["post_type"]) {
+    if ("acf-field-group" !== $wp_query->query["post_type"]) {
         return $posts;
     }
     return [];
 }, 10, 2);
 
-add_action('acfe/init', function() {
+add_action('acfe/init', function () {
     acfe_update_setting('dev', false);
     acfe_update_setting('modules/author', true);
     acfe_update_setting('modules/categories', false);

@@ -15,7 +15,7 @@ if (PHP_SAPI === 'cli') {
     $_SERVER['HTTP_HOST']       = WP_CUBI_CONFIG['WEB_DOMAIN'];
 }
 
-if(!file_exists(__DIR__ . '/../config/salt-keys.php')) {
+if (!file_exists(__DIR__ . '/../config/salt-keys.php')) {
     die('Error: config/salt-keys.php is missing.');
 }
 require_once __DIR__ . '/../config/salt-keys.php';
@@ -25,7 +25,7 @@ require_once __DIR__ . '/../config/environments/' . WP_CUBI_CONFIG['ENVIRONEMENT
 
 define('FS_METHOD', 'direct');
 
-if(!file_exists(__DIR__ . '/../config/local.php')) {
+if (!file_exists(__DIR__ . '/../config/local.php')) {
     die('Error: config/local.php is missing.');
 }
 require_once __DIR__ . '/../config/local.php';
