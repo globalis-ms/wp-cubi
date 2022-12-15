@@ -1,10 +1,9 @@
-dist: focal
+dist: jammy
 
 language: php
 
 matrix:
   include:
-    - php: 7.4
     - php: 8.0
 
 sudo: false
