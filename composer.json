@@ -41,7 +41,8 @@
         "wpackagist-plugin/query-monitor": "^3.10.1",
         "wpackagist-plugin/wp-crontrol": "^1.15.0",
         "wpackagist-plugin/user-switching": "^1.7.0",
-        "wpackagist-plugin/autodescription": "^4.2.7.1"
+        "wpackagist-plugin/autodescription": "^4.2.7.1",
+        "wpackagist-plugin/dynamo": "^1.1"
     },
     "require-dev": {
         "globalis/wp-cubi-robo" : "^2.0.7",
