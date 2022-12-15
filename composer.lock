@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3522ddf5cbd3b99713486c1734dab4c",
+    "content-hash": "7119e2ee7450c74ef4d643b705b4caa6",
     "packages": [
         {
             "name": "brick/varexporter",
@@ -3612,6 +3612,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/dynamo/"
+        },
+        {
+            "name": "wpackagist-plugin/limit-login-attempts-reloaded",
+            "version": "2.25.10",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/limit-login-attempts-reloaded/",
+                "reference": "tags/2.25.10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/limit-login-attempts-reloaded.2.25.10.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/limit-login-attempts-reloaded/"
         },
         {
             "name": "wpackagist-plugin/query-monitor",

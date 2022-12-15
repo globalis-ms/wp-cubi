@@ -89,3 +89,6 @@ require_once __DIR__ . '/src/40-disallow-weak-passwords.php';
 
 // Remove attachments public templates and permalinks
 require_once __DIR__ . '/src/50-disable-attachments-public.php';
+
+// Limit login attempts
+require_once __DIR__ . '/src/60-hooks-limit-login-attempts-reloaded.php';
