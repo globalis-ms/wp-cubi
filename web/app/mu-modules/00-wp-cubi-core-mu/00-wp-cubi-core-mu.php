@@ -60,6 +60,9 @@ if (!defined('WP_INSTALLING') || !WP_INSTALLING) {
 // Disable comments
 require_once __DIR__ . '/src/20-disable-comments.php';
 
+// Hooks on acf & acf-pro
+require_once __DIR__ . '/src/20-hooks-acf.php';
+
 // Hide admin-ajax URL
 require_once __DIR__ . '/src/20-hide-admin-ajax-url.php';
 
