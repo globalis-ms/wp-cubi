@@ -34,15 +34,15 @@ remove_filter('widget_text_content', 'capital_P_dangit', 11);
 remove_filter('comment_text', 'capital_P_dangit', 31);
 
 /*
- * Remove smilies and useless capital_P_dangit filter in ACF fields
- */
-add_filter('acf_the_content', function ($default) {
-    remove_filter('acf_the_content', 'convert_smilies', 20);
-    remove_filter('acf_the_content', 'capital_P_dangit', 11);
-    return $default;
-}, 0);
-
-/*
  * Remove native WordPress sitemap
  */
+add_filter('wp_sitemaps_enabled', '__return_false');
 remove_action('init', 'wp_sitemaps_get_server');
+
+/*
+ * Enable svg upload support
+ */
+add_filter('upload_mimes', function ($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+});

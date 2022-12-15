@@ -2,7 +2,22 @@
 
 namespace Globalis\WP\Cubi;
 
+define('THE_SEO_FRAMEWORK_HEADLESS', [
+    'user' => true,
+    'meta' => false,
+    'settings' => false,
+]);
+
 define('TSF_DISABLE_SUGGESTIONS', true);
+
+add_filter('the_seo_framework_default_site_options', function($config) {
+    $config['alter_search_query'] = 0;
+    $config['alter_archive_query'] = 0;
+    $config['canonical_scheme'] = WP_SCHEME;
+    //var_dump($config);
+    //die;
+    return $config;
+}, 10, 1);
 
 add_filter('the_seo_framework_indicator', '__return_false');
 
@@ -20,36 +35,29 @@ add_filter('the_seo_framework_ld_json_search_url', function ($url) {
     return $url;
 });
 
-define( 'THE_SEO_FRAMEWORK_HEADLESS', [
-    'user' => true,
-    'meta' => false,
-    'settings' => true,
-]);
-
-add_filter('option_autodescription-site-settings', function ($settings) {
-    $settings['canonical_scheme'] = WP_SCHEME;
-    return $settings;
+add_action('plugins_loaded', function() {
+    remove_action('the_seo_framework_upgraded', 'The_SEO_Framework\\Bootstrap\\_prepare_upgrade_notice', 99, 2);
+    remove_action('the_seo_framework_upgraded', 'The_SEO_Framework\\Bootstrap\\_prepare_upgrade_suggestion', 100, 2);
 });
 
-add_filter('the_seo_framework_default_site_options', function($config) {
-    $config['display_seo_bar_tables'] = 0;
-    return $config;
-}, 10, 1);
 
-add_filter('the_seo_framework_user_meta_defaults', function($config, $user_id) {
-    // var_dump($config);
-    // die;
-    return $config;
-}, 10, 2);
+if (!defined('WP_INSTALLING') || !WP_INSTALLING) {
+    add_filter('get_user_metadata', __NAMESPACE__ . '\\disable_autodescription_usermeta_queries', 10, 4);
+}
 
-add_filter('the_seo_framework_post_meta_defaults', function($config, $post_id) {
-    // var_dump($config);
-    // die;
-    return $config;
-}, 10, 2);
+function disable_autodescription_usermeta_queries($null, $object_id, $meta_key, $single)
+{
+    if (!defined('THE_SEO_FRAMEWORK_USER_OPTIONS')) {
+        return;
+    }
 
-add_filter('the_seo_framework_term_meta_defaults', function($config, $term_id) {
-    // var_dump($config);
-    // die;
-    return $config;
-}, 10, 2);
+    if (!\Globalis\WP\Cubi\is_frontend()) {
+        return $null;
+    }
+
+    if ($meta_key !== THE_SEO_FRAMEWORK_USER_OPTIONS) {
+        return $null;
+    }
+
+    return '';
+}
