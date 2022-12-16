@@ -44,7 +44,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 
 ## Requirements
 
-* [PHP](http://php.net/) >= 7.4
+* [PHP](http://php.net/) 8.0 (work in progress: PHP 8.1, PHP 8.2)
 * [Composer](http://getcomposer.org)
 * [Git](https://git-scm.com/)
 
