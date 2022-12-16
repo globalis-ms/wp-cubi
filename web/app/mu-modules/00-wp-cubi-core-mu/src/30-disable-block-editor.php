@@ -74,7 +74,10 @@ remove_action('init', ['WP_Block_Supports', 'init'], 22);
 
 remove_action('setup_theme', 'wp_enable_block_templates');
 remove_action('wp_enqueue_scripts', 'wp_common_block_scripts_and_styles');
+remove_action('wp_enqueue_scripts', 'wp_enqueue_classic_theme_styles');
 remove_action('wp_footer', 'the_block_template_skip_link');
+remove_action('wp_enqueue_scripts', 'wp_enqueue_stored_styles');
+remove_action('wp_footer', 'wp_enqueue_stored_styles', 1);
 
 remove_theme_support('core-block-patterns');
 
