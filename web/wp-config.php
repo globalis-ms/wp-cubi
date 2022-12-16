@@ -15,15 +15,20 @@ if (PHP_SAPI === 'cli') {
     $_SERVER['HTTP_HOST']       = WP_CUBI_CONFIG['WEB_DOMAIN'];
 }
 
-require_once __DIR__ . '/../config/application.php';
+if (!file_exists(__DIR__ . '/../config/salt-keys.php')) {
+    die('Error: config/salt-keys.php is missing.');
+}
 require_once __DIR__ . '/../config/salt-keys.php';
+
+require_once __DIR__ . '/../config/application.php';
 require_once __DIR__ . '/../config/environments/' . WP_CUBI_CONFIG['ENVIRONEMENT'] . '.php';
 
 define('FS_METHOD', 'direct');
 
-if (file_exists(__DIR__ . '/../config/local.php')) {
-    require_once __DIR__ . '/../config/local.php';
+if (!file_exists(__DIR__ . '/../config/local.php')) {
+    die('Error: config/local.php is missing.');
 }
+require_once __DIR__ . '/../config/local.php';
 
 if (defined('SQL_CACHE_QUERIES') && true !== SQL_CACHE_QUERIES) {
     \Globalis\WP\Cubi\mysql_enable_nocache_mod();

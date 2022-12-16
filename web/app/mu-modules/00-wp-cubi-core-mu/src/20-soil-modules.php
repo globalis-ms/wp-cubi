@@ -9,12 +9,12 @@ add_action('after_setup_theme', function () {
         'disable-trackbacks',
         'nice-search',
         'relative-urls',
-        // 'disable-asset-versioning',
-        // 'nav-walker',
-        // 'js-to-footer',
+        'disable-asset-versioning',
+        'nav-walker',
+        //'js-to-footer',
     ];
 
-    if(!WP_CUBI_ENABLE_REST_API) {
+    if (!WP_CUBI_ENABLE_REST_API) {
         $modules[] = 'disable-rest-api';
     }
 

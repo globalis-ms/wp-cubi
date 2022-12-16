@@ -15,6 +15,12 @@ require_once __DIR__ . '/src/00-wonolog.php';
 // Automated `no-index` on development / staging environments
 require_once __DIR__ . '/src/10-disallow-indexing.php';
 
+// Mail configuration
+require_once __DIR__ . '/src/10-mail.php';
+
+// SMTP server configuration
+require_once __DIR__ . '/src/10-mail-smtp.php';
+
 // Mail-trapper on development / staging environments
 require_once __DIR__ . '/src/10-mail-trapper.php';
 
@@ -51,6 +57,12 @@ if (!defined('WP_INSTALLING') || !WP_INSTALLING) {
     require_once __DIR__ . '/src/20-soil-modules.php';
 }
 
+// Disable comments
+require_once __DIR__ . '/src/20-disable-comments.php';
+
+// Hooks on acf & acf-pro
+require_once __DIR__ . '/src/20-hooks-acf.php';
+
 // Hide admin-ajax URL
 require_once __DIR__ . '/src/20-hide-admin-ajax-url.php';
 
@@ -74,3 +86,9 @@ require_once __DIR__ . '/src/40-jquery-cdn.php';
 
 // Disallow weak passwords
 require_once __DIR__ . '/src/40-disallow-weak-passwords.php';
+
+// Remove attachments public templates and permalinks
+require_once __DIR__ . '/src/50-disable-attachments-public.php';
+
+// Limit login attempts
+require_once __DIR__ . '/src/60-hooks-limit-login-attempts-reloaded.php';

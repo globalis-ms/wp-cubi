@@ -2,12 +2,20 @@
 
 namespace Globalis\WP\Cubi;
 
-use Inpsyde\Wonolog;
 use Monolog\Handler;
+use Inpsyde\Wonolog\Configurator;
 
 if (!defined('WP_CUBI_LOG_ENABLED') || true !== WP_CUBI_LOG_ENABLED) {
+    define('WONOLOG_DISABLE', true);
     return;
 }
+
+add_action(
+    'wonolog.setup',
+    function (\Inpsyde\Wonolog\Configurator $config) {
+        $config->disableFallbackHandler();
+    }
+);
 
 $log_level = defined('WP_CUBI_LOG_LEVEL_LOCAL') ? WP_CUBI_LOG_LEVEL_LOCAL : WP_CUBI_LOG_LEVEL;
 
@@ -43,20 +51,79 @@ if (defined('WP_CUBI_LOG_DIR')) {
     $handler = new Handler\StreamHandler(WP_CUBI_LOG_FILE, $log_level);
 }
 
-if (false !== $handler) {
-    if (defined('WP_CUBI_LOG_PHP_ERRORS') && WP_CUBI_LOG_PHP_ERRORS) {
-        $flags = Wonolog\USE_DEFAULT_PROCESSOR | Wonolog\LOG_PHP_ERRORS;
-        add_action('qm/collect/new_php_error', [new Wonolog\PhpErrorController(), 'on_error'], 10, 5);
-    } else {
-        $flags = Wonolog\USE_DEFAULT_PROCESSOR;
+if (empty($handler)) {
+    return;
+}
+
+add_action(
+    'wonolog.setup',
+    function (Configurator $config) use ($handler) {
+        $config->pushHandler($handler);
+    }
+);
+
+if (defined('WP_CUBI_LOG_PHP_ERRORS') && WP_CUBI_LOG_PHP_ERRORS) {
+    add_action('qm/collect/new_php_error', __NAMESPACE__ . '\\forward_php_error_handled_by_qm', 10, 4);
+}
+
+function forward_php_error_handled_by_qm(int $errno, string $errstr, string $errfile, int $errline)
+{
+    $qm_php_error_collector = \QM_Collectors::get("php_errors");
+
+    if (empty($qm_php_error_collector)) {
+        return;
     }
 
-    Wonolog\bootstrap($handler, $flags)
-        ->use_hook_listener(new Wonolog\HookListener\DbErrorListener())
-        ->use_hook_listener(new Wonolog\HookListener\FailedLoginListener())
-        ->use_hook_listener(new Wonolog\HookListener\HttpApiListener())
-        ->use_hook_listener(new Wonolog\HookListener\MailerListener())
-        //->use_hook_listener(new Wonolog\HookListener\QueryErrorsListener())
-        ->use_hook_listener(new Wonolog\HookListener\CronDebugListener())
-        ->use_hook_listener(new Wonolog\HookListener\WpDieHandlerListener());
+    $previous_error_handler = null;
+    $qm_php_error_collector_properties = (array) $qm_php_error_collector;
+
+    if (!is_array($qm_php_error_collector_properties)) {
+        return;
+    }
+
+    foreach ($qm_php_error_collector_properties as $property_name => $property_value) {
+        if (false !== strpos($property_name, "previous_error_handler")) {
+            $previous_error_handler = $property_value;
+        }
+    }
+
+    if (!is_array($previous_error_handler) || !isset($previous_error_handler[0])) {
+        return;
+    }
+
+    $object = $previous_error_handler[0];
+
+    if (is_a($object, 'Inpsyde\Wonolog\PhpErrorController')) {
+        call_user_func($previous_error_handler, $errno, $errstr, $errfile, $errline);
+    }
 }
+
+if (defined("WP_CUBI_LOG_CUSTOM_CHANNELS") && !empty(WP_CUBI_LOG_CUSTOM_CHANNELS)) {
+    add_action(
+        'wonolog.setup',
+        function (Configurator $config) {
+            $config->enableWpContextProcessorForChannels(...WP_CUBI_LOG_CUSTOM_CHANNELS);
+            $config->enableWpContextProcessor();
+        }
+    );
+}
+
+/*
+
+Usage:
+
+1. Add "MY_CUSTOM_CHANNEL" to constant WP_CUBI_LOG_CUSTOM_CHANNELS in config/application.php
+
+2. Add custom log actions in your code :
+
+(assuming $e is a PHP Exception object)
+
+$context = [
+    'code' => "My error code",
+    'details' => "Some details about the error",
+    'trace' => $e->getTraceAsString(),
+];
+
+\Inpsyde\Wonolog\makeLogger("MY_CUSTOM_CHANNEL")->error($e->getMessage(), $context);
+
+*/

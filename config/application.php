@@ -50,9 +50,17 @@ define('WP_AUTO_UPDATE_CORE', false);
 define('WP_CUBI_DISABLE_ALL_VERSION_UPDATE_CHECKS', true);
 
 /* SECURITY */
+
 // NOTE: If you need to edit this section, you may need to edit htaccess-security > Block sensitive WordPress files
 define('DISALLOW_FILE_MODS', true);
 define('DISALLOW_FILE_EDIT', true);
+
+/* LIMIT LOGIN ATTEMPTS */
+define("WP_CUBI_LIMIT_LOGIN_ALLOWED_RETRIES", 5);
+define("WP_CUBI_LIMIT_LOGIN_LOCKOUT_DURATION_IN_MINUTES", 20);
+define("WP_CUBI_LIMIT_LOGIN_LOCKOUT_MAX_LOCKOUTS", 3);
+define("WP_CUBI_LIMIT_LOGIN_LOCKOUT_DURATION_IN_HOURS", 72);
+define("WP_CUBI_LIMIT_LOGIN_RESET_RETRIES_AFTER_DURATION_IN_HOURS", 24);
 
 /* PASSWORDS */
 define('WP_CUBI_DISALLOW_WEAK_PASSWORDS', true);
@@ -82,9 +90,14 @@ define('ENFORCE_GZIP', true);
 define('WP_DEBUG_LOG', false);
 define('WP_CUBI_LOG_DIR', ROOT_DIR . '/log');
 define('WP_CUBI_LOG_MAX_FILES', 30);
+define('WP_CUBI_LOG_CUSTOM_CHANNELS', []);
 
 /* PUBLIC URLS */
 define('WP_CUBI_PUBLIC_URLS', [
     'staging'    => 'https://staging.example.com/',
     'production' => 'https://example.com/',
 ]);
+
+/* EMAIL */
+// define('WP_MAIL_FROM_EMAIL', 'no-reply@example.com');
+// define('WP_MAIL_FROM_NAME', 'Example');

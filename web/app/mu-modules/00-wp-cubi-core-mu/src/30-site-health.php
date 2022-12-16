@@ -2,6 +2,8 @@
 
 namespace Globalis\WP\Cubi;
 
+add_filter('pre_transient_health-check-site-status-result', '__return_zero');
+
 add_filter('site_status_tests', __NAMESPACE__ . '\\wp_site_health_options', 10, 1);
 
 function wp_site_health_options($tests)

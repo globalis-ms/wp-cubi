@@ -21,14 +21,16 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * Environment-specific configuration
 * Automated `no-index` and mail-trapper on development / staging environments
 * Command-line administration with [wp-cli](http://wp-cli.org/)
-* Monitoring tools ([query-monitor](https://fr.wordpress.org/plugins/query-monitor/), [wp-crontrol](https://fr.wordpress.org/plugins/wp-crontrol/), [user-switching](https://fr.wordpress.org/plugins/user-switching/), [wp-cubi-admin-bar](https://github.com/globalis-ms/wp-cubi/tree/master/web/app/mu-modules/10-wp-cubi-admin-bar))
+* Monitoring tools ([query-monitor](https://wordpress.org/plugins/query-monitor/), [wp-crontrol](https://wordpress.org/plugins/wp-crontrol/), [user-switching](https://wordpress.org/plugins/user-switching/), [wp-cubi-admin-bar](https://github.com/globalis-ms/wp-cubi/tree/master/web/app/mu-modules/10-wp-cubi-admin-bar))
 * Cleaner wp-admin dashboard with [soberwp/intervention](https://github.com/soberwp/intervention)
 * Gitflow integration with Robo commands
 * Optimized `.htaccess` generation
 * Logging system with [inpsyde/wonolog](https://github.com/inpsyde/Wonolog) and [monolog](https://github.com/Seldaek/monolog)
 * Standalone image minification plugin with [globalis/wp-cubi-imagemin](https://github.com/globalis-ms/wp-cubi-imagemin)
 * Additional functions with [globalis/wp-cubi-helpers](https://github.com/globalis-ms/wp-cubi-helpers)
-* SEO friendly, with [The SEO Framework](https://fr.wordpress.org/plugins/autodescription/) plugin and [roots/soil](https://github.com/roots/soil) DOM optimizations
+* SEO friendly, with [The SEO Framework](https://wordpress.org/plugins/autodescription/) plugin and [roots/soil](https://github.com/roots/soil) DOM optimizations
+* Lighter and faster than a default WordPress application, by disabling things we don't use from core
+* Comments disabled by default
 
 
 ## Security optimizations
@@ -37,6 +39,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * `.htaccess` security directives
 * Deactivation of REST API and `xmlrpc.php` unless explicitly activated
 * Better password encryption with [roots/wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt)
+* Anti brute-force protection on `wp-login.php` with [Limit Login Attempts Reloaded](https://wordpress.org/plugins/limit-login-attempts-reloaded/)
 
 
 ## Requirements
@@ -56,6 +59,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 ## Configuration
 
 * Login page logo: Replace `./web/logo.png` with your application logo (or edit [`00-wp-cubi-core-mu/20-wp-login.php`](https://github.com/globalis-ms/wp-cubi/blob/master/web/app/mu-modules/00-wp-cubi-core-mu/src/20-wp-login.php))
+* If your application use a SMTP server for outgoing emails, configure it in `config/local.php`
 * Image minification: Configure [globalis/wp-cubi-imagemin](https://github.com/globalis-ms/wp-cubi-imagemin) to enable a meaningfull level of uploads / image minification
 
 
