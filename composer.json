@@ -31,7 +31,7 @@
         }
     ],
     "require": {
-        "php": ">=8.0 <8.1",
+        "php": ">=8.0 <8.2",
         "composer/installers": "^2.1.1",
         "roots/wordpress": "6.1.1",
         "consolidation/robo": "^3.0.11",
@@ -42,8 +42,8 @@
         "roots/soil": "^4.1.1",
         "roots/wp-password-bcrypt": "^1.1.0",
         "inpsyde/wonolog": "^2.x-dev",
-        "wpackagist-plugin/query-monitor": "^3.10.1",
-        "wpackagist-plugin/wp-crontrol": "^1.15.0",
+        "wpackagist-plugin/query-monitor": "^3.11.1",
+        "wpackagist-plugin/wp-crontrol": "^1.15.1",
         "wpackagist-plugin/user-switching": "^1.7.0",
         "wpackagist-plugin/autodescription": "^4.2.7.1",
         "wpackagist-plugin/limit-login-attempts-reloaded": "^2.25.10",
