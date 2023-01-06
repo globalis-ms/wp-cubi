@@ -1,10 +1,10 @@
 <?php
 
-namespace Globalis\WP\Cubi;
+namespace Globalis\WP\WPUnhooked;
 
-if (true === WP_CUBI_ENABLE_REST_API) {
-    return;
-}
+// @see https://github.com/globalis-ms/wp-cubi/blob/1.4.0/web/app/mu-modules/00-wp-cubi-core-mu/src/10-security-rest-api.php
+// @see https://github.com/roots/soil/blob/main/src/Modules/DisableRestApiModule.php
+// @see https://github.com/vincentorback/clean-wordpress-admin/blob/master/rest-api.php
 
 remove_action('init', 'rest_api_init');
 remove_action('parse_request', 'rest_api_loaded');

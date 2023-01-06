@@ -27,22 +27,11 @@ require_once __DIR__ . '/src/10-mail-trapper.php';
 // Force secure cookies if site has HTTPS scheme (better reverse proxies compatibility)
 require_once __DIR__ . '/src/10-secure-cookies.php';
 
-// Disable REST API unless explicitly activated
-require_once __DIR__ . '/src/10-security-rest-api.php';
-
-// Disable xmlrpc.php unless explicitly activated
-require_once __DIR__ . '/src/10-security-xmlrpc.php';
-
 // Force uploads path to configuration constants values
 require_once __DIR__ . '/src/10-uploads-path.php';
 
 // Clean WordPress frontend (remove unwanted inline css and other things)
 require_once __DIR__ . '/src/20-clean-frontend.php';
-
-// Clean WordPress administration dahboard (remove widgets)
-if (!defined('WP_INSTALLING') || !WP_INSTALLING) {
-    require_once __DIR__ . '/src/20-clean-wp-admin.php';
-}
 
 // Various default filters
 require_once __DIR__ . '/src/20-default-filters.php';
@@ -57,9 +46,6 @@ if (!defined('WP_INSTALLING') || !WP_INSTALLING) {
     require_once __DIR__ . '/src/20-soil-modules.php';
 }
 
-// Disable comments
-require_once __DIR__ . '/src/20-disable-comments.php';
-
 // Hooks on acf & acf-pro
 require_once __DIR__ . '/src/20-hooks-acf.php';
 
@@ -69,17 +55,8 @@ require_once __DIR__ . '/src/20-hide-admin-ajax-url.php';
 // Customize wp-login.php page with application logo and url
 require_once __DIR__ . '/src/20-wp-login.php';
 
-// Disable block-editor (previously, gutenberg)
-require_once __DIR__ . '/src/30-disable-block-editor.php';
-
 // Disable core useless SQL queries
 require_once __DIR__ . '/src/30-disable-useless-sql-queries.php';
-
-// Disable version update checks
-require_once __DIR__ . '/src/30-disable-version-update-checks.php';
-
-// Configure Site Health admin panel
-require_once __DIR__ . '/src/30-site-health.php';
 
 // jQuery (frontend): use cdnjs.cloudflare.com
 require_once __DIR__ . '/src/40-jquery-cdn.php';

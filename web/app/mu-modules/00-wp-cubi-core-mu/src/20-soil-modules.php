@@ -12,11 +12,8 @@ add_action('after_setup_theme', function () {
         'disable-asset-versioning',
         'nav-walker',
         //'js-to-footer',
+        //'disable-rest-api',
     ];
-
-    if (!WP_CUBI_ENABLE_REST_API) {
-        $modules[] = 'disable-rest-api';
-    }
 
     add_theme_support('soil', $modules);
 }, 10);

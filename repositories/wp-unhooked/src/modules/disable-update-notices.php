@@ -1,23 +1,6 @@
 <?php
 
-namespace Globalis\WP\Cubi;
-
-/*
- * Disable all version checks (core, plugins, themes)
- */
-
-if (!WP_AUTO_UPDATE_CORE) {
-    add_filter('pre_option_auto_update_core_dev', '__return_zero');
-    add_filter('pre_option_auto_update_core_minor', '__return_zero');
-    add_filter('pre_option_auto_update_core_major', '__return_zero');
-    add_filter('pre_option_auto_core_update_failed', '__return_zero');
-    add_filter('pre_option_auto_update_themes', '__return_zero');
-    add_filter('pre_option_auto_update_plugins', '__return_zero');
-}
-
-if (!defined('WP_CUBI_DISABLE_ALL_VERSION_UPDATE_CHECKS') || !WP_CUBI_DISABLE_ALL_VERSION_UPDATE_CHECKS) {
-    return;
-}
+namespace Globalis\WP\WPUnhooked;
 
 remove_action('admin_init', '_maybe_update_core');
 remove_action('wp_version_check', 'wp_version_check');

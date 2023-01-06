@@ -47,7 +47,6 @@ define('WP_DEFAULT_THEME', 'wp-cubi-debug-theme');
 // NOTE: If you need to edit this section, you may need to edit htaccess-security > Block sensitive WordPress files
 define('AUTOMATIC_UPDATER_DISABLED', true);
 define('WP_AUTO_UPDATE_CORE', false);
-define('WP_CUBI_DISABLE_ALL_VERSION_UPDATE_CHECKS', true);
 
 /* SECURITY */
 
@@ -65,20 +64,8 @@ define("WP_CUBI_LIMIT_LOGIN_RESET_RETRIES_AFTER_DURATION_IN_HOURS", 24);
 /* PASSWORDS */
 define('WP_CUBI_DISALLOW_WEAK_PASSWORDS', true);
 
-/* COMMENTS */
-define('WP_CUBI_ENABLE_COMMENTS', false);
-
 /* ADMIN AJAX */
 define('WP_CUBI_HIDE_ADMIN_AJAX_URL', true);
-
-/* REST API */
-define('WP_CUBI_ENABLE_REST_API', false);
-
-/* XML-RPC */
-define('WP_CUBI_ENABLE_XMLRPC', false);
-
-/* BLOCK-EDITOR (PREV. GUTENBERG) */
-define('WP_CUBI_ENABLE_BLOCK_EDITOR', false);
 
 /* PERFORMANCES */
 define('COMPRESS_CSS', true);
@@ -101,3 +88,72 @@ define('WP_CUBI_PUBLIC_URLS', [
 /* EMAIL */
 // define('WP_MAIL_FROM_EMAIL', 'no-reply@example.com');
 // define('WP_MAIL_FROM_NAME', 'Example');
+
+define('WP_UNHOOKED_CONFIG', [
+    'disable-admin-bar' => false,
+    'disable-admin-bar-comments-menu' => true,
+    'disable-admin-bar-customize-menu' => true,
+    'disable-admin-bar-edit-menu' => false,
+    'disable-admin-bar-edit-site-menu' => false,
+    'disable-admin-bar-howdy' => true,
+    'disable-admin-bar-my-account-menu' => false,
+    'disable-admin-bar-my-sites-menu' => false,
+    'disable-admin-bar-new-content-menu' => true,
+    'disable-admin-bar-recovery-mode-menu' => true,
+    'disable-admin-bar-search-menu' => true,
+    'disable-admin-bar-sidebar-toggle' => false,
+    'disable-admin-bar-site-menu' => false,
+    'disable-admin-bar-site-nav-menus' => true,
+    'disable-admin-bar-site-themes' => true,
+    'disable-admin-bar-site-widgets' => true,
+    'disable-admin-bar-updates-menu' => true,
+    'disable-admin-bar-wp-menu' => true,
+    'disable-admin-dashboard-tab-help' => true,
+    'disable-admin-dashboard-tab-screen-options' => true,
+    'disable-admin-dashboard-welcome-panel' => true,
+    'disable-admin-dashboard-widget-activity' => true,
+    'disable-admin-dashboard-widget-browser-nag' => true,
+    'disable-admin-dashboard-widget-incoming-links' => true,
+    'disable-admin-dashboard-widget-plugins' => true,
+    'disable-admin-dashboard-widget-primary' => true,
+    'disable-admin-dashboard-widget-quick-press' => true,
+    'disable-admin-dashboard-widget-recent-comments' => true,
+    'disable-admin-dashboard-widget-recent-drafts' => true,
+    'disable-admin-dashboard-widget-right-now' => true,
+    'disable-admin-dashboard-widget-site-health' => true,
+    'disable-admin-footer' => true,
+    'disable-admin-plugins-menu' => true,
+    'disable-admin-plugins-page' => false,
+    'disable-admin-tab-help' => true,
+    'disable-admin-tab-screen-options' => false,
+    'disable-admin-themes-customize-menu' => true,
+    'disable-admin-themes-customize-page' => false,
+    'disable-admin-themes-menu' => true,
+    'disable-admin-themes-page' => false,
+    'disable-admin-tools-erase-personal-data' => true,
+    'disable-admin-tools-export-personal-data' => true,
+    'disable-admin-tools-export' => true,
+    'disable-admin-tools-import' => true,
+    'disable-admin-tools-menu' => false,
+    'disable-admin-tools-page' => true,
+    'disable-admin-tools-site-health' => true,
+    'disable-asset-versioning' => true,
+    'disable-auto-updates' => true,
+    'disable-block-editor' => true,
+    'disable-browser-check' => true,
+    'disable-capital-p-dangit' => true,
+    'disable-comments' => true,
+    'disable-emojis' => true,
+    'disable-frontend-wp-info' => true,
+    'disable-gallery-css' => true,
+    'disable-php-version-check' => true,
+    'disable-rest-api' => true,
+    'disable-sitemaps' => true,
+    'disable-smilies' => true,
+    'disable-taxonomy-category' => true,
+    'disable-taxonomy-post-format' => true,
+    'disable-taxonomy-post-tag' => true,
+    'disable-trackbacks' => true,
+    'disable-update-notices' => true,
+    'disable-xmlrpc' => true,
+]);

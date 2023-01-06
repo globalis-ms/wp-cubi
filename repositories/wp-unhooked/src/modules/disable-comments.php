@@ -1,10 +1,6 @@
 <?php
 
-namespace Globalis\WP\Cubi;
-
-if (defined('WP_CUBI_ENABLE_COMMENTS') && WP_CUBI_ENABLE_COMMENTS) {
-    return;
-}
+namespace Globalis\WP\WPUnhooked;
 
 add_filter('wp_count_comments', function ($default) {
     return (object) [
@@ -40,6 +36,7 @@ class DisableComments
         add_filter('comment_link', '__return_false', 10, 1);
         add_filter('get_comments_number', '__return_false', 10, 2);
         add_filter('feed_links_show_comments_feed', '__return_false');
+        add_filter('show_recent_comments_widget_style', '__return_false');
         add_action('wp_enqueue_scripts', function () {
             wp_deregister_script('comment-reply');
         }, 99);
@@ -48,9 +45,12 @@ class DisableComments
             global $wp_admin_bar;
             $wp_admin_bar->remove_menu('comments');
         });
-
+        add_action('wp_dashboard_setup', function () {
+            remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
+        });
         add_action('admin_menu', function () {
             remove_menu_page('edit-comments.php');
+            remove_submenu_page('options-general.php', 'options-discussion.php');
         });
     }
 
@@ -74,9 +74,14 @@ class DisableComments
      */
     public function adminMenuRedirect()
     {
+        $blacklist = [
+            'edit-comments.php',
+            'options-discussion.php',
+        ];
+
         global $pagenow;
 
-        if ($pagenow === 'edit-comments.php') {
+        if (in_array($pagenow, $blacklist)) {
             wp_safe_redirect(admin_url());
             exit;
         }

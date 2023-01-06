@@ -1,10 +1,6 @@
 <?php
 
-namespace Globalis\WP\Cubi;
-
-if (true === WP_CUBI_ENABLE_BLOCK_EDITOR) {
-    return;
-}
+namespace Globalis\WP\WPUnhooked;
 
 add_action('admin_init', __NAMESPACE__ . '\\disable_block_editor_privacy_notice');
 
@@ -108,3 +104,14 @@ function disable_taxonomy_template_queries($terms, $wp_query)
     }
     return [];
 }
+
+add_action(
+    'wp_enqueue_scripts',
+    function () {
+        wp_dequeue_style('wp-block-library'); // Wordpress block libaray styles
+        wp_dequeue_style('global-styles');// Wordpress global styles generated from theme.json
+    }
+);
+
+remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
+remove_action('wp_footer', 'wp_enqueue_global_styles', 1);

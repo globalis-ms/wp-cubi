@@ -24,6 +24,10 @@
         {
             "type": "composer",
             "url": "https://wpackagist.org"
+        },
+        {
+            "type": "path",
+            "url": "./repositories/wp-unhooked"
         }
     ],
     "require": {
@@ -37,14 +41,14 @@
         "johnbillion/extended-cpts": "^5.0.3",
         "roots/soil": "^4.1.1",
         "roots/wp-password-bcrypt": "^1.1.0",
-        "soberwp/intervention": "dev-main",
         "inpsyde/wonolog": "^2.x-dev",
         "wpackagist-plugin/query-monitor": "^3.10.1",
         "wpackagist-plugin/wp-crontrol": "^1.15.0",
         "wpackagist-plugin/user-switching": "^1.7.0",
         "wpackagist-plugin/autodescription": "^4.2.7.1",
         "wpackagist-plugin/limit-login-attempts-reloaded": "^2.25.10",
-        "wpackagist-plugin/dynamo": "^1.1"
+        "wpackagist-plugin/dynamo": "^1.1",
+        "globalis/wp-unhooked": "*@dev"
     },
     "require-dev": {
         "globalis/wp-cubi-robo" : "^2.0.7",
