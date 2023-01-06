@@ -47,6 +47,12 @@ add_filter('pre_option_limit_login_gdpr', function () {
     return '0';
 });
 
+// Avoid useless SQL request
+
+add_filter('pre_option_limit_login_active_app', function () {
+    return 'local';
+});
+
 // Configure plugin with wp-cubi constants
 
 if (defined("WP_CUBI_LIMIT_LOGIN_ALLOWED_RETRIES")) {
