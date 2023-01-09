@@ -34,4 +34,6 @@ if (defined('SQL_CACHE_QUERIES') && true !== SQL_CACHE_QUERIES) {
     \Globalis\WP\Cubi\mysql_enable_nocache_mod();
 }
 
+require_once __DIR__ . '/../config/tmp/php-8.1-workaround-silent-php-errors-deprecated.php';
+
 require_once ABSPATH . 'wp-settings.php';
