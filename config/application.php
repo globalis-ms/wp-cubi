@@ -119,7 +119,7 @@ define('WP_UNHOOKED_CONFIG', [
     'disable-admin-dashboard-widget-quick-press' => true,
     'disable-admin-dashboard-widget-recent-comments' => true,
     'disable-admin-dashboard-widget-recent-drafts' => true,
-    'disable-admin-dashboard-widget-right-now' => true,
+    'disable-admin-dashboard-widget-right-now' => false,
     'disable-admin-dashboard-widget-site-health' => true,
     'disable-admin-footer' => true,
     'disable-admin-plugins-menu' => true,
