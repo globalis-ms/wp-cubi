@@ -46,7 +46,7 @@
         "wpackagist-plugin/wp-crontrol": "^1.15.1",
         "wpackagist-plugin/user-switching": "^1.7.0",
         "wpackagist-plugin/autodescription": "^4.2.7.1",
-        "wpackagist-plugin/limit-login-attempts-reloaded": "^2.25.10",
+        "wpackagist-plugin/limit-login-attempts-reloaded": "^2.25.11",
         "wpackagist-plugin/dynamo": "^1.1",
         "globalis/wp-unhooked": "*@dev"
     },
