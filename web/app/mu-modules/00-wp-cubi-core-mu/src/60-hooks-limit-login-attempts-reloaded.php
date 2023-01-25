@@ -35,6 +35,10 @@ add_filter('pre_option_limit_login_show_top_level_menu_item', function () {
     return '0';
 });
 
+add_filter('pre_option_limit_login_auto_update_choice', function () {
+    return '0';
+});
+
 // Turn off mail notifications
 
 add_filter('pre_option_limit_login_lockout_notify', function () {
