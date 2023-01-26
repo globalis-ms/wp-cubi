@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4afefe84a20103aa6553c7130393b2e1",
+    "content-hash": "31425eba3bb7307871fccc944901bc73",
     "packages": [
         {
             "name": "composer/installers",
@@ -733,23 +733,23 @@
         },
         {
             "name": "globalis/wp-cubi-helpers",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-helpers.git",
-                "reference": "e33b5b2e2f86c7308a8257ee9d1bea1703662195"
+                "reference": "6b1d2529b2967f9bba134ee9b5da909f630ce3b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-helpers/zipball/e33b5b2e2f86c7308a8257ee9d1bea1703662195",
-                "reference": "e33b5b2e2f86c7308a8257ee9d1bea1703662195",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-helpers/zipball/6b1d2529b2967f9bba134ee9b5da909f630ce3b1",
+                "reference": "6b1d2529b2967f9bba134ee9b5da909f630ce3b1",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2"
+                "php": ">=8.0"
             },
             "require-dev": {
-                "squizlabs/php_codesniffer": "^3.5.0"
+                "squizlabs/php_codesniffer": "^3.7.1"
             },
             "type": "library",
             "autoload": {
@@ -793,9 +793,9 @@
             ],
             "support": {
                 "issues": "https://github.com/globalis-ms/wp-cubi-helpers/issues",
-                "source": "https://github.com/globalis-ms/wp-cubi-helpers/tree/1.0.4"
+                "source": "https://github.com/globalis-ms/wp-cubi-helpers/tree/1.0.5"
             },
-            "time": "2020-12-16T13:38:01+00:00"
+            "time": "2023-01-26T16:04:53+00:00"
         },
         {
             "name": "globalis/wp-cubi-imagemin",
