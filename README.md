@@ -123,7 +123,7 @@ wp-cubi provides a basic deploy command `./vendor/bin/robo deploy` that builds t
 You can build your own deploy method using [Deployer](https://deployer.org/), [Capistrano](https://capistranorb.com/) or any other tool by editing [`./RoboFile.php`](https://github.com/globalis-ms/wp-cubi/blob/master/RoboFile.php).
 
 
-## Where are all the ~~good~~bad things gone ?
+## Where is the block editor gone ?
 
 We use [globalis/wp-unhooked](https://github.com/globalis-ms/wp-unhooked) to disable a lot of things from WordPress core, such as block editor, REST-API, xmlrpc, comments, most of dashboard widgets and a few admin menus entries.
 
