@@ -51,7 +51,7 @@
         "globalis/wp-unhooked": "*@dev"
     },
     "require-dev": {
-        "globalis/wp-cubi-robo" : "^2.0.12",
+        "globalis/wp-cubi-robo" : "^2.0.13",
         "squizlabs/php_codesniffer": "^3.7.1"
     },
     "extra": {
