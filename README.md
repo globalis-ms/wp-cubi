@@ -1,6 +1,5 @@
 # [wp-cubi](https://github.com/globalis-ms/wp-cubi/)
 
-[![Build Status](https://travis-ci.com/globalis-ms/wp-cubi.svg?branch=master)](https://travis-ci.com/globalis-ms/wp-cubi)
 [![Latest Stable Version](https://poser.pugx.org/globalis/wp-cubi/v/stable)](https://packagist.org/packages/globalis/wp-cubi)
 [![License](https://poser.pugx.org/globalis/wp-cubi/license)](https://github.com/globalis-ms/wp-cubi/blob/master/LICENSE.md)
 
@@ -22,7 +21,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * Automated `no-index` and mail-trapper on development / staging environments
 * Command-line administration with [wp-cli](http://wp-cli.org/)
 * Monitoring tools ([query-monitor](https://wordpress.org/plugins/query-monitor/), [wp-crontrol](https://wordpress.org/plugins/wp-crontrol/), [user-switching](https://wordpress.org/plugins/user-switching/), [wp-cubi-admin-bar](https://github.com/globalis-ms/wp-cubi/tree/master/web/app/mu-modules/10-wp-cubi-admin-bar))
-* Cleaner wp-admin dashboard with [soberwp/intervention](https://github.com/soberwp/intervention)
+* Cleaner wp-admin with [globalis/wp-unhooked](https://github.com/globalis-ms/wp-unhooked)
 * Gitflow integration with Robo commands
 * Optimized `.htaccess` generation
 * Logging system with [inpsyde/wonolog](https://github.com/inpsyde/Wonolog) and [monolog](https://github.com/Seldaek/monolog)
@@ -44,7 +43,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 
 ## Requirements
 
-* [PHP](http://php.net/) 8.0 (work in progress: PHP 8.1, PHP 8.2)
+* [PHP](http://php.net/) >=8.0 <8.2
 * [Composer](http://getcomposer.org)
 * [Git](https://git-scm.com/)
 
@@ -58,6 +57,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 
 ## Configuration
 
+* Edit `WP_UNHOOKED_CONFIG` constant, according to your needs, in [`config/application.php`](https://github.com/globalis-ms/wp-cubi/blob/master/config/application.php)
 * Login page logo: Replace `./web/logo.png` with your application logo (or edit [`00-wp-cubi-core-mu/20-wp-login.php`](https://github.com/globalis-ms/wp-cubi/blob/master/web/app/mu-modules/00-wp-cubi-core-mu/src/20-wp-login.php))
 * If your application use a SMTP server for outgoing emails, configure it in `config/local.php`
 * Image minification: Configure [globalis/wp-cubi-imagemin](https://github.com/globalis-ms/wp-cubi-imagemin) to enable a meaningfull level of uploads / image minification
@@ -123,6 +123,10 @@ wp-cubi provides a basic deploy command `./vendor/bin/robo deploy` that builds t
 You can build your own deploy method using [Deployer](https://deployer.org/), [Capistrano](https://capistranorb.com/) or any other tool by editing [`./RoboFile.php`](https://github.com/globalis-ms/wp-cubi/blob/master/RoboFile.php).
 
 
-## Block Editor (previously known as Gutenberg)
+## Where is the block editor gone ?
 
-The Block Editor, existing since WordPress version 5.0 is disabled by default. If you want to use it, edit your `./config/application.php` file, and turn constants `WP_CUBI_ENABLE_BLOCK_EDITOR` and `WP_CUBI_ENABLE_REST_API` to `true`.
+We use [globalis/wp-unhooked](https://github.com/globalis-ms/wp-unhooked) to disable a lot of things from WordPress core, such as block editor, REST-API, xmlrpc, comments, most of dashboard widgets and a few admin menus entries.
+
+It allows your application to be cleaner, faster and lighter. It also improves security, by disabling potential attack routes when you don't need them.
+
+If you need to activate one of those things, edit `WP_UNHOOKED_CONFIG` constant in [`config/application.php`](https://github.com/globalis-ms/wp-cubi/blob/master/config/application.php).

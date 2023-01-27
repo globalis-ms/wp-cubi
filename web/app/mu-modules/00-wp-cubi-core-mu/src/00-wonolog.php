@@ -34,7 +34,7 @@ if (defined('WP_CUBI_LOG_DIR')) {
     }
 
     $max_files = defined('WP_CUBI_LOG_MAX_FILES') ? WP_CUBI_LOG_MAX_FILES : 30;
-    $handler = new Handler\RotatingFileHandler(WP_CUBI_LOG_DIR . DIRECTORY_SEPARATOR . '.log', $max_files, $log_level);
+    $handler = new Handler\RotatingFileHandler(WP_CUBI_LOG_DIR . DIRECTORY_SEPARATOR . '.log', $max_files, $log_level, true, 0777);
     $handler->setFilenameFormat('{date}', 'Y-m-d');
 } elseif (defined('WP_CUBI_LOG_FILE')) {
     if (!is_file(WP_CUBI_LOG_FILE)) {
@@ -48,7 +48,7 @@ if (defined('WP_CUBI_LOG_DIR')) {
         return;
     }
 
-    $handler = new Handler\StreamHandler(WP_CUBI_LOG_FILE, $log_level);
+    $handler = new Handler\StreamHandler(WP_CUBI_LOG_FILE, $log_level, true, 0777);
 }
 
 if (empty($handler)) {

@@ -22,12 +22,7 @@ class AdminBar
     {
         add_action('admin_enqueue_scripts', [$this, 'enqueueStyle'], 10);
         add_action('wp_enqueue_scripts', [$this, 'enqueueStyle'], 10);
-
-        add_action('admin_bar_menu', [$this, 'removeWpLogo'], 99, 1);
         add_action('admin_bar_menu', [$this, 'addInfoBox'], 10, 1);
-
-        add_filter('update_footer', '__return_empty_string', 99);
-        add_filter('admin_footer_text', '__return_empty_string', 99);
     }
 
     public function enqueueStyle()
@@ -35,11 +30,6 @@ class AdminBar
         if (is_user_logged_in() && is_admin_bar_showing()) {
             wp_enqueue_style('wp-cubi/admin-bar', plugins_url(self::CSS_PATH, dirname(__FILE__)), [], null);
         }
-    }
-
-    public function removeWpLogo($wp_admin_bar)
-    {
-        $wp_admin_bar->remove_menu('wp-logo');
     }
 
     public function addInfoBox($wp_admin_bar)

@@ -35,6 +35,26 @@ add_filter('pre_option_limit_login_show_top_level_menu_item', function () {
     return '0';
 });
 
+add_filter('pre_option_limit_login_auto_update_choice', function () {
+    return '0';
+});
+
+add_filter('pre_transient_llar_welcome_redirect', function () {
+    return '0';
+});
+
+add_filter('pre_option_limit_login_review_notice_shown', function () {
+    return true;
+});
+
+add_filter('pre_option_limit_login_notice_enable_notify_timestamp', function () {
+    return 99999999999999;
+});
+
+add_filter('pre_option_limit_login_activation_timestamp', function () {
+    return 99999999999999;
+});
+
 // Turn off mail notifications
 
 add_filter('pre_option_limit_login_lockout_notify', function () {
@@ -45,6 +65,12 @@ add_filter('pre_option_limit_login_lockout_notify', function () {
 
 add_filter('pre_option_limit_login_gdpr', function () {
     return '0';
+});
+
+// Avoid useless SQL request
+
+add_filter('pre_option_limit_login_active_app', function () {
+    return 'local';
 });
 
 // Configure plugin with wp-cubi constants
