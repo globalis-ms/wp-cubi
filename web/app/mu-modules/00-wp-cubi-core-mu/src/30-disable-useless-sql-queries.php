@@ -68,18 +68,6 @@ add_filter('pre_site_transient_theme_roots', function () {
     return [WP_DEFAULT_THEME => "/themes"];
 });
 
-add_filter('pre_transient_llar_welcome_redirect', '__return_zero');
-
-add_filter('pre_option_limit_login_review_notice_shown', '__return_true');
-
-add_filter('pre_option_limit_login_notice_enable_notify_timestamp', function () {
-    return 99999999999999;
-});
-
-add_filter('pre_option_limit_login_activation_timestamp', function () {
-    return 99999999999999;
-});
-
 add_action('admin_init', function () {
     remove_action('admin_init', ['WP_Privacy_Policy_Content', 'text_change_check'], 100);
 });
