@@ -11,7 +11,7 @@ define('WP_DISABLE_FATAL_ERROR_HANDLER', true);
 define('WP_ENVIRONMENT_TYPE', 'local');
 
 /* QUERY MONITOR */
-define('QM_DISABLE_ERROR_HANDLER', true);
+define('QM_DISABLE_ERROR_HANDLER', false);
 define('QM_ENABLE_CAPS_PANEL', true);
 
 /* WONOLOG */

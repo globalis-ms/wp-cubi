@@ -1,10 +1,11 @@
 <?php
 
-\Globalis\WP\Cubi\add_filter('enable_wp_debug_mode_checks', 'wp_debug_mode_turn_off_error_deprecated');
+\Globalis\WP\Cubi\add_filter('enable_wp_debug_mode_checks', 'wp_debug_mode_turn_off_errors_deprecated');
+\Globalis\WP\Cubi\add_filter('qm/collect/php_errors_return_value', 'query_monitor_turn_off_errors_deprecated');
 
-function wp_debug_mode_turn_off_error_deprecated($default)
+function wp_debug_mode_turn_off_errors_deprecated($default)
 {
-    remove_filter('enable_wp_debug_mode_checks', 'wp_debug_mode_turn_off_error_deprecated');
+    remove_filter('enable_wp_debug_mode_checks', 'wp_debug_mode_turn_off_errors_deprecated');
 
     wp_debug_mode();
 
@@ -15,4 +16,16 @@ function wp_debug_mode_turn_off_error_deprecated($default)
     }
 
     return false;
+}
+
+function query_monitor_turn_off_errors_deprecated($default)
+{
+    $qm_php_error_collector = \QM_Collectors::get("php_errors");
+    $data = $qm_php_error_collector->get_data();
+    $errors = $data->errors;
+    if (isset($errors['deprecated'])) {
+        unset($errors['deprecated']);
+    }
+    $qm_php_error_collector->set_php_errors($errors);
+    return $default;
 }
