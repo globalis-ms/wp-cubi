@@ -24,10 +24,6 @@
         {
             "type": "composer",
             "url": "https://wpackagist.org"
-        },
-        {
-            "type": "path",
-            "url": "./repositories/wp-unhooked"
         }
     ],
     "require": {
@@ -48,7 +44,7 @@
         "wpackagist-plugin/autodescription": "^4.2.7.1",
         "wpackagist-plugin/limit-login-attempts-reloaded": "^2.25.11",
         "wpackagist-plugin/dynamo": "^1.1",
-        "globalis/wp-unhooked": "*@dev"
+        "globalis/wp-unhooked": "^1.0"
     },
     "require-dev": {
         "globalis/wp-cubi-robo" : "^2.0.13",
