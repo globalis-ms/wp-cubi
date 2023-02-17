@@ -59,7 +59,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 
 * Edit `WP_UNHOOKED_CONFIG` constant, according to your needs, in [`config/application.php`](https://github.com/globalis-ms/wp-cubi/blob/master/config/application.php)
 * Login page logo: Replace `./web/logo.png` with your application logo (or edit [`00-wp-cubi-core-mu/20-wp-login.php`](https://github.com/globalis-ms/wp-cubi/blob/master/web/app/mu-modules/00-wp-cubi-core-mu/src/20-wp-login.php))
-* If your application use a SMTP server for outgoing emails, configure it in `config/local.php`
+* If your application uses a SMTP server for outgoing emails, configure it in `config/local.php`
 * Image minification: Configure [globalis/wp-cubi-imagemin](https://github.com/globalis-ms/wp-cubi-imagemin) to enable a meaningfull level of uploads / image minification
 
 
