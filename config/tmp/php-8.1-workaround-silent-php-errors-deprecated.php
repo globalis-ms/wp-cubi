@@ -1,5 +1,9 @@
 <?php
 
+if (version_compare(PHP_VERSION, '8.1.0') < 0) {
+    return;
+}
+
 \Globalis\WP\Cubi\add_filter('enable_wp_debug_mode_checks', 'wp_debug_mode_turn_off_errors_deprecated');
 \Globalis\WP\Cubi\add_filter('qm/collect/php_errors_return_value', 'query_monitor_turn_off_errors_deprecated');
 
