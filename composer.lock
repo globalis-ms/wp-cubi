@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6629f0506459eb179e2901df34ff52a8",
+    "content-hash": "bab0c36fa9158990596ea4c4aa6f11b3",
     "packages": [
         {
             "name": "composer/installers",
@@ -461,16 +461,16 @@
         },
         {
             "name": "consolidation/robo",
-            "version": "3.0.11",
+            "version": "3.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/robo.git",
-                "reference": "820fa0f164f77887e268b7dbfb2283416c7334c1"
+                "reference": "a1f49b1cce81169e44c7d46d29e98b03da92a7ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/robo/zipball/820fa0f164f77887e268b7dbfb2283416c7334c1",
-                "reference": "820fa0f164f77887e268b7dbfb2283416c7334c1",
+                "url": "https://api.github.com/repos/consolidation/robo/zipball/a1f49b1cce81169e44c7d46d29e98b03da92a7ba",
+                "reference": "a1f49b1cce81169e44c7d46d29e98b03da92a7ba",
                 "shasum": ""
             },
             "require": {
@@ -554,9 +554,9 @@
             "description": "Modern task runner",
             "support": {
                 "issues": "https://github.com/consolidation/robo/issues",
-                "source": "https://github.com/consolidation/robo/tree/3.0.11"
+                "source": "https://github.com/consolidation/robo/tree/3.x"
             },
-            "time": "2022-12-07T15:18:26+00:00"
+            "time": "2022-12-29T14:56:34+00:00"
         },
         {
             "name": "consolidation/self-update",
@@ -1300,16 +1300,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "2.8.0",
+            "version": "2.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "720488632c590286b88b80e62aa3d3d551ad4a50"
+                "reference": "f259e2b15fb95494c83f52d3caad003bbf5ffaa1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/720488632c590286b88b80e62aa3d3d551ad4a50",
-                "reference": "720488632c590286b88b80e62aa3d3d551ad4a50",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/f259e2b15fb95494c83f52d3caad003bbf5ffaa1",
+                "reference": "f259e2b15fb95494c83f52d3caad003bbf5ffaa1",
                 "shasum": ""
             },
             "require": {
@@ -1324,7 +1324,7 @@
                 "doctrine/couchdb": "~1.0@dev",
                 "elasticsearch/elasticsearch": "^7 || ^8",
                 "ext-json": "*",
-                "graylog2/gelf-php": "^1.4.2",
+                "graylog2/gelf-php": "^1.4.2 || ^2@dev",
                 "guzzlehttp/guzzle": "^7.4",
                 "guzzlehttp/psr7": "^2.2",
                 "mongodb/mongodb": "^1.8",
@@ -1386,7 +1386,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/2.8.0"
+                "source": "https://github.com/Seldaek/monolog/tree/2.9.1"
             },
             "funding": [
                 {
@@ -1398,7 +1398,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-07-24T11:55:47+00:00"
+            "time": "2023-02-06T13:44:46+00:00"
         },
         {
             "name": "ps/image-optimizer",
@@ -3321,15 +3321,15 @@
         },
         {
             "name": "wpackagist-plugin/limit-login-attempts-reloaded",
-            "version": "2.25.11",
+            "version": "2.25.12",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/limit-login-attempts-reloaded/",
-                "reference": "tags/2.25.11"
+                "reference": "tags/2.25.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/limit-login-attempts-reloaded.2.25.11.zip"
+                "url": "https://downloads.wordpress.org/plugin/limit-login-attempts-reloaded.2.25.12.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -3544,16 +3544,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.5.1",
+            "version": "2.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "923278ad13e1621946eb76ab2882655d2cc396a4"
+                "reference": "6b67eeea4d72051c369ccdbfb2423a56e2ab51a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/923278ad13e1621946eb76ab2882655d2cc396a4",
-                "reference": "923278ad13e1621946eb76ab2882655d2cc396a4",
+                "url": "https://api.github.com/repos/composer/composer/zipball/6b67eeea4d72051c369ccdbfb2423a56e2ab51a9",
+                "reference": "6b67eeea4d72051c369ccdbfb2423a56e2ab51a9",
                 "shasum": ""
             },
             "require": {
@@ -3637,7 +3637,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/2.5.1"
+                "source": "https://github.com/composer/composer/tree/2.5.4"
             },
             "funding": [
                 {
@@ -3653,7 +3653,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-12-22T14:33:54+00:00"
+            "time": "2023-02-15T12:10:06+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -3943,22 +3943,22 @@
         },
         {
             "name": "globalis/robo-task",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/robo_task.git",
-                "reference": "517b0ce9c7ebf483049205e8c9d8365da74ab12d"
+                "reference": "0ab94ffb46adf965b98644a3f6054de0b8947533"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/robo_task/zipball/517b0ce9c7ebf483049205e8c9d8365da74ab12d",
-                "reference": "517b0ce9c7ebf483049205e8c9d8365da74ab12d",
+                "url": "https://api.github.com/repos/globalis-ms/robo_task/zipball/0ab94ffb46adf965b98644a3f6054de0b8947533",
+                "reference": "0ab94ffb46adf965b98644a3f6054de0b8947533",
                 "shasum": ""
             },
             "require": {
                 "composer/composer": "^2.1.0",
-                "consolidation/robo": "^3.0.3",
-                "php": ">=7.4"
+                "consolidation/robo": "3.x-dev@dev",
+                "php": ">=8.0"
             },
             "require-dev": {
                 "phpmd/phpmd": "^2.10.1",
@@ -3988,27 +3988,28 @@
             "description": "Robo task common collection",
             "support": {
                 "issues": "https://github.com/globalis-ms/robo_task/issues",
-                "source": "https://github.com/globalis-ms/robo_task/tree/2.1.0"
+                "source": "https://github.com/globalis-ms/robo_task/tree/2.2.0"
             },
-            "time": "2022-04-22T14:11:59+00:00"
+            "time": "2023-02-20T15:20:26+00:00"
         },
         {
             "name": "globalis/wp-cubi-robo",
-            "version": "2.0.13",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-robo.git",
-                "reference": "49d49696934ebafc31e01e3b94ba05a9b125fa79"
+                "reference": "9d5ab56f451b7bd66bd1a0524772813a57fb6d7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-robo/zipball/49d49696934ebafc31e01e3b94ba05a9b125fa79",
-                "reference": "49d49696934ebafc31e01e3b94ba05a9b125fa79",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-robo/zipball/9d5ab56f451b7bd66bd1a0524772813a57fb6d7f",
+                "reference": "9d5ab56f451b7bd66bd1a0524772813a57fb6d7f",
                 "shasum": ""
             },
             "require": {
-                "globalis/robo-task": "^2.0.1",
-                "php": ">=8.0 <8.2"
+                "consolidation/robo": "3.x-dev@dev",
+                "globalis/robo-task": "^2.2.0",
+                "php": ">=8.0 <8.3"
             },
             "require-dev": {
                 "squizlabs/php_codesniffer": "^3.7.1"
@@ -4037,9 +4038,9 @@
             "homepage": "https://github.com/globalis-ms/wp-cubi-robo",
             "support": {
                 "issues": "https://github.com/globalis-ms/wp-cubi-robo/issues",
-                "source": "https://github.com/globalis-ms/wp-cubi-robo/tree/2.0.13"
+                "source": "https://github.com/globalis-ms/wp-cubi-robo/tree/2.1.1"
             },
-            "time": "2023-01-27T13:19:27+00:00"
+            "time": "2023-02-20T15:43:40+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -4499,12 +4500,13 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "inpsyde/wonolog": 20
+        "inpsyde/wonolog": 20,
+        "consolidation/robo": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.0 <8.2"
+        "php": ">=8.0 <8.3"
     },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"
