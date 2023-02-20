@@ -47,6 +47,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * [Composer](http://getcomposer.org)
 * [Git](https://git-scm.com/)
 
+**Note:** wp-cubi support for PHP 8.1 and PHP 8.2 is partial because there is still a few deprecation notices triggered by WordPress Core, wp-cli and inpsyde/wonolog. As error display is disabled in production, this should be non-blocking. In local or development environnement, [we silenced those notices](https://github.com/globalis-ms/wp-cubi/blob/1.6.0/config/tmp/php-8.1-workaround-silent-php-errors-deprecated.php). We will publish a new release of wp-cubi as soon as those packages are fixed ([next WordPress release](https://make.wordpress.org/core/6-2/) is scheduled for March 28, 2023 so hopefully we won't wait too long).
 
 ## Installation
 
