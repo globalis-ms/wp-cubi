@@ -1,5 +1,6 @@
 # [wp-cubi](https://github.com/globalis-ms/wp-cubi/)
 
+[![PHP Version Require](http://poser.pugx.org/globalis/wp-cubi/require/php)](https://packagist.org/packages/globalis/wp-cubi)
 [![Latest Stable Version](https://poser.pugx.org/globalis/wp-cubi/v/stable)](https://packagist.org/packages/globalis/wp-cubi)
 [![License](https://poser.pugx.org/globalis/wp-cubi/license)](https://github.com/globalis-ms/wp-cubi/blob/master/LICENSE.md)
 
