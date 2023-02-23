@@ -34,6 +34,7 @@
         "globalis/wp-cli-bin" : "^2.7.1",
         "globalis/wp-cubi-helpers": "^1.0.5",
         "globalis/wp-cubi-imagemin": "^1.3.2",
+        "globalis/wp-unhooked": "^1.0.1",
         "johnbillion/extended-cpts": "^5.0.3",
         "roots/soil": "^4.1.1",
         "roots/wp-password-bcrypt": "^1.1.0",
@@ -43,8 +44,7 @@
         "wpackagist-plugin/user-switching": "^1.7.0",
         "wpackagist-plugin/autodescription": "^4.2.7.1",
         "wpackagist-plugin/limit-login-attempts-reloaded": "^2.25.11",
-        "wpackagist-plugin/dynamo": "^1.1",
-        "globalis/wp-unhooked": "^1.0"
+        "wpackagist-plugin/dynamo": "^1.1"
     },
     "require-dev": {
         "consolidation/robo": "3.x-dev@dev",
