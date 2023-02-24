@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d9c0e9d38798f6c9efe7ed61f836e10c",
+    "content-hash": "c96aa2b92577380e3335ed947eb51872",
     "packages": [
         {
             "name": "composer/installers",
@@ -307,16 +307,16 @@
         },
         {
             "name": "globalis/wp-unhooked",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-unhooked.git",
-                "reference": "989cb4a1987763b321f2872044016e095df9442f"
+                "reference": "e987e14cc4db1482e8f022ca6889c1b5c66b14d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-unhooked/zipball/989cb4a1987763b321f2872044016e095df9442f",
-                "reference": "989cb4a1987763b321f2872044016e095df9442f",
+                "url": "https://api.github.com/repos/globalis-ms/wp-unhooked/zipball/e987e14cc4db1482e8f022ca6889c1b5c66b14d2",
+                "reference": "e987e14cc4db1482e8f022ca6889c1b5c66b14d2",
                 "shasum": ""
             },
             "require": {
@@ -358,9 +358,9 @@
             ],
             "support": {
                 "issues": "https://github.com/globalis-ms/wp-unhooked/issues",
-                "source": "https://github.com/globalis-ms/wp-unhooked/tree/1.0.1"
+                "source": "https://github.com/globalis-ms/wp-unhooked/tree/1.0.2"
             },
-            "time": "2023-02-23T16:49:18+00:00"
+            "time": "2023-02-24T10:46:53+00:00"
         },
         {
             "name": "inpsyde/wonolog",
