@@ -368,32 +368,34 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/inpsyde/Wonolog.git",
-                "reference": "addcd8881327b11f7ae45e84574a78addaa179d8"
+                "reference": "a0c8bd8c748e25dff384551e234d0fe9cfad5230"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/inpsyde/Wonolog/zipball/addcd8881327b11f7ae45e84574a78addaa179d8",
-                "reference": "addcd8881327b11f7ae45e84574a78addaa179d8",
+                "url": "https://api.github.com/repos/inpsyde/Wonolog/zipball/a0c8bd8c748e25dff384551e234d0fe9cfad5230",
+                "reference": "a0c8bd8c748e25dff384551e234d0fe9cfad5230",
                 "shasum": ""
             },
             "require": {
                 "monolog/monolog": "^2.3.5",
-                "php": ">=7.2",
-                "psr/log": "^1.1.4"
+                "php": ">=7.2 < 8.3",
+                "psr/log": "^1.1.4",
+                "wecodemore/wordpress-early-hook": "^1.1.0"
             },
             "provide": {
                 "psr/log-implementation": "1.0.0"
             },
             "require-dev": {
                 "brain/monkey": "^2.6.1",
-                "globalis/wp-cli-bin": "^2.5.0",
-                "inpsyde/php-coding-standards": "^1@beta",
-                "inpsyde/wp-stubs": "dev-main",
-                "johnpbloch/wordpress-core": ">=5.8.0",
-                "mikey179/vfsstream": "~1.6.10",
-                "phpunit/phpunit": "^8.5.21",
-                "symfony/process": "^4.4.30",
-                "vimeo/psalm": "^4.12.0"
+                "globalis/wp-cli-bin": "^2.7.1",
+                "inpsyde/php-coding-standards": "^1",
+                "inpsyde/wp-stubs-versions": "dev-latest",
+                "mikey179/vfsstream": "~v1.6.11",
+                "mockery/mockery": "^1.3.6",
+                "phpunit/phpunit": "^8.5.33",
+                "roots/wordpress-no-content": ">=6.1.1",
+                "symfony/process": "^v4.4.44",
+                "vimeo/psalm": "^4.30.0"
             },
             "type": "library",
             "extra": {
@@ -438,7 +440,7 @@
                 "issues": "https://github.com/inpsyde/Wonolog/issues",
                 "source": "https://github.com/inpsyde/Wonolog"
             },
-            "time": "2022-11-14T15:47:46+00:00"
+            "time": "2023-03-01T13:57:26+00:00"
         },
         {
             "name": "johnbillion/args",
@@ -1549,6 +1551,68 @@
                 }
             ],
             "time": "2023-01-01T08:32:19+00:00"
+        },
+        {
+            "name": "wecodemore/wordpress-early-hook",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wecodemore/wordpress-early-hook.git",
+                "reference": "256a592e8a34e4eb7d59c1230a9fad1c24b73056"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wecodemore/wordpress-early-hook/zipball/256a592e8a34e4eb7d59c1230a9fad1c24b73056",
+                "reference": "256a592e8a34e4eb7d59c1230a9fad1c24b73056",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1 < 8.3"
+            },
+            "require-dev": {
+                "inpsyde/php-coding-standards": "^1.0.0",
+                "phpunit/phpunit": "^7.5.20 || ^9.6.4",
+                "roave/security-advisories": "dev-latest",
+                "roots/wordpress-no-content": ">=6.1.1",
+                "vimeo/psalm": "^4.30.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "wordpress-early-hook.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Giuseppe Mazzapica",
+                    "email": "giuseppe.mazzapica@gmail.com",
+                    "homepage": "https://gmazzap.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Small library to safely add WordPress hooks before WordPress is loaded.",
+            "keywords": [
+                "actions",
+                "filters",
+                "hooks",
+                "wordpress",
+                "wordpress actions",
+                "wordpress filters",
+                "wordpress hooks",
+                "wp",
+                "wp actions",
+                "wp filters",
+                "wp hooks"
+            ],
+            "support": {
+                "issues": "https://github.com/wecodemore/wordpress-early-hook/issues",
+                "source": "https://github.com/wecodemore/wordpress-early-hook"
+            },
+            "time": "2023-03-01T13:09:19+00:00"
         },
         {
             "name": "wpackagist-plugin/autodescription",
