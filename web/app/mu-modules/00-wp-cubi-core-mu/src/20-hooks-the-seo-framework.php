@@ -61,3 +61,17 @@ function disable_autodescription_usermeta_queries($null, $object_id, $meta_key, 
 
     return '';
 }
+
+add_filter('robots_txt', __NAMESPACE__ . '\\hide_wp_admin_in_robots_txt', 99, 2);
+
+function hide_wp_admin_in_robots_txt($output, $public)
+{
+    $site_path = \esc_attr(parse_url(\site_url(), PHP_URL_PATH)) ?: '';
+    $search = "User-agent: *\n";
+    $search .= "Disallow: $site_path/wp-admin/\n";
+    $search .= "Allow: $site_path/wp-admin/admin-ajax.php\n";
+
+    $output = str_replace($search, '', $output);
+
+    return $output;
+}
