@@ -5,6 +5,10 @@ define('WP_CUBI_MAIL_TRAPPING', [
     WP_CUBI_CONFIG['DEV_MAIL'],
 ]);
 
+/* Locally disable wp-cubi-transient cache */
+define('WP_CUBI_DISABLE_TRANSIENT_CACHE', false);
+define('WP_CUBI_DISABLE_NAV_MENUS_AUTO_CACHE', false);
+
 /* SMTP SETTINGS (for real smtp server) */
 // define('WP_MAIL_SMTP_ENABLED', true);
 // define('WP_MAIL_SMTP_HOST', 'smtp.example.com');

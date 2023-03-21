@@ -55,6 +55,8 @@ class RoboFile extends \Globalis\WP\Cubi\Robo\RoboFile
 
     const CONFIRM_CONFIG_BEFORE_DEPLOY  = true;
 
+    const WP_CUBI_WEBHOOKS_SECRET = '<##WP_CUBI_WEBHOOKS_SECRET##>';
+
     protected function wpUrl()
     {
         $scheme = $this->getConfig('development', 'WEB_SCHEME');

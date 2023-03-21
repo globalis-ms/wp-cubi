@@ -79,6 +79,9 @@ define('WP_CUBI_LOG_DIR', ROOT_DIR . '/log');
 define('WP_CUBI_LOG_MAX_FILES', 30);
 define('WP_CUBI_LOG_CUSTOM_CHANNELS', []);
 
+/* WEBHOOKS */
+define('WP_CUBI_WEBHOOKS_SECRET', '<##WP_CUBI_WEBHOOKS_SECRET##>');
+
 /* PUBLIC URLS */
 define('WP_CUBI_PUBLIC_URLS', [
     'staging'    => 'https://staging.example.com/',
