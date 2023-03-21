@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a362ebd0a013fd53b5e3f9c869aa817f",
+    "content-hash": "e2b75feaf946c5235f7a5bd7e37e087a",
     "packages": [
         {
             "name": "composer/installers",
@@ -307,20 +307,21 @@
         },
         {
             "name": "globalis/wp-cubi-transient-cache",
-            "version": "0.1.0",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-transient-cache.git",
-                "reference": "f36a67425aa27bf4543ba90bb5a0dd95ccc52628"
+                "reference": "8a80c2e14f9a43082bde5f9a32213e6f49675c6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-transient-cache/zipball/f36a67425aa27bf4543ba90bb5a0dd95ccc52628",
-                "reference": "f36a67425aa27bf4543ba90bb5a0dd95ccc52628",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-transient-cache/zipball/8a80c2e14f9a43082bde5f9a32213e6f49675c6d",
+                "reference": "8a80c2e14f9a43082bde5f9a32213e6f49675c6d",
                 "shasum": ""
             },
             "require": {
-                "globalis/wp-cubi-helpers": "^1.0.5"
+                "globalis/wp-cubi-helpers": "^1.0.5",
+                "php": ">=8.0"
             },
             "require-dev": {
                 "squizlabs/php_codesniffer": "^3.7.1"
@@ -352,9 +353,9 @@
             "homepage": "https://github.com/globalis-ms/wp-cubi-transient-cache",
             "support": {
                 "issues": "https://github.com/globalis-ms/wp-cubi-transient-cache/issues",
-                "source": "https://github.com/globalis-ms/wp-cubi-transient-cache/tree/0.1.0"
+                "source": "https://github.com/globalis-ms/wp-cubi-transient-cache/tree/0.1.1"
             },
-            "time": "2023-03-21T16:27:44+00:00"
+            "time": "2023-03-21T16:51:31+00:00"
         },
         {
             "name": "globalis/wp-unhooked",
