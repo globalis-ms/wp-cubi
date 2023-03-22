@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e2b75feaf946c5235f7a5bd7e37e087a",
+    "content-hash": "bc0e8020b4d1a7a75911683d29e11cd4",
     "packages": [
         {
             "name": "composer/installers",
@@ -307,16 +307,16 @@
         },
         {
             "name": "globalis/wp-cubi-transient-cache",
-            "version": "0.1.1",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/globalis-ms/wp-cubi-transient-cache.git",
-                "reference": "8a80c2e14f9a43082bde5f9a32213e6f49675c6d"
+                "reference": "1b393ab469d9b3d0f6dca4ae7d9f6c78bfb92de0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-transient-cache/zipball/8a80c2e14f9a43082bde5f9a32213e6f49675c6d",
-                "reference": "8a80c2e14f9a43082bde5f9a32213e6f49675c6d",
+                "url": "https://api.github.com/repos/globalis-ms/wp-cubi-transient-cache/zipball/1b393ab469d9b3d0f6dca4ae7d9f6c78bfb92de0",
+                "reference": "1b393ab469d9b3d0f6dca4ae7d9f6c78bfb92de0",
                 "shasum": ""
             },
             "require": {
@@ -353,9 +353,9 @@
             "homepage": "https://github.com/globalis-ms/wp-cubi-transient-cache",
             "support": {
                 "issues": "https://github.com/globalis-ms/wp-cubi-transient-cache/issues",
-                "source": "https://github.com/globalis-ms/wp-cubi-transient-cache/tree/0.1.1"
+                "source": "https://github.com/globalis-ms/wp-cubi-transient-cache/tree/0.2.0"
             },
-            "time": "2023-03-21T16:51:31+00:00"
+            "time": "2023-03-22T10:45:41+00:00"
         },
         {
             "name": "globalis/wp-unhooked",
