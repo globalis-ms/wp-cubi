@@ -5,9 +5,10 @@ define('WP_CUBI_MAIL_TRAPPING', [
     WP_CUBI_CONFIG['DEV_MAIL'],
 ]);
 
-/* Locally disable wp-cubi-transient-cache */
-define('WP_CUBI_DISABLE_CACHE_TEMPLATES', false);
-define('WP_CUBI_DISABLE_CACHE_NAV_MENUS', false);
+/* Edit to locally disable wp-cubi-transient cache */
+define('WP_CUBI_TRANSIENT_CACHE_BYPASS_ALL', false);
+define('WP_CUBI_TRANSIENT_CACHE_BYPASS_TEMPLATES', false);
+define('WP_CUBI_TRANSIENT_CACHE_DISABLE_AUTO_CACHE_NAV_MENUS', false);
 
 /* SMTP SETTINGS (for real smtp server) */
 // define('WP_MAIL_SMTP_ENABLED', true);
