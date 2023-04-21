@@ -31,6 +31,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * SEO friendly, with [The SEO Framework](https://wordpress.org/plugins/autodescription/) plugin and [roots/soil](https://github.com/roots/soil) DOM optimizations
 * Lighter and faster than a default WordPress application, by disabling things we don't use from core
 * Comments disabled by default
+* Automatically cache nav-menus with [globalis/wp-cubi-transient-cache](https://github.com/globalis-ms/wp-cubi-transient-cache/)
 
 
 ## Security optimizations
@@ -48,7 +49,6 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * [Composer](http://getcomposer.org)
 * [Git](https://git-scm.com/)
 
-**Note:** wp-cubi support for PHP 8.1 and PHP 8.2 is partial because there is still a few deprecation notices triggered by WordPress Core, wp-cli and inpsyde/wonolog. As error display is disabled in production, this should be non-blocking. In local or development environnement, [we silenced those notices](https://github.com/globalis-ms/wp-cubi/blob/1.6.0/config/tmp/php-8.1-workaround-silent-php-errors-deprecated.php). We will publish a new release of wp-cubi as soon as those packages are fixed ([next WordPress release](https://make.wordpress.org/core/6-2/) is scheduled for March 28, 2023 so hopefully we won't wait too long).
 
 ## Installation
 
@@ -111,7 +111,7 @@ If you want to use plugins that are not available through [wordpress.org](https:
 
 ## Logs
 
-wp-cubi comes with [inpsyde/wonolog](https://github.com/inpsyde/Wonolog), which allows to log anything with a single line of code, and automatically writes logs for multiple events like PHP errors, DB errors, HTTP API errors, `wp_mail()` errors, and 404 errors.
+wp-cubi comes with [inpsyde/wonolog](https://github.com/inpsyde/Wonolog), which allows to log anything with a single line of code, and automatically writes logs for multiple events like PHP errors, DB errors, HTTP API errors, `wp_mail()` errors, and more.
 
 Basic configuration is possible in wp-cubi [`./config/application.php`](https://github.com/globalis-ms/wp-cubi/blob/master/config/application.php) and [`./config/environments/`](https://github.com/globalis-ms/wp-cubi/tree/master/config/environments) files, where you can change the maximum number of log files and the log level.
 
