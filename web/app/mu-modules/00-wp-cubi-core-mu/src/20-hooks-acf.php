@@ -110,7 +110,7 @@ add_filter('posts_pre_query', function ($posts, $wp_query) {
 }, 10, 2);
 
 add_action('acfe/init', function () {
-    acfe_update_setting('dev', false);
+    acfe_update_setting('dev', WP_ENV === "development");
     acfe_update_setting('modules/author', true);
     acfe_update_setting('modules/categories', false);
     acfe_update_setting('modules/block_types', false);
@@ -120,6 +120,14 @@ add_action('acfe/init', function () {
     acfe_update_setting('modules/taxonomies', false);
     acfe_update_setting('modules/multilang', false);
     acfe_update_setting('modules/options', false);
-    acfe_update_setting('modules/single_meta', false);
+    acfe_update_setting('modules/performance', false);
     acfe_update_setting('modules/ui', false);
+    acfe_update_setting('modules/rewrite_rules', false);
+    acfe_update_setting('modules/templates', false);
+    acfe_update_setting('modules/classic_editor', false);
+    acfe_update_setting('modules/field_group_ui', true);
 });
+
+add_filter('acf/settings/enable_post_types', '__return_false');
+add_filter('acf/settings/rest_api_enabled', '__return_false');
+add_filter('acf/settings/preload_blocks', '__return_false');
