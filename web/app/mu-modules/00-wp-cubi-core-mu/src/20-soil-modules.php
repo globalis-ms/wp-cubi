@@ -10,7 +10,7 @@ add_action('after_setup_theme', function () {
         'nice-search',
         'relative-urls',
         'disable-asset-versioning',
-        'nav-walker',
+        //'nav-walker', // disabled for now because it seems not PHP 8.2 ready
         //'js-to-footer',
         //'disable-rest-api',
     ];
