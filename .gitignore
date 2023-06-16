@@ -10,6 +10,7 @@
 /web/.htpasswd
 
 # Composer
+/auth.json
 /vendor
 
 # File system files

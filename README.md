@@ -28,6 +28,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * Logging system with [inpsyde/wonolog](https://github.com/inpsyde/Wonolog) and [monolog](https://github.com/Seldaek/monolog)
 * Standalone image minification plugin with [globalis/wp-cubi-imagemin](https://github.com/globalis-ms/wp-cubi-imagemin)
 * Additional functions with [globalis/wp-cubi-helpers](https://github.com/globalis-ms/wp-cubi-helpers)
+* [advanced-custom-fields-pro](https://www.advancedcustomfields.com/pro/) installed with composer, if license key provided
 * SEO friendly, with [The SEO Framework](https://wordpress.org/plugins/autodescription/) plugin and [roots/soil](https://github.com/roots/soil) DOM optimizations
 * Lighter and faster than a default WordPress application, by disabling things we don't use from core
 * Comments disabled by default
@@ -87,6 +88,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * `./vendor/bin/robo wp:language-install [<language>] [--activate]`
 * `./vendor/bin/robo wp:language-update [<language>] [--activate]`
 * `./vendor/bin/robo wp:update-timezone`
+* `./vendor/bin/robo wp:install-acf-pro [--username="<username>"] [--password="<password>"]`
 * `./vendor/bin/robo feature:start <feature-name>`
 * `./vendor/bin/robo feature:finish <feature-name>`
 * `./vendor/bin/robo hotfix:start [--semversion=<version>]`
