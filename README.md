@@ -88,7 +88,7 @@ Despite that WordPress does not comply with semantic versioning specification, c
 It can be done by adding to your staging and production server crontabs :
 
 ```
-*/1 * * * * */30 * * * * /usr/bin/php8.2 /var/www/my-app/vendor/bin/wp core update --minor  &>/dev/null
+*/30 * * * *  /usr/bin/php8.2 /var/www/my-app/vendor/bin/wp core update --minor  &>/dev/null
 ```
 
 Notes :
