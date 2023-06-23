@@ -78,12 +78,12 @@ For an optimal wp-cron setup in production, apply following configuration :
 
 Notes :
 - Be sure you adapt PHP binary path (with accurate version) and your application path in above command
-- Using absolute paths is recommanded
+- Using absolute paths is recommended
 
 
 ## WordPress core automatic updates
 
-Despite that WordPress does not comply with semantic versioning specification, core minor updates generally respect backward compatibility and could be applied automatically, for security purposes.
+Even though WordPress does not comply with semantic versioning specification, core minor updates generally respect backward compatibility and could be applied automatically, for security purposes.
 
 It can be done by adding to your staging and production server crontabs :
 
@@ -93,13 +93,13 @@ It can be done by adding to your staging and production server crontabs :
 
 Notes :
 - Be sure you adapt PHP binary path (with accurate version) and your application path in above command
-- Using absolute paths is recommanded
+- Using absolute paths is recommended
 
 This cron task will ensure, every 30 minutes, that WordPress instance running on server is up-to-date with latest minor version of its current branch.
 
 This cron task will **not** automatically change roots/wordpress version in your composer.lock file.
 
-To avoid unwanted rollbacks when deploying, wp-cubi deploy command will check before every deployment that you're about to deploy last minor version of your WordPress current branch. If not, it will invite your to abort deployment and run `./vendor/bin/robo wp:apply-available-patch`.
+To avoid unwanted rollbacks when deploying, wp-cubi deploy command will check before every deployment that you're about to deploy last minor version of your WordPress current branch. If not, it will invite you to abort deployment and run `./vendor/bin/robo wp:apply-available-patch`.
 
 
 
