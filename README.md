@@ -76,8 +76,9 @@ For an optimal wp-cron setup in production, apply following configuration :
 */1 * * * * /usr/bin/php8.2 /var/www/my-app/web/wpcb/wp-cron.php &>/dev/null
 ```
 
-- Be sure you adapt PHP binary path (with accurate version) and your application wp-cron.php path in above command
-- Note that using absolute paths is recommanded
+Notes :
+- Be sure you adapt PHP binary path (with accurate version) and your application path in above command
+- Using absolute paths is recommanded
 
 
 ## Commands
