@@ -122,6 +122,7 @@ To avoid unwanted rollbacks when deploying, wp-cubi deploy command will check be
 * `./vendor/bin/robo build:composer`
 * `./vendor/bin/robo build:config`
 * `./vendor/bin/robo build:htaccess`
+* `./vendor/bin/robo wp:apply-available-patch`
 * `./vendor/bin/robo wp:language-install [<language>] [--activate]`
 * `./vendor/bin/robo wp:language-update [<language>] [--activate]`
 * `./vendor/bin/robo wp:update-timezone`
