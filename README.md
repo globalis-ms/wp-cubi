@@ -65,6 +65,20 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 * If your application uses a SMTP server for outgoing emails, configure it in `config/local.php`
 * Image minification: Configure [globalis/wp-cubi-imagemin](https://github.com/globalis-ms/wp-cubi-imagemin) to enable a meaningfull level of uploads / image minification
 
+## wp-cron tasks
+
+For an optimal wp-cron setup in production, apply following configuration :
+
+- Set constant `DISABLE_WP_CRON` to `true` in `./config/environments/production.php`
+- Add to your production server crontab :
+
+```
+*/1 * * * * /usr/bin/php8.2 /var/www/my-app/web/wpcb/wp-cron.php &>/dev/null
+```
+
+- Be sure you adapt PHP binary path (with accurate version) and your application wp-cron.php path in above command
+- Note that using absolute paths is recommanded
+
 
 ## Commands
 
