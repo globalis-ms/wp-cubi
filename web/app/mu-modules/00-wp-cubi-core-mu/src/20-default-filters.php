@@ -27,12 +27,6 @@ add_filter('upload_mimes', function ($mimes) {
 remove_action('template_redirect', 'wp_redirect_admin_locations', 1000);
 
 /*
- * Disable redirect from /admin to /wpcb/wp-admin
- * No need to help malicious bots to find the door...
- */
-remove_action('template_redirect', 'wp_redirect_admin_locations', 1000);
-
-/*
  * Increase timeout on wordpress.org translations api HTTP calls
  */
 add_filter('http_request_args', function ($args, $url) {
