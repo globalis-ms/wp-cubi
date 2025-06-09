@@ -46,7 +46,7 @@ Built with [Composer](http://getcomposer.org) dependency manager and [Robo](http
 
 ## Requirements
 
-* [PHP](http://php.net/) >=8.1 <8.4
+* [PHP](http://php.net/) >=8.1 <8.5
 * [Composer](http://getcomposer.org)
 * [Git](https://git-scm.com/)
 
@@ -73,7 +73,7 @@ For an optimal wp-cron setup in production, apply following configuration :
 - Add to your production server crontab :
 
 ```
-*/1 * * * * /usr/bin/php8.2 /var/www/my-app/web/wpcb/wp-cron.php &>/dev/null
+*/1 * * * * /usr/bin/php8.4 /var/www/my-app/web/wpcb/wp-cron.php &>/dev/null
 ```
 
 Notes :
@@ -88,7 +88,7 @@ Even though WordPress does not comply with semantic versioning specification, co
 It can be done by adding to your staging and production server crontabs :
 
 ```
-*/30 * * * *  /usr/bin/php8.2 /var/www/my-app/vendor/bin/wp core update --minor  &>/dev/null
+*/30 * * * *  /usr/bin/php8.4 /var/www/my-app/vendor/bin/wp core update --minor  &>/dev/null
 ```
 
 Notes :
