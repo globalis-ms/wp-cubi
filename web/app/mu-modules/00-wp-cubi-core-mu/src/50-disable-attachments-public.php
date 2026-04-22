@@ -39,4 +39,6 @@ add_action('parse_query', function ($query) {
     unset($query->queried_object);
     unset($query->queried_object_id);
     $query->set_404();
+    status_header(404);
+    nocache_headers();
 });
