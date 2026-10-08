@@ -50,7 +50,7 @@
         "inpsyde/wonolog": "3.x-dev",
         "wpackagist-plugin/advanced-custom-fields": "^6.3.11",
         "wpackagist-plugin/acf-extended": "^0.9.0.9",
-        "johnbillion/query-monitor": "^3.17.0",
+        "johnbillion/query-monitor": "^3.20.4",
         "wpackagist-plugin/wp-crontrol": "^1.15.2",
         "wpackagist-plugin/user-switching": "^1.9.1",
         "wpackagist-plugin/autodescription": "^5.1.2",
