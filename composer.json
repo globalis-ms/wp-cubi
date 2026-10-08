@@ -60,7 +60,7 @@
         "wpackagist-plugin/fakerpress":"0.8.0"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.7.2",
+        "squizlabs/php_codesniffer": "^3.13.6",
         "consolidation/robo": "5.1.0",
         "globalis/wp-cubi-robo": "^2.5.2"
     },
